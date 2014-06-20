@@ -1,6 +1,5 @@
 package org.ideavillage.mentormarketplace.web.controllers;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.ideavillage.mentormarketplace.persistence.domain.Entrepreneur;
 import org.ideavillage.mentormarketplace.persistence.repositories.EntrepreneurRepository;
