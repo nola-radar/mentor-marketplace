@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+                           http://www.springframework.org/schema/data/jpa
+                           http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd">
+
+    <!-- Tell Spring to scan these packages for repositories. -->
+    <jpa:repositories base-package="org.ideavillage.mentormarketplace.persistence.repositories" />
+
+    <!-- The annotation-driven tag tells Spring to look at the helpful annotations for transactions -->
+    <tx:annotation-driven/>
+
+    <context:property-placeholder properties-ref="deployProperties"/>
+
+    <bean id="deployProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
+          p:location="WEB-INF/configs/jdbc-local.properties"/>
+
+    <bean id="jpaDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.url}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}" />
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+          p:persistenceUnitName="mentormarketplacePU"
+          p:dataSource-ref="jpaDataSource"
+          p:jpaVendorAdapter-ref="hibernateVendor"/>
+
+    <bean id="hibernateVendor" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+          p:showSql="${jpa.showSql}"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+          p:entityManagerFactory-ref="entityManagerFactory"/>
+</beans>
