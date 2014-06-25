@@ -41,7 +41,7 @@ public class AppTest {
         driver.findElement(By.cssSelector("#entrepreneur > div:nth-child(3) > div > button")).click();
         Thread.sleep(2000);
         driver.close();
-        driver.quit();   */ 
+        driver.quit(); */
         /*
         driver.findElement(By.cssSelector("input#firstname.inputbox.indexInput")).sendKeys("Marcus");
         driver.findElement(By.cssSelector("input#lastname.inputbox.indexInput")).sendKeys("Bischof");
