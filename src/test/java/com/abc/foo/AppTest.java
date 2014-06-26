@@ -31,7 +31,9 @@ public class AppTest {
        
         driver.get("http://localhost:8080/mentormarketplace/");
 	
-
+        // Proper way to "sleep" would be to do below
+        // WebDriverWait.until(condition-that-finds-the-element)
+        
         driver.findElement(By.cssSelector("a")).click();
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("body > a")).click();
