@@ -12,6 +12,11 @@
 
     <!-- Tell Spring to scan these packages for components (e.g., controllers, services). -->
     <context:component-scan base-package="org.ideavillage.mentormarketplace.web.controllers"/>
+    
+    <!-- Spring Social ConnectController -->
+    <bean class="org.springframework.social.connect.web.ConnectController">
+        <!-- relies on by-type autowiring for the constructor-args -->
+    </bean>
 
     <!-- These next two beans are for Spring to automatically find a domain model instance when specifying the id
     as a path variable. See the view method in the EntrepreneurController. -->

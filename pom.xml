@@ -11,7 +11,11 @@
 
     <properties>
         <spring.version>4.0.5.RELEASE</spring.version>
+        <spring.security.version>3.2.4.RELEASE</spring.security.version>
         <spring.data.version>1.6.0.RELEASE</spring.data.version>
+        <spring.social.version>1.1.0.RELEASE</spring.social.version>
+        <spring.social.linkedin.version>1.0.1.RELEASE</spring.social.linkedin.version>
+        <apache.httpcomponents.version>4.3.1</apache.httpcomponents.version>
         <javaee.version>6.0</javaee.version>
         <jstl.version>1.2</jstl.version>
         <hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
@@ -47,6 +51,16 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
@@ -60,6 +74,27 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>${spring.data.version}</version>
+        </dependency>
+        <!-- Spring Social, LinkedIn -->
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-security</artifactId>
+            <version>${spring.social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-web</artifactId>
+            <version>${spring.social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-linkedin</artifactId>
+            <version>${spring.social.linkedin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${apache.httpcomponents.version}</version>
         </dependency>
         <!-- Java EE dependencies -->
         <dependency>
