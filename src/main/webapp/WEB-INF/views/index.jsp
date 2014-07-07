@@ -37,5 +37,8 @@
         <a href="<c:url value="/entrepreneurs" />">Entrepreneurs</a>
         <div id="profile"></div>
         <script type="IN/Login" data-onAuth="loadData"></script>
+        <button class="btn btn-info" type="submit">
+                        Submit
+                    </button>
     </body>
 </html>
