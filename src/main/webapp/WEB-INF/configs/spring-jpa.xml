@@ -22,9 +22,6 @@
 
     <context:property-placeholder properties-ref="deployProperties"/>
 
-    <bean id="deployProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
-          p:location="WEB-INF/configs/jdbc-local.properties"/>
-
     <bean id="jpaDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
           p:driverClassName="${jdbc.driverClassName}"
           p:url="${jdbc.url}"
@@ -41,4 +38,13 @@
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
           p:entityManagerFactory-ref="entityManagerFactory"/>
+
+    <beans profile="ci">
+        <bean id="deployProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
+              p:location="WEB-INF/configs/jdbc-ci.properties"/>
+    </beans>
+    <beans profile="local">
+        <bean id="deployProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
+              p:location="WEB-INF/configs/jdbc-local.properties"/>
+    </beans>
 </beans>
