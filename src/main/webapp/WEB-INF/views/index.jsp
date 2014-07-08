@@ -14,7 +14,7 @@
     </head>
     <body>
         <!-- Navigate Bar -->
-        <div class="navbar navbar-fixed-top-idea"> 
+        <div class="navbar navbar-fixed-top-idea" style="margin-bottom:0px;"> 
                 <div class="navbar-inner-idea"> 
                         <div class="container" id="navIndex">
                                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -32,39 +32,42 @@
 
         <!-- Section Contained Two Clouds and Register Buttons -->
         <div class="hero-unit-idea">
-            <div class="row-fluid" style="z-index:0;">
-                <div class="span12"></div>
-            </div>
-            <div class="row-fluid" style="z-index:0;">
-                <div class="span12"></div>
-            </div>
-            <div class="row-fluid" style="z-index:0;">
-                <div class="span12"></div>
-            </div>
-            <div class="row-fluid" style="z-index:0;">
-                <div class="span3"></div>
-                <div class="span2" id="cloudText" style="right:25px;top:25px;">
-                    <center>
-                        <h5>Founder</h5>
-                        <div id="pwrap"><p id="cloudParagraph">For Companies Participating in the 2015 IDEAx Program</p></div>
-                        <form class="navbar-form pull-left" id="indexForm">
-                            <a class="btn btn-info" href="#" id="indexButton">REGISTER</a>
-                        </form>
-                    </center>
+            <img src="/mentormarketplace/resources/img/indexBack.png" id="indexHalfmoom">
+                <div class="row-fluid" style="z-index:0;">
+                    <div class="span12"></div>
                 </div>
-                <div class="span2"></div>
-                <div class="span2" id="cloudText" style="left:35px;top:25px;">
-                    <center>
-                        <h5>Mentor</h5>
-                        <div id="pwrap"><p id="cloudParagraph">For Leaders Mentoring Companies in the 2015 IDEAx Program</p></div>
-                        <form class="navbar-form pull-left" id="indexForm">
-                            <a class="btn btn-info" href="#" id="indexButton">REGISTER</a>
-                        </form>
-                    </center>
+                <div class="row-fluid" style="z-index:0;">
+                    <div class="span12"></div>
                 </div>
-                <div class="span3"></div>
-            </div>
-            <center><img src="/mentormarketplace/resources/img/indexBack.png" id="indexHalfmoom"></center>
+                <div class="row-fluid" style="z-index:0;">
+                    <div class="span12"></div>
+                </div>
+                <div class="row-fluid" style="z-index:0;">
+                    <div class="span3"></div>
+                    <div class="span2" id="cloudText" style="right:25px;top:25px;">
+                        <center>
+                            <h5>Founder</h5>
+                            <div id="pwrap"><p id="cloudParagraph">For Companies Participating in the 2015 IDEAx Program</p></div>
+                            <form class="navbar-form pull-left" id="indexForm">
+                                <br>
+                                <a class="btn btn-info" href="#" id="indexButton">REGISTER</a>
+                            </form>
+                        </center>
+                    </div>
+                    <div class="span2"></div>
+                    <div class="span2" id="cloudText" style="left:35px;top:25px;">
+                        <center>
+                            <h5>Mentor</h5>
+                            <div id="pwrap"><p id="cloudParagraph">For Leaders Mentoring Companies in the 2015 IDEAx Program</p></div>
+                            <form class="navbar-form pull-left" id="indexForm">
+                                <br>
+                                <a class="btn btn-info" href="#" id="indexButton">REGISTER</a>
+                            </form>
+                        </center>
+                    </div>
+                    <div class="span3"></div>
+                </div>
+            <!--<center><img src="/mentormarketplace/resources/img/indexBack.png" id="indexHalfmoom"></center>-->
         </div>
 
         <!-- Section Containing Connect, Meet, and Innovate -->
@@ -75,7 +78,7 @@
         </div>  
         </div>
 
-        <div class="row-fluid" style="height:300px;" id="firstFluid">
+        <!--<div class="row-fluid" style="height:300px;" id="firstFluid">
             <div class="span4" style="padding-left:15%;">
                 <center><img src="/mentormarketplace/resources/img/indexCircle.png" id="indexCircle"></center>
                 <h4>Connect</h4>
@@ -91,7 +94,25 @@
                 <h4>Innovate</h4>
                 <p>Together founders and mentors can shape a business that can change and industry, change New Orleans, and grow nationally.</p>
             </div>
+        </div>-->
+        <div class="row-fluid" style="height:300px;" id="firstFluid">
+            <div class="span4">
+                <center><img src="/mentormarketplace/resources/img/indexCircle.png" id="indexCircle"></center>
+                <h4>Connect</h4>
+                <p>Our platform allows participating founders to easily identify the local and national experts who can help them define and scale their businesses.</p>
+            </div>
+            <div class="span4">
+                <center><img src="/mentormarketplace/resources/img/indexCircle.png" id="indexCircle"></center>
+                <h4>Meet</h4>
+                <p>The ability to turn a connection into a meeting our phone call has been streamlined to emphasize value instead of spending time getting in front of potential mentors.</p>
+            </div>
+            <div class="span4">
+                <center><img src="/mentormarketplace/resources/img/indexCircle.png" id="indexCircle"></center>
+                <h4>Innovate</h4>
+                <p>Together founders and mentors can shape a business that can change and industry, change New Orleans, and grow nationally.</p>
+            </div>
         </div>
+        
         </center>
 
         <!-- Section Explaining Mission of IdeaVillage -->
