@@ -24,17 +24,24 @@ public class AppTest {
         //driver.get("http://cmf-30f8gz1/VisitorBadgeUAT/Home/");
         
         System.out.println("group 2 test");
-        /*
+
+
+         /*
         WebDriver driver;
 	System.setProperty("webdriver.chrome.driver", "C:/Users/212412051/Desktop/chromedriver.exe");
         driver = new ChromeDriver();
        
         driver.get("http://localhost:8080/mentormarketplace/");
 	
+
         // Proper way to "sleep" would be to do below
         // WebDriverWait.until(condition-that-finds-the-element)
         
         driver.findElement(By.cssSelector("a")).click();
+
+
+        driver.findElement(By.cssSelector("body > div.hero-unit > div > a")).click();
+
         Thread.sleep(4000);
         driver.findElement(By.cssSelector("body > a")).click();
         Thread.sleep(4000);

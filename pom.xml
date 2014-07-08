@@ -10,7 +10,9 @@
     <name>Idea Village Mentor Marketplace</name>
 
     <properties>
-        <spring.version>4.0.3.RELEASE</spring.version>
+
+        <spring.version>4.0.5.RELEASE</spring.version>
+
         <spring.data.version>1.6.0.RELEASE</spring.data.version>
         <javaee.version>6.0</javaee.version>
         <jstl.version>1.2</jstl.version>
@@ -120,6 +122,7 @@
 
     <build>
         <finalName>mentormarketplace</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
