@@ -6,14 +6,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Create Mentor Page</title>
     </head>
     <body>
-        <h1>New Entrepreneur:</h1>
-        <form:form modelAttribute="entrepreneur" class="form-horizontal">
+        <h1>New Mentor:</h1>
+        <form:form modelAttribute="mentor" class="form-horizontal">
+            
             <spring:bind path="linkedInId">
                 <div class="control-group ${status.error ? 'error' : ''}">
-                    <form:label path="linkedInId" class="control-label">
+      -              <form:label path="linkedInId" class="control-label">
                         Linked In Id
                     </form:label>
                     <div class="controls">
@@ -22,6 +23,7 @@
                     </div>
                 </div>
             </spring:bind>
+            
             <spring:bind path="industry">
                 <div class="control-group ${status.error ? 'error' : ''}">
                     <form:label path="industry" class="control-label">
@@ -33,6 +35,19 @@
                     </div>
                 </div>
             </spring:bind>
+            
+            <spring:bind path="firstName">
+                <div class="control-group ${status.error ? 'error' : ''}">
+                    <form:label path="firstName" class="control-label">
+                        First Name
+                    </form:label>
+                    <div class="controls">
+                        <form:input path="firstName" class="input-large" />
+                        <form:errors path="firstName" cssClass="help-inline" />
+                    </div>
+                </div>
+            </spring:bind>
+            
             <div class="control-group">
                 <div class="controls">
                     <button class="btn btn-info" type="submit">
