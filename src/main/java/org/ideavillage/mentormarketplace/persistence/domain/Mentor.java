@@ -34,16 +34,39 @@ public class Mentor implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Long id;
-    @Size(max = 2147483647)
-    @Column(name = "linkedinid")
-    private String linkedInId;
-    @Size(max = 2147483647)
-    @Column(name = "industry")
-    private String industry;
+    
     @Size(max = 2147483647)
     @Column(name = "firstname")
     private String firstName;
-
+    
+    @Size(max = 2147483647)
+    @Column(name = "lastname")
+    private String lastName;
+    
+    @Size(max = 2147483647)
+    @Column(name = "industry")
+    private String industry;
+    
+    @Size(max = 2147483647)
+    @Column(name = "areasofexpertise")
+    private String areasOfExpertise;
+    
+    @Size(max = 2147483647)
+    @Column(name = "linkedinid")
+    private String linkedInId;
+     
+    @Size(max = 2147483647)
+    @Column(name = "linkedinpictureurl")
+    private String linkedInPictureURL;
+    
+    @Size(max = 2147483647)
+    @Column(name = "linkedincurrentcompany")
+    private String linkedInCurrentCompany;
+    
+    @Size(max = 2147483647)
+    @Column(name = "linkedincurrentjobtitle")
+    private String linkedInCurrentJobTitle;
+    
     public Mentor() {
     }
 
@@ -58,13 +81,21 @@ public class Mentor implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getLinkedInId() {
-        return linkedInId;
+    
+    public String getFirstName() {
+        return firstName;
     }
-
-    public void setLinkedInId(String linkedInId) {
-        this.linkedInId = linkedInId;
+    
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    
+    public String getLastName() {
+        return lastName;
+    }
+    
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getIndustry() {
@@ -75,14 +106,46 @@ public class Mentor implements Serializable {
         this.industry = industry;
     }
     
-    public String getFirstName() {
-        return firstName;
-    }
-    
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getAreasOfExpertise() {
+        return areasOfExpertise;
     }
 
+    public void setAreasOfExpertise(String areasOfExpertise) {
+        this.areasOfExpertise = areasOfExpertise;
+    }
+    
+    public String getLinkedInId() {
+        return linkedInId;
+    }
+
+    public void setLinkedInId(String linkedInId) {
+        this.linkedInId = linkedInId;
+    }
+    
+    public String getLinkedInPictureURL() {
+        return linkedInPictureURL;
+    }
+
+    public void setLinkedInPictureURL(String linkedInPictureURL) {
+        this.linkedInPictureURL = linkedInPictureURL;
+    }
+    
+    public String getLinkedInCurrentCompany() {
+        return linkedInCurrentCompany;
+    }
+
+    public void setLinkedInCurrentCompany(String linkedInCurrentCompany) {
+        this.linkedInCurrentCompany = linkedInCurrentCompany;
+    }
+    
+    public String getLinkedInCurrentJobTitle() {
+        return linkedInCurrentJobTitle;
+    }
+
+    public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
+        this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
