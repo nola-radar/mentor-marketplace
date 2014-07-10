@@ -6,15 +6,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Mentor Page</title>
     </head>
     <body>
-        <h1>Entrepreneur ${entrepreneur.id}:</h1>
+        <h1>Mentor ${mentor.id}:</h1>
         <div>
-            <b>Linked In Id:</b> ${entrepreneur.linkedInId}
+            <b>Linked In Id:</b> ${mentor.linkedInId}
         </div>
+        
         <div>
-            <b>Industry:</b> ${entrepreneur.industry}
+            <b>Industry:</b> ${mentor.industry}
         </div>
+        
+        <div>
+            <b>First Name:</b> ${mentor.firstName}
+        </div>
+        
     </body>
 </html>
