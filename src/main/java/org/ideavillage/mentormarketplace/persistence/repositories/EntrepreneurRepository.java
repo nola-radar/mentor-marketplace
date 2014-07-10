@@ -16,6 +16,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @see <a href="http://docs.spring.io/spring-data/data-commons/docs/current/reference/html/repositories.html">Spring
  * Data Repositories</a>
  */
+
 public interface EntrepreneurRepository extends PagingAndSortingRepository<Entrepreneur, Long> {
 
     long countByLinkedInId(String linkedInId);

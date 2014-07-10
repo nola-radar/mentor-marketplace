@@ -16,3 +16,5 @@ WITH (
 );
 ALTER TABLE entrepreneur
   OWNER TO ideavillage;
+
+
