@@ -25,7 +25,7 @@ ALTER TABLE mentor
 
 CREATE TABLE founder
 (
-  id serial NOT NULL,
+  id integer NOT NULL DEFAULT nextval('founder_id_seq'::regclass),
   linkedinid text,
   industry text,
   CONSTRAINT founder_pkey PRIMARY KEY (id)
@@ -34,5 +34,5 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE founder
-  OWNER TO ideavillage;
+OWNER TO ideavillage;
 
