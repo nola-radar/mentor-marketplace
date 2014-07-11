@@ -4,11 +4,23 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Create Mentor Page</title>
+        <title>JSP Page</title>
+        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+            api_key: 756f7ogbvydmk2
+            authorize: true
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link media="all" type="text/css" href="../css/streamin.css" rel="stylesheet"/>
+        <link media="all" type="text/css" href="../css/jqueryui.css" rel="stylesheet"/>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.5b1.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>  
     </head>
     <body>
+        
+        <script type="IN/Login" data-onAuth="loadData"></script>
+        
         <h1>New Mentor:</h1>
         <form:form modelAttribute="mentor" class="form-horizontal">
             
@@ -116,5 +128,33 @@
                 </div>
             </div>
         </form:form>
+        
+        <!-- This is the script for populating the fields with linkedin data
+             It is placed at the bottom of the form to allow fields to load 
+             before being populated -->
+        
+        <script type="text/javascript">
+            function loadData() {
+                IN.API.Profile("me")
+                .fields(["id", "firstName", "lastName", "pictureUrl","headline","publicProfileUrl",
+                         "industry"])
+                .result(function(result) {
+                  profile = result.values[0];
+                 
+                 document.getElementById("firstName").value = profile.firstName.toString();
+                 document.getElementById("lastName").value = profile.lastName.toString();
+                 document.getElementById("industry").value = profile.industry.toString();
+                 document.getElementById("linkedInId").value = profile.id.toString();
+                 if(profile.pictureUrl === null){
+                 document.getElementById("linkedInPictureURL").value = profile.pictureURL.toString();
+             }
+                 document.getElementById("linkedInCurrentJobTitle").value = profile.headline.toString();
+                 
+
+                });
+            }
+        </script>
+        
+        
     </body>
 </html>
