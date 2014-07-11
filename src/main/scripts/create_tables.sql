@@ -25,7 +25,7 @@ ALTER TABLE mentor
 
 CREATE TABLE founder
 (
-  id integer NOT NULL DEFAULT nextval('founder_id_seq'::regclass),
+  id serial NOT NULL,
   linkedinid text,
   industry text,
   CONSTRAINT founder_pkey PRIMARY KEY (id)
