@@ -12,7 +12,7 @@ CREATE TABLE mentor
   linkedinid text,
   linkedinpictureurl character(255),
   linkedincurrentcompany character(255),
-  linkedincurrentcurrentjobtitle character(255),
+  linkedincurrentjobtitle character(255),
   CONSTRAINT mentor_pkey PRIMARY KEY (id),
   CONSTRAINT unique_linkedin_id UNIQUE (linkedinid)
 )
@@ -25,7 +25,7 @@ ALTER TABLE mentor
 
 CREATE TABLE founder
 (
-  id integer NOT NULL DEFAULT nextval('founder_id_seq'::regclass),
+  id serial NOT NULL,
   linkedinid text,
   industry text,
   CONSTRAINT founder_pkey PRIMARY KEY (id)
