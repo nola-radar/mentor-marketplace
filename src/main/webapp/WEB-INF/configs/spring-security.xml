@@ -23,7 +23,7 @@
         <security:logout
             logout-url="/logout"
             logout-success-url="/login"
-            delete-cookies="JESSIONID"/>
+            delete-cookies="JSESSIONID"/>
         <!-- Anyone can access these urls -->
         <security:intercept-url pattern="/auth/**" access="permitAll"/>
         <security:intercept-url pattern="/login" access="permitAll"/>
@@ -33,6 +33,7 @@
 
         <!-- The rest of our application is protected. -->
         <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
+        <!--<security:intercept-url pattern="/**" access="permitAll"/>-->
 
         <!-- Adds social authentication filter to the Spring Security filter chain. -->
         <security:custom-filter ref="socialAuthenticationFilter" before="PRE_AUTH_FILTER" />
@@ -43,9 +44,9 @@
         requests.
     -->
     <security:authentication-manager alias="authenticationManager">
-        <security:authentication-provider user-service-ref="userDetailsService">
+<!--        <security:authentication-provider user-service-ref="userDetailsService">
             <security:password-encoder ref="passwordEncoder"/>
-        </security:authentication-provider>
+        </security:authentication-provider>-->
 
         <security:authentication-provider ref="socialAuthenticationProvider"/>
     </security:authentication-manager>

@@ -34,10 +34,10 @@ public class SimpleSocialUserDetailsService implements SocialUserDetailsService 
      */
     @Override
     public SocialUserDetails loadUserByUserId(String userId) throws UsernameNotFoundException, DataAccessException {
-        LOGGER.debug("Loading user by user id: {}", userId);
+        LOGGER.info("Loading user by user id: {}", userId);
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(userId);
-        LOGGER.debug("Found user details: {}", userDetails);
+        LOGGER.info("Found user details: {}", userDetails);
 
         return (SocialUserDetails) userDetails;
     }

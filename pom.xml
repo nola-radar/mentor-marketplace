@@ -18,8 +18,8 @@
         <apache.httpcomponents.version>4.3.1</apache.httpcomponents.version>
         <javaee.version>6.0</javaee.version>
         <jstl.version>1.2</jstl.version>
-        <hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
         <hibernate.version>4.3.5.Final</hibernate.version>
+        <hibernate.validator.version>5.1.1.Final</hibernate.validator.version>
         <postgres.jdbc.driver.version>9.3-1101-jdbc41</postgres.jdbc.driver.version>
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
         <maven.surefire.version>2.12.4</maven.surefire.version>
@@ -109,15 +109,20 @@
             <version>${jstl.version}</version>
         </dependency>
         <!-- JPA Dependecies -->
-        <!--        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>${hibernate.jpa.version}</version>
-        </dependency>-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version>
         </dependency>
         <!-- PostgreSQL JDBC Driver dependencies -->
         <dependency>
