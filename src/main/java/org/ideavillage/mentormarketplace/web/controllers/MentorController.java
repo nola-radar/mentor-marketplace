@@ -38,12 +38,12 @@ public class MentorController {
      */
     // Tells Spring to route HTTP GET requests at "/mentormarketplace/mentors/" and
     // "/mentormarketplace/mentors/list" to this method.
-    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+    /*@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
     public String list(Model model, Pageable pageable) {
         Page page = mentorRepository.findAll(pageable);
         model.addAttribute("mentors", page.getContent());
         return "mentors/list";
-    }
+    }/*
 
     /**
      * Controller method for redirecting HTTP GET requests at "/mentormarketplace/mentors" to
@@ -96,4 +96,31 @@ public class MentorController {
         Mentor saved = mentorRepository.save(mentor);
         return "redirect:/mentors/" + saved.getId();
     }
+    
+    /* Marcus Bischof added these two similar mappings for /list view,
+     * in order to create mentor on /list view as well
+    */
+    
+    @RequestMapping(value = {"/","/list"}, method = RequestMethod.GET)
+    public ModelAndView list() {
+        return new ModelAndView("mentors/list", "mentor", new Mentor());
+    }
+
+    /**
+     * Controller method for handling the submitted create new Mentor form.
+     *
+     * @param mentor - Mentor trying to be created
+     * @param result - Object to find out if there were validation errors in the parameter object
+     * @return name of the view to render
+     */
+    @RequestMapping(value = {"/","/list"}, method = RequestMethod.POST)
+    public String doList(@Valid Mentor mentor, BindingResult result) {
+        if (result.hasErrors()) {
+            return "mentors/list";
+        }
+        Mentor saved = mentorRepository.save(mentor);
+        return "redirect:/mentors/" + saved.getId();
+    }
+    
+    
 }

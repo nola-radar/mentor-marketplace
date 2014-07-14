@@ -62,7 +62,7 @@
                             <div id="pwrap"><p id="cloudParagraph">For Leaders Mentoring Companies in the 2015 IDEAx Program</p></div>
                             <form class="navbar-form pull-left" id="indexForm">
                                 <br>
-                                <a class="btn btn-info" href="#" id="indexButton">REGISTER</a>
+                                <a class="btn btn-info" href="<c:url value="mentors/" />" id="indexButton">REGISTER</a>
                             </form>
                         </center>
                     </div>
