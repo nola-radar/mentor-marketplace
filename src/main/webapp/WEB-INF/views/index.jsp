@@ -7,13 +7,59 @@
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JSP Page</title>
-        
+
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="/mentormarketplace/resources/css/bootstrap.css"  type="text/css"/>
         <link rel="stylesheet" href="/mentormarkeplace/resources/css/bootstrap-responsive.css" type="text/css"/>
-       
+        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+            api_key: 756f7ogbvydmk2
+             
+            authorize: true
+        </script> 
+
+        <script type="text/javascript">
+            function onLinkedInLoad() {
+                IN.UI.Authorize().place();
+//                IN.Event.on(IN, "auth", function() {
+//                    onLogin();
+//                });
+//                IN.Event.on(IN, "logout", function() {
+//                    onLogout();
+//                });
+            }
+
+            function onLogin() {
+                IN.API.Profile("me").result(displayResult);
+            }
+            function displayResult(profiles) {
+                member = profiles.values[0];
+                alert(member.id + " Hello " + member.firstName + " " + member.lastName);
+            }
+            
+            function loadData() {
+                IN.API.Profile("me")
+                        .fields(["id", "firstName", "lastName", "pictureUrl", "headline", "publicProfileUrl"])
+                        .result(function(result) {
+                            profile = result.values[0];
+
+//                  entrepreneur = new Entrepreneur();
+//                  entrepreneur.setLinkedInId(profile.id);
+//                  entrepreneur.setIndustry("placeholder");
+//                  entrepreneurRepository.save(entrepreneur);
+//                  
+                            profHTML = "<p><a href=\"" + profile.publicProfileUrl + "\">";
+                            profHTML += "<img class=img_border align=\"left\" src=\"" + profile.pictureUrl + "\"></a>";
+                            profHTML += "<a href=\"" + profile.publicProfileUrl + "\">";
+                            profHTML += "<h2 class=myname>" + profile.firstName + " " + profile.lastName + "</a> </h2>";
+                            profHTML += "<span class=myheadline>" + profile.headline + " " + profile.id + "</span>";
+                            $("#profile").html(profHTML);
+                        });
+            }
+        </script>
     </head>
     <body>
+ 
+            
         <!-- Navigate Bar -->
         <div class="navbar navbar-fixed-top-idea" style="margin-bottom:0px;"> 
                 <div class="navbar-inner-idea"> 
@@ -51,10 +97,11 @@
                             <div id="pwrap"><p id="cloudParagraph">For Companies Participating in the 2015 IDEAx Program</p></div>
                             <form class="navbar-form pull-left" id="indexForm">
                                 <br>
-                                <a class="btn btn-info" href="#" id="indexButton">REGISTER</a>
+                                <a class="btn btn-info" onclick="onLinkedInLoad()" data-toggle="modal" data-target="#founderModal" id="indexButton">REGISTER</a>
                             </form>
                         </center>
                     </div>
+                   
                     <div class="span2"></div>
                     <div class="span2" id="cloudText" style="left:35px;top:25px;">
                         <center>
@@ -70,14 +117,27 @@
                 </div>
             <!--<center><img src="/mentormarketplace/resources/img/indexBack.png" id="indexHalfmoom"></center>-->
         </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="founderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Signup as a Founder</h4>
+                    </div>
 
-        <!-- Section Containing Connect, Meet, and Innovate -->
-        <center>
-        <div class="row-fluid" id="firstFluid">
-            <div class="span12">
-            <center><h3 class="text-center  pagination-centered">Welcome to the Mentor Marketplace</h3></center>
-        </div>  
+                    <body>
+
+                    </body>
+
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
         </div>
+
+        
 
         <!--<div class="row-fluid" style="height:300px;" id="firstFluid">
             <div class="span4" style="padding-left:15%;">
@@ -128,11 +188,14 @@
             </div>
         </div>
         </center>
+
+
         
         <!-- BOOTSTRAP! -->
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script scr="/js/bootstrap.js"></script>
-        
+	<!--<script scr="/js/bootstrap.js"></script>-->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     </body>
+
 </html>
 

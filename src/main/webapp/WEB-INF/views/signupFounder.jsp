@@ -10,9 +10,15 @@
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
+    
+        
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <!-- BOOTSTRAP! -->
+        <link rel="stylesheet" href="/mentormarketplace/resources/css/bootstrap.css"  type="text/css"/>
+        <link rel="stylesheet" href="/mentormarkeplace/resources/css/bootstrap-responsive.css" type="text/css"/>
+        
         <script type="text/javascript" src="http://platform.linkedin.com/in.js">
             api_key: 756f7ogbvydmk2
             authorize: true
@@ -24,16 +30,16 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>  
         <script type="text/javascript">
             function loadData() {
-                IN.API.Profile("zH_kILvvlO")
+                IN.API.Profile("me")
                 .fields(["id", "firstName", "lastName", "pictureUrl","headline","publicProfileUrl"])
                 .result(function(result) {
                   profile = result.values[0];
           
-                  entrepreneur = new Entrepreneur();
-                  entrepreneur.setLinkedInId(profile.id);
-                  entrepreneur.setIndustry("placeholder");
-                  entrepreneurRepository.save(entrepreneur);
-                  
+//                  entrepreneur = new Entrepreneur();
+//                  entrepreneur.setLinkedInId(profile.id);
+//                  entrepreneur.setIndustry("placeholder");
+//                  entrepreneurRepository.save(entrepreneur);
+//                  
                   profHTML = "<p><a href=\"" + profile.publicProfileUrl + "\">";
                   profHTML += "<img class=img_border align=\"left\" src=\"" + profile.pictureUrl + "\"></a>";      
                   profHTML += "<a href=\"" + profile.publicProfileUrl + "\">";
@@ -45,7 +51,13 @@
         </script>
     </head>
     <body class="yui3-skin-sam	yui-skin-sam">
+
+
         <div id="profile"></div>
         <script type="IN/Login" data-onAuth="loadData"></script>
     </body>
+    
+    <!-- BOOTSTRAP! -->
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script scr="/js/bootstrap.js"></script>
 </html>
