@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 
 <html>
+
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JSP Page</title>
@@ -57,6 +58,7 @@
             <div class="row-fluid" style="padding:10px;height:40px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span12" style="margin-top:0px;margin-bottom:0px;background-color:#203747;height:100%;position:relative;">
                     <center><h3 id="firstNameMentor" style="color:white;top:0;padding:0;margin:0;"></h3></center>
+
                 </div>
             </div>
             <div class="row-fluid" style="padding:10px;height:400px;margin:0;background-color:lightgray;" id="firstFluid">
@@ -159,13 +161,16 @@
                 
         </div>
         </form:form>
+
         <div style="display:none;">
             <script type="IN/Login" data-onAuth="loadData"></script>
         </div>
+
         <script type="text/javascript">
             function loadData() {
                 IN.API.Profile("me")
                 .fields(["id", "firstName", "lastName", "pictureUrl","headline","publicProfileUrl",
+
                          "industry","three-current-positions"])
                 .result(function(result) {
                  profile = result.values[0];
@@ -175,13 +180,16 @@
                  document.getElementById("industry").value = profile.industry.toString();
                  document.getElementById("linkedInCurrentCompany").value = profile.threeCurrentPositions.values[0].company.name;
                  document.getElementById("linkedInCurrentJobTitle").value = profile.threeCurrentPositions.values[0].title;
+
                 });
             }
         </script>
         
+
         <!-- BOOTSTRAP! -->
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
         
     </body>
 </html>
