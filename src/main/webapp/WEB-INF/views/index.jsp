@@ -10,6 +10,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <a href="<c:url value="/auth/linkedin" />">Login</a>
         <a href="<c:url value="/entrepreneurs" />">Entrepreneurs</a>
     </body>
 </html>

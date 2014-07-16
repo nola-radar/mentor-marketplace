@@ -51,3 +51,19 @@ CREATE UNIQUE INDEX userconnectionrank
   USING btree
   (userid COLLATE pg_catalog."default", providerid COLLATE pg_catalog."default", rank);
 
+-- Table: mmuser
+
+-- DROP TABLE mmuser;
+
+CREATE TABLE mmuser
+(
+  id integer NOT NULL DEFAULT nextval('user_id_seq'::regclass),
+  email character varying(255) NOT NULL,
+  linkedinid character varying(255) NOT NULL,
+  CONSTRAINT user_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE mmuser
+  OWNER TO ideavillage;

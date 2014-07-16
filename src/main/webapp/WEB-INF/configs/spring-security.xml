@@ -9,27 +9,22 @@
     <!-- Static resources such as CSS and JS files are ignored by Spring Security -->
     <security:http pattern="/resources/**" security="none" />
 
-    <security:http use-expressions="true">
+    <security:http use-expressions="true" disable-url-rewriting="true">
         <!-- Enables Spring Security CSRF protection -->
         <security:csrf/>
         <!-- Configures the form login -->
         <security:form-login
-            login-page="/login"
-            login-processing-url="/login/authenticate"
-            authentication-failure-url="/login?error=bad_credentials"
-            username-parameter="username"
-            password-parameter="password"/>
+            login-page="/auth/linkedin"
+            authentication-failure-url="/?error=bad_credentials"/>
         <!-- Configures the logout function -->
         <security:logout
             logout-url="/logout"
-            logout-success-url="/login"
+            logout-success-url="/"
             delete-cookies="JSESSIONID"/>
         <!-- Anyone can access these urls -->
         <security:intercept-url pattern="/auth/**" access="permitAll"/>
-        <security:intercept-url pattern="/login" access="permitAll"/>
-        <security:intercept-url pattern="/signin/**" access="permitAll"/>
-        <security:intercept-url pattern="/signup/**" access="permitAll"/>
         <security:intercept-url pattern="/user/register/**" access="permitAll"/>
+        <security:intercept-url pattern="/" access="permitAll"/>
 
         <!-- The rest of our application is protected. -->
         <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
@@ -68,6 +63,8 @@
 
         <!-- Sets the url of the registration form. -->
         <property name="signupUrl" value="/user/register"/>
+        <property name="postLoginUrl" value="/user/profile"/>
+        <property name="defaultFailureUrl" value="/?error=authentication_failure"/>
     </bean>
 
     <!--
