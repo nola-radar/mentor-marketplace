@@ -19,7 +19,6 @@ CREATE TABLE mentor
 WITH (
   OIDS=FALSE
 );
-
 ALTER TABLE mentor
   OWNER TO ideavillage;
 
@@ -36,3 +35,53 @@ WITH (
 ALTER TABLE founder
 OWNER TO ideavillage;
 
+-- Table: userconnection
+
+-- DROP TABLE userconnection;
+
+CREATE TABLE userconnection
+(
+  userid character varying(255) NOT NULL,
+  providerid character varying(255) NOT NULL,
+  provideruserid character varying(255) NOT NULL,
+  rank integer NOT NULL,
+  displayname character varying(255),
+  profileurl character varying(512),
+  imageurl character varying(512),
+  accesstoken character varying(255) NOT NULL,
+  secret character varying(255),
+  refreshtoken character varying(255),
+  expiretime bigint,
+  CONSTRAINT userconnection_pkey PRIMARY KEY (userid, providerid, provideruserid)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE userconnection
+  OWNER TO ideavillage;
+
+-- Index: userconnectionrank
+
+-- DROP INDEX userconnectionrank;
+
+CREATE UNIQUE INDEX userconnectionrank
+  ON userconnection
+  USING btree
+  (userid COLLATE pg_catalog."default", providerid COLLATE pg_catalog."default", rank);
+
+-- Table: mmuser
+
+-- DROP TABLE mmuser;
+
+CREATE TABLE mmuser
+(
+  id integer NOT NULL DEFAULT nextval('user_id_seq'::regclass),
+  email character varying(255) NOT NULL,
+  linkedinid character varying(255) NOT NULL,
+  CONSTRAINT user_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE mmuser
+  OWNER TO ideavillage;

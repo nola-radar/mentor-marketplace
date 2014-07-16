@@ -20,12 +20,7 @@
     <!-- The annotation-driven tag tells Spring to look at the helpful annotations for transactions -->
     <tx:annotation-driven/>
 
-    <context:property-placeholder properties-ref="deployProperties"/>
-
-    <bean id="deployProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
-          p:location="WEB-INF/configs/jdbc-local.properties"/>
-
-    <bean id="jpaDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
           p:driverClassName="${jdbc.driverClassName}"
           p:url="${jdbc.url}"
           p:username="${jdbc.username}"
@@ -33,7 +28,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
           p:persistenceUnitName="mentormarketplacePU"
-          p:dataSource-ref="jpaDataSource"
+          p:dataSource-ref="dataSource"
           p:jpaVendorAdapter-ref="hibernateVendor"/>
 
     <bean id="hibernateVendor" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"

@@ -24,7 +24,7 @@
                         <a href="#" class="brand" id="indexLink">MENTOR MARKETPLACE</a>
                         <div class="nav-collapse collapse pull-right">
                             <form class="navbar-form pull-left" id="indexForm">
-                                <a class="btn btn-info" href="#" id="indexButton">LOGIN</a>
+                                <a class="btn btn-info" href="<c:url value="/auth/linkedin" />" id="indexButton">LOGIN</a>
                             </form>
                         </div>
                         </div>
@@ -51,7 +51,7 @@
                             <div id="pwrap"><p id="cloudParagraph">For Companies Participating in the 2015 IDEAx Program</p></div>
                             <form class="navbar-form pull-left" id="indexForm">
                                 <br>
-                                <a class="btn btn-info" href="#" id="indexButton">REGISTER</a>
+                                <a class="btn btn-info" href="<c:url value="/auth/linkedin" />" id="indexButton">REGISTER</a>
                             </form>
                         </center>
                     </div>
@@ -62,7 +62,7 @@
                             <div id="pwrap"><p id="cloudParagraph">For Leaders Mentoring Companies in the 2015 IDEAx Program</p></div>
                             <form class="navbar-form pull-left" id="indexForm">
                                 <br>
-                                <a class="btn btn-info" href="#" id="indexButton">REGISTER</a>
+                                <a class="btn btn-info" href="<c:url value="/auth/linkedin" />" id="indexButton">REGISTER</a>
                             </form>
                         </center>
                     </div>
@@ -125,14 +125,12 @@
                 <center><p>At The Idea Village our mission is to create change through entrepreneurship. IDEAx is our program for the highest potential founders in New Orleans. These companies have been selected through a rigorous application and interview process by local business leaders and experts. They are embarking on an 11 week journey to grow as much as possible and develop a roadmap for future success. To do so, it takes a village... <br><br> IDEAx focuses on making strategic connections on behalf of founders to experts in the community who can accelerate their rate of growth. The Mentor Program will use a new technology, known as the Mentor Marketplace (which you're looking at right now) to pair founders with the Idea Village mentors who can have an impact on the course of these startups. Whether a connection leads to one phone call and a few nuggets of knowledge or a meeting that grows. </p></center>
             </div>
             </center>
-            </div>
         </div>
         </center>
         
         <!-- BOOTSTRAP! -->
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script scr="/js/bootstrap.js"></script>
-        
+	<script src="/js/bootstrap.js"></script>
     </body>
 </html>
 

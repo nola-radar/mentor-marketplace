@@ -10,14 +10,16 @@
     <name>Idea Village Mentor Marketplace</name>
 
     <properties>
-
         <spring.version>4.0.5.RELEASE</spring.version>
-
+        <spring.security.version>3.2.4.RELEASE</spring.security.version>
         <spring.data.version>1.6.0.RELEASE</spring.data.version>
+        <spring.social.version>1.1.0.RELEASE</spring.social.version>
+        <spring.social.linkedin.version>1.0.1.RELEASE</spring.social.linkedin.version>
+        <apache.httpcomponents.version>4.3.1</apache.httpcomponents.version>
         <javaee.version>6.0</javaee.version>
         <jstl.version>1.2</jstl.version>
-        <hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
         <hibernate.version>4.3.5.Final</hibernate.version>
+        <hibernate.validator.version>5.1.1.Final</hibernate.validator.version>
         <postgres.jdbc.driver.version>9.3-1101-jdbc41</postgres.jdbc.driver.version>
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
         <maven.surefire.version>2.12.4</maven.surefire.version>
@@ -49,6 +51,16 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
@@ -62,6 +74,27 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>${spring.data.version}</version>
+        </dependency>
+        <!-- Spring Social, LinkedIn -->
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-security</artifactId>
+            <version>${spring.social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-web</artifactId>
+            <version>${spring.social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-linkedin</artifactId>
+            <version>${spring.social.linkedin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${apache.httpcomponents.version}</version>
         </dependency>
         <!-- Java EE dependencies -->
         <dependency>
@@ -102,15 +135,20 @@
 	    <scope>test</scope>	
         </dependency>
         <!-- JPA Dependecies -->
-        <!--        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>${hibernate.jpa.version}</version>
-        </dependency>-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version>
         </dependency>
         <!-- PostgreSQL JDBC Driver dependencies -->
         <dependency>
