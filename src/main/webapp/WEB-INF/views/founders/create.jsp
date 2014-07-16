@@ -9,8 +9,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>New Entrepreneur:</h1>
-        <form:form modelAttribute="entrepreneur" class="form-horizontal">
+        <h1>New Founder:</h1>
+        <form:form modelAttribute="founder" class="form-horizontal">
             <spring:bind path="linkedInId">
                 <div class="control-group ${status.error ? 'error' : ''}">
                     <form:label path="linkedInId" class="control-label">
