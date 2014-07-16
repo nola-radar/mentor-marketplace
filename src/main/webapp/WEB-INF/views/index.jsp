@@ -20,41 +20,17 @@
         <script type="text/javascript">
             function onLinkedInLoad() {
                 IN.UI.Authorize().place();
-//                IN.Event.on(IN, "auth", function() {
-//                    onLogin();
-//                });
+                
+                IN.Event.on(IN, "auth", function() {
+                location.href = "http://localhost:8080/mentormarketplace/entrepreneurs/"            
+                });
+            }
 //                IN.Event.on(IN, "logout", function() {
 //                    onLogout();
 //                });
-            }
+   //         }
 
-            function onLogin() {
-                IN.API.Profile("me").result(displayResult);
-            }
-            function displayResult(profiles) {
-                member = profiles.values[0];
-                alert(member.id + " Hello " + member.firstName + " " + member.lastName);
-            }
             
-            function loadData() {
-                IN.API.Profile("me")
-                        .fields(["id", "firstName", "lastName", "pictureUrl", "headline", "publicProfileUrl"])
-                        .result(function(result) {
-                            profile = result.values[0];
-
-//                  entrepreneur = new Entrepreneur();
-//                  entrepreneur.setLinkedInId(profile.id);
-//                  entrepreneur.setIndustry("placeholder");
-//                  entrepreneurRepository.save(entrepreneur);
-//                  
-                            profHTML = "<p><a href=\"" + profile.publicProfileUrl + "\">";
-                            profHTML += "<img class=img_border align=\"left\" src=\"" + profile.pictureUrl + "\"></a>";
-                            profHTML += "<a href=\"" + profile.publicProfileUrl + "\">";
-                            profHTML += "<h2 class=myname>" + profile.firstName + " " + profile.lastName + "</a> </h2>";
-                            profHTML += "<span class=myheadline>" + profile.headline + " " + profile.id + "</span>";
-                            $("#profile").html(profHTML);
-                        });
-            }
         </script>
     </head>
     <body>
@@ -97,7 +73,7 @@
                             <div id="pwrap"><p id="cloudParagraph">For Companies Participating in the 2015 IDEAx Program</p></div>
                             <form class="navbar-form pull-left" id="indexForm">
                                 <br>
-                                <a class="btn btn-info" onclick="onLinkedInLoad()" data-toggle="modal" data-target="#founderModal" id="indexButton">REGISTER</a>
+                                <a class="btn btn-info" onclick="onLinkedInLoad()" id="indexButton">REGISTER</a>
                             </form>
                         </center>
                     </div>
@@ -117,6 +93,7 @@
                 </div>
             <!--<center><img src="/mentormarketplace/resources/img/indexBack.png" id="indexHalfmoom"></center>-->
         </div>
+        
         
         <!-- Modal -->
         <div class="modal fade" id="founderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -195,6 +172,7 @@
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<!--<script scr="/js/bootstrap.js"></script>-->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
     </body>
 
 </html>
