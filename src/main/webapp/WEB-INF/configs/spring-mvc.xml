@@ -36,8 +36,9 @@
     </mvc:annotation-driven>
 
     <!-- Define the folder to serve out static resources (e.g., .js, .css, etc.) -->
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
+    <mvc:resources mapping="/resources/**" location="/resources/"/> 
+    
     <!-- Default JSP View Resolver -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />

@@ -2,20 +2,38 @@
 -- then copy the sql from the 'SQL Pane' to here
 -- so we have scripts that we can run on the servers.
 
-CREATE TABLE entrepreneur
+CREATE TABLE mentor
 (
   id serial NOT NULL,
-  -- these two fields should probably be varchar with an appropriate length
+  firstname character(255),
+  lastname character(255),
+  industry character(255),
+  areasofexpertise text,
   linkedinid text,
-  industry text,
-  CONSTRAINT entrepreneur_pkey PRIMARY KEY (id),
+  linkedinpictureurl character(255),
+  linkedincurrentcompany character(255),
+  linkedincurrentjobtitle character(255),
+  CONSTRAINT mentor_pkey PRIMARY KEY (id),
   CONSTRAINT unique_linkedin_id UNIQUE (linkedinid)
 )
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE entrepreneur
+ALTER TABLE mentor
   OWNER TO ideavillage;
+
+CREATE TABLE founder
+(
+  id serial NOT NULL,
+  linkedinid text,
+  industry text,
+  CONSTRAINT founder_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE founder
+OWNER TO ideavillage;
 
 -- Table: userconnection
 
