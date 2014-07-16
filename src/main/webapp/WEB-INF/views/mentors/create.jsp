@@ -61,7 +61,7 @@
 
                 </div>
             </div>
-            <div class="row-fluid" style="padding:10px;height:400px;margin:0;background-color:lightgray;" id="firstFluid">
+            <div class="row-fluid" style="padding:10px;height:550px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="#"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
@@ -114,6 +114,14 @@
                                 <h6 style="margin:10px 0px;">
                                     &nbsp; &nbsp; &nbsp; &nbsp; LinkedIn Picture: &nbsp; &nbsp; &nbsp;
                                     <form:input path="linkedInPictureURL" class="input-large" style="left:0px;" />
+                                    <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
+                                </h6>
+                        </spring:bind>
+                        
+                        <spring:bind path="background">
+                                <h6 style="margin:10px 0px;">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; Background: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <form:textarea path="background" rows="10" cols="30" style="left:0px;" />
                                     <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
                         </spring:bind>
@@ -171,7 +179,7 @@
                 IN.API.Profile("me")
                 .fields(["id", "firstName", "lastName", "pictureUrl","headline","publicProfileUrl",
 
-                         "industry","three-current-positions"])
+                         "industry","three-current-positions","summary"])
                 .result(function(result) {
                  profile = result.values[0];
                  document.getElementById("firstNameMentor").textContent = profile.firstName.toString() + " " + profile.lastName.toString();
@@ -180,7 +188,7 @@
                  document.getElementById("industry").value = profile.industry.toString();
                  document.getElementById("linkedInCurrentCompany").value = profile.threeCurrentPositions.values[0].company.name;
                  document.getElementById("linkedInCurrentJobTitle").value = profile.threeCurrentPositions.values[0].title;
-
+                 document.getElementById("background").value = profile.summary;
                 });
             }
         </script>
