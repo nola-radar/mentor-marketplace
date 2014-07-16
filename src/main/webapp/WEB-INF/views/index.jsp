@@ -6,32 +6,42 @@
 <html>
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JSP Page</title>
-
+        <title>JSP Page</title>     
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="/mentormarketplace/resources/css/bootstrap.css"  type="text/css"/>
         <link rel="stylesheet" href="/mentormarkeplace/resources/css/bootstrap-responsive.css" type="text/css"/>
+        
+        !--LinkedIn-->
+        <link media="all" type="text/css" href="../css/streamin.css" rel="stylesheet"/>
+        <link media="all" type="text/css" href="../css/jqueryui.css" rel="styleshpt" src="http://code.jquery.com/jquery-1.5b1.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
+        
         <script type="text/javascript" src="http://platform.linkedin.com/in.js">
             api_key: 756f7ogbvydmk2
-             
             authorize: true
-        </script> 
-
-        <script type="text/javascript">
-            function onLinkedInLoad() {
-                IN.UI.Authorize().place();
-                
-                IN.Event.on(IN, "auth", function() {
-                location.href = "http://localhost:8080/mentormarketplace/entrepreneurs/"            
-                });
-            }
-//                IN.Event.on(IN, "logout", function() {
-//                    onLogout();
-//                });
-   //         }
-
-            
         </script>
+        
+        <script type="text/javascript">
+           function onLinkedInLoad() {
+               IN.UI.Authorize().place();
+               
+               IN.Event.on(IN, "auth", function() {
+               location.href = "http://localhost:8080/mentormarketplace/founders/"            
+               });
+           }
+           function onLinkedInLoadMentor() {
+               IN.UI.Authorize().place();
+               
+               IN.Event.on(IN, "auth", function() {
+               location.href = "http://localhost:8080/mentormarketplace/mentors/"            
+               });
+           }
+        </script>
+
+        <
+        
+
+        
     </head>
     <body>
  
@@ -74,6 +84,7 @@
                             <form class="navbar-form pull-left" id="indexForm">
                                 <br>
                                 <a class="btn btn-info" onclick="onLinkedInLoad()" id="indexButton">REGISTER</a>
+
                             </form>
                         </center>
                     </div>
@@ -85,7 +96,7 @@
                             <div id="pwrap"><p id="cloudParagraph">For Leaders Mentoring Companies in the 2015 IDEAx Program</p></div>
                             <form class="navbar-form pull-left" id="indexForm">
                                 <br>
-                                <a class="btn btn-info" href="<c:url value="mentors/" />" id="indexButton">REGISTER</a>
+                                <a class="btn btn-info" onclick="onLinkedInLoadMentor()" id="indexButton">REGISTER</a>
                             </form>
                         </center>
                     </div>

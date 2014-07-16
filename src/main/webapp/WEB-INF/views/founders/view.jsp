@@ -10,11 +10,58 @@
     </head>
     <body>
         <h1>Founder ${founder.id}:</h1>
+        
         <div>
-            <b>Linked In Id:</b> ${founder.linkedInId}
+            <b>First Name:</b> ${founder.firstName}
         </div>
+        
+        <div>
+            <b>Last Name:</b> ${founder.lastName}
+        </div>
+        
         <div>
             <b>Industry:</b> ${founder.industry}
         </div>
+        
+        <div>
+            <b>Areas of Expertise:</b> ${founder.areasOfExpertise}
+        </div>
+        
+        <div>
+            <b>Background:</b> ${founder.background}
+        </div>
+        
+        <div>
+            <b>Website:</b> ${founder.website}
+        </div>
+        
+        <div>
+            <b>Facebook:</b> ${founder.facebook}
+        </div>
+        
+        <div>
+            <b>Twitter:</b> ${founder.twitter}
+        </div>
+        
+        <div>
+            <b>Other Social Media:</b> ${founder.otherSocialMedia}
+        </div>
+        
+        <div>
+            <b>LinkedIn ID:</b> ${founder.linkedInId}
+        </div>
+        
+        <div>
+            <b>LinkedIn Picture URL:</b> ${founder.linkedInPictureURL}
+        </div>
+        
+        <div>
+            <b>LinkedIn Current Company:</b> ${founder.linkedInCurrentCompany}
+        </div>
+        
+        <div>
+            <b>LinkedIn Current Job Title:</b> ${founder.linkedInCurrentJobTitle}
+        </div>
+        
     </body>
 </html>

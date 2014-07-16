@@ -38,12 +38,12 @@ public class FounderController {
      */
     // Tells Spring to route HTTP GET requests at "/mentormarketplace/founders/" and
     // "/mentormarketplace/founders/list" to this method.
-    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
-    public String list(Model model, Pageable pageable) {
-        Page page = founderRepository.findAll(pageable);
-        model.addAttribute("founders", page.getContent());
-        return "founders/list";
-    }
+//    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+//    public String list(Model model, Pageable pageable) {
+//        Page page = founderRepository.findAll(pageable);
+//        model.addAttribute("founders", page.getContent());
+//        return "founders/list";
+//    }
 
     /**
      * Controller method for redirecting HTTP GET requests at "/mentormarketplace/founders" to
@@ -96,4 +96,30 @@ public class FounderController {
         Founder saved = founderRepository.save(founder);
         return "redirect:/founders/" + saved.getId();
     }
+    
+    /* Marcus Bischof added these two similar mappings for /list view,
+     * in order to create founder on /list view as well
+    */
+    
+    @RequestMapping(value = {"/","/list"}, method = RequestMethod.GET)
+    public ModelAndView list() {
+        return new ModelAndView("founders/list", "founder", new Founder());
+    }
+
+    /**
+     * Controller method for handling the submitted create new Founder form.
+     *
+     * @param founder - Founder trying to be created
+     * @param result - Object to find out if there were validation errors in the parameter object
+     * @return name of the view to render
+     */
+    @RequestMapping(value = {"/","/list"}, method = RequestMethod.POST)
+    public String doList(@Valid Founder founder, BindingResult result) {
+        if (result.hasErrors()) {
+            return "founders/list";
+        }
+        Founder saved = founderRepository.save(founder);
+        return "redirect:/founders/" + saved.getId();
+    }
+    
 }

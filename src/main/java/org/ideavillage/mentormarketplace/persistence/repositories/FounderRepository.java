@@ -19,11 +19,55 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface FounderRepository extends PagingAndSortingRepository<Founder, Long> {
 
-    long countByLinkedInId(String linkedInId);
+    long countByFirstName(String firstName);
+
+    long countByLastName(String lastName);
 
     long countByIndustry(String industry);
+    
+    long countByAreasOfExpertise(String areasOfExpertise);
+    
+    long countByBackground(String background);
+    
+    long countByWebsite(String website);
+    
+    long countByFacebook(String facebook);
+    
+    long countByTwitter(String twitter);
+    
+    long countByOtherSocialMedia(String otherSocialMedia);
+    
+    long countByLinkedInId(String linkedInId);
+    
+    long countByLinkedInPictureURL(String linkedInPictureURL);
+    
+    long countByLinkedInCurrentCompany(String linkedInCurrentCompany);
+    
+    long countByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
 
-    Founder findByLinkedInId(String linkedInId);
+    Page<Founder> findByFirstName(String firstName, Pageable pageable);
+    
+    Page<Founder> findByLastName(String lastName, Pageable pageable);
 
     Page<Founder> findByIndustry(String industry, Pageable pageable);
+    
+    Page<Founder> findByAreasOfExpertise(String areasOfExpertise, Pageable pageable);
+    
+    Page<Founder> findByBackground(String background, Pageable pageable);
+    
+    Page<Founder> findByWebsite(String website, Pageable pageable);
+    
+    Page<Founder> findByFacebook(String facebook, Pageable pageable);
+    
+    Page<Founder> findByTwitter(String twitter, Pageable pageable);
+    
+    Page<Founder> findByOtherSocialMedia(String otherSocialMedia, Pageable pageable);
+
+    Founder findByLinkedInId(String linkedInId);
+    
+    Founder findByLinkedInPictureURL(String linkedInPictureURL);
+    
+    Founder findByLinkedInCurrentCompany(String linkedInCurrentCompany);
+    
+    Founder findByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
 }

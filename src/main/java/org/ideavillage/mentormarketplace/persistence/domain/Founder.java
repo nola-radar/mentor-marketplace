@@ -34,13 +34,59 @@ public class Founder implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Long id;
+    
     @Size(max = 2147483647)
-    @Column(name = "linkedinid")
-    private String linkedInId;
+    @Column(name = "firstname")
+    private String firstName;
+    
+    @Size(max = 2147483647)
+    @Column(name = "lastname")
+    private String lastName;
+    
     @Size(max = 2147483647)
     @Column(name = "industry")
     private String industry;
-
+    
+    @Size(max = 2147483647)
+    @Column(name = "areasofexpertise")
+    private String areasOfExpertise;
+    
+    @Size(max = 2147483647)
+    @Column(name = "background")
+    private String background;
+    
+    @Size(max = 2147483647)
+    @Column(name = "website")
+    private String website;
+    
+    @Size(max = 2147483647)
+    @Column(name = "facebook")
+    private String facebook;
+    
+    @Size(max = 2147483647)
+    @Column(name = "twitter")
+    private String twitter;
+    
+    @Size(max = 2147483647)
+    @Column(name = "othersocialmedia")
+    private String otherSocialMedia;
+    
+    @Size(max = 2147483647)
+    @Column(name = "linkedinid")
+    private String linkedInId;
+     
+    @Size(max = 2147483647)
+    @Column(name = "linkedinpictureurl")
+    private String linkedInPictureURL;
+    
+    @Size(max = 2147483647)
+    @Column(name = "linkedincurrentcompany")
+    private String linkedInCurrentCompany;
+    
+    @Size(max = 2147483647)
+    @Column(name = "linkedincurrentjobtitle")
+    private String linkedInCurrentJobTitle;
+    
     public Founder() {
     }
 
@@ -55,13 +101,21 @@ public class Founder implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getLinkedInId() {
-        return linkedInId;
+    
+    public String getFirstName() {
+        return firstName;
     }
-
-    public void setLinkedInId(String linkedInId) {
-        this.linkedInId = linkedInId;
+    
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    
+    public String getLastName() {
+        return lastName;
+    }
+    
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getIndustry() {
@@ -71,7 +125,87 @@ public class Founder implements Serializable {
     public void setIndustry(String industry) {
         this.industry = industry;
     }
+    
+    public String getAreasOfExpertise() {
+        return areasOfExpertise;
+    }
 
+    public void setAreasOfExpertise(String areasOfExpertise) {
+        this.areasOfExpertise = areasOfExpertise;
+    }
+    
+    public String getBackground() {
+        return background;
+    }
+
+    public void setBackground(String background) {
+        this.background = background;
+    }
+    
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+    
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+    
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+    
+    public String getOtherSocialMedia() {
+        return otherSocialMedia;
+    }
+
+    public void setOtherSocialMedia(String otherSocialMedia) {
+        this.otherSocialMedia = otherSocialMedia;
+    }
+    
+    public String getLinkedInId() {
+        return linkedInId;
+    }
+
+    public void setLinkedInId(String linkedInId) {
+        this.linkedInId = linkedInId;
+    }
+    
+    public String getLinkedInPictureURL() {
+        return linkedInPictureURL;
+    }
+
+    public void setLinkedInPictureURL(String linkedInPictureURL) {
+        this.linkedInPictureURL = linkedInPictureURL;
+    }
+    
+    public String getLinkedInCurrentCompany() {
+        return linkedInCurrentCompany;
+    }
+
+    public void setLinkedInCurrentCompany(String linkedInCurrentCompany) {
+        this.linkedInCurrentCompany = linkedInCurrentCompany;
+    }
+    
+    public String getLinkedInCurrentJobTitle() {
+        return linkedInCurrentJobTitle;
+    }
+
+    public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
+        this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -91,10 +225,10 @@ public class Founder implements Serializable {
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
-        return "org.ideavillage.mentormarketplace.persistence.domain.Founder[ id=" + id + " ]";
+        return "org.ideavillage.mentormarketplace.persistence.domain.Mentor[ id=" + id + " ]";
     }
 
 }
