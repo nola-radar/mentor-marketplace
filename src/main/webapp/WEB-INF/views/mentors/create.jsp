@@ -55,12 +55,14 @@
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
             </div>
                 
-            <div class="row-fluid" style="padding:10px;height:40px;margin:0;background-color:lightgray;" id="firstFluid">
-                <div class="span12" style="margin-top:0px;margin-bottom:0px;background-color:#203747;height:100%;position:relative;">
-                    <center><h3 id="firstNameMentor" style="color:white;top:0;padding:0;margin:0;"></h3></center>
-
+            <div class="row-fluid" style="padding:10px;height:100px;margin:0;background-color:lightgray;" id="firstFluid">
+                <div class="span2" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;"></div>
+                <div class="span10" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
+                    <h3 id="firstNameMentor" style="top:0;padding:0;margin:0;padding-left:20px;"></h3>
+                    
                 </div>
             </div>
+
             <div class="row-fluid" style="padding:10px;height:550px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
@@ -96,7 +98,7 @@
                             
                             <spring:bind path="otherSocialMedia">
                                     <h6 style="margin:10px 0px;">
-                                        &nbsp; &nbsp; &nbsp; &nbsp; Other Social Media: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; Other Social Media: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     <form:textarea path="otherSocialMedia" rows="10" cols="30" style="left:0px;" />
                                     <form:errors path="otherSocialMedia" cssClass="help-inline" style="text-align:left;"/>
                                     </h6>
@@ -107,10 +109,10 @@
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <center><h4><i class="icon-road"></i> Background</h4></center>
                     
-                    <div style="position:absolute;margin-left:0px;margin:0;left:0;padding:0;">
+                   
                         <spring:bind path="firstName">
                                 <h6 style="margin:10px 0px;">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; First Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; First Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     <form:input path="firstName" class="input-large" style="left:0px;" />
                                     <form:errors path="firstName" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
@@ -118,7 +120,7 @@
                         
                         <spring:bind path="lastName">
                                 <h6 style="margin:10px 0px;">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; Last Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Last Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     <form:input path="lastName" class="input-large" style="left:0px;" />
                                     <form:errors path="lastName" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
@@ -126,7 +128,7 @@
                         
                         <spring:bind path="linkedInCurrentCompany">
                                 <h6 style="margin:10px 0px;">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; Current Company: &nbsp; &nbsp; 
+                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Current Company: &nbsp; &nbsp; 
                                     <form:input path="linkedInCurrentCompany" class="input-large" style="left:0px;" />
                                     <form:errors path="linkedInCurrentCompany" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
@@ -134,7 +136,7 @@
                         
                         <spring:bind path="linkedInCurrentJobTitle">
                                 <h6 style="margin:10px 0px;">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; Current Job Title: &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Current Job Title: &nbsp; &nbsp; &nbsp;
                                     <form:input path="linkedInCurrentJobTitle" class="input-large" style="left:0px;" />
                                     <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
@@ -142,7 +144,7 @@
                         
                         <spring:bind path="linkedInPictureURL">
                                 <h6 style="margin:10px 0px;">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; LinkedIn Picture: &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; LinkedIn Picture: &nbsp; &nbsp; &nbsp;
                                     <form:input path="linkedInPictureURL" class="input-large" style="left:0px;" />
                                     <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
@@ -150,12 +152,12 @@
                         
                         <spring:bind path="background">
                                 <h6 style="margin:10px 0px;">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; Background: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Background: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     <form:textarea path="background" rows="10" cols="30" style="left:0px;" />
                                     <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
                         </spring:bind>
-                    </div>
+                    
                     
                 </div>
             </div>
@@ -165,7 +167,7 @@
                     <div style="position:absolute;margin-left:0px;margin:0;left:0;padding:0;">
                         <spring:bind path="industry">
                                 <h6 style="margin:10px 0px;">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; Industry: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Industry: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     <form:input path="industry" class="input-large" style="left:0px;" />
                                     <form:errors path="industry" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
@@ -173,7 +175,7 @@
                         
                         <spring:bind path="areasOfExpertise">
                                 <h6 style="margin:10px 0px;">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; Expertise: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Expertise: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     <form:input path="areasOfExpertise" class="input-large" style="left:0px;" />
                                     <form:errors path="areasOfExpertise" cssClass="help-inline" style="text-align:left;"/>
                                 </h6>
@@ -217,7 +219,9 @@
                  document.getElementById("industry").value = profile.industry.toString();
                  document.getElementById("linkedInCurrentCompany").value = profile.threeCurrentPositions.values[0].company.name;
                  document.getElementById("linkedInCurrentJobTitle").value = profile.threeCurrentPositions.values[0].title;
+                 document.getElementById("linkedInPictureURL").value = profile.pictureUrl;
                  document.getElementById("background").value = profile.summary;
+
                 });
             }
         </script>

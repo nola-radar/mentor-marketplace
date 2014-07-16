@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="/mentormarkeplace/resources/css/bootstrap-responsive.css" type="text/css"/>
         
         <!--LinkedIn-->
-         <link media="all" type="text/css" href="../css/streamin.css" rel="stylesheet"/>
+        <link media="all" type="text/css" href="../css/streamin.css" rel="stylesheet"/>
         <link media="all" type="text/css" href="../css/jqueryui.css" rel="styleshpt" src="http://code.jquery.com/jquery-1.5b1.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
         
@@ -55,30 +55,40 @@
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
             </div>
                 
-            <div class="row-fluid" style="padding:10px;height:40px;margin:0;background-color:lightgray;" id="firstFluid">
-                <div class="span12" style="margin-top:0px;margin-bottom:0px;background-color:#203747;height:100%;position:relative;">
-                    <center><h3 id="firstNameMentor" style="color:white;top:0;padding:0;margin:0;"></h3></center>
+            <div class="row-fluid" style="padding:10px;height:100px;margin:0;background-color:lightgray;" id="firstFluid">
+                <div class="span2" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%;position:relative;" id="mentor-picutre"></div>
+                <div class="span8" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
+                    <h3 id="firstNameMentor" style="top:0;padding:0;margin:0;padding-left:20px;"></h3>
+                    <p id="currentCompanyMentor" style="margin:0;padding-left:20px;"></p>
+                    <p id="currentJobTitleMentor" style="margin:0;padding-left:20px;"></p>
+                </div>
+                <div class="span2" style="background-color:lightgray;height:100px;">
+                    <p></p>
+                    <p style="margin:0;padding:0;"><!--<img src="/mentormarketplace/resources/img/website.png" style="height:20px;width:20px;"/>--> <a href="#">Website</a></p> 
+                    <p style="margin:0;padding:0;"><!--<img src="/mentormarketplace/resources/img/twitter.png" style="height:20px;width:20px;"/>--> <a href="#">Twitter</a></p>
+                    <p style="margin:0;padding:0;"><!--<img src="/mentormarketplace/resources/img/facebook.png" style="height:20px;width:20px;"/>--> <a href="#">Facebook</a></p>
                 </div>
             </div>
+            
             <div class="row-fluid" style="padding:10px;height:400px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="<c:url value="create" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
-                        <ul>
+                        <!--<ul>
                             <li><img src="/mentormarketplace/resources/img/website.png" style="height:20px;width:20px;"/> Website: </li>
-                            <!--<li><img src="/mentormarketplace/resources/img/linkedin.jpg" style="height:17px;width:17px;"/> LinkedIn: </li>-->
+                            <li><img src="/mentormarketplace/resources/img/linkedin.jpg" style="height:17px;width:17px;"/> LinkedIn: </li>
                             <li><img src="/mentormarketplace/resources/img/twitter.png" style="height:20px;width:20px;"/> Twitter: </li>
                             <li><img src="/mentormarketplace/resources/img/facebook.png" style="height:20px;width:20px;"/> Facebook: </li>
                             <li>Other: </li>
-                        </ul>
+                        </ul>-->
                 </div>
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="<c:url value="create" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-road"></i> Background</h4></center>
                     <ul>
-                        <li id="currentCompanyMentor"></li>
+                        <!--<li id="currentCompanyMentor"></li>
                         <li id="currentJobTitleMentor"></li>
-                        <br>
+                        <br>-->
                         <li id="currentBackground"></li>
                     </ul>
                 </div>
@@ -186,6 +196,9 @@
                  document.getElementById("industry").value = profile.industry.toString();
                  document.getElementById("linkedInCurrentCompany").value = profile.threeCurrentPositions.values[0].company.name;
                  document.getElementById("linkedInCurrentJobTitle").value = profile.threeCurrentPositions.values[0].title;
+                 
+                 picHTML = "<img style=\"height:100px;width:120px;right:0;float:right;border-radius:10%;\" class=img_border align=\"left\" src=\"" + profile.pictureUrl + "\"></a>";      
+                 $("#mentor-picutre").html(picHTML);
                 });
             }
         </script>
