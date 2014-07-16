@@ -16,6 +16,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @see <a href="http://docs.spring.io/spring-data/data-commons/docs/current/reference/html/repositories.html">Spring
  * Data Repositories</a>
  */
+
 public interface MentorRepository extends PagingAndSortingRepository<Mentor, Long> {
 
     long countByFirstName(String firstName);
@@ -25,6 +26,16 @@ public interface MentorRepository extends PagingAndSortingRepository<Mentor, Lon
     long countByIndustry(String industry);
     
     long countByAreasOfExpertise(String areasOfExpertise);
+    
+    long countByBackground(String background);
+    
+    long countByWebsite(String website);
+    
+    long countByFacebook(String facebook);
+    
+    long countByTwitter(String twitter);
+    
+    long countByOtherSocialMedia(String otherSocialMedia);
     
     long countByLinkedInId(String linkedInId);
     
@@ -41,6 +52,16 @@ public interface MentorRepository extends PagingAndSortingRepository<Mentor, Lon
     Page<Mentor> findByIndustry(String industry, Pageable pageable);
     
     Page<Mentor> findByAreasOfExpertise(String areasOfExpertise, Pageable pageable);
+    
+    Page<Mentor> findByBackground(String background, Pageable pageable);
+    
+    Page<Mentor> findByWebsite(String website, Pageable pageable);
+    
+    Page<Mentor> findByFacebook(String facebook, Pageable pageable);
+    
+    Page<Mentor> findByTwitter(String twitter, Pageable pageable);
+    
+    Page<Mentor> findByOtherSocialMedia(String otherSocialMedia, Pageable pageable);
 
     Mentor findByLinkedInId(String linkedInId);
     

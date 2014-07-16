@@ -52,6 +52,26 @@ public class Mentor implements Serializable {
     private String areasOfExpertise;
     
     @Size(max = 2147483647)
+    @Column(name = "background")
+    private String background;
+    
+    @Size(max = 2147483647)
+    @Column(name = "website")
+    private String website;
+    
+    @Size(max = 2147483647)
+    @Column(name = "facebook")
+    private String facebook;
+    
+    @Size(max = 2147483647)
+    @Column(name = "twitter")
+    private String twitter;
+    
+    @Size(max = 2147483647)
+    @Column(name = "othersocialmedia")
+    private String otherSocialMedia;
+    
+    @Size(max = 2147483647)
     @Column(name = "linkedinid")
     private String linkedInId;
      
@@ -112,6 +132,46 @@ public class Mentor implements Serializable {
 
     public void setAreasOfExpertise(String areasOfExpertise) {
         this.areasOfExpertise = areasOfExpertise;
+    }
+    
+    public String getBackground() {
+        return background;
+    }
+
+    public void setBackground(String background) {
+        this.background = background;
+    }
+    
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+    
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+    
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+    
+    public String getOtherSocialMedia() {
+        return otherSocialMedia;
+    }
+
+    public void setOtherSocialMedia(String otherSocialMedia) {
+        this.otherSocialMedia = otherSocialMedia;
     }
     
     public String getLinkedInId() {
