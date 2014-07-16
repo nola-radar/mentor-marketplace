@@ -80,7 +80,7 @@
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
                         <ul>
                             <li><img src="/mentormarketplace/resources/img/website.png" style="height:20px;width:20px;"/> Website: </li>
-                            <li><img src="/mentormarketplace/resources/img/linkedin.jpg" style="height:17px;width:17px;"/> LinkedIn: </li>
+                            <!--<li><img src="/mentormarketplace/resources/img/linkedin.jpg" style="height:17px;width:17px;"/> LinkedIn: </li>-->
                             <li><img src="/mentormarketplace/resources/img/twitter.png" style="height:20px;width:20px;"/> Twitter: </li>
                             <li><img src="/mentormarketplace/resources/img/facebook.png" style="height:20px;width:20px;"/> Facebook: </li>
                             <li>Other: </li>
@@ -92,6 +92,8 @@
                     <ul>
                         <li id="currentCompanyMentor"></li>
                         <li id="currentJobTitleMentor"></li>
+                        <br>
+                        <li id="currentBackground"></li>
                     </ul>
                 </div>
             </div>
@@ -185,10 +187,11 @@
             function loadData() {
                 IN.API.Profile("me")
                 .fields(["id", "firstName", "lastName", "pictureUrl","headline","publicProfileUrl",
-                         "industry","three-current-positions"])
+                         "industry","three-current-positions","summary"])
                 .result(function(result) {
                  profile = result.values[0];
                  document.getElementById("firstNameMentor").textContent = profile.firstName.toString() + " " + profile.lastName.toString();
+                 document.getElementById("currentBackground").textContent = profile.summary;
                  document.getElementById("currentCompanyMentor").textContent = profile.threeCurrentPositions.values[0].company.name;
                  document.getElementById("currentJobTitleMentor").textContent = profile.threeCurrentPositions.values[0].title;
                  document.getElementById("industryMentor").textContent = "Industry: " + profile.industry.toString();
