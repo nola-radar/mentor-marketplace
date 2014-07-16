@@ -1,3 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+
 <html>
 
     <head>
@@ -49,6 +56,10 @@
             <div class="container-fluid" style="background-color:#fff; width:90%; margin-left:3%;">
                 <br />
                 <br />
+                <div class="row-fluid">
+                    <div class="span12"></div>
+                    <div class="span12"></div>
+                </div>
                 <div class="row-fluid" style="margin-top:8px;">
                     <div class="span1"></div>
                     <div class="span1" id ="mentor-picture" style="margin:0 0 0 -1%;">PICTURE</div>
@@ -71,7 +82,8 @@
                 <br />
                 <div class="row-fluid">
                     <div class="span1"></div>
-                    <div class="span8" id="mentor-background" style="background-color:#f9f9f9; height: 40%; width:90%; margin-left:-1.5%;">
+                    <!--<div class="span8" id="mentor-background" style="background-color:#f9f9f9; height: 40%; width:90%; margin-left:-1.5%;">-->
+                    <div class="span8" id="mentor-background" style="background-color:#f9f9f9; height: 300px; width:90%; margin-left:-1.5%;">
                         <h5>Background</h5>
                     </div>
                     <div class="span1"></div>
@@ -79,7 +91,8 @@
                 <br />
                    <div class="row-fluid">
                     <div class="span1"></div>
-                    <div class="span8" id="mentor-expertise" style="background-color:#f9f9f9; height:40%; width:90%; margin-left:-1.5%;">
+                    <!--<div class="span8" id="mentor-expertise" style="background-color:#f9f9f9; height:40%; width:90%; margin-left:-1.5%;">-->
+                    <div class="span8" id="mentor-expertise" style="background-color:#f9f9f9; height:300px; width:90%; margin-left:-1.5%;"> 
                         <h5>Areas of Expertise</h5>
                     </div>
                     <div class="span2"></div>
