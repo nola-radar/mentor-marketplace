@@ -66,11 +66,35 @@
                     <a href="#"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
                         <ul>
-                            <li><img src="/mentormarketplace/resources/img/website.png" style="height:20px;width:20px;"/> Website: </li>
-                            <li><img src="/mentormarketplace/resources/img/linkedin.jpg" style="height:17px;width:17px;"/> LinkedIn: </li>
-                            <li><img src="/mentormarketplace/resources/img/twitter.png" style="height:20px;width:20px;"/> Twitter: </li>
-                            <li><img src="/mentormarketplace/resources/img/facebook.png" style="height:20px;width:20px;"/> Facebook: </li>
-                            <li>Other: </li>
+                            <!--<li><img src="/mentormarketplace/resources/img/website.png" style="height:20px;width:20px;"/> Website: </li>-->
+                            <!--<li><img src="/mentormarketplace/resources/img/linkedin.jpg" style="height:17px;width:17px;"/> LinkedIn: </li>-->
+                            <!--<li><img src="/mentormarketplace/resources/img/twitter.png" style="height:20px;width:20px;"/> Twitter: </li>-->
+                            <!--<li><img src="/mentormarketplace/resources/img/facebook.png" style="height:20px;width:20px;"/> Facebook: </li>-->
+                            <!--<li>Other: </li>-->
+                            <spring:bind path="website">
+                                <h6 style="margin:10px 0px;">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; Website: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <form:input path="website" class="input-large" style="left:0px;" />
+                                    <form:errors path="website" cssClass="help-inline" style="text-align:left;"/>
+                                </h6>
+                            </spring:bind>
+
+                            <spring:bind path="facebook">
+                                    <h6 style="margin:10px 0px;">
+                                        &nbsp; &nbsp; &nbsp; &nbsp; Facebook: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        <form:input path="facebook" class="input-large" style="left:0px;" />
+                                        <form:errors path="facebook" cssClass="help-inline" style="text-align:left;"/>
+                                    </h6>
+                            </spring:bind>
+
+                            <spring:bind path="twitter">
+                                    <h6 style="margin:10px 0px;">
+                                        &nbsp; &nbsp; &nbsp; &nbsp; Twitter: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        <form:input path="twitter" class="input-large" style="left:0px;" />
+                                        <form:errors path="twitter" cssClass="help-inline" style="text-align:left;"/>
+                                    </h6>
+                            </spring:bind>
+
                         </ul>
                 </div>
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">

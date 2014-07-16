@@ -12,6 +12,18 @@
         <h1>Mentor ${mentor.id}:</h1>
         
         <div>
+            <b>Website:</b> ${mentor.website}
+        </div>
+        
+        <div>
+            <b>Facebook:</b> ${mentor.facebook}
+        </div>
+        
+        <div>
+            <b>Twitter:</b> ${mentor.twitter}
+        </div>
+        
+        <div>
             <b>First Name:</b> ${mentor.firstName}
         </div>
         
@@ -42,6 +54,11 @@
         <div>
             <b>LinkedIn Current Job Title:</b> ${mentor.linkedInCurrentJobTitle}
         </div>
+        
+        <div>
+            <b>Background:</b> ${mentor.background}
+        </div>
+        
         
     </body>
 </html>
