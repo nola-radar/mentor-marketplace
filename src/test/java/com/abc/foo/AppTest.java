@@ -29,7 +29,7 @@ public class AppTest {
     @Test(groups = { "group 2" })
     public void groupTwoTest() throws InterruptedException {
         
-        /*System.out.println("Mentor Create Test Beginnning");
+        System.out.println("Mentor Create Test Beginnning");
         
         WebDriver driver;
 	System.setProperty("webdriver.chrome.driver", "C:/Users/212412051/Desktop/chromedriver.exe");
@@ -59,14 +59,14 @@ public class AppTest {
             System.out.println("Edit Buttons Not Enabled");
         }
         
-        if ( driver.findElement(By.cssSelector("#indexButton")).isDisplayed() ) 
+        if ( driver.findElement(By.cssSelector("#indexButton3")).isDisplayed() ) 
         {
             System.out.println("Log Out Button is Displayed");
         } else {
             System.out.println("Log Out Button is not Displayed");
         }
         
-        if ( driver.findElement(By.cssSelector("#indexButton")).isEnabled() ) 
+        if ( driver.findElement(By.cssSelector("#indexButton3")).isEnabled() ) 
         {
             System.out.println("Log Out Button is Enabled");
         } else {
@@ -173,6 +173,6 @@ public class AppTest {
         Thread.sleep(10000);
         driver.close();
         driver.quit();
-        */
+        
     }
 }
