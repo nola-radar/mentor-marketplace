@@ -10,5 +10,5 @@
     <classes>
       <class name="com.abc.foo.AppTest"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> 
+</suite> 

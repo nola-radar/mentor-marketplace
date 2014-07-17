@@ -38,23 +38,7 @@
         
     </head>
     <body>
-        
-        <!-- Navigate Bar -->
-        <div class="navbar navbar-fixed-top-idea" style="margin-bottom:0px;"> 
-                <div class="navbar-inner-idea"> 
-                        <div class="container" id="navIndex" style="background-color:#203747;">
-                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-th-list"></span></a>
-                        <img class="brand" src="/mentormarketplace/resources/img/logo.png" style="height:21px;padding-left:40px;padding-right:20px;"/>
-                        <a href="#" class="brand" id="indexLink">MENTOR MARKETPLACE</a>
-                        <div class="nav-collapse collapse pull-right">
-                            <form class="navbar-form pull-left" id="indexForm">
-                                <a class="btn btn-info" onclick ="linkedInLogOut()" id="indexButton">LOG OUT</a>
-                            </form>
-                        </div>
-                        </div>
-                </div> 
-        </div>
+        <%@include file="../nav.jsp" %>
         
         <form:form modelAttribute="mentor">
          <div class="container-fluid" style="margin-right:70px;margin-left:70px;">
@@ -64,24 +48,11 @@
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
             </div>
-                
-            <!--<div class="row-fluid" style="padding:10px;height:100px;margin:0;background-color:lightgray;" id="firstFluid">
-                <div class="span2" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;"></div>
-                <div class="span10" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
-                    <h3 id="firstNameMentor" style="top:0;padding:0;margin:0;padding-left:20px;"></h3>
-                    
-                </div>
-            </div>-->
-
+            
             <div class="row-fluid" style="padding:10px;height:550px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
                         <ul>
-                            <!--<li><img src="/mentormarketplace/resources/img/website.png" style="height:20px;width:20px;"/> Website: </li>-->
-                            <!--<li><img src="/mentormarketplace/resources/img/linkedin.jpg" style="height:17px;width:17px;"/> LinkedIn: </li>-->
-                            <!--<li><img src="/mentormarketplace/resources/img/twitter.png" style="height:20px;width:20px;"/> Twitter: </li>-->
-                            <!--<li><img src="/mentormarketplace/resources/img/facebook.png" style="height:20px;width:20px;"/> Facebook: </li>-->
-                            <!--<li>Other: </li>-->
                             <spring:bind path="website">
                                 <h6 style="margin:10px 0px;">
                                     &nbsp; &nbsp; &nbsp; &nbsp; Website: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
@@ -214,7 +185,8 @@
         <div style="display:none;">
             <script type="IN/Login" data-onAuth="loadData"></script>
         </div>
-
+        
+        
         <script type="text/javascript">
             function loadData() {
                 IN.API.Profile("me")
