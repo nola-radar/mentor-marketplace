@@ -28,8 +28,8 @@ public class AppTest {
     */
     @Test(groups = { "group 2" })
     public void groupTwoTest() throws InterruptedException {
-        /*
-        System.out.println("Mentor Create Test Beginnning");
+        
+        /*System.out.println("Mentor Create Test Beginnning");
         
         WebDriver driver;
 	System.setProperty("webdriver.chrome.driver", "C:/Users/212412051/Desktop/chromedriver.exe");
@@ -174,6 +174,5 @@ public class AppTest {
         driver.close();
         driver.quit();
         */
-        
     }
 }

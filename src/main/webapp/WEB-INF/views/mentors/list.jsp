@@ -90,7 +90,7 @@
             </div>
             <div class="row-fluid" style="padding:10px;height:200px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span12" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%;position:relative;">
-                    <button class="btn btn-info" type="submit" style="background:#339900;width:150px;">
+                    <button class="btn btn-info" type="submit" style="border-radius:0%;background:#27ae60;width:150px;">
                         Create Profile
                     </button>
                 </div>
