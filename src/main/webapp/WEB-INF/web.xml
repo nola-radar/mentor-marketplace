@@ -16,7 +16,7 @@
     </context-param>
     <context-param>
         <param-name>spring.profiles.default</param-name>
-        <param-value>CI</param-value>
+        <param-value>LOCAL</param-value>
     </context-param>
 
     <listener>
