@@ -9,15 +9,13 @@
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JSP Page</title>
-        
         <!--LinkedIn-->
         <script type="text/javascript" src="http://platform.linkedin.com/in.js">
             api_key: 756f7ogbvydmk2
             authorize: true
         </script>
         
-        
-        <script type="text/javascript">
+         <script type="text/javascript">
            function linkedInLogOut() {
                
              IN.User.logout(function() {
@@ -26,9 +24,11 @@
              });
          }
 
-           
-   
         </script>
+       
+        
+        
+
         
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="/mentormarketplace/resources/css/bootstrap.css"  type="text/css"/>

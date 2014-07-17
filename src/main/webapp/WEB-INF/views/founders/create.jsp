@@ -16,7 +16,15 @@
             api_key: 756f7ogbvydmk2
             authorize: true
         </script>
-        
+         <script type="text/javascript">
+           function linkedInLogOut() {
+               
+             IN.User.logout(function() {
+            location.href = "http://localhost:8080/mentormarketplace"; 
+             //window.location = "/logout";
+             });
+         }   
+        </script>
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="/mentormarketplace/resources/css/bootstrap.css"  type="text/css"/>
         <link rel="stylesheet" href="/mentormarkeplace/resources/css/bootstrap-responsive.css" type="text/css"/>
@@ -39,7 +47,7 @@
                         <a href="#" class="brand" id="indexLink">MENTOR MARKETPLACE</a>
                         <div class="nav-collapse collapse pull-right">
                             <form class="navbar-form pull-left" id="indexForm">
-                                <a class="btn btn-info" href="#" id="indexButton">LOG OUT</a>
+                                <a class="btn btn-info" onclick ="linkedInLogOut()" id="indexButton">LOG OUT</a>
                             </form>
                         </div>
                         </div>
