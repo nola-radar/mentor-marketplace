@@ -27,7 +27,7 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
         
     </head>
-    <body style="background-color:lightgray;">
+    <body>
         
         <!-- Navigate Bar -->
         <div class="navbar navbar-fixed-top-idea" style="margin-bottom:0px;"> 
@@ -47,7 +47,7 @@
         </div>
         
         <form:form modelAttribute="mentor">
-        <div class="container-fluid" style="margin-right:20px;margin-left:20px;">
+         <div class="container-fluid" style="margin-right:70px;margin-left:70px;">
             <div class="row-fluid"><div class="span12"></div></div>
 
             <div class="row-fluid" style="padding:10px;height:20px;margin:0;background-color:lightgray;" id="firstFluid">
@@ -55,13 +55,13 @@
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
             </div>
                 
-            <div class="row-fluid" style="padding:10px;height:100px;margin:0;background-color:lightgray;" id="firstFluid">
+            <!--<div class="row-fluid" style="padding:10px;height:100px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span2" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;"></div>
                 <div class="span10" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <h3 id="firstNameMentor" style="top:0;padding:0;margin:0;padding-left:20px;"></h3>
                     
                 </div>
-            </div>
+            </div>-->
 
             <div class="row-fluid" style="padding:10px;height:550px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
@@ -161,7 +161,7 @@
                     
                 </div>
             </div>
-            <div class="row-fluid" style="padding:10px;height:400px;margin:0;background-color:lightgray;" id="firstFluid">
+            <div class="row-fluid" style="padding:10px;height:200px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <center><h4><i class="icon-bookmark"></i> Areas of Expertise</h4></center>
                     <div style="position:absolute;margin-left:0px;margin:0;left:0;padding:0;">
@@ -213,7 +213,7 @@
                          "industry","three-current-positions","summary"])
                 .result(function(result) {
                  profile = result.values[0];
-                 document.getElementById("firstNameMentor").textContent = profile.firstName.toString() + " " + profile.lastName.toString();
+                 //document.getElementById("firstNameMentor").textContent = profile.firstName.toString() + " " + profile.lastName.toString();
                  document.getElementById("firstName").value = profile.firstName.toString();
                  document.getElementById("lastName").value = profile.lastName.toString();
                  document.getElementById("industry").value = profile.industry.toString();

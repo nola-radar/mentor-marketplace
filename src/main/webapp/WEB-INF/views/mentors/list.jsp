@@ -40,7 +40,8 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
         
     </head>
-    <body style="background-color:lightgray;">
+    <!--<body style="background-color:lightgray;">-->
+    <body>
         
         <!-- Navigate Bar -->
         <div class="navbar navbar-fixed-top-idea" style="margin-bottom:0px;"> 
@@ -62,7 +63,7 @@
                     
         <form:form modelAttribute="mentor">    
         
-        <div class="container-fluid" style="margin-right:20px;margin-left:20px;">
+        <div class="container-fluid" style="margin-right:70px;margin-left:70px;">
             <div class="row-fluid"><div class="span12"></div></div>
             <div class="row-fluid" style="padding:10px;height:20px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
@@ -71,10 +72,10 @@
                 
             <div class="row-fluid" style="padding:10px;height:100px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span2" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%;position:relative;" id="mentor-picutre"></div>
-                <div class="span8" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
-                    <h3 id="firstNameMentor" style="top:0;padding:0;margin:0;padding-left:20px;"></h3>
-                    <p id="currentCompanyMentor" style="margin:0;padding-left:20px;"></p>
-                    <p id="currentJobTitleMentor" style="margin:0;padding-left:20px;"></p>
+                <div class="span8" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%;position:relative;">
+                    <h3 id="firstNameMentor" style="top:0;padding:0;margin:0;"></h3>
+                    <p id="currentCompanyMentor" style="margin:0;"></p>
+                    <p id="currentJobTitleMentor" style="margin:0;"></p>
                 </div>
                 <div class="span2" style="background-color:lightgray;height:100px;">
                     <p></p>
@@ -84,8 +85,8 @@
                 </div>
             </div>
             
-            <div class="row-fluid" style="padding:10px;height:400px;margin:0;background-color:lightgray;" id="firstFluid">
-                <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
+            <div class="row-fluid" style="padding:10px;height:200px;margin:0;background-color:lightgray;" id="firstFluid">
+                <div class="span6" style="margin-left:10px;margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="<c:url value="create" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
                         <!--<ul>
@@ -96,7 +97,7 @@
                             <li>Other: </li>
                         </ul>-->
                 </div>
-                <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
+                <div class="span6" style="margin-left:10px;margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="<c:url value="create" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-road"></i> Background</h4></center>
                     <ul>
@@ -107,8 +108,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="row-fluid" style="padding:10px;height:400px;margin:0;background-color:lightgray;" id="firstFluid">
-                <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
+            <div class="row-fluid" style="padding:10px;height:200px;margin:0;background-color:lightgray;" id="firstFluid">
+                <div class="span6" style="margin-left:10px;margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="<c:url value="create" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-bookmark"></i> Areas of Expertise</h4></center>
                     <ul>
@@ -116,7 +117,7 @@
                         <li>Consulting Expertise: </li>
                     </ul>
                 </div>
-                <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;"> 
+                <div class="span6" style="margin-left:10px;margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;"> 
                     <center><h4><i class="icon-globe"></i> Current Connections</h4></center>
                 </div>
             </div>
