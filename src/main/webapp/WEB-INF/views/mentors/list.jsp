@@ -14,7 +14,6 @@
             api_key: 756f7ogbvydmk2
             authorize: true
         </script>
-        
          <script type="text/javascript">
            function linkedInLogOut() {
                
@@ -23,13 +22,8 @@
              //window.location = "/logout";
              });
          }
-
         </script>
        
-        
-        
-
-        
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="/mentormarketplace/resources/css/bootstrap.css"  type="text/css"/>
         <link rel="stylesheet" href="/mentormarkeplace/resources/css/bootstrap-responsive.css" type="text/css"/>
@@ -40,9 +34,8 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
         
     </head>
-    <!--<body style="background-color:lightgray;">-->
+    
     <body>
-        
         <!-- Navigate Bar -->
         <div class="navbar navbar-fixed-top-idea" style="margin-bottom:0px;"> 
                 <div class="navbar-inner-idea"> 
@@ -79,9 +72,9 @@
                 </div>
                 <div class="span2" style="background-color:lightgray;height:100px;">
                     <p></p>
-                    <p style="margin:0;padding:0;"><!--<img src="/mentormarketplace/resources/img/website.png" style="height:20px;width:20px;"/>--> <a href="#">Website</a></p> 
-                    <p style="margin:0;padding:0;"><!--<img src="/mentormarketplace/resources/img/twitter.png" style="height:20px;width:20px;"/>--> <a href="#">Twitter</a></p>
-                    <p style="margin:0;padding:0;"><!--<img src="/mentormarketplace/resources/img/facebook.png" style="height:20px;width:20px;"/>--> <a href="#">Facebook</a></p>
+                    <p style="margin:0;padding:0;"><a href="#">Website</a></p> 
+                    <p style="margin:0;padding:0;"><a href="#">Twitter</a></p>
+                    <p style="margin:0;padding:0;"><a href="#">Facebook</a></p>
                 </div>
             </div>
             
@@ -89,21 +82,11 @@
                 <div class="span6" style="margin-left:10px;margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="<c:url value="create" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
-                        <!--<ul>
-                            <li><img src="/mentormarketplace/resources/img/website.png" style="height:20px;width:20px;"/> Website: </li>
-                            <li><img src="/mentormarketplace/resources/img/linkedin.jpg" style="height:17px;width:17px;"/> LinkedIn: </li>
-                            <li><img src="/mentormarketplace/resources/img/twitter.png" style="height:20px;width:20px;"/> Twitter: </li>
-                            <li><img src="/mentormarketplace/resources/img/facebook.png" style="height:20px;width:20px;"/> Facebook: </li>
-                            <li>Other: </li>
-                        </ul>-->
                 </div>
                 <div class="span6" style="margin-left:10px;margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="<c:url value="create" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <center><h4><i class="icon-road"></i> Background</h4></center>
                     <ul>
-                        <!--<li id="currentCompanyMentor"></li>
-                        <li id="currentJobTitleMentor"></li>
-                        <br>-->
                         <li id="currentBackground"></li>
                     </ul>
                 </div>
@@ -194,7 +177,8 @@
         <div style="display:none;">
             <script type="IN/Login" data-onAuth="loadData"></script>
         </div>
-        <script type="text/javascript">
+        
+        <script type="text/javascript" >
             function loadData() {
                 IN.API.Profile("me")
                 .fields(["id", "firstName", "lastName", "pictureUrl","headline","publicProfileUrl",
