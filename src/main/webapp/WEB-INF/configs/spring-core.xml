@@ -10,12 +10,25 @@
     <context:component-scan base-package="org.ideavillage.mentormarketplace.core.services"/>
     <context:property-placeholder properties-ref="appProperties"/>
 
-    <bean id="appProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
-        <property name="locations">
-            <list>
-                <value>WEB-INF/configs/jdbc-local.properties</value>
-                <value>WEB-INF/configs/social.properties</value>
-            </list>
-        </property>
-    </bean>
+    <beans profile="CI">
+        <bean id="appProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+            <property name="locations">
+                <list>
+                    <value>WEB-INF/configs/jdbc-ci.properties</value>
+                    <value>WEB-INF/configs/social.properties</value>
+                </list>
+            </property>
+        </bean>
+    </beans>
+
+    <beans profile="LOCAL">
+        <bean id="appProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+            <property name="locations">
+                <list>
+                    <value>WEB-INF/configs/jdbc-local.properties</value>
+                    <value>WEB-INF/configs/social.properties</value>
+                </list>
+            </property>
+        </bean>
+    </beans>
 </beans>
