@@ -45,6 +45,8 @@
     <form:form modelAttribute="founder">
         <div class="container-fluid" style="margin-right:70px;margin-left:70px;">
             <div class="row-fluid"><div class="span12"></div></div>
+            <div class="row-fluid" style="background-color:lightgray;"><div class="span12"></div></div>
+            <div class="row-fluid" style="background-color:lightgray;"><div class="span12"></div></div>
 
             <div class="row-fluid" style="padding:0px;height:20px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
@@ -187,8 +189,8 @@
             </div>
                         
                         
-            <div class="row-fluid" style="padding:10px;height:200px;margin:0;background-color:lightgray;position:relative;" id="firstFluid">
-                <div class="span12" style="margin-top:0px;margin-bottom:0px;margin-right:10px;padding-right:10px;background-color:ligthgray;height:100%;position:absolute;">
+            <div class="row-fluid" style="padding:0px;height:350px;margin:0;background-color:lightgray;" id="firstFluid">
+                <div class="span12" style="margin-top:10px;margin-left:10px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <left><h4> &nbsp; &nbsp; <i class="icon-bookmark"></i> Skills</h4></left>
                     <div style="position:absolute;margin-left:0px;margin:0;left:0;padding:0;">
 
@@ -214,7 +216,7 @@
             <div class="row-fluid" style="padding:0px;height:200px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span12" style="margin-top:0px;margin-bottom:0px;background-color:ligthgray;height:100%;position:relative;">
                     <div style="position:absolute;margin-left:0px;margin:0;left:0;padding:10px;">
-                        <button class="btn btn-info" type="submit" style="background:#27ae60;border-radius:0%;width:150px;">
+                        <button class="btn btn-info" type="submit" style="background:#339900;width:150px;">
                             Create Profile
                         </button>
                     </div>
