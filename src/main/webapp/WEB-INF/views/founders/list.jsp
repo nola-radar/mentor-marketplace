@@ -81,8 +81,8 @@
                 
             </div>                 
                     
-            <div class="row-fluid" style="padding:0px;height:400px;margin:0;background-color:lightgray;" id="firstFluid">
-                <div class="span12" style="margin-top:10px;margin-left:10px;margin-right:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
+            <div class="row-fluid" style="padding:0px;height:350px;margin:0;background-color:lightgray;" id="firstFluid">
+                <div class="span12" style="margin-left:10px;width:98%;margin-top:10px;background-color:#f6f6f6;height:100%;position:relative;">
                     <a href="<c:url value="create" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:0;" /></a>
                     <left><h4> &nbsp; &nbsp; <i class="icon-bookmark"></i> Skills</h4></left>
                     <ul>
