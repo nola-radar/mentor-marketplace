@@ -45,6 +45,8 @@
         <div class="container-fluid" style="margin-right:70px;margin-left:70px;">
             
             <div class="row-fluid"><div class="span12"></div></div>
+            <div class="row-fluid" style="background-color:lightgray;"><div class="span12"></div></div>
+            <div class="row-fluid" style="background-color:lightgray;"><div class="span12"></div></div>
             <div class="row-fluid" style="padding:0px;height:20px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
