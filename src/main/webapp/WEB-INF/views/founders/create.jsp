@@ -43,7 +43,7 @@
     <%@include file="../nav.jsp" %>
 
     <form:form modelAttribute="founder">
-        <div class="container-fluid" style="margin-right:70px;margin-left:70px;">
+        <div class="container-fluid" style="background-color:lightgray;margin-right:70px;margin-left:70px;">
             <div class="row-fluid"><div class="span12"></div></div>
             <div class="row-fluid" style="background-color:lightgray;"><div class="span12"></div></div>
             <div class="row-fluid" style="background-color:lightgray;"><div class="span12"></div></div>
@@ -110,13 +110,21 @@
                             <form:input path="linkedInCurrentJobTitle" class="input-large" style="left:0px;" />
                             <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" style="text-align:left;"/>
                         </h6>
-                    </spring:bind>  
+                        </spring:bind>  
+                        
+                        <spring:bind path="linkedInPictureURL">
+                        <h6 style="margin:10px 0px;">
+                            &nbsp; &nbsp; &nbsp; &nbsp; LinkedIn Picture: &nbsp; &nbsp; &nbsp;
+                            <form:input path="linkedInPictureURL" class="input-large" style="left:0px;" />
+                            <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
+                        </h6>
+                        </spring:bind>  
 
                     </ul>
                 </div>
                 
                 <div class="row-fluid" style="padding:0px;height:270px;margin:0;background-color:lightgray;" id="firstFluid">
-                <div class="span4" style="margin-top:0px;margin-bottom:0px;margin-left:5px;background-color:#f6f6f6;height:100%;position:relative;">
+                <div class="span6" style="margin-top:0px;margin-bottom:0px;margin-left:5px;background-color:#f6f6f6;height:100%;position:relative;">
                     <center><h4><i class="icon-user"></i> Personal Details</h4></center>
 
 
@@ -145,16 +153,10 @@
                     </spring:bind>
 
                 </div>
-                    <div class="span2" style="margin-top:0px;margin-bottom:0px;background-color:lightgrey;height:100%;position:relative;" id="founder-picutre">
-                    <spring:bind path="linkedInPictureURL">
-                        <h6 style="margin:10px 0px;">
-                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; LinkedIn Picture: &nbsp; &nbsp; &nbsp;
-                            <form:input path="linkedInPictureURL" class="input-large" style="left:0px;" />
-                            <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
-                        </h6>
-                    </spring:bind>                        
+                    <!--<div class="span2" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;" id="founder-picutre">
+                                          
                     </div>
-                </div>
+                </div>-->
                     
                 <div class="row-fluid" style="padding:0px;height:275px;margin:0;background-color:lightgray;" id="firstFluid">
                     <div class="span6" style="margin-top:5px;margin-left:5px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
