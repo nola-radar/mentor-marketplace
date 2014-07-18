@@ -188,9 +188,14 @@
                 </div>
             </div>
                         
+            
+                        <!--<div class="row-fluid" style="padding:0px;height:350px;margin:0;background-color:lightgray;">
+                            <div class="span12" style="height:100%;padding:10px;background-color:lightblue;">
+                            </div>
+                        </div>-->       
                         
             <div class="row-fluid" style="padding:0px;height:350px;margin:0;background-color:lightgray;" id="firstFluid">
-                <div class="span12" style="margin-top:10px;margin-left:10px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
+                <div class="span12" style="margin-left:10px;width:98%;margin-top:10px;background-color:#f6f6f6;height:100%;position:relative;">
                     <left><h4> &nbsp; &nbsp; <i class="icon-bookmark"></i> Skills</h4></left>
                     <div style="position:absolute;margin-left:0px;margin:0;left:0;padding:0;">
 
