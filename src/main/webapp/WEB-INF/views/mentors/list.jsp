@@ -176,7 +176,7 @@
                             document.getElementById("industryMentor").textContent = "Industry: " + profile.industry.toString();
                             document.getElementById("firstName").value = profile.firstName.toString();
                             document.getElementById("lastName").value = profile.lastName.toString();
-                            document.getElementById("industry").value = profile.industry.toString();
+                            //document.getElementById("industry").value = profile.industry.toString();
                             document.getElementById("linkedInCurrentCompany").value = profile.threeCurrentPositions.values[0].company.name;
                             document.getElementById("linkedInCurrentJobTitle").value = profile.threeCurrentPositions.values[0].title;
 

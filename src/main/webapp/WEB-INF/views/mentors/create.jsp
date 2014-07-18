@@ -149,7 +149,47 @@
                         <spring:bind path="industry">
                             <h6 style="margin:10px 0px;">
                                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Industry: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                <form:input path="industry" class="input-large" style="left:0px;" />
+                                <!--<form:input path="industry" class="input-large" style="left:0px;" />
+                                <form:errors path="industry" cssClass="help-inline" style="text-align:left;"/>-->
+                                <form:select path="industry" class="input-large" style="left:0px;">
+                                    <form:option value="Accounting" label="Accounting"/>
+                                    <form:option value="Advertising/Publication" label="Advertising/Publication"/>
+                                    <form:option value="Agriculture" label="Agriculture"/>
+                                    <form:option value="Angel Funding" label="Angel Funding"/>
+                                    <form:option value="Apparel/Accessories" label="Apparel/Accessories"/>
+                                    <form:option value="Architecture/Design" label="Architecture/Design"/>
+                                    <form:option value="Arts, Entertainment/Recreation" label="Arts, Entertainment/Recreation"/>
+                                    <form:option value="Automotive" label="Automotive"/>
+                                    <form:option value="Biotechnology/Health/Medical" label="Biotechnology/Health/Medical"/>
+                                    <form:option value="Communication Services" label="Communication Services"/>
+                                    <form:option value="Computer/Software" label="Computer/Software"/>
+                                    <form:option value="E-commerce" label="E-commerce"/>
+                                    <form:option value="Energy" label="Energy"/>
+                                    <form:option value="Education/Training" label="Education/Training"/>
+                                    <form:option value="Environmental" label="Environmental"/>
+                                    <form:option value="Financial Services" label="Financial Services"/>
+                                    <form:option value="Food/Beverage" label="Food/Beverage"/>
+                                    <form:option value="Health Care/Biotech" label="Health Care/Biotech"/>
+                                    <form:option value="Manufacturing" label="Manufacturing"/>
+                                    <form:option value="Marketing/PR" label="Marketing/PR"/>
+                                    <form:option value="Media Services" label="Media Services"/>
+                                    <form:option value="Mining Industry" label="Mining Industry"/>
+                                    <form:option value="Multimedia/Internet/Online services" label="Multimedia/Internet/Online services"/>
+                                    <form:option value="Office Equipment" label="Office Equipment"/>
+                                    <form:option value="Oil/Gas" label="Oil/Gas"/>
+                                    <form:option value="Plumbing" label="Plumbing"/>
+                                    <form:option value="Printing/Graphics" label="Printing/Graphics"/>
+                                    <form:option value="Product Licensing" label="Product Licensing"/>
+                                    <form:option value="Real Estate" label="Real Estate"/>
+                                    <form:option value="Retail or eCommerce" label="Retail or eCommerce"/>
+                                    <form:option value="SaaS" label="SaaS"/>
+                                    <form:option value="Social Entrepreneurship" label="Social Entrepreneurship"/>
+                                    <form:option value="Sports/Fitness Services" label="Sports/Fitness Services"/>
+                                    <form:option value="Television/Film" label="Television/Film"/>
+                                    <form:option value="Travel/Transportation" label="Travel/Transportation"/>
+                                    <form:option value="Venture Capital or Private Equity" label="Venture Capital or Private Equity"/>
+                                    <form:option value="Other" label="Other"/>
+                                </form:select>
                                 <form:errors path="industry" cssClass="help-inline" style="text-align:left;"/>
                             </h6>
                         </spring:bind>

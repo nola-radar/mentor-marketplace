@@ -18,7 +18,7 @@
             <a href="#" class="brand" id="indexLink">MENTOR MARKETPLACE</a>
             <div class="nav-collapse collapse pull-right">
                 <form class="navbar-form pull-left" id="indexForm">
-                    <a class="btn btn-info" onclick="linkedInLogOut()" id="indexButton3">LOG OUT</a>
+                    <a class="btn btn-info" onclick="linkedInLogOut()" id="indexButton3" style="margin-right:40px;">LOG OUT</a>
                 </form>
             </div>
         </div>
