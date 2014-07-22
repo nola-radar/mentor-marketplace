@@ -1,0 +1,1 @@
+set "CATALINA_OPTS=-Dhttp.proxyHost=iss-americas-pitc-cincinnatiz.proxy.corporate.ge.com -Dhttp.proxyPort=80 -Dhttps.proxyHost=iss-americas-pitc-cincinnatiz.proxy.corporate.ge.com -Dhttps.proxyPort=80 -Xms1024m -Xmx1024m -XX:MaxPermSize=256m -XX:PermSize=256m"
