@@ -6,37 +6,15 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
-        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JSP Page</title>
-
-        <!--LinkedIn-->
-        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-            api_key: 756f7ogbvydmk2
-                    authorize: true
-        </script>
-
-        <script type="text/javascript">
-            function linkedInLogOut() {
-
-                IN.User.logout(function() {
-                    location.href = "http://localhost:8080/mentormarketplace";
-                    //window.location = "/logout";
-                });
-            }
-        </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mentor Register</title>
 
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="/mentormarketplace/resources/css/bootstrap.css"  type="text/css"/>
         <link rel="stylesheet" href="/mentormarkeplace/resources/css/bootstrap-responsive.css" type="text/css"/>
-
-        <!--LinkedIn-->
-        <link media="all" type="text/css" href="../css/streamin.css" rel="stylesheet"/>
-        <link media="all" type="text/css" href="../css/jqueryui.css" rel="styleshpt" src="http://code.jquery.com/jquery-1.5b1.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
-
-</head>
+    </head>
 <body>
     <%@include file="../nav.jsp" %>
 
@@ -221,32 +199,6 @@
 
         </div>
     </form:form>
-
-    <div style="display:none;">
-        <script type="IN/Login" data-onAuth="loadData"></script>
-    </div>
-
-
-    <script type="text/javascript">
-            function loadData() {
-                IN.API.Profile("me")
-                        .fields(["id", "firstName", "lastName", "pictureUrl", "headline", "publicProfileUrl",
-                            "industry", "three-current-positions", "summary"])
-                        .result(function(result) {
-                            profile = result.values[0];
-                            //document.getElementById("firstNameMentor").textContent = profile.firstName.toString() + " " + profile.lastName.toString();
-                            document.getElementById("firstName").value = profile.firstName.toString();
-                            document.getElementById("lastName").value = profile.lastName.toString();
-                            document.getElementById("industry").value = profile.industry.toString();
-                            document.getElementById("linkedInCurrentCompany").value = profile.threeCurrentPositions.values[0].company.name;
-                            document.getElementById("linkedInCurrentJobTitle").value = profile.threeCurrentPositions.values[0].title;
-                            document.getElementById("linkedInPictureURL").value = profile.pictureUrl;
-                            document.getElementById("background").value = profile.summary;
-
-                        });
-            }
-    </script>
-
 
     <!-- BOOTSTRAP! -->
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>

@@ -10,7 +10,6 @@ CREATE TABLE mentor
   industry character(255),
   areasofexpertise text,
   background text,
-  linkedinid text,
   linkedinpictureurl character(255),
   linkedincurrentcompany character(255),
   linkedincurrentjobtitle character(255),
@@ -18,8 +17,11 @@ CREATE TABLE mentor
   facebook character(255),
   twitter character(255),
   othersocialmedia character(255),
+  mmuser bigint NOT NULL,
   CONSTRAINT mentor_pkey PRIMARY KEY (id),
-  CONSTRAINT unique_linkedin_id UNIQUE (linkedinid)
+  CONSTRAINT foreign_key_mmuser FOREIGN KEY (mmuser)
+      REFERENCES mmuser (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
   OIDS=FALSE

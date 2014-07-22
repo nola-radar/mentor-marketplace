@@ -2,7 +2,9 @@ package org.ideavillage.mentormarketplace.web.controllers;
 
 import javax.validation.Valid;
 import org.ideavillage.mentormarketplace.persistence.domain.MMUser;
+import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
 import org.ideavillage.mentormarketplace.persistence.repositories.MMUserRepository;
+import org.ideavillage.mentormarketplace.persistence.repositories.MentorRepository;
 import org.ideavillage.mentormarketplace.web.forms.RegistrationForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -32,6 +34,9 @@ public class UserController {
 
     @Autowired
     private MMUserRepository mmUserRepository;
+    
+    @Autowired
+    private MentorRepository mentorRepository;
 
     @Autowired
     private ConnectionRepository connectionRepository;
@@ -41,24 +46,32 @@ public class UserController {
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String signupForm(WebRequest request,
-            @ModelAttribute("registrationForm") RegistrationForm registrationForm) {
+            @ModelAttribute("registrationForm") RegistrationForm registrationForm,
+            @ModelAttribute("mentor") Mentor mentor) {
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
         if (connection != null) {
+            LinkedIn api = (LinkedIn)connection.getApi();
             registrationForm.setEmail(connection.fetchUserProfile().getEmail());
             registrationForm.setLinkedInId(connection.createData().getProviderUserId());
+            mentor.setFirstName(connection.fetchUserProfile().getFirstName());
+            mentor.setLastName(connection.fetchUserProfile().getLastName());
+            mentor.setIndustry(api.profileOperations().getUserProfileFull().getIndustry());
         }
-        return "user/register";
+        return "mentors/create";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String processForm(WebRequest request,
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
+            @Valid @ModelAttribute("mentor") Mentor mentor,
             BindingResult result) {
         if (result.hasErrors()) {
             return "user/register";
         }
         MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId());
         MMUser savedUser = mmUserRepository.save(user);
+        mentor.setMmuser(savedUser);
+        mentorRepository.save(mentor);
         // TODO: Clean up all of this
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
         SocialUserDetails details = socialUserDetailsService.loadUserByUserId(savedUser.getEmail());
