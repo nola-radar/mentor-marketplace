@@ -12,10 +12,13 @@
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css" />"  type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-responsive.min.css" />" type="text/css"/>
+        
+        <link rel="stylesheet" href="<c:url value="/resources/css/ivmm.css" />"  type="text/css"/>
     </head>
+    
     <body>
         <!-- Navigate Bar -->
-        <div class="navbar navbar-fixed-top-idea" style="margin-bottom:0px;"> 
+        <div class="navbar navbar-fixed-top-idea" id="indexNav"> 
             <div class="navbar-inner-idea"> 
                 <div class="container" id="navIndex">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -34,18 +37,18 @@
         <!-- Section Contained Two Clouds and Register Buttons -->
         <div class="hero-unit-idea">
             <img src="/mentormarketplace/resources/img/indexBack.png" id="indexHalfmoom">
-            <div class="row-fluid" style="z-index:0;">
+            <div class="row-fluid">
                 <div class="span12"></div>
             </div>
-            <div class="row-fluid" style="z-index:0;">
+            <div class="row-fluid">
                 <div class="span12"></div>
             </div>
-            <div class="row-fluid" style="z-index:0;">
+            <div class="row-fluid">
                 <div class="span12"></div>
             </div>
-            <div class="row-fluid" style="z-index:0;">
+            <div class="row-fluid">
                 <div class="span3"></div>
-                <div class="span2" id="cloudText" style="right:25px;top:25px;">
+                <div class="span2" id="cloudText1">
                     <center>
                         <h5>Founder</h5>
                         <div id="pwrap"><p id="cloudParagraph">For Companies Participating in the 2015 IDEAx Program</p></div>
@@ -56,7 +59,7 @@
                     </center>
                 </div>
                 <div class="span2"></div>
-                <div class="span2" id="cloudText" style="left:35px;top:25px;">
+                <div class="span2" id="cloudText2">
                     <center>
                         <h5>Mentor</h5>
                         <div id="pwrap"><p id="cloudParagraph">For Leaders Mentoring Companies in the 2015 IDEAx Program</p></div>
@@ -78,7 +81,7 @@
                 </div>  
             </div>
 
-            <div class="row-fluid" style="height:300px;" id="firstFluid">
+            <div class="row-fluid" id="firstFluid">
                 <div class="span4">
                     <center><img src="/mentormarketplace/resources/img/indexCircle.png" id="indexCircle"></center>
                     <h4>Connect</h4>
