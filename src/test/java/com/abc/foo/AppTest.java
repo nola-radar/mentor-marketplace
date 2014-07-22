@@ -27,7 +27,7 @@ public class AppTest {
      * according to where it is on your local machine
      * Author: Marcus Bischof
     */
-    @Test(groups = { "group 2" })
+    //@Test(groups = { "group 2" })
     public void groupTwoTest() throws InterruptedException {
         
         System.out.println("Mentor Create Test Beginnning");

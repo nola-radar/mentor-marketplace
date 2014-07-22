@@ -27,8 +27,8 @@
         <security:intercept-url pattern="/" access="permitAll"/>
 
         <!-- The rest of our application is protected. -->
-        <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
-        <!--<security:intercept-url pattern="/**" access="permitAll"/>-->
+        <!--<security:intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>-->
+        <security:intercept-url pattern="/**" access="permitAll"/>
 
         <!-- Adds social authentication filter to the Spring Security filter chain. -->
         <security:custom-filter ref="socialAuthenticationFilter" before="PRE_AUTH_FILTER" />
