@@ -2,6 +2,8 @@
 -- then copy the sql from the 'SQL Pane' to here
 -- so we have scripts that we can run on the servers.
 
+-- Table: mmuser
+
 CREATE TABLE mmuser
 (
   id serial NOT NULL,
@@ -15,6 +17,7 @@ WITH (
 ALTER TABLE mmuser
   OWNER TO ideavillage;
 
+-- Table: mentor
 
 CREATE TABLE mentor
 (
@@ -42,6 +45,8 @@ WITH (
 );
 ALTER TABLE mentor
   OWNER TO ideavillage;
+
+-- Table: founder
 
 CREATE TABLE founder
 (
@@ -104,7 +109,3 @@ CREATE UNIQUE INDEX userconnectionrank
   ON userconnection
   USING btree
   (userid COLLATE pg_catalog."default", providerid COLLATE pg_catalog."default", rank);
-
--- Table: mmuser
-
--- DROP TABLE mmuser;
