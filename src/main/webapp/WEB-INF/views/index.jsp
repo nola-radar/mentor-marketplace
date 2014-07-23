@@ -75,7 +75,7 @@
 
         <!-- Section Containing Connect, Meet, and Innovate -->
         <center>
-            <div class="row-fluid" id="firstFluid">
+            <div class="row-fluid" id="titleBanner">
                 <div class="span12">
                     <center><h3 class="text-center  pagination-centered">Welcome to the Mentor Marketplace</h3></center>
                 </div>  
