@@ -1,3 +1,6 @@
+-- I would recommend using pgAdmin to create the tables,
+-- then copy the sql from the 'SQL Pane' to here
+-- so we have scripts that we can run on the servers.
 
 CREATE TABLE mmuser
 (
@@ -12,9 +15,6 @@ WITH (
 ALTER TABLE mmuser
   OWNER TO ideavillage;
 
--- I would recommend using pgAdmin to create the tables,
--- then copy the sql from the 'SQL Pane' to here
--- so we have scripts that we can run on the servers.
 
 CREATE TABLE mentor
 (
@@ -59,7 +59,11 @@ CREATE TABLE founder
   facebook character(255),
   twitter character(255),
   othersocialmedia character(255),
-  CONSTRAINT founder_pkey PRIMARY KEY (id)
+  mmuser bigint NOT NULL,
+  CONSTRAINT founder_pkey PRIMARY KEY (id),
+  CONSTRAINT foreign_key_mmuser FOREIGN KEY (mmuser)
+      REFERENCES mmuser (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
   OIDS=FALSE
@@ -104,4 +108,3 @@ CREATE UNIQUE INDEX userconnectionrank
 -- Table: mmuser
 
 -- DROP TABLE mmuser;
-
