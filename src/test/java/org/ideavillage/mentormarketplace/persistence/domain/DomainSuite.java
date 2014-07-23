@@ -4,18 +4,28 @@
  * and open the template in the editor.
  */
 
-package org.ideavillage.mentormarketplace.web.controllers;
+package org.ideavillage.mentormarketplace.persistence.domain;
 
+import junit.framework.Test;
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 /**
  *
  * @author 212412062
  */
-public class AdminControllerTest extends TestCase {
-//    
-//    public AdminControllerTest(String testName) {
+public class DomainSuite extends TestCase {
+    
+//    public DomainSuite(String testName) {
 //        super(testName);
+//    }
+//    
+//    public static Test suite() {
+//        TestSuite suite = new TestSuite("DomainSuite");
+//        suite.addTest(MentorTest.suite());
+//        suite.addTest(MMUserTest.suite());
+//        suite.addTest(FounderTest.suite());
+//        return suite;
 //    }
 //    
 //    @Override
@@ -27,10 +37,5 @@ public class AdminControllerTest extends TestCase {
 //    protected void tearDown() throws Exception {
 //        super.tearDown();
 //    }
-//
-//    public void testSomeMethod() {
-//        // TODO review the generated test code and remove the default call to fail.
-//        //fail("The test case is a prototype.");
-//    }
-//    
+    
 }

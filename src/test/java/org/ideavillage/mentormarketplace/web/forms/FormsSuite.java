@@ -4,18 +4,26 @@
  * and open the template in the editor.
  */
 
-package org.ideavillage.mentormarketplace.web.controllers;
+package org.ideavillage.mentormarketplace.web.forms;
 
+import junit.framework.Test;
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 /**
  *
  * @author 212412062
  */
-public class AdminControllerTest extends TestCase {
-//    
-//    public AdminControllerTest(String testName) {
+public class FormsSuite extends TestCase {
+    
+//    public FormsSuite(String testName) {
 //        super(testName);
+//    }
+//    
+//    public static Test suite() {
+//        TestSuite suite = new TestSuite("FormsSuite");
+//        suite.addTest(RegistrationFormTest.suite());
+//        return suite;
 //    }
 //    
 //    @Override
@@ -26,11 +34,6 @@ public class AdminControllerTest extends TestCase {
 //    @Override
 //    protected void tearDown() throws Exception {
 //        super.tearDown();
-//    }
-//
-//    public void testSomeMethod() {
-//        // TODO review the generated test code and remove the default call to fail.
-//        //fail("The test case is a prototype.");
 //    }
 //    
 }
