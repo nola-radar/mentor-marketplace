@@ -1,3 +1,17 @@
+
+CREATE TABLE mmuser
+(
+  id serial NOT NULL,
+  email character varying(255) NOT NULL,
+  linkedinid character varying(255) NOT NULL,
+  CONSTRAINT user_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE mmuser
+  OWNER TO ideavillage;
+
 -- I would recommend using pgAdmin to create the tables,
 -- then copy the sql from the 'SQL Pane' to here
 -- so we have scripts that we can run on the servers.
@@ -91,15 +105,3 @@ CREATE UNIQUE INDEX userconnectionrank
 
 -- DROP TABLE mmuser;
 
-CREATE TABLE mmuser
-(
-  id serial NOT NULL,
-  email character varying(255) NOT NULL,
-  linkedinid character varying(255) NOT NULL,
-  CONSTRAINT user_pkey PRIMARY KEY (id)
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE mmuser
-  OWNER TO ideavillage;
