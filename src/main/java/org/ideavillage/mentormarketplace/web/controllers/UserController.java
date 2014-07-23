@@ -56,6 +56,10 @@ public class UserController {
             mentor.setFirstName(connection.fetchUserProfile().getFirstName());
             mentor.setLastName(connection.fetchUserProfile().getLastName());
             mentor.setIndustry(api.profileOperations().getUserProfileFull().getIndustry());
+            // Lines below added by Marcus, Review
+            mentor.setLinkedInCurrentCompany(api.profileOperations().getUserProfileFull().getThreeCurrentPositions().get(0).getCompany().getName());
+            mentor.setLinkedInCurrentJobTitle(api.profileOperations().getUserProfileFull().getThreeCurrentPositions().get(0).getTitle());
+            mentor.setBackground(api.profileOperations().getUserProfileFull().getSummary());
         }
         return "mentors/create";
     }
