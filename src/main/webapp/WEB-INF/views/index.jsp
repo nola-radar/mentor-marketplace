@@ -23,15 +23,15 @@
                 <div class="container" id="navIndex">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-th-list"></span></a>
-                    <img class="brand" src="/mentormarketplace/resources/img/IdeaLogo.png" style="height:21px;padding-left:40px;padding-right:20px;"/>
-                    <a href="#" class="brand" id="indexLink">MENTOR MARKETPLACE</a>
-                    <div class="nav-collapse collapse pull-right">
-                        <form class="navbar-form pull-left" id="indexForm">
-                            <a href="<c:url value="/auth/linkedin" />" class="btn btn-info" id="indexButton">LOGIN</a>
-                        </form>
-                    </div>
+                        <img class="brand" src="/mentormarketplace/resources/img/IdeaLogo.png" style="height:21px;padding-left:40px;padding-right:20px;"/>
+                        <a href="#" class="brand" id="indexLink">MENTOR MARKETPLACE</a>
+                        <div class="nav-collapse collapse pull-right">
+                            <form class="navbar-form pull-left" id="indexForm">
+                                <a class="btn btn-info" href="<c:url value="/auth/linkedin" />" id="indexButton">LOGIN</a>
+                            </form>
+                        </div>
+                        </div>
                 </div>
-            </div> 
         </div>
 
         <!-- Section Contained Two Clouds and Register Buttons -->
