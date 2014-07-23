@@ -1,4 +1,4 @@
-package com.abc.foo;
+package views.mentor;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class AppTest {
+public class IndexMentorJSPTest {
     @BeforeClass
     public void setUp() {
       // code that will be invoked when this test is instantiated

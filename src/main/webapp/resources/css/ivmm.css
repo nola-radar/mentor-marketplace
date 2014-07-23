@@ -53,6 +53,9 @@
     overflow:hidden;
 }
 
+#titleBanner {
+    background-color:#E0E0E0;
+}
 #firstFluid {
     background-color:#E0E0E0;
     padding-top: 30px;
