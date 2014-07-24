@@ -1,4 +1,4 @@
-<form:form modelAttribute="mentor">
+<form:form modelAttribute="founder">
         <div class="container-fluid" style="margin-right:70px;margin-left:70px;">
             <div class="row-fluid"><div class="span12"></div></div>
 
@@ -89,15 +89,6 @@
                             <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
                         </h6>
                     </spring:bind>
-
-                    <spring:bind path="background">
-                        <h6 style="margin:10px 0px;">
-                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Background: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            <form:textarea path="background" rows="10" cols="30" style="left:0px;" />
-                            <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
-                        </h6>
-                    </spring:bind>
-
 
                 </div>
             </div>

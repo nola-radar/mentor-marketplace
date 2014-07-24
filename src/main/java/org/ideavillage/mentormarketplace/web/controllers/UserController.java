@@ -66,6 +66,13 @@ public class UserController {
             mentor.setLinkedInCurrentCompany(api.profileOperations().getUserProfileFull().getThreeCurrentPositions().get(0).getCompany().getName());
             mentor.setLinkedInCurrentJobTitle(api.profileOperations().getUserProfileFull().getThreeCurrentPositions().get(0).getTitle());
             mentor.setBackground(api.profileOperations().getUserProfileFull().getSummary());
+            
+            founder.setFirstName(connection.fetchUserProfile().getFirstName());
+            founder.setLastName(connection.fetchUserProfile().getLastName());
+            founder.setIndustry(api.profileOperations().getUserProfileFull().getIndustry());
+            founder.setLinkedInCurrentCompany(api.profileOperations().getUserProfileFull().getThreeCurrentPositions().get(0).getCompany().getName());
+            founder.setLinkedInCurrentJobTitle(api.profileOperations().getUserProfileFull().getThreeCurrentPositions().get(0).getTitle());
+            founder.setBackground(api.profileOperations().getUserProfileFull().getSummary());
         }
         return "mentors/create";
     }
