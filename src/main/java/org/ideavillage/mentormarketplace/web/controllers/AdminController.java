@@ -21,7 +21,7 @@ public class AdminController {
      */
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String redirect() {
-        return "redirect:/mentors/";
+        return "redirect:/mentors/dashboard";
     }
 
 }
