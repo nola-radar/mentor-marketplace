@@ -7,9 +7,10 @@
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:lightgray;height:100%"></div>
             </div>
 
-            <div class="row-fluid" style="padding:10px;height:550px;margin:0;background-color:lightgray;" id="firstFluid">
+            <div class="row-fluid" style="padding:10px;height:2000px;margin:0;background-color:lightgray;" id="firstFluid">
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
-                    <center><h4><i class="icon-user"></i> Personal Details</h4></center>
+                    <center><h4><i class="icon-user"></i> Company Details</h4></center>
+                    
                     <ul>
                         <li>THIS IS FOUNDER PAGE</li>
                         <spring:bind path="website">
@@ -44,52 +45,99 @@
                             </h6>
                         </spring:bind>
                         
+                        <spring:bind path="companyDetails">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; Company Description: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="companyDetails" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="companyDetails" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
+                        </spring:bind>
+                        
+                        <spring:bind path="inspiration">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; Inspiration: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="inspiration" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="inspiration" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
+                        </spring:bind>
+                        
+                        <spring:bind path="programPlan">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; Program Plan: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="programPlan" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="programPlan" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
+                        </spring:bind>
+                        
+                        <spring:bind path="weeklyReports">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; Weekly Reports: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="weeklyReports" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="weeklyReports" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
+                        </spring:bind>
                     </ul>
                 </div>
                 <div class="span6" style="margin-top:0px;margin-bottom:0px;background-color:#f6f6f6;height:100%;position:relative;">
                     <center><h4><i class="icon-road"></i> Background</h4></center>
 
-
-                    <spring:bind path="firstName">
+                    
+                    <spring:bind path="logo">
                         <h6 style="margin:10px 0px;">
-                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; First Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            <form:input path="firstName" class="input-large" style="left:0px;" />
-                            <form:errors path="firstName" cssClass="help-inline" style="text-align:left;"/>
+                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Logo: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <form:input path="logo" class="input-large" style="left:0px;" />
+                            <form:errors path="logo" cssClass="help-inline" style="text-align:left;"/>
                         </h6>
                     </spring:bind>
-
-                    <spring:bind path="lastName">
+                    
+                    <spring:bind path="tagline">
                         <h6 style="margin:10px 0px;">
-                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Last Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            <form:input path="lastName" class="input-large" style="left:0px;" />
-                            <form:errors path="lastName" cssClass="help-inline" style="text-align:left;"/>
+                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Tagline: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <form:input path="tagline" class="input-large" style="left:0px;" />
+                            <form:errors path="tagline" cssClass="help-inline" style="text-align:left;"/>
                         </h6>
                     </spring:bind>
-
-                    <spring:bind path="linkedInCurrentCompany">
-                        <h6 style="margin:10px 0px;">
-                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Current Company: &nbsp; &nbsp; 
-                            <form:input path="linkedInCurrentCompany" class="input-large" style="left:0px;" />
-                            <form:errors path="linkedInCurrentCompany" cssClass="help-inline" style="text-align:left;"/>
-                        </h6>
+                    
+                    <spring:bind path="elevatorPitch">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; Elevator Pitch: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="elevatorPitch" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="elevatorPitch" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
                     </spring:bind>
-
-                    <spring:bind path="linkedInCurrentJobTitle">
-                        <h6 style="margin:10px 0px;">
-                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Current Job Title: &nbsp; &nbsp; &nbsp;
-                            <form:input path="linkedInCurrentJobTitle" class="input-large" style="left:0px;" />
-                            <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" style="text-align:left;"/>
-                        </h6>
+                    
+                    <spring:bind path="immediateNeeds">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; Immediate Needs: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="immediateNeeds" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="immediateNeeds" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
                     </spring:bind>
-
-                    <spring:bind path="linkedInPictureURL">
-                        <h6 style="margin:10px 0px;">
-                            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; LinkedIn Picture: &nbsp; &nbsp; &nbsp;
-                            <form:input path="linkedInPictureURL" class="input-large" style="left:0px;" />
-                            <form:errors path="linkedInPictureURL" cssClass="help-inline" style="text-align:left;"/>
-                        </h6>
+                    
+                    <spring:bind path="status">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; Status: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="status" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="status" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
                     </spring:bind>
-
+                    
+                    <spring:bind path="vision">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; Vision: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="vision" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="vision" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
+                    </spring:bind>
+                    
+                    <spring:bind path="newOrleans">
+                            <h6 style="margin:10px 0px;">
+                                &nbsp; &nbsp; &nbsp; &nbsp; New Orleans: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <form:textarea path="newOrleans" rows="10" cols="30" style="left:0px;" />
+                                <form:errors path="newOrleans" cssClass="help-inline" style="text-align:left;"/>
+                            </h6>
+                    </spring:bind>
+                    
                 </div>
             </div>
             <div class="row-fluid" style="padding:10px;height:200px;margin:0;background-color:lightgray;" id="firstFluid">

@@ -65,6 +65,17 @@ CREATE TABLE founder
   twitter character(255),
   othersocialmedia character(255),
   mmuser bigint NOT NULL,
+  logo character(255),
+  tagline character(255),
+  elevatorpitch text,
+  immediateneeds text,
+  companydetails text,
+  inspiration text,
+  status text,
+  vision text,
+  neworleans text,
+  programplan text,
+  weeklyreports text,
   CONSTRAINT founder_pkey PRIMARY KEY (id),
   CONSTRAINT foreign_key_mmuser FOREIGN KEY (mmuser)
       REFERENCES mmuser (id) MATCH SIMPLE

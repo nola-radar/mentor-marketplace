@@ -94,6 +94,50 @@ public class Founder implements Serializable {
     @Column(name = "linkedincurrentjobtitle")
     private String linkedInCurrentJobTitle;
     
+    @Size(max = 2147483647)
+    @Column(name = "logo")
+    private String logo;
+    
+    @Size(max = 2147483647)
+    @Column(name = "tagline")
+    private String tagline;
+    
+    @Size(max = 2147483647)
+    @Column(name = "elevatorPitch")
+    private String elevatorPitch;
+    
+    @Size(max = 2147483647)
+    @Column(name = "immediateNeeds")
+    private String immediateNeeds;
+    
+    @Size(max = 2147483647)
+    @Column(name = "companyDetails")
+    private String companyDetails;
+    
+    @Size(max = 2147483647)
+    @Column(name = "inspiration")
+    private String inspiration;
+    
+    @Size(max = 2147483647)
+    @Column(name = "status")
+    private String status;
+    
+    @Size(max = 2147483647)
+    @Column(name = "vision")
+    private String vision;
+    
+    @Size(max = 2147483647)
+    @Column(name = "newOrleans")
+    private String newOrleans;
+    
+    @Size(max = 2147483647)
+    @Column(name = "programPlan")
+    private String programPlan;
+    
+    @Size(max = 2147483647)
+    @Column(name = "weeklyReports")
+    private String weeklyReports;
+    
     public Founder() {
     }
 
@@ -211,6 +255,93 @@ public class Founder implements Serializable {
 
     public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
         this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
+    }
+    
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+    
+    public String getTagline() {
+        return tagline;
+    }
+
+    public void setTagline(String tagline) {
+        this.tagline = tagline;
+    }
+    
+    public String getElevatorPitch() {
+        return elevatorPitch;
+    }
+
+    public void setElevatorPitch(String elevatorPitch) {
+        this.elevatorPitch = elevatorPitch;
+    }
+    
+    public String getImmediateNeeds() {
+        return immediateNeeds;
+    }
+
+    public void setImmediateNeeds(String immediateNeeds) {
+        this.immediateNeeds = immediateNeeds;
+    }
+    
+    public String getCompanyDetails() {
+        return companyDetails;
+    }
+
+    public void setCompanyDetails(String companyDetails) {
+        this.companyDetails = companyDetails;
+    }
+    
+    public String getInspiration() {
+        return inspiration;
+    }
+
+    public void setInspiration(String inspiration) {
+        this.inspiration = inspiration;
+    }
+    
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public String getVision() {
+        return vision;
+    }
+
+    public void setVision(String vision) {
+        this.vision = vision;
+    }
+    
+    public String getNewOrleans() {
+        return newOrleans;
+    }
+
+    public void setNewOrleans(String newOrleans) {
+        this.newOrleans = newOrleans;
+    }
+    
+    public String getProgramPlan() {
+        return programPlan;
+    }
+
+    public void setProgramPlan(String programPlan) {
+        this.programPlan = programPlan;
+    }
+    
+    public String getWeeklyReports() {
+        return weeklyReports;
+    }
+
+    public void setWeeklyReports(String weeklyReports) {
+        this.weeklyReports = weeklyReports;
     }
     
     @Override
