@@ -12,13 +12,13 @@
         <title>Mentor Register</title>
 
         <!-- BOOTSTRAP! -->
-        <link rel="stylesheet" href="/mentormarketplace/resources/css/bootstrap.css"  type="text/css"/>
-        <link rel="stylesheet" href="/mentormarkeplace/resources/css/bootstrap-responsive.css" type="text/css"/>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/mentormarketplace/resources/css/bootstrap-responsive.css" type="text/css" />
         <link rel="stylesheet" href="/mentormarketplace/resources/css/ivmm.css"  type="text/css"/>
     </head>
 <body>
-   <%@include file="../nav.jsp" %>
-    <br><br><br><br><br><br>
+   <!--<%@include file="../nav.jsp" %>
+    <br><br><br><br><br><br>-->
     <form id="userType">
         <input type="radio" name="user" value="founder">Founder
         <input type="radio" name="user" value="mentor">Mentor
