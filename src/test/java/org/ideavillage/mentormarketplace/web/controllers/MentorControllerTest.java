@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package org.ideavillage.mentormarketplace.web.controllers;
 
 import junit.framework.TestCase;
@@ -16,16 +15,16 @@ import org.springframework.web.servlet.ModelAndView;
  * @author 212412062
  */
 public class MentorControllerTest extends TestCase {
-    
+
 //    public MentorControllerTest(String testName) {
 //        super(testName);
 //    }
-//    
+//
 //    @Override
 //    protected void setUp() throws Exception {
 //        super.setUp();
 //    }
-//    
+//
 //    @Override
 //    protected void tearDown() throws Exception {
 //        super.tearDown();
@@ -37,7 +36,7 @@ public class MentorControllerTest extends TestCase {
 //    public void testRedirect() {
 //        System.out.println("redirect");
 //        MentorController instance = new MentorController();
-//        String expResult = "";
+//        String expResult = "redirect:/mentors/";
 //        String result = instance.redirect();
 //        assertEquals(expResult, result);
 //
@@ -48,11 +47,11 @@ public class MentorControllerTest extends TestCase {
 //     */
 //    public void testView() {
 //        System.out.println("view");
-//        Mentor mentor = null;
+//        Mentor mentor = new Mentor();
 //        MentorController instance = new MentorController();
-//        ModelAndView expResult = null;
+//        ModelAndView expResult = new ModelAndView("mentors/view", "mentor", mentor);
 //        ModelAndView result = instance.view(mentor);
-//        assertEquals(expResult, result);
+//        assertEquals(expResult.getViewName(), result.getViewName());
 //
 //    }
 //
@@ -62,9 +61,9 @@ public class MentorControllerTest extends TestCase {
 //    public void testCreate() {
 //        System.out.println("create");
 //        MentorController instance = new MentorController();
-//        ModelAndView expResult = null;
+//        ModelAndView expResult = new ModelAndView("mentors/create", "mentor", new Mentor());
 //        ModelAndView result = instance.create();
-//        assertEquals(expResult, result);
+//        assertEquals(expResult.getViewName(), result.getViewName());
 //
 //    }
 //
@@ -73,13 +72,13 @@ public class MentorControllerTest extends TestCase {
 //     */
 //    public void testDoCreate() {
 //        System.out.println("doCreate");
-//        Mentor mentor = null;
+//        long id = 1;
+//        Mentor mentor = new Mentor(id);
 //        BindingResult result_2 = null;
 //        MentorController instance = new MentorController();
-//        String expResult = "";
+//        String expResult = "redirect:/mentors/" + mentor.getId();
 //        String result = instance.doCreate(mentor, result_2);
 //        assertEquals(expResult, result);
-//
 //    }
 //
 //    /**
@@ -88,9 +87,9 @@ public class MentorControllerTest extends TestCase {
 //    public void testList() {
 //        System.out.println("list");
 //        MentorController instance = new MentorController();
-//        ModelAndView expResult = null;
+//        ModelAndView expResult = new ModelAndView("mentors/list", "mentor", new Mentor());
 //        ModelAndView result = instance.list();
-//        assertEquals(expResult, result);
+//        assertEquals(expResult.getViewName(), result.getViewName());
 //
 //    }
 //
@@ -99,13 +98,14 @@ public class MentorControllerTest extends TestCase {
 //     */
 //    public void testDoList() {
 //        System.out.println("doList");
-//        Mentor mentor = null;
+//        long id = 1;
+//        Mentor mentor = new Mentor(id);
 //        BindingResult result_2 = null;
 //        MentorController instance = new MentorController();
-//        String expResult = "";
+//        String expResult = "redirect:/mentors/" + mentor.getId();
 //        String result = instance.doList(mentor, result_2);
 //        assertEquals(expResult, result);
-//
 //    }
-    
 }
+
+

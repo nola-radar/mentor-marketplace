@@ -29,6 +29,9 @@
         <!-- The rest of our application is protected. -->
         <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
         <!--<security:intercept-url pattern="/**" access="permitAll"/>-->
+        
+        <!-- Protect the admin page for admin users only -->
+        <security:intercept-url pattern="/admin" access="ROLE_ADMIN" />
 
         <!-- Adds social authentication filter to the Spring Security filter chain. -->
         <security:custom-filter ref="socialAuthenticationFilter" before="PRE_AUTH_FILTER" />
