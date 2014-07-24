@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Mentor.findAll", query = "SELECT e FROM Mentor e")})
 public class Mentor implements Serializable {
+    
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private MMUser mmuser;

@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mentor Marketplace</title>
-
+        
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css" />"  type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-responsive.min.css" />" type="text/css"/>
@@ -53,19 +53,22 @@
                         <h5>Founder</h5>
                         <div id="pwrap"><p id="cloudParagraph">For Companies Participating in the 2015 IDEAx Program</p></div>
                         <form class="navbar-form pull-left" id="indexForm">
-                            <br>
-                            <a href="<c:url value="/auth/linkedin" />" class="btn btn-info" id="indexButton">REGISTER</a>
+                            <!--<br>
+                            <a href="<c:url value="/auth/linkedin" />" class="btn btn-info" id="indexButton">REGISTER</a>-->
                         </form>
                     </center>
                 </div>
-                <div class="span2"></div>
+                <div class="span2">
+                    <br><br><br><br><br>
+                    <a href="<c:url value="/auth/linkedin" />"  class="btn btn-info" id="indexButton">REGISTER</a>
+                </div>
                 <div class="span2" id="cloudText2">
                     <center>
                         <h5>Mentor</h5>
                         <div id="pwrap"><p id="cloudParagraph">For Leaders Mentoring Companies in the 2015 IDEAx Program</p></div>
                         <form class="navbar-form pull-left" id="indexForm">
-                            <br>
-                            <a href="<c:url value="/auth/linkedin" />" class="btn btn-info" id="indexButton2">REGISTER</a>
+                            <!--<br>
+                            <a href="<c:url value="/auth/linkedin" />" class="btn btn-info" id="indexButton2">REGISTER</a>-->
                         </form>
                     </center>
                 </div>
@@ -112,7 +115,8 @@
                 </center>
             </div>
         </center>
-
+        
+        
         <!-- BOOTSTRAP! -->
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="<c:url value="/resources/js/bootstrap.js" />"></script>
