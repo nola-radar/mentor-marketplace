@@ -34,6 +34,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "MMUser.findAll", query = "SELECT m FROM MMUser m")})
 public class MMUser implements Serializable {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser")
+    private Collection<Founder> founderCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser", fetch = FetchType.EAGER)
     private Collection<Mentor> mentorCollection;
 
@@ -130,5 +132,15 @@ public class MMUser implements Serializable {
     public void setMentorCollection(Collection<Mentor> mentorCollection) {
         this.mentorCollection = mentorCollection;
     }
+    
+    @XmlTransient
+    public Collection<Founder> getFounderCollection() {
+        return founderCollection;
+    }
+
+    public void setFounderCollection(Collection<Founder> founderCollection) {
+        this.founderCollection = founderCollection;
+    }
+
 
 }

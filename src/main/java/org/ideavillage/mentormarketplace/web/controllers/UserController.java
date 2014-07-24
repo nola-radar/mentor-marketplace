@@ -3,6 +3,8 @@ package org.ideavillage.mentormarketplace.web.controllers;
 import javax.validation.Valid;
 import org.ideavillage.mentormarketplace.persistence.domain.MMUser;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
+import org.ideavillage.mentormarketplace.persistence.domain.Founder;
+import org.ideavillage.mentormarketplace.persistence.repositories.FounderRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MentorRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MMUserRepository;
 import org.ideavillage.mentormarketplace.web.forms.RegistrationForm;
@@ -37,7 +39,10 @@ public class UserController {
     
     @Autowired
     private MentorRepository mentorRepository;
-
+    
+    @Autowired
+    private FounderRepository founderRepository;
+    
     @Autowired
     private ConnectionRepository connectionRepository;
 
@@ -47,7 +52,8 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String signupForm(WebRequest request,
             @ModelAttribute("registrationForm") RegistrationForm registrationForm,
-            @ModelAttribute("mentor") Mentor mentor) {
+            @ModelAttribute("mentor") Mentor mentor,
+            @ModelAttribute("founder") Founder founder ) {
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
         if (connection != null) {
             LinkedIn api = (LinkedIn)connection.getApi();
