@@ -8,6 +8,7 @@ CREATE TABLE mmuser
 (
   id serial NOT NULL,
   email character varying(255) NOT NULL,
+  userType character(255),
   linkedinid character varying(255) NOT NULL,
   CONSTRAINT user_pkey PRIMARY KEY (id)
 )
@@ -22,6 +23,7 @@ ALTER TABLE mmuser
 CREATE TABLE mentor
 (
   id serial NOT NULL,
+  linkedinid character(255),
   firstname character(255),
   lastname character(255),
   industry character(255),

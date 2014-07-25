@@ -1,4 +1,4 @@
-<form:form modelAttribute="mentor">
+<form:form modelAttribute="registrationForm">
 <div class="container-fluid" style="margin-right:70px;margin-left:70px;padding-right:2px;padding-left:7px;background-color:#ffffff;">
 
     <!-- Top Row -->
@@ -188,6 +188,29 @@
                         <form:errors path="areasOfExpertise" cssClass="help-inline" />
                     </h6>
                 </spring:bind>
+                
+                <spring:bind path="email">
+                    <div class="control-group ${status.error ? 'error' : ''}">
+                        <form:label path="email" class="control-label">
+                            Email
+                        </form:label>
+                        <div class="controls">
+                            <form:input path="email" class="input-large" />
+                            <form:errors path="email" cssClass="help-inline" />
+                        </div>
+                    </div>
+                </spring:bind>
+                <spring:bind path="linkedInId">
+                    <form:hidden path="linkedInId" />
+                </spring:bind>
+                        
+                <spring:bind path="userType">
+                    <h6>
+                        User Type: &nbsp;
+                        <form:input path="userType" class="input-large" />
+                        <form:errors path="userType" cssClass="help-inline" />
+                    </h6>
+                </spring:bind>
             </div>
 
         </div>
@@ -199,6 +222,12 @@
 
 </form:form>
 
+<!--<script type="text/javascript">
+    function loadData() {
+        document.getElementById("userType").value = document.getElementById("userTypeB").value();
+    }
+</script>-->
+                        
 <!-- BOOTSTRAP! -->
 <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>

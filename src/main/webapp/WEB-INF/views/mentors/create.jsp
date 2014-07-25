@@ -20,7 +20,7 @@
         <%@include file="../nav.jsp" %>
         <div class="container" style="background-color:#f6f6f6;">
             <center>
-            <form id="userType">
+            <form id="userTypeB">
                 <input type="radio" name="user" value="founder">Founder
                 <input type="radio" name="user" value="mentor">Mentor
                 <input type="submit" value="Submit">
