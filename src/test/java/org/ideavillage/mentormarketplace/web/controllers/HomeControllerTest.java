@@ -16,32 +16,32 @@ import org.springframework.web.context.request.WebRequest;
  */
 public class HomeControllerTest extends TestCase {
     
-//    public HomeControllerTest(String testName) {
-//        super(testName);
-//    }
-//    
-//    @Override
-//    protected void setUp() throws Exception {
-//        super.setUp();
-//    }
-//    
-//    @Override
-//    protected void tearDown() throws Exception {
-//        super.tearDown();
-//    }
-//
-//    /**
-//     * Test of displayHomePage method, of class HomeController.
-//     */
-//    public void testDisplayHomePage() {
-//        System.out.println("displayHomePage");
-//        HomeController instance = new HomeController();
-//        String expResult = "";
-//        String result = instance.displayHomePage();
-//        assertEquals(expResult, result);
-//
-//    }
-//
+    public HomeControllerTest(String testName) {
+        super(testName);
+    }
+    
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+    
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
+    /**
+     * Test of displayHomePage method, of class HomeController.
+     */
+    public void testDisplayHomePage() {
+        System.out.println("displayHomePage");
+        HomeController instance = new HomeController();
+        String expResult = "index";
+        String result = instance.displayHomePage();
+        assertEquals(expResult, result);
+
+    }
+
 //    /**
 //     * Test of linkedin method, of class HomeController.
 //     */
@@ -49,20 +49,20 @@ public class HomeControllerTest extends TestCase {
 //        System.out.println("linkedin");
 //        Model model = null;
 //        HomeController instance = new HomeController();
-//        String expResult = "";
+//        String expResult = "index";
 //        String result = instance.linkedin(model);
 //        assertEquals(expResult, result);
 //
 //    }
-//
+
 //    /**
 //     * Test of signupForm method, of class HomeController.
 //     */
 //    public void testSignupForm() {
 //        System.out.println("signupForm");
-//        WebRequest request = null;
+//        WebRequest request = new WebRequest();
 //        HomeController instance = new HomeController();
-//        String expResult = "";
+//        String expResult = "user/register";
 //        String result = instance.signupForm(request);
 //        assertEquals(expResult, result);
 //

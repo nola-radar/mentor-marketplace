@@ -16,26 +16,27 @@ import org.springframework.security.core.userdetails.UserDetails;
  * @author 212412062
  */
 public class RepositoryUserDetailsServiceTest extends TestCase {
+
     
-//    public RepositoryUserDetailsServiceTest(String testName) {
-//        super(testName);
-//    }
-//
-//    public static Test suite() {
-//        TestSuite suite = new TestSuite(RepositoryUserDetailsServiceTest.class);
-//        return suite;
-//    }
-//    
-//    @Override
-//    protected void setUp() throws Exception {
-//        super.setUp();
-//    }
-//    
-//    @Override
-//    protected void tearDown() throws Exception {
-//        super.tearDown();
-//    }
-//
+    public RepositoryUserDetailsServiceTest(String testName) {
+        super(testName);
+    }
+
+    public static Test suite() {
+        TestSuite suite = new TestSuite(RepositoryUserDetailsServiceTest.class);
+        return suite;
+    }
+    
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+    
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
 //    /**
 //     * Test of loadUserByUsername method, of class RepositoryUserDetailsService.
 //     */

@@ -16,26 +16,26 @@ import org.springframework.social.security.SocialUserDetails;
  * @author 212412062
  */
 public class SimpleSocialUserDetailsServiceTest extends TestCase {
+
+    public SimpleSocialUserDetailsServiceTest(String testName) {
+        super(testName);
+    }
+
+    public static Test suite() {
+        TestSuite suite = new TestSuite(SimpleSocialUserDetailsServiceTest.class);
+        return suite;
+    }
     
-//    public SimpleSocialUserDetailsServiceTest(String testName) {
-//        super(testName);
-//    }
-//
-//    public static Test suite() {
-//        TestSuite suite = new TestSuite(SimpleSocialUserDetailsServiceTest.class);
-//        return suite;
-//    }
-//    
-//    @Override
-//    protected void setUp() throws Exception {
-//        super.setUp();
-//    }
-//    
-//    @Override
-//    protected void tearDown() throws Exception {
-//        super.tearDown();
-//    }
-//
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+    
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
 //    /**
 //     * Test of loadUserByUserId method, of class SimpleSocialUserDetailsService.
 //     */

@@ -16,25 +16,25 @@ import junit.framework.TestSuite;
  */
 public class FounderTest extends TestCase {
     
-//    public FounderTest(String testName) {
-//        super(testName);
-//    }
-//
-//    public static Test suite() {
-//        TestSuite suite = new TestSuite(FounderTest.class);
-//        return suite;
-//    }
-//    
-//    @Override
-//    protected void setUp() throws Exception {
-//        super.setUp();
-//    }
-//    
-//    @Override
-//    protected void tearDown() throws Exception {
-//        super.tearDown();
-//    }
-//
+    public FounderTest(String testName) {
+        super(testName);
+    }
+
+    public static Test suite() {
+        TestSuite suite = new TestSuite(FounderTest.class);
+        return suite;
+    }
+    
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+    
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
 //    /**
 //     * Test of getId method, of class Founder.
 //     */

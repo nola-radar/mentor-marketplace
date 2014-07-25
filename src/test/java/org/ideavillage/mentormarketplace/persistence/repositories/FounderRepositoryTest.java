@@ -19,25 +19,25 @@ import org.springframework.data.domain.Pageable;
  */
 public class FounderRepositoryTest extends TestCase {
     
-//    public FounderRepositoryTest(String testName) {
-//        super(testName);
-//    }
-//
-//    public static Test suite() {
-//        TestSuite suite = new TestSuite(FounderRepositoryTest.class);
-//        return suite;
-//    }
-//    
-//    @Override
-//    protected void setUp() throws Exception {
-//        super.setUp();
-//    }
-//    
-//    @Override
-//    protected void tearDown() throws Exception {
-//        super.tearDown();
-//    }
-//
+    public FounderRepositoryTest(String testName) {
+        super(testName);
+    }
+
+    public static Test suite() {
+        TestSuite suite = new TestSuite(FounderRepositoryTest.class);
+        return suite;
+    }
+    
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+    
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
 //    /**
 //     * Test of countByFirstName method, of class FounderRepository.
 //     */

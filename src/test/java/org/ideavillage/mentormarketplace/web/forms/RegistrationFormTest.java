@@ -16,25 +16,25 @@ import junit.framework.TestSuite;
  */
 public class RegistrationFormTest extends TestCase {
     
-//    public RegistrationFormTest(String testName) {
-//        super(testName);
-//    }
-//
-//    public static Test suite() {
-//        TestSuite suite = new TestSuite(RegistrationFormTest.class);
-//        return suite;
-//    }
-//    
-//    @Override
-//    protected void setUp() throws Exception {
-//        super.setUp();
-//    }
-//    
-//    @Override
-//    protected void tearDown() throws Exception {
-//        super.tearDown();
-//    }
-//
+    public RegistrationFormTest(String testName) {
+        super(testName);
+    }
+
+    public static Test suite() {
+        TestSuite suite = new TestSuite(RegistrationFormTest.class);
+        return suite;
+    }
+    
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+    
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
 //    /**
 //     * Test of getEmail method, of class RegistrationForm.
 //     */
