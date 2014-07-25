@@ -1,11 +1,11 @@
 <form:form modelAttribute="founder">
-    <div class="container-fluid" style="margin-right:70px;margin-left:70px;">
-
+    <div class="container-fluid" style="margin-right:70px;margin-left:70px;padding-right:2px;padding-left:7px;background-color:#ffffff;">
+         
             <!-- Top Row -->
-            <div class="row">
+            <div class="row"">
 
                 <div class="col-sm-12">
-                    <div style="background-color:lightgrey;"> Test Row 1</div>
+                    <div style="background-color:#203747;"> Test Row 1</div>
                 </div>
                 
             </div>
@@ -14,15 +14,15 @@
             <div class="row">
                 
                 <div class="col-sm-4 col-xs-4">
-                    <div style="background-color:#203747;"> <font color="white"> Test Row 2 - Col 1  </font></div>
+                    <div style="background-color:#f6f6f6;"> <font color="white"> Test Row 2 - Col 1  </font></div>
                 </div>
                 
                 <div class="col-sm-4 col-xs-4">
-                    <div style="background-color:#203747;"> <font color="white"> Test Row 2 - Col 2  </font></div>
+                    <div style="background-color:#f6f6f6;"> <font color="white"> Test Row 2 - Col 2  </font></div>
                 </div>
                 
                 <div class="col-sm-4 col-xs-4">
-                    <div style="background-color:#203747;"> <font color="white"> Test Row 2 - Col 3 </font></div>
+                    <div style="background-color:#f6f6f6;"> <font color="white"> Test Row 2 - Col 3 </font></div>
                 </div>
                 
             </div>
@@ -33,7 +33,7 @@
                 
                 <div class="col-xs-12 col-sm-6">
                     
-                    <div  style="background-color:lightgreen; height:400px;">
+                    <div  style="background-color:#f6f6f6;; height:400px;">
                         <spring:bind path="website">
                             <h6>
                                 Website: &nbsp;
@@ -88,7 +88,7 @@
                 
                 <div class="col-xs-12 col-sm-6">
                     
-                    <div style="height:200px;background-color:lightblue;">
+                    <div style="height:200px;background-color:#f6f6f6;;">
                         <spring:bind path="logo">
                             <h6>
                                 Logo: &nbsp;
@@ -114,7 +114,7 @@
                         </spring:bind>
                     </div>
                     
-                    <div style="background-color:lightgrey; height:200px;">
+                    <div style="background-color:#f6f6f6;; height:200px;">
                         <spring:bind path="immediateNeeds">
                                 <h6>
                                     Immediate Needs: &nbsp;
@@ -156,7 +156,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
                     
-                    <div style="padding:10px;background-color:lightpink; height:300px;">
+                    <div style="padding:10px;background-color:#f6f6f6;; height:300px;">
                         <spring:bind path="programPlan">
                             <h6>
                                 Program Plan: &nbsp; 
@@ -230,9 +230,13 @@
                     
                 </div>
             </div>
-
+            <button class="btn btn-info" type="submit" style="background:#27ae60;border-radius:0%;width:150px;">
+                Create Profile
+            </button>
     </div>
+    
  </form:form>
+
         <!-- BOOTSTRAP! -->
         <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>

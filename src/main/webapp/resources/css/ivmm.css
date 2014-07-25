@@ -1,5 +1,35 @@
 
 /* Below is css for the create page */
+#createBody {
+    background-color:#e3e3e3;
+}
+
+#navHeader {
+    color:white;
+    margin-top:12px;
+}
+
+#navDefault {
+    background-color:#203747;
+    border-radius:0;
+    margin-bottom:0px;
+}
+
+#mentorLogo {
+    margin-bottom:5px;
+    height:35px;
+    margin-top:5px;
+    margin-left:40px;
+}
+
+#mentorNavButton {
+    margin-right:40px;
+    background-color:#27ae60;
+    border-radius:0;
+    height:30px;
+    border:0;
+    color:white;
+}
 
 .hero-unit-idea1 {
   z-index:0;

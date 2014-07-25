@@ -81,6 +81,7 @@ public class UserController {
     public String processForm(WebRequest request,
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
             @Valid @ModelAttribute("mentor") Mentor mentor,
+            @Valid @ModelAttribute("founder") Founder founder,
             BindingResult result) {
         if (result.hasErrors()) {
             return "user/register";
@@ -88,13 +89,15 @@ public class UserController {
         MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId());
         MMUser savedUser = mmUserRepository.save(user);
         mentor.setMmuser(savedUser);
+        founder.setMmuser(savedUser);
         mentorRepository.save(mentor);
-        // TODO: Clean up all of this
+        founderRepository.save(founder);
+         // TODO: Clean up all of this
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
+        ProviderSignInUtils.handlePostSignUp(savedUser.getEmail(), request);
         SocialUserDetails details = socialUserDetailsService.loadUserByUserId(savedUser.getEmail());
         SecurityContextHolder.getContext().setAuthentication(
-                new SocialAuthenticationToken(connection, details, null, details.getAuthorities()));
-        ProviderSignInUtils.handlePostSignUp(savedUser.getEmail(), request);
+        new SocialAuthenticationToken(connection, details, null, details.getAuthorities()));
         return "redirect:/user/profile";
     }
 
