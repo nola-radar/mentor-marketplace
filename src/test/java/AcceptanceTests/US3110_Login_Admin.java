@@ -24,7 +24,7 @@ public class US3110_Login_Admin {
         System.out.println("Setting up webdriver");
 
         //Path to the Chromedriver executable
-        System.setProperty("webdriver.chrome.driver", "C:/Users/212412062/Desktop/webdriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver.exe");
         String baseUrl = "http://localhost:8080/mentormarketplace/";
         driver = new ChromeDriver();
         driver.get(baseUrl);
