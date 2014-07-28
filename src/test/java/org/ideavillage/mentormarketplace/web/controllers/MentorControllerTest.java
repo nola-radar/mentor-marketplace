@@ -8,6 +8,7 @@ package org.ideavillage.mentormarketplace.web.controllers;
 import junit.framework.*;
 import junit.framework.TestCase;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
+import static org.mockito.Mockito.mock;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -74,7 +75,7 @@ public class MentorControllerTest extends TestCase {
 //        System.out.println("doCreate");
 //        long id = 1;
 //        Mentor mentor = new Mentor(id);
-//        BindingResult result_2 = null;
+//        BindingResult result_2 = mock(BindingResult.class);
 //        MentorController instance = new MentorController();
 //        String expResult = "redirect:/mentors/" + mentor.getId();
 //        String result = instance.doCreate(mentor, result_2);
@@ -98,8 +99,9 @@ public class MentorControllerTest extends TestCase {
 //     */
 //    public void testDoList() {
 //        System.out.println("doList");
-//        Mentor mentor = new Mentor();
-//        BindingResult result_2 = null;
+//        Long id = 1234L;
+//        Mentor mentor = new Mentor(id);
+//        BindingResult result_2 = mock(BindingResult.class);
 //        MentorController instance = new MentorController();
 //        String expResult = "redirect:/mentors/" + mentor.getId();
 //        String result = instance.doList(mentor, result_2);
