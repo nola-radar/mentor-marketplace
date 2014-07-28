@@ -23,11 +23,10 @@
         <div class="container" style="background-color:#f6f6f6;">
             
             <br><br><br><br><br><br>
-            <div class="container-fluid" style="margin-right:70px;margin-left:70px;padding-right:2px;padding-left:7px;background-color:#ffffff;">
+            <div class="container-fluid" style="margin-right:70px;margin-left:70px;background-color:#ffffff;">
 
                     <!-- Top Row -->
                     <div class="row">
-
                         <div class="col-sm-12">
                             <div style="background-color:#203747;height:50px;"> 
                                 <img src="${profile.profilePictureUrl}" style="bottom:20px;left:40px;position:absolute;height:120px;width:120px;"></img>
@@ -35,7 +34,6 @@
                                 <h5 style="bottom:60px;left:170px;position:absolute;"> ${founder.getIndustry()} </h5>
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Content Body -->
@@ -45,6 +43,7 @@
                         <div class="col-xs-12 col-sm-6" style="padding-right:5px;">
 
                             <div  style="background-color:#f6f6f6;; height:500px;">
+                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:3px;" /></a>
                                 <p> <strong>Website:</strong> &nbsp &nbsp ${founder.getWebsite()} </p>
                                 <p> <strong>Facebook:</strong> &nbsp &nbsp ${founder.getFacebook()} </p>
                                 <p> <strong>Twitter:</strong> &nbsp &nbsp ${founder.getTwitter()} </p>
@@ -57,6 +56,7 @@
                         <div class="col-xs-12 col-sm-6" style="padding-left:5px;">
 
                             <div style="background-color:white;height:250px;">
+                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:10px;" /></a>
                                 <p> <strong>Elevator Pitch:</strong> &nbsp &nbsp ${founder.getElevatorPitch()} </p>
                                 <p> <strong>Immediate Needs:</strong> &nbsp &nbsp ${founder.getImmediateNeeds()} </p>
                                 <p> <strong>Company Details:</strong> &nbsp &nbsp ${founder.getCompanyDetails()} </p>
@@ -79,6 +79,7 @@
                         <div class="col-xs-12 col-sm-12">
 
                             <div style="padding:10px;background-color:#f6f6f6;; height:300px;">
+                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:10px;" /></a>
                                 <p> <strong>Program Plan:</strong> &nbsp &nbsp ${founder.getProgramPlan()} </p>
                                 <p> <strong>Weekly Reports:</strong> &nbsp &nbsp ${founder.getWeeklyReports()} </p>
                             </div>

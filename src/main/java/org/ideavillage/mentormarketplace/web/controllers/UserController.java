@@ -84,7 +84,6 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/register";
         }
-        System.out.println("hello");
         MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getUserType());
         MMUser savedUser = mmUserRepository.save(user);
         
@@ -97,10 +96,6 @@ public class UserController {
             founder.setMmuser(savedUser);
             founderRepository.save(founder);
         }
-        //mentor.setMmuser(savedUser);
-        //founder.setMmuser(savedUser);
-        //mentorRepository.save(mentor);
-        //founderRepository.save(founder);
          // TODO: Clean up all of this
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
         ProviderSignInUtils.handlePostSignUp(savedUser.getEmail(), request);
@@ -125,7 +120,7 @@ public class UserController {
         if (utypeparsed.equals("founder")) {
             return "redirect:/user/founder";
         } else {
-            return "user/profile";
+            return "user/mentor";
         }
     }
 
@@ -156,5 +151,58 @@ public class UserController {
         Founder founder = founderRepository.findByLinkedInId(user.getLinkedInId());
         model.addAttribute("founder",founder);
         return "user/founder";
+    }
+    
+    @RequestMapping(value = "/editFounder", method = RequestMethod.GET)
+    public String viewEditFounder(WebRequest request,
+            @ModelAttribute("registrationForm") RegistrationForm registrationForm,
+            Model model,
+            BindingResult result) {
+        if (result.hasErrors()) {
+            return "user/profile";
+        }
+        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == connection) {
+            return "redirect:/entrepreneurs/";
+        }
+        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
+        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
+        MMUser user = mmUserRepository.findByEmail(email);
+        Founder founder = founderRepository.findByLinkedInId(user.getLinkedInId());
+        registrationForm.setFirstName(founder.getFirstName());
+        registrationForm.setLastName(founder.getLastName());
+        registrationForm.setWebsite(founder.getWebsite());
+        registrationForm.setFacebook(founder.getFacebook());
+        registrationForm.setTwitter(founder.getTwitter());
+        registrationForm.setOtherSocialMedia(founder.getOtherSocialMedia());
+        registrationForm.setCompanyDetails(founder.getCompanyDetails());
+        registrationForm.setInspiration(founder.getInspiration());
+        registrationForm.setLogo(founder.getLogo());
+        registrationForm.setTagline(founder.getTagline());
+        registrationForm.setElevatorPitch(founder.getElevatorPitch());
+        registrationForm.setProgramPlan(founder.getProgramPlan());
+        registrationForm.setWeeklyReports(founder.getWeeklyReports());
+        registrationForm.setIndustry(founder.getIndustry());
+        registrationForm.setAreasOfExpertise(founder.getAreasOfExpertise());
+        registrationForm.setImmediateNeeds(founder.getImmediateNeeds());
+        registrationForm.setStatus(founder.getStatus());
+        registrationForm.setVision(founder.getVision());
+        registrationForm.setNewOrleans(founder.getNewOrleans());
+        registrationForm.setUserType(user.getUserType());
+        return "user/editFounder";
+    }
+    
+    @RequestMapping(value = "/mentor", method = RequestMethod.GET)
+    public String viewProfileMentor(WebRequest request, Model model) {
+        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == connection) {
+            return "redirect:/entrepreneurs/";
+        }
+        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
+        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
+        MMUser user = mmUserRepository.findByEmail(email);
+        Mentor mentor = mentorRepository.findByLinkedInId(user.getLinkedInId());
+        model.addAttribute("mentor",mentor);
+        return "user/mentor";
     }
 }
