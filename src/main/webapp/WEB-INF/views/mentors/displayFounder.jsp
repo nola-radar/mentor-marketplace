@@ -33,7 +33,23 @@
                 
                 <div class="col-xs-12 col-sm-6">
                     
-                    <div  style="background-color:#f6f6f6;; height:400px;">
+                    <div  style="background-color:#f6f6f6;; height:500px;">
+                        <spring:bind path="firstName">
+                            <h6>
+                                First Name: &nbsp;
+                                <form:input path="firstName" class="input-large" />
+                                <form:errors path="firstName" cssClass="help-inline" />
+                            </h6>
+                        </spring:bind>
+                        
+                        <spring:bind path="lastName">
+                            <h6>
+                                Last Name: &nbsp;
+                                <form:input path="lastName" class="input-large" />
+                                <form:errors path="lastName" cssClass="help-inline" />
+                            </h6>
+                        </spring:bind>
+                        
                         <spring:bind path="website">
                             <h6>
                                 Website: &nbsp;
@@ -61,7 +77,7 @@
                         <spring:bind path="otherSocialMedia">
                             <h6>
                                 Other Social Media: &nbsp;
-                                <form:textarea path="otherSocialMedia" rows="5" cols="30" />
+                                <form:textarea path="otherSocialMedia" rows="2" cols="30" />
                                 <form:errors path="otherSocialMedia" cssClass="help-inline" />
                             </h6>
                         </spring:bind>
@@ -69,7 +85,7 @@
                         <spring:bind path="companyDetails">
                             <h6>
                                 Company Description: &nbsp;
-                                <form:textarea path="companyDetails" rows="5" cols="30" />
+                                <form:textarea path="companyDetails" rows="2" cols="30" />
                                 <form:errors path="companyDetails" cssClass="help-inline" />
                             </h6>
                         </spring:bind>
@@ -77,7 +93,7 @@
                         <spring:bind path="inspiration">
                             <h6>
                                 Inspiration: &nbsp; 
-                                <form:textarea path="inspiration" rows="5" cols="30" />
+                                <form:textarea path="inspiration" rows="2" cols="30" />
                                 <form:errors path="inspiration" cssClass="help-inline" />
                             </h6>
                         </spring:bind>
@@ -88,7 +104,7 @@
                 
                 <div class="col-xs-12 col-sm-6">
                     
-                    <div style="height:200px;background-color:#f6f6f6;;">
+                    <div style="height:250px;background-color:#f6f6f6;;">
                         <spring:bind path="logo">
                             <h6>
                                 Logo: &nbsp;
@@ -108,13 +124,13 @@
                         <spring:bind path="elevatorPitch">
                                 <h6>
                                     Elevator Pitch: &nbsp; 
-                                    <form:textarea path="elevatorPitch" rows="5" cols="30" />
+                                    <form:textarea path="elevatorPitch" rows="2" cols="30" />
                                     <form:errors path="elevatorPitch" cssClass="help-inline" />
                                 </h6>
                         </spring:bind>
                     </div>
                     
-                    <div style="background-color:#f6f6f6;; height:200px;">
+                    <div style="background-color:#f6f6f6;; height:250px;">
                         <spring:bind path="immediateNeeds">
                                 <h6>
                                     Immediate Needs: &nbsp;
@@ -151,8 +167,13 @@
                         <spring:bind path="userType">
                             <h6>
                                 User Type: &nbsp;
-                                <form:input path="userType" class="input-large" />
-                                <form:errors path="userType" cssClass="help-inline" />
+                                <!--<form:input path="userType" class="input-large" />
+                                <form:errors path="userType" cssClass="help-inline" />-->
+                                <form:select path="userType" class="input-large" >
+                                    <form:option value="founder" label="founder"/>
+                                    <form:option value="mentor" label="mentor"/>
+                                </form:select>
+                                <form:errors path="userType" cssClass="userType" />
                             </h6>
                         </spring:bind>
                     </div>
@@ -169,7 +190,7 @@
                         <spring:bind path="programPlan">
                             <h6>
                                 Program Plan: &nbsp; 
-                                <form:textarea path="programPlan" rows="5" cols="30" />
+                                <form:textarea path="programPlan" rows="2" cols="30" />
                                 <form:errors path="programPlan" cssClass="help-inline" />
                             </h6>
                         </spring:bind>
@@ -177,7 +198,7 @@
                         <spring:bind path="weeklyReports">
                             <h6>
                                 Weekly Reports: &nbsp;
-                                <form:textarea path="weeklyReports" rows="5" cols="30" />
+                                <form:textarea path="weeklyReports" rows="2" cols="30" />
                                 <form:errors path="weeklyReports" cssClass="help-inline" />
                             </h6>
                         </spring:bind>

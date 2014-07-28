@@ -85,7 +85,7 @@ public class UserController {
             return "user/register";
         }
         System.out.println("hello");
-        MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId());
+        MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getUserType());
         MMUser savedUser = mmUserRepository.save(user);
         
         if (registrationForm.getUserType().equals("mentor")) {
@@ -117,7 +117,16 @@ public class UserController {
             return "redirect:/entrepreneurs/";
         }
         model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
-        return "user/profile";
+        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
+        //below is code determining to send user to founder profile or mentor profile jsp
+        MMUser user = mmUserRepository.findByEmail(email);
+        String utype = user.getUserType();
+        String utypeparsed = utype.substring(0, 7);
+        if (utypeparsed.equals("founder")) {
+            return "redirect:/user/founder";
+        } else {
+            return "user/profile";
+        }
     }
 
     @RequestMapping(value = "/profile/{id}", method = RequestMethod.GET)
@@ -133,5 +142,19 @@ public class UserController {
         // TODO: Fix this. Get insufficient permissions when using the id, but I think it works when using the publicUrl
         model.addAttribute("profile", connection.getApi().profileOperations().getProfileFullById(user.getLinkedInId()));
         return "user/profile";
+    }
+    
+    @RequestMapping(value = "/founder", method = RequestMethod.GET)
+    public String viewProfileFounder(WebRequest request, Model model) {
+        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == connection) {
+            return "redirect:/entrepreneurs/";
+        }
+        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
+        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
+        MMUser user = mmUserRepository.findByEmail(email);
+        Founder founder = founderRepository.findByLinkedInId(user.getLinkedInId());
+        model.addAttribute("founder",founder);
+        return "user/founder";
     }
 }

@@ -68,9 +68,10 @@ public class MMUser implements Serializable {
         this.id = id;
     }
 
-    public MMUser(String email, String linkedinid) {
+    public MMUser(String email, String linkedinid, String usertype) {
         this.email = email;
         this.linkedInId = linkedinid;
+        this.userType = usertype;
     }
 
 

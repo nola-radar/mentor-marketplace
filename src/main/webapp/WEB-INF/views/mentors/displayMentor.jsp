@@ -207,8 +207,13 @@
                 <spring:bind path="userType">
                     <h6>
                         User Type: &nbsp;
-                        <form:input path="userType" class="input-large" />
-                        <form:errors path="userType" cssClass="help-inline" />
+                        <!--<form:input path="userType" class="input-large" />
+                        <form:errors path="userType" cssClass="help-inline" />-->
+                        <form:select path="userType" class="input-large" >
+                            <form:option value="founder" label="founder"/>
+                            <form:option value="mentor" label="mentor"/>
+                        </form:select>
+                        <form:errors path="userType" cssClass="userType" />
                     </h6>
                 </spring:bind>
             </div>

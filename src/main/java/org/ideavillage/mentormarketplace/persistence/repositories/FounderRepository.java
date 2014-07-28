@@ -71,5 +71,7 @@ public interface FounderRepository extends PagingAndSortingRepository<Founder, L
     
     Founder findByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
     
+    //Founder findByMmUser(Long mmUser);
+    
     //possibly need to add new fields in database that were added to founder
 }
