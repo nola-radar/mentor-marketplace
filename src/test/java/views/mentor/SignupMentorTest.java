@@ -28,7 +28,7 @@ public class SignupMentorTest {
         System.out.println("Setting up webdriver");
         
         //Path to the Chromedriver executable
-        System.setProperty("webdriver.chrome.driver", "C:/Users/212391758/Desktop/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver.exe");
         String baseUrl = "http://localhost:8080/mentormarketplace/";
         driver = new ChromeDriver();
         driver.get(baseUrl);
@@ -48,7 +48,7 @@ public class SignupMentorTest {
      * 
      * @throws InterruptedException 
      */
-    @Test(groups = {"Founder Signup"})
+    //@Test(groups = {"Founder Signup"})
     public void testSignupFounder() throws InterruptedException {
           String title;
        //Check to see if we are on the index page        
