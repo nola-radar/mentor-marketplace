@@ -80,21 +80,33 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String processForm(WebRequest request,
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
-            @Valid @ModelAttribute("mentor") Mentor mentor,
             BindingResult result) {
         if (result.hasErrors()) {
             return "user/register";
         }
+        System.out.println("hello");
         MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId());
         MMUser savedUser = mmUserRepository.save(user);
-        mentor.setMmuser(savedUser);
-        mentorRepository.save(mentor);
-        // TODO: Clean up all of this
+        
+        if (registrationForm.getUserType().equals("mentor")) {
+            Mentor mentor = registrationForm.getMentor();
+            mentor.setMmuser(savedUser);
+            mentorRepository.save(mentor);
+        } else {
+            Founder founder = registrationForm.getFounder();
+            founder.setMmuser(savedUser);
+            founderRepository.save(founder);
+        }
+        //mentor.setMmuser(savedUser);
+        //founder.setMmuser(savedUser);
+        //mentorRepository.save(mentor);
+        //founderRepository.save(founder);
+         // TODO: Clean up all of this
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
+        ProviderSignInUtils.handlePostSignUp(savedUser.getEmail(), request);
         SocialUserDetails details = socialUserDetailsService.loadUserByUserId(savedUser.getEmail());
         SecurityContextHolder.getContext().setAuthentication(
-                new SocialAuthenticationToken(connection, details, null, details.getAuthorities()));
-        ProviderSignInUtils.handlePostSignUp(savedUser.getEmail(), request);
+        new SocialAuthenticationToken(connection, details, null, details.getAuthorities()));
         return "redirect:/user/profile";
     }
 

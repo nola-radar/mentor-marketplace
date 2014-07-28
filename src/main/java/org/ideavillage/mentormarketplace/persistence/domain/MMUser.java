@@ -56,6 +56,10 @@ public class MMUser implements Serializable {
     @Size(min = 1, max = 255)
     @Column(name = "linkedinid")
     private String linkedInId;
+    
+    @Size(max = 2147483647)
+    @Column(name = "userType")
+    private String userType;
 
     public MMUser() {
     }
@@ -81,6 +85,14 @@ public class MMUser implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     public String getEmail() {

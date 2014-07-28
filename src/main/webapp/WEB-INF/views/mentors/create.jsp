@@ -16,24 +16,27 @@
         <link rel="stylesheet" href="http://localhost:8080/mentormarketplace/resources/css/bootstrap-responsive.css" type="text/css" />
         <link rel="stylesheet" href="/mentormarketplace/resources/css/ivmm.css"  type="text/css"/>
     </head>
-<body>
-   <!--<%@include file="../nav.jsp" %>
-    <br><br><br><br><br><br>-->
-    <form id="userType">
-        <input type="radio" name="user" value="founder">Founder
-        <input type="radio" name="user" value="mentor">Mentor
-        <input type="submit" value="Submit">
-    </form>
-    
-    <% request.setAttribute("user",request.getParameter("user"));%>
-    <c:choose>
-        <c:when test="${user == 'founder'}">
-            <%@include file="displayFounder.jsp" %>
-        </c:when>
-        <c:otherwise>
-            <%@include file="displayMentor.jsp" %>
-        </c:otherwise>
-    </c:choose>
-    
-</body>
+    <body id="createBody">
+        <%@include file="../nav.jsp" %>
+        <div class="container" style="background-color:#f6f6f6;">
+            <center>
+            <form id="userTypeB">
+                <input type="radio" name="user" value="founder">Founder
+                <input type="radio" name="user" value="mentor">Mentor
+                <input type="submit" value="Submit">
+            </form>
+            </center>
+            <br>
+
+            <% request.setAttribute("user",request.getParameter("user"));%>
+            <c:choose>
+                <c:when test="${user == 'founder'}">
+                    <%@include file="displayFounder.jsp" %>
+                </c:when>
+                <c:otherwise>
+                    <%@include file="displayMentor.jsp" %>
+                </c:otherwise>
+            </c:choose>
+        </div>
+    </body>
 </html>
