@@ -1,0 +1,135 @@
+/* Below css for user/founder user/mentor */
+
+#mfMainContainer {
+    background-color:#f6f6f6;
+}
+
+#mfSecondContainer {
+    margin-right:70px;
+    margin-left:70px;
+    background-color:#ffffff;
+}
+
+#mfRowOne {
+    background-color:#203747;
+    height:50px;
+}
+
+#mfImage {
+    bottom:20px;
+    left:40px;
+    position:absolute;
+    height:120px;
+    width:120px;
+}
+
+#mfHOne {
+    bottom:80px;
+    left:170px;
+    position:absolute;
+}
+
+#mfHTwo {
+    bottom:60px;
+    left:170px;
+    position:absolute;
+}
+
+#mfRowThreeDivOne {
+    padding-right:5px;
+}
+
+#mfRowThreeDivTwo {
+    background-color:#f6f6f6;
+    height:500px;
+}
+
+#mfLinkOne {
+    padding:0;
+    height:30px;
+    width:30px;
+    position:absolute;
+    top:0;
+    right:3px;
+}
+
+#mfRowThreeDivThree {
+    padding-left:5px;
+}
+
+#mfRowThreeDivFour {
+    background-color:white;
+    height:250px;
+}
+
+#mfLinkTwo {
+    padding:0;
+    height:30px;
+    width:30px;
+    position:absolute;
+    top:0;
+    right:10px;
+}
+
+#mfRowThreeDivFive {
+    background-color:#f6f6f6;
+    height:250px;
+}
+
+#mfContentBottom  {
+    padding:10px;
+    background-color:#f6f6f6;
+    height:200px;
+}
+
+/* Below is css for editFounder.jsp */
+
+#editMainContainer {
+    background-color:#f6f6f6;
+}
+
+#editSubContainer {
+    margin-right:70px;
+    margin-left:70px;
+    background-color:#ffffff;
+}
+
+#editRowOne {
+    background-color:#203747;
+    height:50px;
+}
+
+#editRowTwoDivOne {
+    padding-right:5px;
+}
+
+#editRowTwoTallDiv {
+    background-color:#f6f6f6;
+    height:500px;
+}
+
+#rowTwoDivTwo {
+    padding-left:5px;
+}
+
+#rowTwoDivTwoChild {
+    background-color:white;
+    height:250px;
+}
+
+#rowTwoDivTwoSecondChild {
+    background-color:#f6f6f6;
+    height:250px;
+}
+
+#rowThreeDivOne {
+    padding:10px;
+    background-color:#f6f6f6;
+    height:300px;
+}
+
+#editUpdateProfileButton {
+    background:#27ae60;
+    border-radius:0%;
+    width:150px;
+}

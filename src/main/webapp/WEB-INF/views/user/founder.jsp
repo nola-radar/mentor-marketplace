@@ -15,23 +15,25 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://localhost:8080/mentormarketplace/resources/css/bootstrap-responsive.css" type="text/css" />
         <link rel="stylesheet" href="/mentormarketplace/resources/css/ivmm.css"  type="text/css"/>
+        <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
+
     </head>
     
     <body id="createBody">
         <%@include file="../nav.jsp" %>
         
-        <div class="container" style="background-color:#f6f6f6;">
+        <div class="container" id="mfMainContainer">
             
             <br><br><br><br><br><br>
-            <div class="container-fluid" style="margin-right:70px;margin-left:70px;background-color:#ffffff;">
+            <div class="container-fluid" id="mfSecondContainer">
 
                     <!-- Top Row -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <div style="background-color:#203747;height:50px;"> 
-                                <img src="${profile.profilePictureUrl}" style="bottom:20px;left:40px;position:absolute;height:120px;width:120px;"></img>
-                                <h4 style="bottom:80px;left:170px;position:absolute;"> ${founder.getFirstName()} ${founder.getLastName()}</h4>
-                                <h5 style="bottom:60px;left:170px;position:absolute;"> ${founder.getIndustry()} </h5>
+                            <div id="mfRowOne"> 
+                                <img src="${profile.profilePictureUrl}" id="mfImage"></img>
+                                <h4 id="mfHOne"> ${founder.getFirstName()} ${founder.getLastName()}</h4>
+                                <h5 id="mfHTwo"> ${founder.getIndustry()} </h5>
                             </div>
                         </div>
                     </div>
@@ -40,10 +42,10 @@
                     <br>
                     <div class="row">
 
-                        <div class="col-xs-12 col-sm-6" style="padding-right:5px;">
+                        <div class="col-xs-12 col-sm-6" id="mfRowThreeDivOne">
 
-                            <div  style="background-color:#f6f6f6;; height:500px;">
-                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:3px;" /></a>
+                            <div id="mfRowThreeDivTwo">
+                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>
                                 <p> <strong>Website:</strong> &nbsp &nbsp ${founder.getWebsite()} </p>
                                 <p> <strong>Facebook:</strong> &nbsp &nbsp ${founder.getFacebook()} </p>
                                 <p> <strong>Twitter:</strong> &nbsp &nbsp ${founder.getTwitter()} </p>
@@ -53,16 +55,16 @@
 
                         </div>
 
-                        <div class="col-xs-12 col-sm-6" style="padding-left:5px;">
+                        <div class="col-xs-12 col-sm-6" id="mfRowThreeDivThree">
 
-                            <div style="background-color:white;height:250px;">
-                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:10px;" /></a>
+                            <div id="mfRowThreeDivFour" >
+                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkTwo" /></a>
                                 <p> <strong>Elevator Pitch:</strong> &nbsp &nbsp ${founder.getElevatorPitch()} </p>
                                 <p> <strong>Immediate Needs:</strong> &nbsp &nbsp ${founder.getImmediateNeeds()} </p>
                                 <p> <strong>Company Details:</strong> &nbsp &nbsp ${founder.getCompanyDetails()} </p>
                             </div>
 
-                            <div style="background-color:#f6f6f6;; height:250px;">
+                            <div id="mfRowThreeDivFive">
                                <p> <strong>Inspiration:</strong> &nbsp &nbsp ${founder.getInspiration()} </p>
                                <p> <strong>Status:</strong> &nbsp &nbsp ${founder.getStatus()} </p>
                                <p> <strong>Vision:</strong> &nbsp &nbsp ${founder.getVision()} </p>
@@ -78,7 +80,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12">
 
-                            <div style="padding:10px;background-color:#f6f6f6;; height:300px;">
+                            <div id="mfContentBottom" >
                                 <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:10px;" /></a>
                                 <p> <strong>Program Plan:</strong> &nbsp &nbsp ${founder.getProgramPlan()} </p>
                                 <p> <strong>Weekly Reports:</strong> &nbsp &nbsp ${founder.getWeeklyReports()} </p>

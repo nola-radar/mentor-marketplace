@@ -9,7 +9,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Founder</title>
+        <title>Edit Mentor</title>
 
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -89,22 +89,6 @@
                                         <form:errors path="otherSocialMedia" cssClass="help-inline" />
                                     </h6>
                                 </spring:bind>
-
-                                <spring:bind path="companyDetails">
-                                    <h6>
-                                        Company Description: &nbsp;
-                                        <form:textarea path="companyDetails" rows="2" cols="30" />
-                                        <form:errors path="companyDetails" cssClass="help-inline" />
-                                    </h6>
-                                </spring:bind>
-
-                                <spring:bind path="inspiration">
-                                    <h6>
-                                        Inspiration: &nbsp; 
-                                        <form:textarea path="inspiration" rows="2" cols="30" />
-                                        <form:errors path="inspiration" cssClass="help-inline" />
-                                    </h6>
-                                </spring:bind>
                             </div>
 
                         </div>
@@ -112,65 +96,34 @@
                         <div class="col-xs-12 col-sm-6" id="rowTwoDivTwo">
 
                             <div id="rowTwoDivTwoChild">
-                                 <spring:bind path="logo">
-                                    <h6>
-                                        Logo: &nbsp;
-                                        <form:input path="logo" class="input-large" />
-                                        <form:errors path="logo" cssClass="help-inline" />
-                                    </h6>
-                                </spring:bind>
 
-                                <spring:bind path="tagline">
-                                    <h6>
-                                        Tagline: &nbsp; 
-                                        <form:input path="tagline" class="input-large" />
-                                        <form:errors path="tagline" cssClass="help-inline"/>
-                                    </h6>
-                                </spring:bind>
-
-                                <spring:bind path="elevatorPitch">
+                                <spring:bind path="background">
                                         <h6>
-                                            Elevator Pitch: &nbsp; 
-                                            <form:textarea path="elevatorPitch" rows="2" cols="30" />
-                                            <form:errors path="elevatorPitch" cssClass="help-inline" />
+                                            Background: &nbsp;
+                                            <form:textarea path="background" rows="2" cols="30" />
+                                            <form:errors path="background" cssClass="help-inline" />
                                         </h6>
                                 </spring:bind>
                             </div>
 
                             <div id="rowTwoDivTwoSecondChild">
-                               <spring:bind path="immediateNeeds">
+                                <spring:bind path="linkedInCurrentCompany">
                                         <h6>
-                                            Immediate Needs: &nbsp;
-                                            <form:textarea path="immediateNeeds" rows="2" cols="30" />
-                                            <form:errors path="immediateNeeds" cssClass="help-inline" />
+                                            Current Company: &nbsp;
+                                            <form:textarea path="linkedInCurrentCompany" rows="2" cols="30" />
+                                            <form:errors path="linkedInCurrentCompany" cssClass="help-inline" />
                                         </h6>
                                 </spring:bind>
-
-                                <spring:bind path="status">
+                                
+                                <spring:bind path="linkedInCurrentJobTitle">
                                         <h6>
-                                            Status: &nbsp;
-                                            <form:textarea path="status" rows="2" cols="30" />
-                                            <form:errors path="status" cssClass="help-inline" />
+                                            Current Job Title: &nbsp;
+                                            <form:textarea path="linkedInCurrentJobTitle" rows="2" cols="30" />
+                                            <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" />
                                         </h6>
                                 </spring:bind>
-
-                                <spring:bind path="vision">
-                                        <h6>
-                                            Vision: &nbsp;
-                                            <form:textarea path="vision" rows="2" cols="30" />
-                                            <form:errors path="vision" cssClass="help-inline" />
-                                        </h6>
-                                </spring:bind>
-
-                                <spring:bind path="newOrleans">
-                                        <h6>
-                                            New Orleans: &nbsp;
-                                            <form:textarea path="newOrleans" rows="2" cols="30" />
-                                            <form:errors path="newOrleans" cssClass="help-inline" />
-                                        </h6>
-                                </spring:bind>
-
-
+                                
+                                
                                 <spring:bind path="userType">
                                     <form:hidden path="userType"></form:hidden>
                                 </spring:bind>
@@ -186,21 +139,6 @@
                         <div class="col-xs-12 col-sm-12">
 
                             <div id="rowThreeDivOne">
-                                <spring:bind path="programPlan">
-                                    <h6>
-                                        Program Plan: &nbsp; 
-                                        <form:textarea path="programPlan" rows="2" cols="30" />
-                                        <form:errors path="programPlan" cssClass="help-inline" />
-                                    </h6>
-                                </spring:bind>
-
-                                <spring:bind path="weeklyReports">
-                                    <h6>
-                                        Weekly Reports: &nbsp;
-                                        <form:textarea path="weeklyReports" rows="2" cols="30" />
-                                        <form:errors path="weeklyReports" cssClass="help-inline" />
-                                    </h6>
-                                </spring:bind>
 
                                 <spring:bind path="industry">
                                     <h6>

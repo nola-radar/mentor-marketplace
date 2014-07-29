@@ -140,6 +140,23 @@ public class RegistrationForm {
         return mentor;
     }
     
+    public Mentor editMentor (Mentor mentor) {
+        mentor.setFirstName(this.firstName);
+        mentor.setLastName(this.lastName);
+        mentor.setIndustry(this.industry);
+        mentor.setAreasOfExpertise(this.areasOfExpertise);
+        mentor.setBackground(this.background);
+        mentor.setLinkedInPictureURL(this.linkedInPictureURL);
+        mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
+        mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
+        mentor.setWebsite(this.website);
+        mentor.setFacebook(this.facebook);
+        mentor.setTwitter(this.twitter);
+        mentor.setOtherSocialMedia(this.otherSocialMedia);
+        mentor.setLinkedInId(this.linkedInId);
+        return mentor;
+    }
+    
     public Founder editFounder (Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);

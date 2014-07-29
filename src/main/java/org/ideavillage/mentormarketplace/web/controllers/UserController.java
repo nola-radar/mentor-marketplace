@@ -122,7 +122,7 @@ public class UserController {
         if (utypeparsed.equals("founder")) {
             return "redirect:/user/founder";
         } else {
-            return "user/mentor";
+            return "redirect:/user/mentor";
         }
     }
 
@@ -226,7 +226,59 @@ public class UserController {
         String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
         MMUser user = mmUserRepository.findByEmail(email);
         Mentor mentor = mentorRepository.findByLinkedInId(user.getLinkedInId());
-        model.addAttribute("mentor",mentor);
+        model.addAttribute("mentor", mentor);
         return "user/mentor";
+    }
+    
+    // page that user is redirected to if they want to edit their profile (founder)
+    @RequestMapping(value = "/editMentor", method = RequestMethod.GET)
+    public String viewEditMentor(WebRequest request,
+            @ModelAttribute("registrationForm") RegistrationForm registrationForm,
+            Model model,
+            BindingResult result) {
+        if (result.hasErrors()) {
+            return "user/profile";
+        }
+        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == connection) {
+            return "redirect:/entrepreneurs/";
+        }
+        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
+        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
+        MMUser user = mmUserRepository.findByEmail(email);
+        Mentor mentor = mentorRepository.findByLinkedInId(user.getLinkedInId());
+        registrationForm.setFirstName(mentor.getFirstName());
+        registrationForm.setLastName(mentor.getLastName());
+        registrationForm.setWebsite(mentor.getWebsite());
+        registrationForm.setFacebook(mentor.getFacebook());
+        registrationForm.setTwitter(mentor.getTwitter());
+        registrationForm.setOtherSocialMedia(mentor.getOtherSocialMedia());
+        registrationForm.setIndustry(mentor.getIndustry());
+        registrationForm.setAreasOfExpertise(mentor.getAreasOfExpertise());
+        registrationForm.setUserType(user.getUserType());
+        registrationForm.setLinkedInId(mentor.getLinkedInId());
+        registrationForm.setEmail(user.getEmail());
+        registrationForm.setLinkedInCurrentCompany(mentor.getLinkedInCurrentCompany());
+        registrationForm.setLinkedInCurrentJobTitle(mentor.getLinkedInCurrentJobTitle());
+        return "user/editMentor";
+    }
+    
+    @RequestMapping(value = "/editMentor", method = RequestMethod.POST)
+    public String processMentorEdit(WebRequest request,
+            Model model,
+            @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
+            BindingResult result) {
+        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == connection) {
+            return "redirect:/entrepreneurs/";
+        }
+        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
+        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
+        MMUser user = mmUserRepository.findByEmail(email);
+        Mentor mentor = mentorRepository.findByLinkedInId(user.getLinkedInId());
+        mmUserRepository.save(user);
+        registrationForm.editMentor(mentor);
+        mentorRepository.save(mentor);
+        return "redirect:/user/profile";
     }
 }
