@@ -60,12 +60,22 @@ public class MMUser implements Serializable {
     @Size(max = 2147483647)
     @Column(name = "userType")
     private String userType;
+    
+    @Column(name = "isAdmin")
+    private boolean isAdmin;
 
     public MMUser() {
     }
 
     public MMUser(Long id) {
         this.id = id;
+    }
+    
+     public MMUser(String email, String linkedinid, String usertype, boolean isadmin) {
+        this.email = email;
+        this.linkedInId = linkedinid;
+        this.userType = usertype;
+        this.isAdmin = false;
     }
 
     public MMUser(String email, String linkedinid, String usertype) {
@@ -110,6 +120,14 @@ public class MMUser implements Serializable {
 
     public void setLinkedInId(String linkedinid) {
         this.linkedInId = linkedinid;
+    }
+    
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isadmin) {
+        this.isAdmin = isadmin;
     }
 
     @Override

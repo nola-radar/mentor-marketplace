@@ -49,6 +49,7 @@
                                 <p> <strong>Website:</strong> &nbsp &nbsp ${mentor.getWebsite()} </p>
                                 <p> <strong>Facebook:</strong> &nbsp &nbsp ${mentor.getFacebook()} </p>
                                 <p> <strong>Twitter:</strong> &nbsp &nbsp ${mentor.getTwitter()} </p>
+                                <p> <strong>Other Social Media:</strong> &nbsp &nbsp ${mentor.getOtherSocialMedia()} </p>
                                 <p> <strong>Areas of Expertise:</strong> &nbsp &nbsp ${mentor.getAreasOfExpertise()} </p>
                             </div>
 

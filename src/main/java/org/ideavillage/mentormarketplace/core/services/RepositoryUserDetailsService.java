@@ -46,7 +46,7 @@ public class RepositoryUserDetailsService implements UserDetailsService {
         ArrayList<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
         
-        if ("ndupuis08@gmail.com".equals(user.getEmail())){
+        if (user.getIsAdmin()) {
             authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         }
 

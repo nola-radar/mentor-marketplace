@@ -121,6 +121,9 @@ public class RegistrationForm {
     @Size(max = 2147483647)
     @Column(name = "userType")
     private String userType;
+    
+    @Column(name = "isAdmin")
+    private boolean isAdmin;
 
     public Mentor getMentor () {
         Mentor mentor = new Mentor();
@@ -432,5 +435,14 @@ public class RegistrationForm {
     public void setWeeklyReports(String weeklyReports) {
         this.weeklyReports = weeklyReports;
     }
+    
+    public void setIsAdmin(boolean isadmin) {
+        this.isAdmin = isadmin;
+    }
+
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+    
     
 }

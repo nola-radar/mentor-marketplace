@@ -84,7 +84,7 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/register";
         }
-        MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getUserType());
+        MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getUserType(), registrationForm.getIsAdmin());
         MMUser savedUser = mmUserRepository.save(user);
         
         //Will save user as founder or mentor depending on user type field
@@ -247,6 +247,7 @@ public class UserController {
         String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
         MMUser user = mmUserRepository.findByEmail(email);
         Mentor mentor = mentorRepository.findByLinkedInId(user.getLinkedInId());
+        registrationForm.setBackground(mentor.getBackground());
         registrationForm.setFirstName(mentor.getFirstName());
         registrationForm.setLastName(mentor.getLastName());
         registrationForm.setWebsite(mentor.getWebsite());

@@ -10,6 +10,7 @@ CREATE TABLE mmuser
   email character varying(255) NOT NULL,
   userType character(255),
   linkedinid character varying(255) NOT NULL,
+  isadmin boolean NOT NULL default false,
   CONSTRAINT user_pkey PRIMARY KEY (id)
 )
 WITH (

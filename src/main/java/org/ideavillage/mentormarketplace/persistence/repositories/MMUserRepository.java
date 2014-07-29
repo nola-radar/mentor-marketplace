@@ -16,4 +16,6 @@ public interface MMUserRepository extends PagingAndSortingRepository<MMUser, Lon
     MMUser findByLinkedInId(String linkedInId);
     
     long countByLinkedInId(String linkedInId);
+    
+    MMUser findByIsAdmin(String isAdmin);
 }

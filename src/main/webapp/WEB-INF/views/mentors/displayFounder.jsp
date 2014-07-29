@@ -272,8 +272,9 @@
                         <spring:bind path="linkedInId">
                             <form:hidden path="linkedInId" />
                         </spring:bind>
-                       
-                                
+                        <spring:bind path="isAdmin">
+                            <form:hidden path="isAdmin" />
+                        </spring:bind>      
                     </div>
                     
                 </div>
