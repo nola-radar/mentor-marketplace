@@ -27,7 +27,7 @@ public class IndexMentorJSPTest {
      * according to where it is on your local machine
      * Author: Marcus Bischof
     */
-    //@Test(groups = { "group 2" })
+    @Test(groups = { "group 2" })
     public void groupTwoTest() throws InterruptedException {
         
         System.out.println("Mentor Create Test Beginnning");
@@ -38,7 +38,13 @@ public class IndexMentorJSPTest {
        
         driver.get("http://localhost:8080/mentormarketplace/");
         
-        if( driver.findElement(By.cssSelector("#indexButton2")).isDisplayed()){
+        if( driver.findElement(By.cssSelector("#indexButton")).isDisplayed()){
+            System.out.println("Mentor Register Visible");
+        }else{
+            System.out.println("Mentor Register Not Visible");
+        }
+        
+        if( driver.findElement(By.cssSelector("#indexButton")).isDisplayed()){
             System.out.println("Mentor Register Visible");
         }else{
             System.out.println("Mentor Register Not Visible");
