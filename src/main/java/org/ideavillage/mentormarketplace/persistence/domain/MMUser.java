@@ -83,6 +83,7 @@ public class MMUser implements Serializable {
         this.email = email;
         this.linkedInId = linkedinid;
         this.userType = usertype;
+        this.isAdmin = false;
     }
 
     public MMUser(String email, String linkedinid, String usertype, boolean isadmin) {
@@ -96,6 +97,7 @@ public class MMUser implements Serializable {
         this.id = id;
         this.email = email;
         this.linkedInId = linkedinid;
+        this.isAdmin = false;
     }
 
     public Long getId() {
