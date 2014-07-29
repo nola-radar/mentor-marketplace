@@ -1,3 +1,5 @@
+package AcceptanceTests;
+
 
 
 import java.io.IOException;

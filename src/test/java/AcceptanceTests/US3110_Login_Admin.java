@@ -47,8 +47,9 @@ public class US3110_Login_Admin {
      */
     @Test(groups = {"Login Admin"})
     public void testLoginAdmin() throws InterruptedException {
-        //Log in to Mentor Marketplace
-        //
+        //Set up Linkedin Credentials
+        //Log into Mentor Marketplace
+        //User should be on admin dashboard.
     }
 
     }
