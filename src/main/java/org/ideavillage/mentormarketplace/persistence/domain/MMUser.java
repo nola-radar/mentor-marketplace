@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "MMUser.findAll", query = "SELECT m FROM MMUser m")})
 public class MMUser implements Serializable {
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser")
     private Collection<Founder> founderCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser", fetch = FetchType.EAGER)
@@ -56,7 +57,7 @@ public class MMUser implements Serializable {
     @Size(min = 1, max = 255)
     @Column(name = "linkedinid")
     private String linkedInId;
-    
+
     @Size(max = 2147483647)
     @Column(name = "userType")
     private String userType;
@@ -84,12 +85,19 @@ public class MMUser implements Serializable {
         this.userType = usertype;
     }
 
+    public MMUser(String email, String linkedinid, String usertype, boolean isadmin) {
+        this.email = email;
+        this.linkedInId = linkedinid;
+        this.userType = usertype;
+        this.isAdmin = false;
+    }
 
     public MMUser(Long id, String email, String linkedinid) {
         this.id = id;
         this.email = email;
         this.linkedInId = linkedinid;
     }
+
     public Long getId() {
         return id;
     }
@@ -97,7 +105,7 @@ public class MMUser implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public String getUserType() {
         return userType;
     }
@@ -121,7 +129,7 @@ public class MMUser implements Serializable {
     public void setLinkedInId(String linkedinid) {
         this.linkedInId = linkedinid;
     }
-    
+
     public boolean getIsAdmin() {
         return isAdmin;
     }
@@ -163,7 +171,7 @@ public class MMUser implements Serializable {
     public void setMentorCollection(Collection<Mentor> mentorCollection) {
         this.mentorCollection = mentorCollection;
     }
-    
+
     @XmlTransient
     public Collection<Founder> getFounderCollection() {
         return founderCollection;
@@ -172,6 +180,5 @@ public class MMUser implements Serializable {
     public void setFounderCollection(Collection<Founder> founderCollection) {
         this.founderCollection = founderCollection;
     }
-
 
 }

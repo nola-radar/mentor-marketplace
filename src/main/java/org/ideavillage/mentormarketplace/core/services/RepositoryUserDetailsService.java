@@ -30,7 +30,8 @@ public class RepositoryUserDetailsService implements UserDetailsService {
      *
      * @param username The username of the requested user.
      * @return The information of the user.
-     * @throws UsernameNotFoundException Thrown if no user is found with the given username.
+     * @throws UsernameNotFoundException Thrown if no user is found with the
+     * given username.
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -36,13 +36,13 @@ public class UserController {
 
     @Autowired
     private MMUserRepository mmUserRepository;
-    
+
     @Autowired
     private MentorRepository mentorRepository;
-    
+
     @Autowired
     private FounderRepository founderRepository;
-    
+
     @Autowired
     private ConnectionRepository connectionRepository;
 
@@ -53,12 +53,13 @@ public class UserController {
     public String signupForm(WebRequest request,
             @ModelAttribute("registrationForm") RegistrationForm registrationForm,
             @ModelAttribute("mentor") Mentor mentor,
-            @ModelAttribute("founder") Founder founder ) {
+            @ModelAttribute("founder") Founder founder) {
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
         if (connection != null) {
-            LinkedIn api = (LinkedIn)connection.getApi();
+            LinkedIn api = (LinkedIn) connection.getApi();
             registrationForm.setEmail(connection.fetchUserProfile().getEmail());
             registrationForm.setLinkedInId(connection.createData().getProviderUserId());
+            registrationForm.setIsAdmin(false);
             mentor.setFirstName(connection.fetchUserProfile().getFirstName());
             mentor.setLastName(connection.fetchUserProfile().getLastName());
             mentor.setIndustry(api.profileOperations().getUserProfileFull().getIndustry());
@@ -66,7 +67,7 @@ public class UserController {
             mentor.setLinkedInCurrentCompany(api.profileOperations().getUserProfileFull().getThreeCurrentPositions().get(0).getCompany().getName());
             mentor.setLinkedInCurrentJobTitle(api.profileOperations().getUserProfileFull().getThreeCurrentPositions().get(0).getTitle());
             mentor.setBackground(api.profileOperations().getUserProfileFull().getSummary());
-            
+
             founder.setFirstName(connection.fetchUserProfile().getFirstName());
             founder.setLastName(connection.fetchUserProfile().getLastName());
             founder.setIndustry(api.profileOperations().getUserProfileFull().getIndustry());
@@ -97,12 +98,12 @@ public class UserController {
             founder.setMmuser(savedUser);
             founderRepository.save(founder);
         }
-         // TODO: Clean up all of this
+        // TODO: Clean up all of this
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
         ProviderSignInUtils.handlePostSignUp(savedUser.getEmail(), request);
         SocialUserDetails details = socialUserDetailsService.loadUserByUserId(savedUser.getEmail());
         SecurityContextHolder.getContext().setAuthentication(
-        new SocialAuthenticationToken(connection, details, null, details.getAuthorities()));
+                new SocialAuthenticationToken(connection, details, null, details.getAuthorities()));
         return "redirect:/user/profile";
     }
 
@@ -140,7 +141,7 @@ public class UserController {
         model.addAttribute("profile", connection.getApi().profileOperations().getProfileFullById(user.getLinkedInId()));
         return "user/profile";
     }
-    
+
     @RequestMapping(value = "/founder", method = RequestMethod.GET)
     public String viewProfileFounder(WebRequest request, Model model) {
         Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
@@ -151,7 +152,7 @@ public class UserController {
         String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
         MMUser user = mmUserRepository.findByEmail(email);
         Founder founder = founderRepository.findByLinkedInId(user.getLinkedInId());
-        model.addAttribute("founder",founder);
+        model.addAttribute("founder", founder);
         return "user/founder";
     }
     

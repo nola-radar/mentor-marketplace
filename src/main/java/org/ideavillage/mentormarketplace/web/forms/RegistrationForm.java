@@ -25,99 +25,99 @@ public class RegistrationForm {
     @NotEmpty
     @Size(min = 1, max = 255)
     private String linkedInId;
-    
+
     @Size(max = 2147483647)
     @Column(name = "firstname")
     private String firstName;
-    
+
     @Size(max = 2147483647)
     @Column(name = "lastname")
     private String lastName;
-    
+
     @Size(max = 2147483647)
     @Column(name = "industry")
     private String industry;
-    
+
     @Size(max = 2147483647)
     @Column(name = "areasofexpertise")
     private String areasOfExpertise;
-    
+
     @Size(max = 2147483647)
     @Column(name = "background")
     private String background;
-    
+
     @Size(max = 2147483647)
     @Column(name = "website")
     private String website;
-    
+
     @Size(max = 2147483647)
     @Column(name = "facebook")
     private String facebook;
-    
+
     @Size(max = 2147483647)
     @Column(name = "twitter")
     private String twitter;
-    
+
     @Size(max = 2147483647)
     @Column(name = "othersocialmedia")
     private String otherSocialMedia;
-     
+
     @Size(max = 2147483647)
     @Column(name = "linkedinpictureurl")
     private String linkedInPictureURL;
-    
+
     @Size(max = 2147483647)
     @Column(name = "linkedincurrentcompany")
     private String linkedInCurrentCompany;
-    
+
     @Size(max = 2147483647)
     @Column(name = "linkedincurrentjobtitle")
     private String linkedInCurrentJobTitle;
-    
+
     @Size(max = 2147483647)
     @Column(name = "logo")
     private String logo;
-    
+
     @Size(max = 2147483647)
     @Column(name = "tagline")
     private String tagline;
-    
+
     @Size(max = 2147483647)
     @Column(name = "elevatorPitch")
     private String elevatorPitch;
-    
+
     @Size(max = 2147483647)
     @Column(name = "immediateNeeds")
     private String immediateNeeds;
-    
+
     @Size(max = 2147483647)
     @Column(name = "companyDetails")
     private String companyDetails;
-    
+
     @Size(max = 2147483647)
     @Column(name = "inspiration")
     private String inspiration;
-    
+
     @Size(max = 2147483647)
     @Column(name = "status")
     private String status;
-    
+
     @Size(max = 2147483647)
     @Column(name = "vision")
     private String vision;
-    
+
     @Size(max = 2147483647)
     @Column(name = "newOrleans")
     private String newOrleans;
-    
+
     @Size(max = 2147483647)
     @Column(name = "programPlan")
     private String programPlan;
-    
+
     @Size(max = 2147483647)
     @Column(name = "weeklyReports")
     private String weeklyReports;
-    
+
     @Size(max = 2147483647)
     @Column(name = "userType")
     private String userType;
@@ -125,7 +125,10 @@ public class RegistrationForm {
     @Column(name = "isAdmin")
     private boolean isAdmin;
 
-    public Mentor getMentor () {
+    @Column(name = "isAdmin")
+    private boolean isAdmin;
+
+    public Mentor getMentor() {
         Mentor mentor = new Mentor();
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
@@ -187,8 +190,8 @@ public class RegistrationForm {
         founder.setLinkedInId(this.linkedInId);
         return founder;
     }
-    
-    public Founder getFounder () {
+
+    public Founder getFounder() {
         Founder founder = new Founder();
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
@@ -216,7 +219,7 @@ public class RegistrationForm {
         founder.setLinkedInId(this.linkedInId);
         return founder;
     }
-    
+
     /**
      * @return the email
      */
@@ -230,15 +233,15 @@ public class RegistrationForm {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     public String getUserType() {
         return userType;
     }
-    
+
     public void setUserType(String userType) {
         this.userType = userType;
     }
- 
+
     /**
      * @return the linkedInId
      */
@@ -252,19 +255,19 @@ public class RegistrationForm {
     public void setLinkedInId(String linkedInId) {
         this.linkedInId = linkedInId;
     }
-    
+
     public String getFirstName() {
         return firstName;
     }
-    
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    
+
     public String getLastName() {
         return lastName;
     }
-    
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -276,7 +279,7 @@ public class RegistrationForm {
     public void setIndustry(String industry) {
         this.industry = industry;
     }
-    
+
     public String getAreasOfExpertise() {
         return areasOfExpertise;
     }
@@ -284,7 +287,7 @@ public class RegistrationForm {
     public void setAreasOfExpertise(String areasOfExpertise) {
         this.areasOfExpertise = areasOfExpertise;
     }
-    
+
     public String getBackground() {
         return background;
     }
@@ -292,7 +295,7 @@ public class RegistrationForm {
     public void setBackground(String background) {
         this.background = background;
     }
-    
+
     public String getWebsite() {
         return website;
     }
@@ -300,7 +303,7 @@ public class RegistrationForm {
     public void setWebsite(String website) {
         this.website = website;
     }
-    
+
     public String getFacebook() {
         return facebook;
     }
@@ -308,7 +311,7 @@ public class RegistrationForm {
     public void setFacebook(String facebook) {
         this.facebook = facebook;
     }
-    
+
     public String getTwitter() {
         return twitter;
     }
@@ -316,7 +319,7 @@ public class RegistrationForm {
     public void setTwitter(String twitter) {
         this.twitter = twitter;
     }
-    
+
     public String getOtherSocialMedia() {
         return otherSocialMedia;
     }
@@ -324,7 +327,7 @@ public class RegistrationForm {
     public void setOtherSocialMedia(String otherSocialMedia) {
         this.otherSocialMedia = otherSocialMedia;
     }
-    
+
     public String getLinkedInPictureURL() {
         return linkedInPictureURL;
     }
@@ -332,7 +335,7 @@ public class RegistrationForm {
     public void setLinkedInPictureURL(String linkedInPictureURL) {
         this.linkedInPictureURL = linkedInPictureURL;
     }
-    
+
     public String getLinkedInCurrentCompany() {
         return linkedInCurrentCompany;
     }
@@ -340,7 +343,7 @@ public class RegistrationForm {
     public void setLinkedInCurrentCompany(String linkedInCurrentCompany) {
         this.linkedInCurrentCompany = linkedInCurrentCompany;
     }
-    
+
     public String getLinkedInCurrentJobTitle() {
         return linkedInCurrentJobTitle;
     }
@@ -348,7 +351,7 @@ public class RegistrationForm {
     public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
         this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
     }
-    
+
     public String getLogo() {
         return logo;
     }
@@ -356,7 +359,7 @@ public class RegistrationForm {
     public void setLogo(String logo) {
         this.logo = logo;
     }
-    
+
     public String getTagline() {
         return tagline;
     }
@@ -364,7 +367,7 @@ public class RegistrationForm {
     public void setTagline(String tagline) {
         this.tagline = tagline;
     }
-    
+
     public String getElevatorPitch() {
         return elevatorPitch;
     }
@@ -372,7 +375,7 @@ public class RegistrationForm {
     public void setElevatorPitch(String elevatorPitch) {
         this.elevatorPitch = elevatorPitch;
     }
-    
+
     public String getImmediateNeeds() {
         return immediateNeeds;
     }
@@ -380,7 +383,7 @@ public class RegistrationForm {
     public void setImmediateNeeds(String immediateNeeds) {
         this.immediateNeeds = immediateNeeds;
     }
-    
+
     public String getCompanyDetails() {
         return companyDetails;
     }
@@ -388,7 +391,7 @@ public class RegistrationForm {
     public void setCompanyDetails(String companyDetails) {
         this.companyDetails = companyDetails;
     }
-    
+
     public String getInspiration() {
         return inspiration;
     }
@@ -396,7 +399,7 @@ public class RegistrationForm {
     public void setInspiration(String inspiration) {
         this.inspiration = inspiration;
     }
-    
+
     public String getStatus() {
         return status;
     }
@@ -404,6 +407,7 @@ public class RegistrationForm {
     public void setStatus(String status) {
         this.status = status;
     }
+
     public String getVision() {
         return vision;
     }
@@ -411,7 +415,7 @@ public class RegistrationForm {
     public void setVision(String vision) {
         this.vision = vision;
     }
-    
+
     public String getNewOrleans() {
         return newOrleans;
     }
@@ -419,7 +423,7 @@ public class RegistrationForm {
     public void setNewOrleans(String newOrleans) {
         this.newOrleans = newOrleans;
     }
-    
+
     public String getProgramPlan() {
         return programPlan;
     }
@@ -427,7 +431,7 @@ public class RegistrationForm {
     public void setProgramPlan(String programPlan) {
         this.programPlan = programPlan;
     }
-    
+
     public String getWeeklyReports() {
         return weeklyReports;
     }
@@ -443,6 +447,5 @@ public class RegistrationForm {
     public boolean getIsAdmin() {
         return isAdmin;
     }
-    
-    
+
 }

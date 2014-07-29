@@ -1,14 +1,15 @@
 -- I would recommend using pgAdmin to create the tables,
 -- then copy the sql from the 'SQL Pane' to here
 -- so we have scripts that we can run on the servers.
-
 -- Table: mmuser
+
+-- DROP TABLE mmuser;
 
 CREATE TABLE mmuser
 (
   id serial NOT NULL,
   email character varying(255) NOT NULL,
-  userType character(255),
+  usertype character(255),
   linkedinid character varying(255) NOT NULL,
   isadmin boolean NOT NULL default false,
   CONSTRAINT user_pkey PRIMARY KEY (id)
@@ -18,6 +19,7 @@ WITH (
 );
 ALTER TABLE mmuser
   OWNER TO ideavillage;
+
 
 -- Table: mentor
 

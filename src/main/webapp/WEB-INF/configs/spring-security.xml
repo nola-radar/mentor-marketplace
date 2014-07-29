@@ -30,9 +30,6 @@
         <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
         <!--<security:intercept-url pattern="/**" access="permitAll"/>-->
         
-        <!-- Protect the admin page for admin users only -->
-        <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
-
         <!-- Adds social authentication filter to the Spring Security filter chain. -->
         <security:custom-filter ref="socialAuthenticationFilter" before="PRE_AUTH_FILTER" />
     </security:http>
@@ -42,7 +39,7 @@
         requests.
     -->
     <security:authentication-manager alias="authenticationManager">
-<!--        <security:authentication-provider user-service-ref="userDetailsService">
+        <!--        <security:authentication-provider user-service-ref="userDetailsService">
             <security:password-encoder ref="passwordEncoder"/>
         </security:authentication-provider>-->
 

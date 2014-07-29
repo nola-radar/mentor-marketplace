@@ -20,15 +20,15 @@
         <%@include file="../nav.jsp" %>
         <div class="container" style="background-color:#f6f6f6;">
             <center>
-            <form id="userTypeB">
-                <input type="radio" name="user" value="founder">Founder
-                <input type="radio" name="user" value="mentor">Mentor
-                <input type="submit" value="Submit">
-            </form>
+                <form id="userTypeB">
+                    <input type="radio" name="user" value="founder">Founder
+                    <input type="radio" name="user" value="mentor">Mentor
+                    <input type="submit" value="Submit">
+                </form>
             </center>
             <br>
 
-            <% request.setAttribute("user",request.getParameter("user"));%>
+            <% request.setAttribute("user", request.getParameter("user"));%>
             <c:choose>
                 <c:when test="${user == 'founder'}">
                     <%@include file="displayFounder.jsp" %>
