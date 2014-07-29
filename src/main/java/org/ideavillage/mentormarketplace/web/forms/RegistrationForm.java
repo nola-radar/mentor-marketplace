@@ -140,6 +140,34 @@ public class RegistrationForm {
         return mentor;
     }
     
+    public Founder editFounder (Founder founder) {
+        founder.setFirstName(this.firstName);
+        founder.setLastName(this.lastName);
+        founder.setIndustry(this.industry);
+        founder.setAreasOfExpertise(this.areasOfExpertise);
+        founder.setBackground(this.background);
+        founder.setLinkedInPictureURL(this.linkedInPictureURL);
+        founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
+        founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
+        founder.setWebsite(this.website);
+        founder.setFacebook(this.facebook);
+        founder.setTwitter(this.twitter);
+        founder.setOtherSocialMedia(this.otherSocialMedia);
+        founder.setLogo(this.logo);
+        founder.setTagline(this.tagline);
+        founder.setElevatorPitch(this.elevatorPitch);
+        founder.setImmediateNeeds(this.immediateNeeds);
+        founder.setCompanyDetails(this.companyDetails);
+        founder.setInspiration(this.inspiration);
+        founder.setStatus(this.status);
+        founder.setVision(this.vision);
+        founder.setNewOrleans(this.newOrleans);
+        founder.setProgramPlan(this.programPlan);
+        founder.setWeeklyReports(this.weeklyReports);
+        founder.setLinkedInId(this.linkedInId);
+        return founder;
+    }
+    
     public Founder getFounder () {
         Founder founder = new Founder();
         founder.setFirstName(this.firstName);

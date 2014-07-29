@@ -274,6 +274,9 @@
 
                         </div>
                     </div>
+                    <button class="btn btn-info" type="submit" style="background:#27ae60;border-radius:0%;width:150px;">
+                        Update Profile
+                    </button>
             </div>
             </form:form>
                 <!-- BOOTSTRAP! -->

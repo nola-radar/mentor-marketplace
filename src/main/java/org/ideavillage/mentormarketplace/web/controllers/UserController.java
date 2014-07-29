@@ -87,6 +87,7 @@ public class UserController {
         MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getUserType());
         MMUser savedUser = mmUserRepository.save(user);
         
+        //Will save user as founder or mentor depending on user type field
         if (registrationForm.getUserType().equals("mentor")) {
             Mentor mentor = registrationForm.getMentor();
             mentor.setMmuser(savedUser);
@@ -117,6 +118,7 @@ public class UserController {
         MMUser user = mmUserRepository.findByEmail(email);
         String utype = user.getUserType();
         String utypeparsed = utype.substring(0, 7);
+        // redirect to founder.jsp if user type is founder
         if (utypeparsed.equals("founder")) {
             return "redirect:/user/founder";
         } else {
@@ -153,6 +155,7 @@ public class UserController {
         return "user/founder";
     }
     
+    // page that user is redirected to if they want to edit their profile (founder)
     @RequestMapping(value = "/editFounder", method = RequestMethod.GET)
     public String viewEditFounder(WebRequest request,
             @ModelAttribute("registrationForm") RegistrationForm registrationForm,
@@ -189,7 +192,28 @@ public class UserController {
         registrationForm.setVision(founder.getVision());
         registrationForm.setNewOrleans(founder.getNewOrleans());
         registrationForm.setUserType(user.getUserType());
+        registrationForm.setLinkedInId(founder.getLinkedInId());
+        registrationForm.setEmail(user.getEmail());
         return "user/editFounder";
+    }
+  
+    @RequestMapping(value = "/editFounder", method = RequestMethod.POST)
+    public String processFounderEdit(WebRequest request,
+            Model model,
+            @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
+            BindingResult result) {
+        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == connection) {
+            return "redirect:/entrepreneurs/";
+        }
+        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
+        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
+        MMUser user = mmUserRepository.findByEmail(email);
+        Founder founder = founderRepository.findByLinkedInId(user.getLinkedInId());
+        mmUserRepository.save(user);
+        registrationForm.editFounder(founder);
+        founderRepository.save(founder);
+        return "redirect:/user/profile";
     }
     
     @RequestMapping(value = "/mentor", method = RequestMethod.GET)
