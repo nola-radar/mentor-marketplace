@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 
 public class FounderProfileTest {
     
-    @Test
+    //@Test
     public void groupOneTest() {
     System.out.println("Founder Profile Test Beginning");
         
@@ -84,7 +84,7 @@ public class FounderProfileTest {
         System.out.println("LInkedin Image is not Displayed");
     }
     
-    driver.findElement(By.cssSelector("#mfLinkOne")).click();
+    driver.get("http://localhost:8080/mentormarketplace/user/editFounder");
     System.out.println("Now on the edit page");
     
     driver.findElement(By.cssSelector("#otherSocialMedia")).sendKeys("testing other social media as example");
