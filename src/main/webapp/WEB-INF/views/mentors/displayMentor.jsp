@@ -1,11 +1,11 @@
 <form:form modelAttribute="registrationForm">
-    <div class="container-fluid" style="margin-right:70px;margin-left:70px;padding-right:2px;padding-left:7px;background-color:#ffffff;">
+    <div class="container-fluid" id="displayMentorMainContainer">
 
         <!-- Top Row -->
         <div class="row">
 
             <div class="col-sm-12">
-                <div style="background-color:#203747;"> Test Row 1</div>
+                <div id="displayMentorRowOne"> Test Row 1</div>
             </div>
 
         </div>
@@ -14,15 +14,15 @@
         <div class="row">
 
             <div class="col-sm-4 col-xs-4">
-                <div style="background-color:#f6f6f6;"> <font color="white"> Test Row 2 - Col 1  </font></div>
+                <div id="displayMentorRowTwoDivOne"> <font color="white"> Test Row 2 - Col 1  </font></div>
             </div>
 
             <div class="col-sm-4 col-xs-4">
-                <div style="background-color:#f6f6f6;"> <font color="white"> Test Row 2 - Col 2  </font></div>
+                <div id="displayMentorRowTwoDivTwo"> <font color="white"> Test Row 2 - Col 2  </font></div>
             </div>
 
             <div class="col-sm-4 col-xs-4">
-                <div style="background-color:#f6f6f6;"> <font color="white"> Test Row 2 - Col 3 </font></div>
+                <div id="displayMentorRowTwoDivThree"> <font color="white"> Test Row 2 - Col 3 </font></div>
             </div>
 
         </div>
@@ -33,95 +33,120 @@
 
             <div class="col-xs-12 col-sm-6">
 
-                <div  style="background-color:#f6f6f6; height:400px;">
-
+                <div Id="displayMentorFirstNameDiv">
+                    <table>
                     <spring:bind path="firstName">
                         <h6>
-                            First Name: &nbsp
-                            <form:input path="firstName" class="input-large" />
-                            <form:errors path="firstName" cssClass="help-inline" />
+                            <tr>
+                                <td>First Name:</td>
+                                <td><form:input path="firstName" class="input-large" />
+                                <form:errors path="firstName" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="lastName">
                         <h6>
-                            Last Name: &nbsp;
-                            <form:input path="lastName" class="input-large" />
-                            <form:errors path="lastName" cssClass="help-inline" />
+                            <tr>
+                                <td>Last Name:</td>
+                                <td><form:input path="lastName" class="input-large" />
+                                <form:errors path="lastName" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="website">
                         <h6>
-                            Website: &nbsp;
-                            <form:input path="website" class="input-large" />
-                            <form:errors path="website" cssClass="help-inline" />
+                            <tr>
+                                <td>Website:</td>
+                                <td><form:input path="website" class="input-large" />
+                                <form:errors path="website" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="facebook">
                         <h6>
-                            Facebook: &nbsp;
-                            <form:input path="facebook" class="input-large" />
-                            <form:errors path="facebook" cssClass="help-inline" />
+                            <tr>
+                                <td>Facebook:</td>
+                                <td><form:input path="facebook" class="input-large" />
+                                <form:errors path="facebook" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="twitter">
                         <h6>
-                            Twitter: &nbsp;
-                            <form:input path="twitter" class="input-large" />
-                            <form:errors path="twitter" cssClass="help-inline" />
+                            <tr>
+                                <td>Twitter:</td>
+                                <td><form:input path="twitter" class="input-large" />
+                                <form:errors path="twitter" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="otherSocialMedia">
                         <h6>
-                            Other Social Media: &nbsp;
-                            <form:textarea path="otherSocialMedia" rows="5" cols="30" />
-                            <form:errors path="otherSocialMedia" cssClass="help-inline" />
+                            <tr>
+                                <td>Other Social Media:</td>
+                                <td><form:textarea path="otherSocialMedia" rows="5" cols="30" />
+                                <form:errors path="otherSocialMedia" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
+                    </table>
                 </div>
 
             </div>
 
             <div class="col-xs-12 col-sm-6">
 
-                <div style="height:200px;background-color:#f6f6f6;;">
+                <div id="displayMentorCompanyDiv">
+                    <table>
                     <spring:bind path="linkedInCurrentCompany">
                         <h6>
-                            Current Company: &nbsp;
-                            <form:input path="linkedInCurrentCompany" class="input-large" />
-                            <form:errors path="linkedInCurrentCompany" cssClass="help-inline" />
+                            <tr>
+                                <td>Current Company:</td>
+                                <td><form:input path="linkedInCurrentCompany" class="input-large" />
+                                <form:errors path="linkedInCurrentCompany" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="linkedInCurrentJobTitle">
                         <h6>
-                            Current Job Title: &nbsp
-                            <form:input path="linkedInCurrentJobTitle" class="input-large" />
-                            <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" />
+                            <tr>
+                                <td>Current Job Title:</td>
+                                <td><form:input path="linkedInCurrentJobTitle" class="input-large" />
+                                <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="linkedInPictureURL">
                         <h6>
-                            LinkedIn Picture: &nbsp; 
-                            <form:input path="linkedInPictureURL" class="input-large"/>
-                            <form:errors path="linkedInPictureURL" cssClass="help-inline" />
+                            <tr>
+                                <td>LinkedIn Picture:</td> 
+                                <td><form:input path="linkedInPictureURL" class="input-large"/>
+                                <form:errors path="linkedInPictureURL" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
+                    </table>
                 </div>
 
                 <div style="background-color:#f6f6f6;; height:200px;">
+                    <table>
                     <spring:bind path="background">
                         <h6>
-                            Background: &nbsp;
-                            <form:textarea path="background" rows="10" cols="30" />
-                            <form:errors path="linkedInPictureURL" cssClass="help-inline" />
+                            <tr>
+                                <td>Background:</td>
+                                <td><form:textarea path="background" rows="10" cols="30" />
+                                <form:errors path="linkedInPictureURL" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
+                    </table>
                 </div>
 
             </div>
@@ -132,13 +157,14 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12">
 
-                <div style="padding:10px;background-color:#f6f6f6;; height:300px;">
-
+                <div id="displayMentorIndustryDiv">
+                    <table>
                     <spring:bind path="industry">
                         <h6>
-                            Industry: &nbsp; 
+                            <tr>
+                                <td>Industry:</td> 
 
-                            <form:select path="industry" class="input-large" >
+                                <td><form:select path="industry" class="input-large" >
                                 <form:option value="Accounting" label="Accounting"/>
                                 <form:option value="Advertising/Publication" label="Advertising/Publication"/>
                                 <form:option value="Agriculture" label="Agriculture"/>
@@ -177,65 +203,58 @@
                                 <form:option value="Venture Capital or Private Equity" label="Venture Capital or Private Equity"/>
                                 <form:option value="Other" label="Other"/>
                             </form:select>
-                            <form:errors path="industry" cssClass="help-inline" />
+                            <form:errors path="industry" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="areasOfExpertise">
                         <h6>
-                            Expertise: &nbsp;
-                            <form:input path="areasOfExpertise" class="input-large" />
-                            <form:errors path="areasOfExpertise" cssClass="help-inline" />
+                            <tr>
+                                <td>Expertise:</td>
+                                <td><form:input path="areasOfExpertise" class="input-large" />
+                                <form:errors path="areasOfExpertise" cssClass="help-inline" /></td>
+                            </tr>
                         </h6>
                     </spring:bind>
 
                     <spring:bind path="email">
                         <div class="control-group ${status.error ? 'error' : ''}">
-                            <form:label path="email" class="control-label">
-                                Email
-                            </form:label>
-                            <div class="controls">
-                                <form:input path="email" class="input-large" />
-                                <form:errors path="email" cssClass="help-inline" />
-                            </div>
+                            <form:hidden path="email" />
                         </div>
-                    </div>
-                </spring:bind>
-                <spring:bind path="linkedInId">
-                    <form:hidden path="linkedInId" />
-                </spring:bind>
-                <spring:bind path="isAdmin">
-                    <form:hidden path="isAdmin" />
-                </spring:bind>
+                    </spring:bind>
+                            
+                    <spring:bind path="linkedInId">
+                        <form:hidden path="linkedInId" />
+                    </spring:bind>
+                            
+                    <spring:bind path="isAdmin">
+                        <form:hidden path="isAdmin" />
+                    </spring:bind>
                         
-                <spring:bind path="userType">
-                    <h6>
-                        User Type: &nbsp;
-                        <!--<form:input path="userType" class="input-large" />
-                        <form:errors path="userType" cssClass="help-inline" />-->
-                        <form:select path="userType" class="input-large" >
-                            <form:option value="founder" label="founder"/>
-                            <form:option value="mentor" label="mentor"/>
-                        </form:select>
-                        <form:errors path="userType" cssClass="userType" />
-                    </h6>
-                </spring:bind>
+                    <spring:bind path="userType">
+                        <h6>
+                            <tr>
+                                <td>User Type:</td>
+                                <td><form:select path="userType" class="input-large" >
+                                <form:option value="founder" label="founder"/>
+                                <form:option value="mentor" label="mentor"/>
+                            </form:select>
+                            <form:errors path="userType" cssClass="userType" /></td>
+                            </tr>
+                        </h6>
+                    </spring:bind>
+                </table>
             </div>
 
             </div>
         </div>
-        <button class="btn btn-info" type="submit" style="background:#27ae60;border-radius:0%;width:150px;">
+        <button class="btn btn-info" type="submit" id="displayMentorCreateProfileButton">
             Create Profile
         </button>
     </div>
 
 </form:form>
-
-<!--<script type="text/javascript">
-    function loadData() {
-        document.getElementById("userType").value = document.getElementById("userTypeB").value();
-    }
-</script>-->
 
 <!-- BOOTSTRAP! -->
 <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>

@@ -9,16 +9,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mentor Register</title>
+        <title>User Register</title>
 
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://localhost:8080/mentormarketplace/resources/css/bootstrap-responsive.css" type="text/css" />
         <link rel="stylesheet" href="/mentormarketplace/resources/css/ivmm.css"  type="text/css"/>
+        <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
     </head>
     <body id="createBody">
         <%@include file="../nav.jsp" %>
-        <div class="container" style="background-color:#f6f6f6;">
+        <div class="container" id="registerMainContainer">
             <center>
                 <form id="userTypeB">
                     <input type="radio" name="user" value="founder">Founder

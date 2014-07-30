@@ -1,3 +1,111 @@
+/* Below css for displayMentor.jsp, keeping separate from display mentor because size of divs is a factor */
+
+#displayMentorMainContainer {
+    margin-right:70px;
+    margin-left:70px;
+    padding-right:2px;
+    padding-left:7px;
+    background-color:#ffffff;
+}
+
+#displayMentorRowOne {
+    background-color:#203747;
+}
+
+#displayMentorRowTwoDivOne {
+    background-color:#f6f6f6;
+}
+
+#displayMentorRowTwoDivTwo {
+    background-color:#f6f6f6;
+}
+
+#displayMentorRowTwoDivThree {
+    background-color:#f6f6f6;
+}
+
+#displayMentorFirstNameDiv {
+    background-color:#f6f6f6; 
+    height:400px;
+}
+
+#displayMentorCompanyDiv {
+    height:200px;
+    background-color:#f6f6f6;
+}
+
+#displayMentorIndustryDiv {
+    padding:10px;
+    background-color:#f6f6f6;
+    height:300px;
+}
+
+#displayMentorCreateProfileButton {
+    background:#27ae60;
+    border-radius:0%;
+    width:150px;
+}
+
+/* Below css for displayFounder.jsp, keeping separate from display mentor because size of divs is a factor */
+
+#displayFounderMainContainer {
+    margin-right:70px;
+    margin-left:70px;
+    padding-right:2px;
+    padding-left:7px;
+    background-color:#ffffff;
+}
+
+#displayFounderFirstRow {
+    background-color:#203747;
+}
+
+#displayFounderRowTwoDivOne {
+    background-color:#f6f6f6;
+}
+
+#displayFounderRowTwoDivTwo {
+    background-color:#f6f6f6;
+}
+
+#displayFounderRowTwoDivThree {
+    background-color:#f6f6f6;
+}
+
+#displayFounderRowThreeDivOne {
+    background-color:#f6f6f6;
+    height:500px;
+}
+
+#displayFounderLogoDiv {
+    height:250px;
+    background-color:#f6f6f6;
+}
+
+#displayFounderStatusDiv {
+    background-color:#f6f6f6;
+    height:250px;
+}
+
+#displayFounderProgramPlanDiv {
+    padding:10px;
+    background-color:#f6f6f6;
+    height:300px;
+}
+
+#displayFounderRegisterButton {
+    background:#27ae60;
+    border-radius:0%;
+    width:150px;
+}
+
+
+/* Below css for mentor/create (soon to be register folder) */
+
+#registerMainContainer {
+    background-color:#f6f6f6;
+}
+
 /* Below css for user/founder user/mentor */
 
 #mfMainContainer {
@@ -82,7 +190,7 @@
     height:200px;
 }
 
-/* Below is css for editFounder.jsp */
+/* Below is css for editFounder.jsp and editMentor.jsp */
 
 #editMainContainer {
     background-color:#f6f6f6;
@@ -105,7 +213,7 @@
 
 #editRowTwoTallDiv {
     background-color:#f6f6f6;
-    height:500px;
+    height:400px;
 }
 
 #rowTwoDivTwo {
@@ -114,18 +222,18 @@
 
 #rowTwoDivTwoChild {
     background-color:white;
-    height:250px;
+    height:200px;
 }
 
 #rowTwoDivTwoSecondChild {
     background-color:#f6f6f6;
-    height:250px;
+    height:200px;
 }
 
 #rowThreeDivOne {
     padding:10px;
     background-color:#f6f6f6;
-    height:300px;
+    height:240px;
 }
 
 #editUpdateProfileButton {
