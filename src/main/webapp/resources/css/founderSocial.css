@@ -1,10 +1,36 @@
 /* Below css for displayMentor.jsp, keeping separate from display mentor because size of divs is a factor */
 
+
+/**********************************
+    HELPER CLASSES
+**********************************/
+.padding-left-35 { padding-left: 35px; }
+.padding-right-35 { padding-right: 35px; }
+
+.padding-bottom-20 { padding-bottom: 20px; }
+.padding-left-20 { padding-left: 20px; }
+.padding-right-20 { padding-right: 20px; }
+
+.padding-left-10 { padding-left: 10px; }
+.padding-right-10 { padding-right: 10px; }
+
+.margin-top-20 { margin-top: 20px; }
+.margin-bottom-20 { margin-bottom: 20px; }
+
+
+
+
+@media (max-width: 992px) {
+    .padding-left-10 { padding-left: 20px; }
+    .padding-right-10 { padding-right: 20px; }
+    .sm-margin-top-20 { margin-top: 20px;}
+}
+
+
+
+
+
 #displayMentorMainContainer {
-    margin-right:70px;
-    margin-left:70px;
-    padding-right:2px;
-    padding-left:7px;
     background-color:#ffffff;
 }
 
@@ -26,16 +52,22 @@
 
 #displayMentorFirstNameDiv {
     background-color:#f6f6f6; 
-    height:400px;
+    height:420px;
 }
 
 #displayMentorCompanyDiv {
+
+}
+
+.section-200 {
     height:200px;
     background-color:#f6f6f6;
 }
+.section-200 + .section-200 {
+    margin-top: 20px;
+}
 
 #displayMentorIndustryDiv {
-    padding:10px;
     background-color:#f6f6f6;
     height:300px;
 }
@@ -58,38 +90,42 @@
 
 #displayFounderFirstRow {
     background-color:#203747;
+    color:white;
 }
 
 #displayFounderRowTwoDivOne {
     background-color:#f6f6f6;
+    color:black;
 }
 
 #displayFounderRowTwoDivTwo {
     background-color:#f6f6f6;
+    color:black;
 }
 
 #displayFounderRowTwoDivThree {
     background-color:#f6f6f6;
+    color:black;
 }
 
-#displayFounderRowThreeDivOne {
-    background-color:#f6f6f6;
+#displayFounderInfoDiv {
+    background-color:lightcoral;
     height:500px;
 }
 
 #displayFounderLogoDiv {
     height:250px;
-    background-color:#f6f6f6;
+    background-color:lightskyblue;
 }
 
 #displayFounderStatusDiv {
-    background-color:#f6f6f6;
+    background-color:lightseagreen;
     height:250px;
 }
 
 #displayFounderProgramPlanDiv {
     padding:10px;
-    background-color:#f6f6f6;
+    background-color:lightsalmon;
     height:300px;
 }
 
@@ -103,6 +139,8 @@
 /* Below css for register/create */
 
 #registerMainContainer {
+    padding-left: 40px;
+    padding-right: 40px;
     background-color:#f6f6f6;
 }
 

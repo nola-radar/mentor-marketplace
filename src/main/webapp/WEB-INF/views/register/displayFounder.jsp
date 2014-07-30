@@ -1,4 +1,5 @@
 <form:form modelAttribute="registrationForm">
+    
     <div class="container-fluid" id="displayFounderMainContainer">
          
             <!-- Top Row -->
@@ -10,31 +11,42 @@
                 
             </div>
 
+            
             <!-- Menu Row -->
             <div class="row">
                 
-                <div class="col-sm-4 col-xs-4">
-                    <div id="displayFounderRowTwoDivOne"> <font color="white"> Test Row 2 - Col 1  </font></div>
+                <!-- Row 2 - Col 1 -->
+                <div class="col-xs-4 col-sm-4">
+                    
+                    <div id="displayFounderRowTwoDivOne"> Test Row 2 - Col 1  </div>
+                
                 </div>
                 
-                <div class="col-sm-4 col-xs-4">
-                    <div id="displayFounderRowTwoDivTwo"> <font color="white"> Test Row 2 - Col 2  </font></div>
+                <!-- Row 2 - Col 2 -->
+                <div class="col-xs-4 col-sm-4">
+                
+                    <div id="displayFounderRowTwoDivTwo"> Test Row 2 - Col 2  </div>
+                
                 </div>
                 
-                <div class="col-sm-4 col-xs-4">
-                    <div id="displayFounderRowTwoDivThree"> <font color="white"> Test Row 2 - Col 3 </font></div>
+                <!-- Row 2 - Col 3 -->
+                <div class="col-xs-4 col-sm-4">
+                
+                    <div id="displayFounderRowTwoDivThree"> Test Row 2 - Col 3 </div>
+                
                 </div>
                 
             </div>
 
+            
             <!-- Content Body -->
-
             <div class="row">
                 
+                <!-- Content Body - Row 1 - Col 1 -->
                 <div class="col-xs-12 col-sm-6">
                     
-                    <div id="displayFounderRowThreeDivOne">
-                        <table>
+                    <div id="displayFounderInfoDiv">
+<!--                        <table>
                         <spring:bind path="firstName">
                             <h6>
                                 <tr>
@@ -114,15 +126,17 @@
                                 </tr>
                             </h6>
                         </spring:bind>
-                        </table>
+                        </table>-->
                     </div>
                     
                 </div>
+               
                 
+                <!-- Content Body - Row 1 - Col 2 - Top Div -->
                 <div class="col-xs-12 col-sm-6">
                     
                     <div id="displayFounderLogoDiv">
-                        <table>
+<!--                        <table>
                         <spring:bind path="logo">
                             <h6>
                                 <tr>
@@ -152,11 +166,13 @@
                                     </tr>
                                 </h6>
                         </spring:bind>
-                        </table>
+                        </table>-->
                     </div>
                     
+                    
+                    <!-- Content Body - Row 1 - Col 2 - Bottom Div -->
                     <div id="displayFounderStatusDiv">
-                        <table>
+<!--                        <table>
                         <spring:bind path="immediateNeeds">
                                 <h6>
                                     <tr>
@@ -210,19 +226,21 @@
                                 </tr>
                             </h6>
                         </spring:bind>
-                        </table>
+                        </table>-->
                     </div>
                     
                 </div>
                 
             </div>
             
-            <!-- Content Bottom -->
+            <!-- Bottom Content -->
             <div class="row">
+
                 <div class="col-xs-12 col-sm-12">
                     
+                    <!-- Bottom Content - Row 1 - Col 1 -->
                     <div id="displayFounderProgramPlanDiv">
-                        <table>
+<!--                        <table>
                         <spring:bind path="programPlan">
                             <h6>
                                 <tr>
@@ -313,11 +331,13 @@
                         <spring:bind path="isAdmin">
                             <form:hidden path="isAdmin" />
                         </spring:bind>
-                        </table>
+                        </table>-->
                     </div>
                     
                 </div>
+                                
             </div>
+                                
             <button class="btn btn-info" type="submit" id="displayFounderRegisterButton">
                 Create Profile
             </button>
