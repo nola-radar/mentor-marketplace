@@ -54,10 +54,6 @@ public class US3110_Login_Admin {
         String adminUserName = "ivmmdeveloper@gmail.com";
         String adminPassword = "ideavillage";
 
-        //Set up Linkedin Credentials for Non Admin
-        String userName = "foundertestidea@gmail.com";
-        String password = "testthefounder1";
-
         //Log into Mentor Marketplace as admin
         System.out.println("Logging in as admin");
         driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(adminUserName);
