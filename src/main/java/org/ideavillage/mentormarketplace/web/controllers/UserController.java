@@ -60,7 +60,7 @@ public class UserController {
             registrationForm.setEmail(connection.fetchUserProfile().getEmail());
             registrationForm.setLinkedInId(connection.createData().getProviderUserId());
         }
-        return "mentors/create";
+        return "register/create";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
