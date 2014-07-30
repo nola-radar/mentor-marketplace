@@ -1,6 +1,8 @@
 package AcceptanceTests;
 
 import java.io.IOException;
+import static junit.framework.Assert.assertEquals;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -14,6 +16,7 @@ import org.testng.annotations.Test;
 public class US3110_Login_Admin {
 
     WebDriver driver;
+    String baseUrl = "http://localhost:8080/mentormarketplace/";
 
     /**
      * Starts a new instance of Chromedriver and directs it to Mentor Market
@@ -25,7 +28,6 @@ public class US3110_Login_Admin {
 
         //Path to the Chromedriver executable
         System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver.exe");
-        String baseUrl = "http://localhost:8080/mentormarketplace/";
         driver = new ChromeDriver();
         driver.get(baseUrl);
     }
@@ -41,15 +43,33 @@ public class US3110_Login_Admin {
     }
 
     /**
-     * Test for lgging in as an Administrator for Mentor Marketplace 
+     * Test for lgging in as an Administrator for Mentor Marketplace
      *
      * @throws java.lang.InterruptedException
      */
-    @Test(groups = {"Login Admin"})
+    @Test(groups = {"Login Admin Successful"})
     public void testLoginAdmin() throws InterruptedException {
-        //Set up Linkedin Credentials
-        //Log into Mentor Marketplace
-        //User should be on admin dashboard.
+
+        //Set up Linkedin Credentials for Admin
+        String adminUserName = "ivmmdeveloper@gmail.com";
+        String adminPassword = "ideavillage";
+
+        //Set up Linkedin Credentials for Non Admin
+        String userName = "foundertestidea@gmail.com";
+        String password = "testthefounder1";
+
+        //Log into Mentor Marketplace as admin
+        System.out.println("Logging in as admin");
+        driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(adminUserName);
+        driver.findElement(By.id("session_password-oauth2SAuthorizeForm")).sendKeys(adminPassword);
+        driver.findElement(By.name("authorize")).click();
+
+        //load the admin page
+        driver.get(baseUrl + "/admin");
+
+        //verify we're on the admin page
+        String adminDashTitle = "Admin Dashboard";
+        assertEquals(adminDashTitle, driver.getTitle());
     }
 
-    }
+}

@@ -58,7 +58,6 @@ public class US3200_CreateProfile_Mentor {
     @Test(groups = {"Mentor Create Profile"})
     public void testCreateProfileMentor() throws InterruptedException {
 
-        
         //linkedin account information for our developer account
         System.out.println("Setting up login");
         String username = "ivmmdeveloper@gmail.com";
@@ -67,22 +66,22 @@ public class US3200_CreateProfile_Mentor {
         //click register button
         System.out.println("finding register button");
         driver.findElement(By.id("indexButton")).click();
-        
+
         //enter linkedin information and login
         System.out.println("Entering Linkedin");
         driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(username);
         driver.findElement(By.id("session_password-oauth2SAuthorizeForm")).sendKeys(password);
         driver.findElement(By.name("authorize")).click();
-        
+
         //verify we're on create profile page
         System.out.println("Check profile page");
         String title = "Mentor Register";
         assertTrue(title.equals(driver.getTitle()));
-        
+
         //select mentor radio button then click submit
         driver.findElement(By.cssSelector("#userTypeB > input[type=\"radio\"]:nth-child(2)")).click();
         driver.findElement(By.cssSelector("#userTypeB > input[type=\"submit\"]:nth-child(3)")).click();
-                
+
         //enter profile information
         driver.findElement(By.cssSelector("#firstName")).sendKeys("IdeaVillage");
         driver.findElement(By.cssSelector("#lastName")).sendKeys("Developer");
@@ -95,14 +94,13 @@ public class US3200_CreateProfile_Mentor {
         driver.findElement(By.cssSelector("#linkedInPictureURL")).sendKeys("http://google.com");
         driver.findElement(By.cssSelector("#background")).sendKeys("I am developing a cool web application");
         driver.findElement(By.cssSelector("#areasOfExpertise")).sendKeys("Web Development");
-                
+
         //click Create Profile button
         driver.findElement(By.cssSelector("#registrationForm > div.container-fluid > button")).click();
-        
+
         //ensure we land on created page
         title = "JSP Page";
         assertEquals(title, driver.getTitle());
-        
     }
 
 }

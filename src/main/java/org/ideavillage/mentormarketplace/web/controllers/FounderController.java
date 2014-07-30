@@ -44,10 +44,10 @@ public class FounderController {
 //        model.addAttribute("founders", page.getContent());
 //        return "founders/list";
 //    }
-
     /**
-     * Controller method for redirecting HTTP GET requests at "/mentormarketplace/founders" to
-     * "/mentormarketplace/founders/" so that relative links in the view work the same way.
+     * Controller method for redirecting HTTP GET requests at
+     * "/mentormarketplace/founders" to "/mentormarketplace/founders/" so that
+     * relative links in the view work the same way.
      *
      * @return String telling the browser to redirect to a different URL
      */
@@ -57,7 +57,8 @@ public class FounderController {
     }
 
     /**
-     * Controller method for viewing a specific Founder at "/mentormarketplace/founders/{id}".
+     * Controller method for viewing a specific Founder at
+     * "/mentormarketplace/founders/{id}".
      *
      * @param founder - The Founder to view
      * @return name of the view to render along with the instance of Founder
@@ -74,7 +75,8 @@ public class FounderController {
     /**
      * Controller method for displaying the Create new Founder page.
      *
-     * @return name of the view to render with a new instance of Founder to pass in to the view
+     * @return name of the view to render with a new instance of Founder to pass
+     * in to the view
      */
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public ModelAndView create() {
@@ -85,7 +87,8 @@ public class FounderController {
      * Controller method for handling the submitted create new Founder form.
      *
      * @param founder - Founder trying to be created
-     * @param result - Object to find out if there were validation errors in the parameter object
+     * @param result - Object to find out if there were validation errors in the
+     * parameter object
      * @return name of the view to render
      */
     @RequestMapping(value = "/create", method = RequestMethod.POST)
@@ -96,12 +99,11 @@ public class FounderController {
         Founder saved = founderRepository.save(founder);
         return "redirect:/founders/" + saved.getId();
     }
-    
+
     /* Marcus Bischof added these two similar mappings for /list view,
      * in order to create founder on /list view as well
-    */
-    
-    @RequestMapping(value = {"/","/list"}, method = RequestMethod.GET)
+     */
+    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
     public ModelAndView list() {
         return new ModelAndView("founders/list", "founder", new Founder());
     }
@@ -110,10 +112,11 @@ public class FounderController {
      * Controller method for handling the submitted create new Founder form.
      *
      * @param founder - Founder trying to be created
-     * @param result - Object to find out if there were validation errors in the parameter object
+     * @param result - Object to find out if there were validation errors in the
+     * parameter object
      * @return name of the view to render
      */
-    @RequestMapping(value = {"/","/list"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.POST)
     public String doList(@Valid Founder founder, BindingResult result) {
         if (result.hasErrors()) {
             return "founders/list";
@@ -121,5 +124,5 @@ public class FounderController {
         Founder saved = founderRepository.save(founder);
         return "redirect:/founders/" + saved.getId();
     }
-    
+
 }
