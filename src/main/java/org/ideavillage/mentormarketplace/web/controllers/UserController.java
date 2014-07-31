@@ -121,8 +121,8 @@ public class UserController {
 
     @RequestMapping(value = "/profile/{id}", method = RequestMethod.GET)
     public String viewProfileForId(WebRequest request, Model model, @PathVariable("id") Long id) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
             return "redirect:/index/";
         }
         MMUser user = mmUserRepository.findOne(id);
@@ -136,8 +136,8 @@ public class UserController {
 
     @RequestMapping(value = "/founder", method = RequestMethod.GET)
     public String viewProfileFounder(WebRequest request, Model model) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
             return "redirect:/index/";
         }
         //MMUser user = mmUserRepository.findByEmail(email);
@@ -156,8 +156,8 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/profile";
         }
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
             return "redirect:/index/";
         }
         registrationForm.setFirstName(globalFounder.getFirstName());
@@ -190,8 +190,8 @@ public class UserController {
             Model model,
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
             BindingResult result) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
             return "redirect:/index/";
         }
         mmUserRepository.save(globalUser);
@@ -202,8 +202,8 @@ public class UserController {
     
     @RequestMapping(value = "/mentor", method = RequestMethod.GET)
     public String viewProfileMentor(WebRequest request, Model model) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
             return "redirect:/index/";
         }
         Mentor mentor = mentorRepository.findByLinkedInId(globalUser.getLinkedInId());
@@ -221,8 +221,8 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/profile";
         }
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
             return "redirect:/index/";
         }
         registrationForm.setBackground(globalMentor.getBackground());
@@ -247,8 +247,8 @@ public class UserController {
             Model model,
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
             BindingResult result) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
             return "redirect:/index/";
         }
         mmUserRepository.save(globalUser);
