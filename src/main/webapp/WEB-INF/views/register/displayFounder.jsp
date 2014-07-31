@@ -211,6 +211,8 @@
                 
             </div>
             
+        </div>
+            
             <!-- Bottom Content -->
 
         <div class="row margin-top-20">
@@ -322,13 +324,14 @@
                 </div>
 
             </div>
-
+                                
         </div>
 
 
         <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
 
             <div class="col-sm-12 padding-left-20 padding-right-20">  
+                
                 <div class="col-sm-12">
                                 
             <button class="btn btn-info" type="submit" id="displayFounderRegisterButton">
