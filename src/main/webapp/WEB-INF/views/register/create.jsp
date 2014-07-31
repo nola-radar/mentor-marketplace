@@ -22,6 +22,7 @@
                     <%@include file="createProfileMentor.jsp" %>
                 </div>
             </div> 
+
         </div>
                 
         <!-- Footer -->
