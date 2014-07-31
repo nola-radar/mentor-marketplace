@@ -136,7 +136,6 @@ public class UserController {
 
     @RequestMapping(value = "/founder", method = RequestMethod.GET)
     public String viewProfileFounder(WebRequest request, Model model) {
-        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
         if (null == globalConnection) {
             return "redirect:/index/";
         }
@@ -221,7 +220,6 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/profile";
         }
-        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
         if (null == globalConnection) {
             return "redirect:/index/";
         }
@@ -247,7 +245,6 @@ public class UserController {
             Model model,
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
             BindingResult result) {
-        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
         if (null == globalConnection) {
             return "redirect:/index/";
         }
