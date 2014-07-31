@@ -83,7 +83,6 @@
                     <div id="profileReports">
                         <label class="col-xs-4 control-label profileTopTextAreaLabels"> Background: </label>
                         <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getBackground()} </label>
-
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
                         <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getAreasOfExpertise()} </label>
                     </div>
