@@ -1,9 +1,14 @@
-/* Below css for displayMentor.jsp, keeping separate from display mentor because size of divs is a factor */
+/**
+ *
+ *
+ *
+ **/
 
 
 /**********************************
     HELPER CLASSES
 **********************************/
+
 .padding-left-35 { padding-left: 35px; }
 .padding-right-35 { padding-right: 35px; }
 
@@ -18,8 +23,6 @@
 .margin-bottom-20 { margin-bottom: 20px; }
 
 
-
-
 @media (max-width: 992px) {
     .padding-left-10 { padding-left: 20px; }
     .padding-right-10 { padding-right: 20px; }
@@ -27,8 +30,16 @@
 }
 
 
+/* Below css for register/create */
+
+#registerMainContainer {
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color:#f6f6f6;
+}
 
 
+/* Below css for displayMentorr.jsp */
 
 #displayMentorMainContainer {
     background-color:#ffffff;
@@ -63,6 +74,7 @@
     height:200px;
     background-color:#f6f6f6;
 }
+
 .section-200 + .section-200 {
     margin-top: 20px;
 }
@@ -78,13 +90,10 @@
     width:150px;
 }
 
-/* Below css for displayFounder.jsp, keeping separate from display mentor because size of divs is a factor */
+
+/* Below css for displayFounder.jsp */
 
 #displayFounderMainContainer {
-    margin-right:70px;
-    margin-left:70px;
-    padding-right:2px;
-    padding-left:7px;
     background-color:#ffffff;
 }
 
@@ -109,23 +118,22 @@
 }
 
 #displayFounderInfoDiv {
-    background-color:lightcoral;
-    height:500px;
+    background-color:#f6f6f6;
+    height:520px;
 }
 
 #displayFounderLogoDiv {
     height:250px;
-    background-color:lightskyblue;
+    background-color:#f6f6f6;
 }
 
 #displayFounderStatusDiv {
-    background-color:lightseagreen;
+    background-color:#f6f6f6;
     height:250px;
 }
 
 #displayFounderProgramPlanDiv {
-    padding:10px;
-    background-color:lightsalmon;
+    background-color:#f6f6f6;
     height:300px;
 }
 
@@ -135,14 +143,6 @@
     width:150px;
 }
 
-
-/* Below css for register/create */
-
-#registerMainContainer {
-    padding-left: 40px;
-    padding-right: 40px;
-    background-color:#f6f6f6;
-}
 
 /* Below css for user/founder user/mentor */
 
@@ -227,6 +227,7 @@
     background-color:#f6f6f6;
     height:200px;
 }
+
 
 /* Below is css for editFounder.jsp and editMentor.jsp */
 

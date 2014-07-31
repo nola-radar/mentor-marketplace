@@ -1,6 +1,6 @@
 <form:form modelAttribute="registrationForm">
     
-    <div class="container-fluid" id="displayFounderMainContainer">
+    <div id="displayFounderMainContainer">
          
             <!-- Top Row -->
             <div class="row">
@@ -12,210 +12,188 @@
             </div>
 
             
-            <!-- Menu Row -->
-            <div class="row">
-                
-                <!-- Row 2 - Col 1 -->
-                <div class="col-xs-4 col-sm-4">
-                    
-                    <div id="displayFounderRowTwoDivOne"> Test Row 2 - Col 1  </div>
-                
-                </div>
-                
-                <!-- Row 2 - Col 2 -->
-                <div class="col-xs-4 col-sm-4">
-                
-                    <div id="displayFounderRowTwoDivTwo"> Test Row 2 - Col 2  </div>
-                
-                </div>
-                
-                <!-- Row 2 - Col 3 -->
-                <div class="col-xs-4 col-sm-4">
-                
-                    <div id="displayFounderRowTwoDivThree"> Test Row 2 - Col 3 </div>
-                
-                </div>
-                
-            </div>
+        <!-- Content Body -->
 
-            
-            <!-- Content Body -->
-            <div class="row">
-                
-                <!-- Content Body - Row 1 - Col 1 -->
-                <div class="col-xs-12 col-sm-6">
-                    
+        <div class="row margin-top-20">
+
+            <div class="col-sm-12">
+
+                <div class="col-md-6 padding-left-20 padding-right-10">
+
                     <div id="displayFounderInfoDiv">
-<!--                        <table>
+                    
+                    <table>
                         <spring:bind path="firstName">
-                            <h6>
+                        
                                 <tr>
                                     <td>First Name:</td>
                                     <td><form:input path="firstName" class="input-large" />
                                     <form:errors path="firstName" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
                         
                         <spring:bind path="lastName">
-                            <h6>
+                        
                                 <tr>
                                     <td>Last Name:</td>
                                     <td><form:input path="lastName" class="input-large" />
                                     <form:errors path="lastName" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
                         
                         <spring:bind path="website">
-                            <h6>
+                        
                                 <tr>
                                     <td>Website:</td>
                                     <td><form:input path="website" class="input-large" />
                                     <form:errors path="website" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="facebook">
-                            <h6>
+                        
                                 <tr>
                                     <td>Facebook:</td>
                                     <td><form:input path="facebook" class="input-large" />
                                     <form:errors path="facebook" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="twitter">
-                            <h6>
+                        
                                 <tr>
                                     <td>Twitter:</td>
                                     <td><form:input path="twitter" class="input-large" />
                                     <form:errors path="twitter" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="otherSocialMedia">
-                            <h6>
+                        
                                 <tr>
                                     <td>Other Social Media:</td>
                                     <td><form:textarea path="otherSocialMedia" rows="2" cols="30" />
                                     <form:errors path="otherSocialMedia" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
                         
                         <spring:bind path="companyDetails">
-                            <h6>
+                       
                                 <tr>
                                     <td>Company Description:</td>
                                     <td><form:textarea path="companyDetails" rows="2" cols="30" />
                                     <form:errors path="companyDetails" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
                         
                         <spring:bind path="inspiration">
-                            <h6>
+                        
                                 <tr>
                                     <td>Inspiration:</td> 
                                     <td><form:textarea path="inspiration" rows="2" cols="30" />
                                     <form:errors path="inspiration" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
-                        </table>-->
+                        </table>
                     </div>
                     
                 </div>
                
                 
                 <!-- Content Body - Row 1 - Col 2 - Top Div -->
-                <div class="col-xs-12 col-sm-6">
-                    
-                    <div id="displayFounderLogoDiv">
-<!--                        <table>
+                
+                <div class="col-md-6 padding-left-10 padding-right-20">
+
+                    <div class="section-200 sm-margin-top-20" id="displayFounderLogoDiv">
+                    <table>
                         <spring:bind path="logo">
-                            <h6>
+                            
                                 <tr>
                                     <td>Logo:</td>
                                     <td><form:input path="logo" class="input-large" />
                                     <form:errors path="logo" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="tagline">
-                            <h6>
+                        
                                 <tr>
                                     <td>Tagline:</td> 
                                     <td><form:input path="tagline" class="input-large" />
                                     <form:errors path="tagline" cssClass="help-inline"/></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="elevatorPitch">
-                                <h6>
+                        
                                     <tr>
                                         <td>Elevator Pitch:</td> 
                                         <td><form:textarea path="elevatorPitch" rows="2" cols="30" />
                                         <form:errors path="elevatorPitch" cssClass="help-inline" /></td>
                                     </tr>
-                                </h6>
+                        
                         </spring:bind>
-                        </table>-->
+                        </table>
                     </div>
                     
                     
                     <!-- Content Body - Row 1 - Col 2 - Bottom Div -->
-                    <div id="displayFounderStatusDiv">
-<!--                        <table>
+                    <div class="section-200" id="displayFounderStatusDiv">
+                    <table>
+                        
                         <spring:bind path="immediateNeeds">
-                                <h6>
+                        
                                     <tr>
                                         <td>Immediate Needs:</td>
                                         <td><form:textarea path="immediateNeeds" rows="2" cols="30" />
                                         <form:errors path="immediateNeeds" cssClass="help-inline" /></td>
                                     </tr>
-                                </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="status">
-                                <h6>
+                        
                                     <tr>
                                         <td>Status:</td>
                                         <td><form:textarea path="status" rows="2" cols="30" />
                                         <form:errors path="status" cssClass="help-inline" /></td>
                                     </tr>
-                                </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="vision">
-                                <h6>
+                        
                                     <tr>    
                                         <td>Vision:</td>
                                         <td><form:textarea path="vision" rows="2" cols="30" />
                                         <form:errors path="vision" cssClass="help-inline" /></td>
                                     </tr>
-                                </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="newOrleans">
-                                <h6>
+                        
                                     <tr>    
                                         <td>New Orleans:</td>
                                         <td><form:textarea path="newOrleans" rows="2" cols="30" />
                                         <form:errors path="newOrleans" cssClass="help-inline" /></td>
                                     </tr>
-                                </h6>
+                        
                         </spring:bind>
                         
                                  
                         <spring:bind path="userType">
-                            <h6>
+                        
                                 <tr>
                                     <td>User Type:</td>
                                     <td><form:select path="userType" class="input-large" >
@@ -224,9 +202,9 @@
                                 </form:select>
                                 <form:errors path="userType" cssClass="userType" /></td>
                                 </tr>
-                            </h6>
+                       
                         </spring:bind>
-                        </table>-->
+                        </table>
                     </div>
                     
                 </div>
@@ -234,35 +212,38 @@
             </div>
             
             <!-- Bottom Content -->
-            <div class="row">
 
-                <div class="col-xs-12 col-sm-12">
+        <div class="row margin-top-20">
+
+            <div class="col-sm-12 padding-left-20 padding-right-20">
+
+                <div class="col-sm-12">
                     
                     <!-- Bottom Content - Row 1 - Col 1 -->
                     <div id="displayFounderProgramPlanDiv">
-<!--                        <table>
+                    <table>
                         <spring:bind path="programPlan">
-                            <h6>
+                        
                                 <tr>
                                     <td>Program Plan:</td> 
                                     <td><form:textarea path="programPlan" rows="2" cols="30" />
                                     <form:errors path="programPlan" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
                         
                         <spring:bind path="weeklyReports">
-                            <h6>
+                        
                                 <tr>
                                     <td>Weekly Reports:</td>
                                     <td><form:textarea path="weeklyReports" rows="2" cols="30" />
                                     <form:errors path="weeklyReports" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
                         
                         <spring:bind path="industry">
-                            <h6>
+                        
                                 <tr>
                                     <td>Industry:</td>
                                     <td><form:select path="industry" class="input-large" >
@@ -306,23 +287,25 @@
                                 </form:select>
                                 <form:errors path="industry" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
 
                         <spring:bind path="areasOfExpertise">
-                            <h6>
+                        
                                 <tr>
                                     <td>Expertise:</td>
                                     <td><form:input path="areasOfExpertise" class="input-large" />
                                     <form:errors path="areasOfExpertise" cssClass="help-inline" /></td>
                                 </tr>
-                            </h6>
+                        
                         </spring:bind>
                         
                         <spring:bind path="email">
-                            <div class="control-group ${status.error ? 'error' : ''}">
+
+<!--                        <div class="control-group ${status.error ? 'error' : ''}">
                                 <form:hidden path="email" />
-                            </div>
+                            </div>-->
+
                         </spring:bind>
                                 
                         <spring:bind path="linkedInId">
@@ -331,16 +314,33 @@
                         <spring:bind path="isAdmin">
                             <form:hidden path="isAdmin" />
                         </spring:bind>
-                        </table>-->
+
+                        </table>
+
                     </div>
-                    
+
                 </div>
-                                
+
             </div>
+
+        </div>
+
+
+        <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
+
+            <div class="col-sm-12 padding-left-20 padding-right-20">  
+                <div class="col-sm-12">
                                 
             <button class="btn btn-info" type="submit" id="displayFounderRegisterButton">
                 Create Profile
             </button>
+            
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
     
  </form:form>
