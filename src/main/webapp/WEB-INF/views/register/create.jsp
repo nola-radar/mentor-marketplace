@@ -16,28 +16,47 @@
         <link rel="stylesheet" href="/mentormarketplace/resources/css/navigationBar.css"  type="text/css"/>
         <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
     </head>
-    
-    <body id="createBody">
-        <%@include file="../nav.jsp" %>
-        <div class="container" id="registerMainContainer">
-            <center>
-                <form id="userTypeB">
-                    <input type="radio" name="user" value="founder">Founder
-                    <input type="radio" name="user" value="mentor">Mentor
-                    <input type="submit" value="Submit">
-                </form>
-            </center>
-            <br>
 
-            <% request.setAttribute("user", request.getParameter("user"));%>
-            <c:choose>
-                <c:when test="${user == 'founder'}">
-                    <%@include file="displayFounder.jsp" %>
-                </c:when>
-                <c:otherwise>
-                    <%@include file="displayMentor.jsp" %>
-                </c:otherwise>
-            </c:choose>
+    <body id="createBody">
+
+
+        <!-- Navigation Bar -->
+
+        <%@include file="../nav.jsp" %>
+
+
+        <!-- Create Profile Main Container -->
+
+        <div class="container" id="registerMainContainer">
+
+
+            <!-- Tab panes -->
+
+            <ul class="nav nav-tabs" id="myTab">
+                
+                <li class="active"><a href="#founder" data-toggle="tab">Founder</a></li>
+                <li><a href="#mentor" data-toggle="tab">Mentor</a></li>
+                
+            </ul>
+
+            <div id='content' class="tab-content">
+
+                <div class="tab-pane active" id="founder">
+
+                    <%@include file="createProfileFounder.jsp" %>
+
+                </div>
+
+                <div class="tab-pane" id="mentor">
+
+                        <%@include file="createProfileMentor.jsp" %>
+
+                </div>
+
+            </div>   
+
         </div>
+
     </body>
+
 </html>

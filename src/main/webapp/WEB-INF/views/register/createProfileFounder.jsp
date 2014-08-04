@@ -1,16 +1,12 @@
 <form:form modelAttribute="registrationForm">
-    
+
     <div id="createProfileMainContainer">
 
         <!-- Top Row -->
         <div class="row">
-            
             <div class="col-sm-12">
-            
-                <div id="createProfileMenu"> Register Profile - Mentor</div>
-            
+                <div id="createProfileMenu"> Register Profile - Founder</div>
             </div>
-
         </div>
 
 
@@ -22,10 +18,9 @@
 
                 <div class="col-md-6 padding-left-20 padding-right-10">
 
-                    <div Id="createProfileMentorSocialInfo">
-                        
+                    <div id="createProfileFounderInfo">
+
                         <table>
-                            
                             <spring:bind path="firstName">
 
                                 <tr>
@@ -80,8 +75,28 @@
 
                                 <tr>
                                     <td>Other Social Media:</td>
-                                    <td><form:textarea path="otherSocialMedia" rows="5" cols="30" />
+                                    <td><form:textarea path="otherSocialMedia" rows="2" cols="30" />
                                 <form:errors path="otherSocialMedia" cssClass="help-inline" /></td>
+                                </tr>
+
+                            </spring:bind>
+
+                            <spring:bind path="companyDetails">
+
+                                <tr>
+                                    <td>Company Description:</td>
+                                    <td><form:textarea path="companyDetails" rows="2" cols="30" />
+                                <form:errors path="companyDetails" cssClass="help-inline" /></td>
+                                </tr>
+
+                            </spring:bind>
+
+                            <spring:bind path="inspiration">
+
+                                <tr>
+                                    <td>Inspiration:</td> 
+                                    <td><form:textarea path="inspiration" rows="2" cols="30" />
+                                <form:errors path="inspiration" cssClass="help-inline" /></td>
                                 </tr>
 
                             </spring:bind>
@@ -90,53 +105,90 @@
 
                 </div>
 
+
+                <!-- Content Body - Row 1 - Col 2 - Top Div -->
+
                 <div class="col-md-6 padding-left-10 padding-right-20">
 
-                    <div class="section-200 sm-margin-top-20" id="createProfileMentorCompany">
+                    <div class="section-200 sm-margin-top-20" id="createProfileFounderLogo">
                         <table>
-                            <spring:bind path="linkedInCurrentCompany">
+                            <spring:bind path="logo">
 
                                 <tr>
-                                    <td>Current Company:</td>
-                                    <td><form:input path="linkedInCurrentCompany" class="input-large" />
-                                <form:errors path="linkedInCurrentCompany" cssClass="help-inline" /></td>
+                                    <td>Logo:</td>
+                                    <td><form:input path="logo" class="input-large" />
+                                <form:errors path="logo" cssClass="help-inline" /></td>
                                 </tr>
 
                             </spring:bind>
 
-                            <spring:bind path="linkedInCurrentJobTitle">
+                            <spring:bind path="tagline">
 
                                 <tr>
-                                    <td>Current Job Title:</td>
-                                    <td><form:input path="linkedInCurrentJobTitle" class="input-large" />
-                                <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" /></td>
+                                    <td>Tagline:</td> 
+                                    <td><form:input path="tagline" class="input-large" />
+                                <form:errors path="tagline" cssClass="help-inline"/></td>
                                 </tr>
 
                             </spring:bind>
 
-                            <spring:bind path="linkedInPictureURL">
+                            <spring:bind path="elevatorPitch">
 
                                 <tr>
-                                    <td>LinkedIn Picture:</td> 
-                                    <td><form:input path="linkedInPictureURL" class="input-large"/>
-                                <form:errors path="linkedInPictureURL" cssClass="help-inline" /></td>
+                                    <td>Elevator Pitch:</td> 
+                                    <td><form:textarea path="elevatorPitch" rows="2" cols="30" />
+                                <form:errors path="elevatorPitch" cssClass="help-inline" /></td>
                                 </tr>
 
                             </spring:bind>
                         </table>
                     </div>
 
-                    <div class="section-200">
+
+                    <!-- Content Body - Row 1 - Col 2 - Bottom Div -->
+                    <div class="section-200" id="createProfileFounderStatus">
                         <table>
-                            <spring:bind path="background">
+
+                            <spring:bind path="immediateNeeds">
 
                                 <tr>
-                                    <td>Background:</td>
-                                    <td><form:textarea path="background" rows="4" cols="30" />
-                                <form:errors path="linkedInPictureURL" cssClass="help-inline" /></td>
+                                    <td>Immediate Needs:</td>
+                                    <td><form:textarea path="immediateNeeds" rows="2" cols="30" />
+                                <form:errors path="immediateNeeds" cssClass="help-inline" /></td>
                                 </tr>
 
                             </spring:bind>
+
+                            <spring:bind path="status">
+
+                                <tr>
+                                    <td>Status:</td>
+                                    <td><form:textarea path="status" rows="2" cols="30" />
+                                <form:errors path="status" cssClass="help-inline" /></td>
+                                </tr>
+
+                            </spring:bind>
+
+                            <spring:bind path="vision">
+
+                                <tr>    
+                                    <td>Vision:</td>
+                                    <td><form:textarea path="vision" rows="2" cols="30" />
+                                <form:errors path="vision" cssClass="help-inline" /></td>
+                                </tr>
+
+                            </spring:bind>
+
+                            <spring:bind path="newOrleans">
+
+                                <tr>    
+                                    <td>New Orleans:</td>
+                                    <td><form:textarea path="newOrleans" rows="2" cols="30" />
+                                <form:errors path="newOrleans" cssClass="help-inline" /></td>
+                                </tr>
+
+                            </spring:bind>
+                            
                         </table>
                     </div>
 
@@ -146,7 +198,7 @@
 
         </div>
 
-        <!-- Content Bottom -->
+        <!-- Bottom Content -->
 
         <div class="row margin-top-20">
 
@@ -154,13 +206,33 @@
 
                 <div class="col-sm-12">
 
-                    <div id="createProfileMentorIndustry">
-
+                    <!-- Bottom Content - Row 1 - Col 1 -->
+                    <div id="createProfileFounderProgramPlan">
                         <table>
-                            <spring:bind path="industry">
-                                <tr>
-                                    <td>Industry:</td> 
+                            <spring:bind path="programPlan">
 
+                                <tr>
+                                    <td>Program Plan:</td> 
+                                    <td><form:textarea path="programPlan" rows="2" cols="30" />
+                                <form:errors path="programPlan" cssClass="help-inline" /></td>
+                                </tr>
+
+                            </spring:bind>
+
+                            <spring:bind path="weeklyReports">
+
+                                <tr>
+                                    <td>Weekly Reports:</td>
+                                    <td><form:textarea path="weeklyReports" rows="2" cols="30" />
+                                <form:errors path="weeklyReports" cssClass="help-inline" /></td>
+                                </tr>
+
+                            </spring:bind>
+
+                            <spring:bind path="industry">
+
+                                <tr>
+                                    <td>Industry:</td>
                                     <td><form:select path="industry" class="input-large" >
                                     <form:option value="Accounting" label="Accounting"/>
                                     <form:option value="Advertising/Publication" label="Advertising/Publication"/>
@@ -202,40 +274,35 @@
                                 </form:select>
                                 <form:errors path="industry" cssClass="help-inline" /></td>
                                 </tr>
+
                             </spring:bind>
 
                             <spring:bind path="areasOfExpertise">
+
                                 <tr>
                                     <td>Expertise:</td>
                                     <td><form:input path="areasOfExpertise" class="input-large" />
                                 <form:errors path="areasOfExpertise" cssClass="help-inline" /></td>
                                 </tr>
+
                             </spring:bind>
 
                             <spring:bind path="email">
-                                <div class="control-group ${status.error ? 'error' : ''}">
                                     <form:hidden path="email" />
-                                </div>
                             </spring:bind>
 
                             <spring:bind path="linkedInId">
                                 <form:hidden path="linkedInId" />
                             </spring:bind>
-
+                            
                             <spring:bind path="isAdmin">
                                 <form:hidden path="isAdmin" />
                             </spring:bind>
-
+                            
                             <spring:bind path="userType">
-                                <tr>
-                                    <td>User Type:</td>
-                                    <td><form:select path="userType" class="input-large" >
-                                    <form:option value="founder" label="founder"/>
-                                    <form:option value="mentor" label="mentor"/>
-                                </form:select>
-                                <form:errors path="userType" cssClass="userType" /></td>
-                                </tr>
+                                <form:hidden path="userType" value="founder"  />
                             </spring:bind>
+
                         </table>
 
                     </div>
@@ -250,10 +317,13 @@
         <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
 
             <div class="col-sm-12 padding-left-20 padding-right-20">  
+
                 <div class="col-sm-12">
+
                     <button class="btn btn-info" type="submit" id="createProfileButton">
                         Create Profile
                     </button>
+
                 </div>
 
             </div>
@@ -268,3 +338,4 @@
 <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+

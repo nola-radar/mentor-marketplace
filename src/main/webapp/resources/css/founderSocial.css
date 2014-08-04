@@ -139,10 +139,9 @@
     background-color:#f6f6f6;
 }
 
-#mfSecondContainer {
-    margin-right:70px;
-    margin-left:70px;
+#profileMainContainer {
     background-color:#ffffff;
+    margin-top: 100px;
 }
 
 #mfRowOne {
@@ -174,18 +173,19 @@
     padding-right:5px;
 }
 
-#mfRowThreeDivTwo {
+#profileSocialInfo {
     background-color:#f6f6f6;
-    height:500px;
+    height:520px;
 }
 
 #mfLinkOne {
-    padding:0;
+    padding-top: 5px;
+    padding-right: 20px;
     height:30px;
-    width:30px;
+    width:70px;
     position:absolute;
-    top:0;
-    right:3px;
+    top:0px;
+    right:0px;
 }
 
 #mfRowThreeDivThree {
@@ -222,13 +222,14 @@
 /* Below is css for editFounder.jsp and editMentor.jsp */
 
 #editMainContainer {
+    padding-left: 40px;
+    padding-right: 40px;
     background-color:#f6f6f6;
 }
 
-#editSubContainer {
-    margin-right:70px;
-    margin-left:70px;
+#editProfileMainContainer {
     background-color:#ffffff;
+    margin-top: 50px;
 }
 
 #editRowOne {
@@ -240,9 +241,9 @@
     padding-right:5px;
 }
 
-#editRowTwoTallDiv {
+#editProfileMentorSocialInfo {
     background-color:#f6f6f6;
-    height:400px;
+    height:420px;
 }
 
 #rowTwoDivTwo {

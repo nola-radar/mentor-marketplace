@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
     <body>
         <h1>Register User</h1>
         <form:form modelAttribute="registrationForm" class="form-horizontal">
@@ -25,6 +26,7 @@
             <spring:bind path="linkedInId">
                 <form:hidden path="linkedInId" />
             </spring:bind>
+            
             <div class="control-group">
                 <div class="controls">
                     <button class="btn btn-info" type="submit">
