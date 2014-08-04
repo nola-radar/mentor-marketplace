@@ -123,7 +123,7 @@
 
 #createProfileFounderLogo {
     height:250px;
-    background-color:lightskyblue;
+    background-color:#f6f6f6;
 }
 
 #createProfileFounderStatus {
@@ -221,6 +221,7 @@
     padding:10px;
     background-color:#f6f6f6;
     height:200px;
+    margin-bottom: 25px;
 }
 
 

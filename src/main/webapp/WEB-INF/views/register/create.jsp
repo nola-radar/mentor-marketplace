@@ -28,7 +28,6 @@
         <!-- Create Profile Main Container -->
 
         <div class="container" id="registerMainContainer">
-<<<<<<< HEAD
 
 
             <!-- Tab panes -->
@@ -56,29 +55,6 @@
 
             </div>   
 
-=======
-            <center>
-                <form id="userTypeB">
-                    <input type="radio" name="user" value="founder"
-                           onclick="document.forms['userTypeB'].submit();">
-                    Founder
-                    <input type="radio" name="user" value="mentor"
-                           onclick="document.forms['userTypeB'].submit();">
-                    Mentor                 
-                </form>
-            </center>
-            <br>
-
-            <% request.setAttribute("user", request.getParameter("user"));%>
-            <c:choose>
-                <c:when test="${user == 'founder'}">
-                    <%@include file="displayFounder.jsp" %>
-                </c:when>
-                <c:when test="${user == 'mentor'}">
-                    <%@include file="displayMentor.jsp" %>
-                </c:when>
-            </c:choose>
->>>>>>> 9908185e734f9b09a919eb2d3ed388366d9a43d0
         </div>
 
     </body>

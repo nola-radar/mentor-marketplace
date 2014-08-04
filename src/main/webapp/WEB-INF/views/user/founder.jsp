@@ -13,30 +13,32 @@
 
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://localhost:8080/mentormarketplace/resources/css/bootstrap-responsive.css" type="text/css" />
         <link rel="stylesheet" href="/mentormarketplace/resources/css/navigationBar.css"  type="text/css"/>
         <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
     </head>
     
     <body id="createBody">
         <%@include file="../nav.jsp" %>
-        <div class="container" id="registerMainContainer">
-            <br><br><br><br><br>
-            <div id="displayMentorMainContainer">
+
+        <div class="container" id="editMainContainer">
+
+            <div id="profileMainContainer">
 
                 <!-- Top Row -->
                 <div class="row">
 
                     <div class="col-sm-12">
-                        <div id="displayMentorRowOne">
-                            <img src="${profile.profilePictureUrl}" id="mfImage"></img>
-                            <h4 id="mfHOne"> ${founder.getFirstName()} ${founder.getLastName()}</h4>
-                            <h5 id="mfHTwo"> ${founder.getIndustry()} </h5>
+
+                        <div id="mfRowOne"> 
+                             <img src="${profile.profilePictureUrl}" id="mfImage"></img>
+                            ${founder.getFirstName()} ${founder.getLastName()}
+                            ${founder.getIndustry()}
+                            
+                            <a href="<c:url value="editMentor" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>
+
                         </div>
                     </div>
-
                 </div>
-
 
                 <!-- Content Body -->
 
@@ -46,7 +48,7 @@
 
                         <div class="col-md-6 padding-left-20 padding-right-10">
 
-                            <div Id="displayMentorFirstNameDiv">
+                            <div id="profileSocialInfo">
                                 <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>
                                 <table>
                                     <tr>
@@ -80,7 +82,7 @@
 
                         <div class="col-md-6 padding-left-10 padding-right-20">
 
-                            <div class="section-200 sm-margin-top-20" id="displayMentorCompanyDiv">
+                            <div class="section-200 sm-margin-top-20" id="createProfileFounderLogo">
                                 <table>
                                     <tr>
                                         <td><strong>Elevator Pitch:</strong></td>
@@ -109,7 +111,7 @@
                                 </table>
                             </div>
 
-                            <div class="section-200">
+                            <div class="section-200" id="createProfileFounderLogo">
                                 <table>
                                     <tr>
                                         <td><strong>Program Plan:</strong></td>
@@ -128,13 +130,29 @@
 
                 </div>
 
-                <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
+                <!-- Content Bottom -->
+                <div class="row margin-top-20">
 
+
+                    <div class="col-sm-12 padding-left-20 padding-right-20">
+
+                        <div class="col-sm-12">
+
+                            <div id="mfContentBottom">
+                            
+                            </div>
+
+                        </div>
+                                
+                    </div>
+                                
                 </div>
-
+                                
             </div>
 
-
+        </div>
+                            
+                   
         <!-- BOOTSTRAP! -->
         <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
