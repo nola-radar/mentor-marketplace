@@ -5,9 +5,9 @@
  **/
 
 
-/**********************************
-    HELPER CLASSES
-**********************************/
+/**
+ *   HELPER CLASSES
+ **/
 
 .padding-left-35 { padding-left: 35px; }
 .padding-right-35 { padding-right: 35px; }
@@ -23,14 +23,30 @@
 .margin-bottom-20 { margin-bottom: 20px; }
 
 
+
+/* BOOTSTRAP OVERRIDES */
+
+@media (max-width: 769px) {
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
 @media (max-width: 992px) {
     .padding-left-10 { padding-left: 20px; }
     .padding-right-10 { padding-right: 20px; }
     .sm-margin-top-20 { margin-top: 20px;}
 }
 
+.col-sm-12 {
+    display: table;
+}
 
-/* Below css for register/create */
+
+
+/**
+ *  Shared Register Container for Create Profiles Page
+ **/
 
 #registerMainContainer {
     padding-left: 40px;
@@ -39,35 +55,46 @@
 }
 
 
-/* Below css for displayMentorr.jsp */
 
-#displayMentorMainContainer {
+/* Shared Profile CSS IDs */
+
+#createProfileMainContainer {
     background-color:#ffffff;
 }
 
-#displayMentorRowOne {
+#createProfileMenu {
     background-color:#203747;
+    color:white;
+    height: 35px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 }
 
-#displayMentorRowTwoDivOne {
+#createProfileMentorIndustry {
     background-color:#f6f6f6;
+    height:300px;
 }
 
-#displayMentorRowTwoDivTwo {
-    background-color:#f6f6f6;
+#createProfileButton {
+    background:#27ae60;
+    border-radius:0%;
+    width:150px;
 }
 
-#displayMentorRowTwoDivThree {
-    background-color:#f6f6f6;
-}
 
-#displayMentorFirstNameDiv {
+
+/**
+ *  createMentor.jps specific CSS 
+ **/
+
+#createProfileMentorSocialInfo {
     background-color:#f6f6f6; 
     height:420px;
 }
 
-#displayMentorCompanyDiv {
-
+#createProfileMentorCompany {
+    background-color:#f6f6f6;
 }
 
 .section-200 {
@@ -79,69 +106,31 @@
     margin-top: 20px;
 }
 
-#displayMentorIndustryDiv {
-    background-color:#f6f6f6;
-    height:300px;
-}
-
-#displayMentorCreateProfileButton {
-    background:#27ae60;
-    border-radius:0%;
-    width:150px;
-}
 
 
-/* Below css for displayFounder.jsp */
-
-#displayFounderMainContainer {
-    background-color:#ffffff;
-}
-
-#displayFounderFirstRow {
-    background-color:#203747;
-    color:white;
-}
-
-#displayFounderRowTwoDivOne {
-    background-color:#f6f6f6;
-    color:black;
-}
-
-#displayFounderRowTwoDivTwo {
-    background-color:#f6f6f6;
-    color:black;
-}
-
-#displayFounderRowTwoDivThree {
-    background-color:#f6f6f6;
-    color:black;
-}
-
-#displayFounderInfoDiv {
+/**
+ *  createFounder.jps specific CSS 
+ **/
+#createProfileFounderInfo {
     background-color:#f6f6f6;
     height:520px;
 }
 
-#displayFounderLogoDiv {
+#createProfileFounderLogo {
     height:250px;
     background-color:#f6f6f6;
 }
 
-#displayFounderStatusDiv {
+#createProfileFounderStatus {
     background-color:#f6f6f6;
     height:250px;
 }
 
-#displayFounderProgramPlanDiv {
+#createProfileFounderProgramPlan {
     background-color:#f6f6f6;
     height:300px;
 }
 
-#displayFounderRegisterButton {
-    background:#27ae60;
-    border-radius:0%;
-    width:150px;
-}
 
 
 /* Below css for user/founder user/mentor */
@@ -227,6 +216,7 @@
     background-color:#f6f6f6;
     height:200px;
 }
+
 
 
 /* Below is css for editFounder.jsp and editMentor.jsp */

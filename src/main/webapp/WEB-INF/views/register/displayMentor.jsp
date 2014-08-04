@@ -1,11 +1,14 @@
 <form:form modelAttribute="registrationForm">
-    <div id="displayMentorMainContainer">
+    
+    <div id="createProfileMainContainer">
 
         <!-- Top Row -->
         <div class="row">
-
+            
             <div class="col-sm-12">
-                <div id="displayMentorRowOne"> Test Row 1</div>
+            
+                <div id="createProfileMenu"> Register Profile - Mentor</div>
+            
             </div>
 
         </div>
@@ -19,8 +22,10 @@
 
                 <div class="col-md-6 padding-left-20 padding-right-10">
 
-                    <div Id="displayMentorFirstNameDiv">
+                    <div Id="createProfileMentorSocialInfo">
+                        
                         <table>
+                            
                             <spring:bind path="firstName">
 
                                 <tr>
@@ -87,7 +92,7 @@
 
                 <div class="col-md-6 padding-left-10 padding-right-20">
 
-                    <div class="section-200 sm-margin-top-20" id="displayMentorCompanyDiv">
+                    <div class="section-200 sm-margin-top-20" id="createProfileMentorCompany">
                         <table>
                             <spring:bind path="linkedInCurrentCompany">
 
@@ -149,7 +154,7 @@
 
                 <div class="col-sm-12">
 
-                    <div id="displayMentorIndustryDiv">
+                    <div id="createProfileMentorIndustry">
 
                         <table>
                             <spring:bind path="industry">
@@ -246,7 +251,7 @@
 
             <div class="col-sm-12 padding-left-20 padding-right-20">  
                 <div class="col-sm-12">
-                    <button class="btn btn-info" type="submit" id="displayMentorCreateProfileButton">
+                    <button class="btn btn-info" type="submit" id="createProfileButton">
                         Create Profile
                     </button>
                 </div>
