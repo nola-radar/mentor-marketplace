@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
  *
  * @author 212412062
  */
-public class US3200_CreateProfile_Mentor {
+public class US3199_CreateProfile_Founder {
 
     WebDriver driver;
 
@@ -60,8 +60,8 @@ public class US3200_CreateProfile_Mentor {
 
         //linkedin account information for our developer account
         System.out.println("Setting up login");
-        String username = "ivmmdeveloper@gmail.com";
-        String password = "ideavillage";
+        String username = "foundertestidea@gmail.com";
+        String password = "testthefounder1";
 
         //click register button
         System.out.println("finding register button");
@@ -79,26 +79,31 @@ public class US3200_CreateProfile_Mentor {
         assertTrue(title.equals(driver.getTitle()));
 
         //select mentor radio button then click submit
-        driver.findElement(By.cssSelector("#userTypeB > input[type=\"radio\"]:nth-child(2)")).click();
+        driver.findElement(By.cssSelector("#userTypeB > input[type=\"radio\"]:nth-child(1)")).click();
 
         //enter profile information
         driver.findElement(By.cssSelector("#firstName")).sendKeys("IdeaVillage");
-        driver.findElement(By.cssSelector("#lastName")).sendKeys("Developer");
+        driver.findElement(By.cssSelector("#lastName")).sendKeys("Founder");
         driver.findElement(By.cssSelector("#website")).sendKeys("ideavillage.org");
         driver.findElement(By.cssSelector("#facebook")).sendKeys("facebook.com");
         driver.findElement(By.cssSelector("#twitter")).sendKeys("@example");
         driver.findElement(By.cssSelector("#otherSocialMedia")).sendKeys("test");
-        driver.findElement(By.cssSelector("#linkedInCurrentCompany")).sendKeys("Idea Village");
-        driver.findElement(By.cssSelector("#linkedInCurrentJobTitle")).sendKeys("Developer");
-        driver.findElement(By.cssSelector("#linkedInPictureURL")).sendKeys("http://google.com");
-        driver.findElement(By.cssSelector("#background")).sendKeys("I am developing a cool web application");
         driver.findElement(By.cssSelector("#areasOfExpertise")).sendKeys("Web Development");
+        driver.findElement(By.cssSelector("#inspiration")).sendKeys("Facebook");
+        driver.findElement(By.cssSelector("#companyDetails")).sendKeys("We are a software company looking for funding");
+        driver.findElement(By.cssSelector("#elevatorPitch")).sendKeys("This is an example elevator pitch");
+        driver.findElement(By.cssSelector("#immediateNeeds")).sendKeys("My immediate needs are ....");
+        driver.findElement(By.cssSelector("#status")).sendKeys("Looking for an awesome Mentor");
+        driver.findElement(By.cssSelector("#vision")).sendKeys("I want my company to be ....");
+        driver.findElement(By.cssSelector("#newOrleans")).sendKeys("New Orleans is important to me because ....");
+        driver.findElement(By.cssSelector("#programPlan")).sendKeys("I plan on ....");
+        driver.findElement(By.cssSelector("#weeklyReports")).sendKeys("This week the company ....");
 
         //click Create Profile button
-        driver.findElement(By.cssSelector("#displayMentorCreateProfileButton")).click();
+        driver.findElement(By.cssSelector("#displayFounderRegisterButton")).click();
 
         //verify we're on profile page
-        title = "Founder Profile";
+        title = "Mentor Profile";
         assertEquals(title, driver.getTitle());
     }
 

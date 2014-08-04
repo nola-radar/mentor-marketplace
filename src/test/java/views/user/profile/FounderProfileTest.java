@@ -32,6 +32,7 @@ public class FounderProfileTest {
     
     driver.get("http://localhost:8080/mentormarketplace/user/founder");
     
+    // For this test foundertestidea@gmail.com needs to be a registered founder in postgres on the local machine
     driver.findElement(By.cssSelector("#session_key-oauth2SAuthorizeForm")).sendKeys("foundertestidea@gmail.com");
     driver.findElement(By.cssSelector("#session_password-oauth2SAuthorizeForm")).sendKeys("testthefounder1");
     driver.findElement(By.cssSelector("#body > div > form > div.actions > ul > li:nth-child(1) > input")).click();

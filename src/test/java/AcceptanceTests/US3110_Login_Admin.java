@@ -56,6 +56,7 @@ public class US3110_Login_Admin {
 
         //Log into Mentor Marketplace as admin
         System.out.println("Logging in as admin");
+        driver.findElement(By.cssSelector("#registerButtonMiddle")).click();
         driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(adminUserName);
         driver.findElement(By.id("session_password-oauth2SAuthorizeForm")).sendKeys(adminPassword);
         driver.findElement(By.name("authorize")).click();

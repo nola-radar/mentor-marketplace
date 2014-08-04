@@ -366,7 +366,7 @@ public class Founder implements Serializable {
 
     @Override
     public String toString() {
-        return "org.ideavillage.mentormarketplace.persistence.domain.Mentor[ id=" + id + " ]";
+        return "org.ideavillage.mentormarketplace.persistence.domain.Founder[ id=" + id + " ]";
     }
     
     public MMUser getMmuser() {

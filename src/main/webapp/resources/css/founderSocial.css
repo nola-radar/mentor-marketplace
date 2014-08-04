@@ -70,6 +70,9 @@
     display: table-cell;
     vertical-align: middle;
 }
+.section-200 + .section-200 {
+    margin-top: 20px;
+}
 
 #createProfileMentorIndustry {
     background-color:#f6f6f6;
@@ -95,11 +98,13 @@
 
 #createProfileMentorCompany {
     background-color:#f6f6f6;
+    color:black;
 }
 
 .section-200 {
     height:200px;
     background-color:#f6f6f6;
+    color:black;
 }
 
 .section-200 + .section-200 {
@@ -118,7 +123,7 @@
 
 #createProfileFounderLogo {
     height:250px;
-    background-color:#f6f6f6;
+    background-color:lightskyblue;
 }
 
 #createProfileFounderStatus {
@@ -153,19 +158,20 @@
     bottom:20px;
     left:40px;
     position:absolute;
-    height:120px;
-    width:120px;
+    height:80px;
+    width:80px;
+    border-radius:5%;
 }
 
 #mfHOne {
-    bottom:80px;
-    left:170px;
+    bottom:40px;
+    left:130px;
     position:absolute;
 }
 
 #mfHTwo {
-    bottom:60px;
-    left:170px;
+    bottom:20px;
+    left:130px;
     position:absolute;
 }
 

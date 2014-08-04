@@ -16,86 +16,129 @@
         <link rel="stylesheet" href="http://localhost:8080/mentormarketplace/resources/css/bootstrap-responsive.css" type="text/css" />
         <link rel="stylesheet" href="/mentormarketplace/resources/css/navigationBar.css"  type="text/css"/>
         <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
-
     </head>
     
     <body id="createBody">
         <%@include file="../nav.jsp" %>
-        
-        <div class="container" id="mfMainContainer">
-            
-            <br><br><br><br><br><br>
-            <div class="container-fluid" id="mfSecondContainer">
+        <div class="container" id="registerMainContainer">
+            <br><br><br><br><br>
+            <div id="displayMentorMainContainer">
 
-                    <!-- Top Row -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div id="mfRowOne"> 
-                                <img src="${profile.profilePictureUrl}" id="mfImage"></img>
-                                <h4 id="mfHOne"> ${founder.getFirstName()} ${founder.getLastName()}</h4>
-                                <h5 id="mfHTwo"> ${founder.getIndustry()} </h5>
-                            </div>
+                <!-- Top Row -->
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div id="displayMentorRowOne">
+                            <img src="${profile.profilePictureUrl}" id="mfImage"></img>
+                            <h4 id="mfHOne"> ${founder.getFirstName()} ${founder.getLastName()}</h4>
+                            <h5 id="mfHTwo"> ${founder.getIndustry()} </h5>
                         </div>
                     </div>
 
-                    <!-- Content Body -->
-                    <br>
-                    <div class="row">
+                </div>
 
-                        <div class="col-xs-12 col-sm-6" id="mfRowThreeDivOne">
 
-                            <div id="mfRowThreeDivTwo">
+                <!-- Content Body -->
+
+                <div class="row margin-top-20">
+
+                    <div class="col-sm-12">
+
+                        <div class="col-md-6 padding-left-20 padding-right-10">
+
+                            <div Id="displayMentorFirstNameDiv">
                                 <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>
-                                <p> <strong>Website:</strong> &nbsp &nbsp ${founder.getWebsite()} </p>
-                                <p> <strong>Facebook:</strong> &nbsp &nbsp ${founder.getFacebook()} </p>
-                                <p> <strong>Twitter:</strong> &nbsp &nbsp ${founder.getTwitter()} </p>
-                                <p> <strong>Areas of Expertise:</strong> &nbsp &nbsp ${founder.getAreasOfExpertise()} </p>
-                                <p> <strong>Logo:</strong> &nbsp &nbsp ${founder.getLogo()} </p>
+                                <table>
+                                    <tr>
+                                        <td><strong>Website:</strong></td>
+                                        <td>${founder.getWebsite()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Facebook:</strong></td>
+                                        <td>${founder.getFacebook()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Twitter:</strong></td>
+                                        <td>${founder.getTwitter()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Other Social Media:</strong></td>
+                                        <td>${founder.getOtherSocialMedia()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Areas of Expertise:</strong></td>
+                                        <td>${founder.getAreasOfExpertise()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Logo:</strong></td>
+                                        <td>${founder.getLogo()}</td>
+                                    </tr>
+                                </table>
                             </div>
 
                         </div>
 
-                        <div class="col-xs-12 col-sm-6" id="mfRowThreeDivThree">
+                        <div class="col-md-6 padding-left-10 padding-right-20">
 
-                            <div id="mfRowThreeDivFour" >
-                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkTwo" /></a>
-                                <p> <strong>Elevator Pitch:</strong> &nbsp &nbsp ${founder.getElevatorPitch()} </p>
-                                <p> <strong>Immediate Needs:</strong> &nbsp &nbsp ${founder.getImmediateNeeds()} </p>
-                                <p> <strong>Company Details:</strong> &nbsp &nbsp ${founder.getCompanyDetails()} </p>
+                            <div class="section-200 sm-margin-top-20" id="displayMentorCompanyDiv">
+                                <table>
+                                    <tr>
+                                        <td><strong>Elevator Pitch:</strong></td>
+                                        <td>${founder.getElevatorPitch()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Immediate Needs:</strong></td>
+                                        <td>${founder.getImmediateNeeds()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Company Details:</strong></td>
+                                        <td>${founder.getCompanyDetails()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Status:</strong></td>
+                                        <td>${founder.getStatus()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vision:</strong></td>
+                                        <td>${founder.getVision()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>New Orleans:</strong></td>
+                                        <td>${founder.getNewOrleans()}</td>
+                                    </tr>
+                                </table>
                             </div>
 
-                            <div id="mfRowThreeDivFive">
-                               <p> <strong>Inspiration:</strong> &nbsp &nbsp ${founder.getInspiration()} </p>
-                               <p> <strong>Status:</strong> &nbsp &nbsp ${founder.getStatus()} </p>
-                               <p> <strong>Vision:</strong> &nbsp &nbsp ${founder.getVision()} </p>
-                               <p> <strong>New Orleans:</strong> &nbsp &nbsp ${founder.getNewOrleans()} </p>
+                            <div class="section-200">
+                                <table>
+                                    <tr>
+                                        <td><strong>Program Plan:</strong></td>
+                                        <td>${founder.getProgramPlan()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Weekly Reports:</strong></td>
+                                        <td>${founder.getWeeklyReports()}</td>
+                                    </tr>
+                                </table>
                             </div>
 
                         </div>
 
                     </div>
 
-                    <!-- Content Bottom -->
-                    <br>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12">
+                </div>
 
-                            <div id="mfContentBottom" >
-                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" style="padding:0;height:30px;width:30px;position:absolute;top:0;right:10px;" /></a>
-                                <p> <strong>Program Plan:</strong> &nbsp &nbsp ${founder.getProgramPlan()} </p>
-                                <p> <strong>Weekly Reports:</strong> &nbsp &nbsp ${founder.getWeeklyReports()} </p>
-                            </div>
+                <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
 
-                        </div>
-                    </div>
+                </div>
+
             </div>
 
-                <!-- BOOTSTRAP! -->
-                <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
-                <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 
+        <!-- BOOTSTRAP! -->
+        <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        </div>
     </body>
 </html>
-
-

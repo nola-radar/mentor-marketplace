@@ -63,15 +63,13 @@
                 </div>
                 <div class="span2">
                     <br><br><br><br><br>
-                    <a href="<c:url value="/auth/linkedin" />"  class="btn btn-info" id="indexButton">REGISTER</a>
+                    <a href="<c:url value="/auth/linkedin" />"  class="btn btn-info" id="registerButtonMiddle">REGISTER</a>
                 </div>
                 <div class="span2" id="cloudText2">
                     <center>
                         <h5>Mentor</h5>
                         <div id="pwrap"><p id="cloudParagraph">For Leaders Mentoring Companies in the 2015 IDEAx Program</p></div>
                         <form class="navbar-form pull-left" id="indexForm">
-                            <!--<br>
-                            <a href="<c:url value="/auth/linkedin" />" class="btn btn-info" id="indexButton2">REGISTER</a>-->
                         </form>
                     </center>
                 </div>
@@ -103,6 +101,7 @@
                     <center><img src="/mentormarketplace/resources/img/indexCircle.png" id="indexCircle"></center>
                     <h4>Innovate</h4>
                     <p>Together founders and mentors can shape a business that can change and industry, change New Orleans, and grow nationally.</p>
+                </div>
                 </div>
             </div>
         </div>

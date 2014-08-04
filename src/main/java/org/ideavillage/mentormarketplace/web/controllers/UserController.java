@@ -33,7 +33,12 @@ import org.springframework.web.context.request.WebRequest;
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
-
+    
+    Connection<LinkedIn> globalConnection;
+    MMUser globalUser;
+    Founder globalFounder;
+    Mentor globalMentor;
+    
     @Autowired
     private MMUserRepository mmUserRepository;
 
@@ -95,13 +100,15 @@ public class UserController {
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
     public String viewProfile(WebRequest request, Model model) {
         Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        globalConnection = connection;
         if (null == connection) {
-            return "redirect:/entrepreneurs/";
+            return "redirect:/index/";
         }
         model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
         String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
         //below is code determining to send user to founder profile or mentor profile jsp
         MMUser user = mmUserRepository.findByEmail(email);
+        globalUser = user;
         String utype = user.getUserType();
         String utypeparsed = utype.substring(0, 7);
         // redirect to founder.jsp if user type is founder
@@ -114,30 +121,28 @@ public class UserController {
 
     @RequestMapping(value = "/profile/{id}", method = RequestMethod.GET)
     public String viewProfileForId(WebRequest request, Model model, @PathVariable("id") Long id) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            return "redirect:/entrepreneurs/";
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
+            return "redirect:/index/";
         }
         MMUser user = mmUserRepository.findOne(id);
         if (null == user) {
-            return "redirect:/entrepreneurs/";
+            return "redirect:/index/";
         }
         // TODO: Fix this. Get insufficient permissions when using the id, but I think it works when using the publicUrl
-        model.addAttribute("profile", connection.getApi().profileOperations().getProfileFullById(user.getLinkedInId()));
+        model.addAttribute("profile", globalConnection.getApi().profileOperations().getProfileFullById(user.getLinkedInId()));
         return "user/profile";
     }
 
     @RequestMapping(value = "/founder", method = RequestMethod.GET)
     public String viewProfileFounder(WebRequest request, Model model) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            return "redirect:/entrepreneurs/";
+        if (null == globalConnection) {
+            return "redirect:/index/";
         }
-        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
-        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
-        MMUser user = mmUserRepository.findByEmail(email);
-        Founder founder = founderRepository.findByLinkedInId(user.getLinkedInId());
-        model.addAttribute("founder", founder);
+        //MMUser user = mmUserRepository.findByEmail(email);
+        Founder founder = founderRepository.findByLinkedInId(globalUser.getLinkedInId());
+        globalFounder = founder;
+        model.addAttribute("founder",founder);
         return "user/founder";
     }
     
@@ -150,36 +155,32 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/profile";
         }
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            return "redirect:/entrepreneurs/";
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
+            return "redirect:/index/";
         }
-        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
-        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
-        MMUser user = mmUserRepository.findByEmail(email);
-        Founder founder = founderRepository.findByLinkedInId(user.getLinkedInId());
-        registrationForm.setFirstName(founder.getFirstName());
-        registrationForm.setLastName(founder.getLastName());
-        registrationForm.setWebsite(founder.getWebsite());
-        registrationForm.setFacebook(founder.getFacebook());
-        registrationForm.setTwitter(founder.getTwitter());
-        registrationForm.setOtherSocialMedia(founder.getOtherSocialMedia());
-        registrationForm.setCompanyDetails(founder.getCompanyDetails());
-        registrationForm.setInspiration(founder.getInspiration());
-        registrationForm.setLogo(founder.getLogo());
-        registrationForm.setTagline(founder.getTagline());
-        registrationForm.setElevatorPitch(founder.getElevatorPitch());
-        registrationForm.setProgramPlan(founder.getProgramPlan());
-        registrationForm.setWeeklyReports(founder.getWeeklyReports());
-        registrationForm.setIndustry(founder.getIndustry());
-        registrationForm.setAreasOfExpertise(founder.getAreasOfExpertise());
-        registrationForm.setImmediateNeeds(founder.getImmediateNeeds());
-        registrationForm.setStatus(founder.getStatus());
-        registrationForm.setVision(founder.getVision());
-        registrationForm.setNewOrleans(founder.getNewOrleans());
-        registrationForm.setUserType(user.getUserType());
-        registrationForm.setLinkedInId(founder.getLinkedInId());
-        registrationForm.setEmail(user.getEmail());
+        registrationForm.setFirstName(globalFounder.getFirstName());
+        registrationForm.setLastName(globalFounder.getLastName());
+        registrationForm.setWebsite(globalFounder.getWebsite());
+        registrationForm.setFacebook(globalFounder.getFacebook());
+        registrationForm.setTwitter(globalFounder.getTwitter());
+        registrationForm.setOtherSocialMedia(globalFounder.getOtherSocialMedia());
+        registrationForm.setCompanyDetails(globalFounder.getCompanyDetails());
+        registrationForm.setInspiration(globalFounder.getInspiration());
+        registrationForm.setLogo(globalFounder.getLogo());
+        registrationForm.setTagline(globalFounder.getTagline());
+        registrationForm.setElevatorPitch(globalFounder.getElevatorPitch());
+        registrationForm.setProgramPlan(globalFounder.getProgramPlan());
+        registrationForm.setWeeklyReports(globalFounder.getWeeklyReports());
+        registrationForm.setIndustry(globalFounder.getIndustry());
+        registrationForm.setAreasOfExpertise(globalFounder.getAreasOfExpertise());
+        registrationForm.setImmediateNeeds(globalFounder.getImmediateNeeds());
+        registrationForm.setStatus(globalFounder.getStatus());
+        registrationForm.setVision(globalFounder.getVision());
+        registrationForm.setNewOrleans(globalFounder.getNewOrleans());
+        registrationForm.setUserType(globalUser.getUserType());
+        registrationForm.setLinkedInId(globalFounder.getLinkedInId());
+        registrationForm.setEmail(globalUser.getEmail());
         return "user/editFounder";
     }
   
@@ -188,30 +189,24 @@ public class UserController {
             Model model,
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
             BindingResult result) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            return "redirect:/entrepreneurs/";
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
+            return "redirect:/index/";
         }
-        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
-        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
-        MMUser user = mmUserRepository.findByEmail(email);
-        Founder founder = founderRepository.findByLinkedInId(user.getLinkedInId());
-        mmUserRepository.save(user);
-        registrationForm.editFounder(founder);
-        founderRepository.save(founder);
+        mmUserRepository.save(globalUser);
+        registrationForm.editFounder(globalFounder);
+        founderRepository.save(globalFounder);
         return "redirect:/user/profile";
     }
     
     @RequestMapping(value = "/mentor", method = RequestMethod.GET)
     public String viewProfileMentor(WebRequest request, Model model) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            return "redirect:/entrepreneurs/";
+        //Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == globalConnection) {
+            return "redirect:/index/";
         }
-        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
-        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
-        MMUser user = mmUserRepository.findByEmail(email);
-        Mentor mentor = mentorRepository.findByLinkedInId(user.getLinkedInId());
+        Mentor mentor = mentorRepository.findByLinkedInId(globalUser.getLinkedInId());
+        globalMentor = mentor;
         model.addAttribute("mentor", mentor);
         return "user/mentor";
     }
@@ -225,28 +220,23 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/profile";
         }
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            return "redirect:/entrepreneurs/";
+        if (null == globalConnection) {
+            return "redirect:/index/";
         }
-        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
-        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
-        MMUser user = mmUserRepository.findByEmail(email);
-        Mentor mentor = mentorRepository.findByLinkedInId(user.getLinkedInId());
-        registrationForm.setBackground(mentor.getBackground());
-        registrationForm.setFirstName(mentor.getFirstName());
-        registrationForm.setLastName(mentor.getLastName());
-        registrationForm.setWebsite(mentor.getWebsite());
-        registrationForm.setFacebook(mentor.getFacebook());
-        registrationForm.setTwitter(mentor.getTwitter());
-        registrationForm.setOtherSocialMedia(mentor.getOtherSocialMedia());
-        registrationForm.setIndustry(mentor.getIndustry());
-        registrationForm.setAreasOfExpertise(mentor.getAreasOfExpertise());
-        registrationForm.setUserType(user.getUserType());
-        registrationForm.setLinkedInId(mentor.getLinkedInId());
-        registrationForm.setEmail(user.getEmail());
-        registrationForm.setLinkedInCurrentCompany(mentor.getLinkedInCurrentCompany());
-        registrationForm.setLinkedInCurrentJobTitle(mentor.getLinkedInCurrentJobTitle());
+        registrationForm.setBackground(globalMentor.getBackground());
+        registrationForm.setFirstName(globalMentor.getFirstName());
+        registrationForm.setLastName(globalMentor.getLastName());
+        registrationForm.setWebsite(globalMentor.getWebsite());
+        registrationForm.setFacebook(globalMentor.getFacebook());
+        registrationForm.setTwitter(globalMentor.getTwitter());
+        registrationForm.setOtherSocialMedia(globalMentor.getOtherSocialMedia());
+        registrationForm.setIndustry(globalMentor.getIndustry());
+        registrationForm.setAreasOfExpertise(globalMentor.getAreasOfExpertise());
+        registrationForm.setUserType(globalUser.getUserType());
+        registrationForm.setLinkedInId(globalMentor.getLinkedInId());
+        registrationForm.setEmail(globalUser.getEmail());
+        registrationForm.setLinkedInCurrentCompany(globalMentor.getLinkedInCurrentCompany());
+        registrationForm.setLinkedInCurrentJobTitle(globalMentor.getLinkedInCurrentJobTitle());
         return "user/editMentor";
     }
     
@@ -255,17 +245,12 @@ public class UserController {
             Model model,
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
             BindingResult result) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            return "redirect:/entrepreneurs/";
+        if (null == globalConnection) {
+            return "redirect:/index/";
         }
-        model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
-        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
-        MMUser user = mmUserRepository.findByEmail(email);
-        Mentor mentor = mentorRepository.findByLinkedInId(user.getLinkedInId());
-        mmUserRepository.save(user);
-        registrationForm.editMentor(mentor);
-        mentorRepository.save(mentor);
+        mmUserRepository.save(globalUser);
+        registrationForm.editMentor(globalMentor);
+        mentorRepository.save(globalMentor);
         return "redirect:/user/profile";
     }
 }
