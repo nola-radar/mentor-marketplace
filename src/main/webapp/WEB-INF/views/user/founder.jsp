@@ -34,8 +34,8 @@
                             ${founder.getFirstName()} ${founder.getLastName()}
                             ${founder.getIndustry()}
                             
-                            <a href="<c:url value="editMentor" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>
-
+                            <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>
+                               
                         </div>
                     </div>
                 </div>
@@ -49,8 +49,7 @@
                         <div class="col-md-6 padding-left-20 padding-right-10">
 
                             <div id="profileSocialInfo">
-                                <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>
-                                <table>
+                               <table>
                                     <tr>
                                         <td><strong>Website:</strong></td>
                                         <td>${founder.getWebsite()}</td>
