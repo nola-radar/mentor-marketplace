@@ -4,24 +4,16 @@
 
         <!-- Top Row -->
         <div class="row">
-            
             <div class="col-sm-12">
-            
                 <div id="createProfileMenu"> Register Profile - Mentor</div>
-            
             </div>
-
         </div>
 
 
         <!-- Content Body -->
-
         <div class="row margin-top-20">
-
             <div class="col-sm-12">
-
                 <div class="col-md-6 padding-left-20 padding-right-10">
-
                     <div id="createProfileMentorSocialInfo">
                         
                         <table>
@@ -87,11 +79,9 @@
                             </spring:bind>
                         </table>
                     </div>
-
                 </div>
 
                 <div class="col-md-6 padding-left-10 padding-right-20">
-
                     <div class="section-200 sm-margin-top-20" id="createProfileMentorCompany">
                         <table>
                             <spring:bind path="linkedInCurrentCompany">
@@ -139,28 +129,20 @@
                             </spring:bind>
                         </table>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
+        
         <!-- Content Bottom -->
-
         <div class="row margin-top-20">
-
             <div class="col-sm-12 padding-left-20 padding-right-20">
-
                 <div class="col-sm-12">
-
                     <div id="createProfileMentorIndustry">
-
                         <table>
+                            
                             <spring:bind path="industry">
                                 <tr>
                                     <td>Industry:</td> 
-
                                     <td><form:select path="industry" class="input-large" >
                                     <form:option value="Accounting" label="Accounting"/>
                                     <form:option value="Advertising/Publication" label="Advertising/Publication"/>
@@ -229,34 +211,20 @@
                             </spring:bind>
                                     
                         </table>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
-
+        <!-- Create Profile Button -->
         <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
-
             <div class="col-sm-12 padding-left-20 padding-right-20">  
                 <div class="col-sm-12">
                     <button class="btn btn-info" type="submit" id="createProfileButton">
                         Create Profile
                     </button>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </form:form>
-
-<!-- BOOTSTRAP! -->
-<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>

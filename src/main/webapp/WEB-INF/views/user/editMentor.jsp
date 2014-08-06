@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 
 <html>
+    
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,48 +21,34 @@
     <body id="createBody">
 
         <%@include file="../nav.jsp" %>
-
         <form:form modelAttribute="registrationForm">
-
+            
             <div class="container" id="editMainContainer">
-
                 <div id="editProfileMainContainer">
 
                     <!-- Top Row -->
                     <div class="row">
-
                         <div class="col-sm-12">
-
                             <div id="createProfileMenu"> Edit Profile - Mentor</div>
-
                         </div>
-
                     </div>
 
-
                     <!-- Content Body -->
-
                     <div class="row margin-top-20">
-
                         <div class="col-sm-12">
-
                             <div class="col-md-6 padding-left-20 padding-right-10">
-
                                 <div id="editProfileMentorSocialInfo">
-
                                     <table>
+                                        
                                         <spring:bind path="firstName">
-
                                             <tr>
                                                 <td>First Name:</td> 
                                                 <td><form:input path="firstName" class="input-large" />
                                                     <form:errors path="firstName" cssClass="help-inline" /></td>
                                             </tr>
-
-                                            </spring:bind>
+                                        </spring:bind>
 
                                             <spring:bind path="lastName">
-
                                             <tr>
                                                 <td>Last Name:</td> 
                                                 <td><form:input path="lastName" class="input-large" />
@@ -71,57 +58,44 @@
                                         </spring:bind>
 
                                         <spring:bind path="website">
-
                                             <tr>
                                                 <td>Website:</td>
                                                 <td><form:input path="website" class="input-large" />
                                                     <form:errors path="website" cssClass="help-inline" /></td>
                                             </tr>
-
                                         </spring:bind>
 
                                         <spring:bind path="facebook">
-
                                             <tr>
                                                 <td>Facebook:</td>
                                                 <td><form:input path="facebook" class="input-large" />
                                                     <form:errors path="facebook" cssClass="help-inline" /></td>
                                             </tr>
-
                                         </spring:bind>
 
                                         <spring:bind path="twitter">
-
                                             <tr>
                                                 <td>Twitter:</td>
                                                 <td><form:input path="twitter" class="input-large" />
                                                     <form:errors path="twitter" cssClass="help-inline" /></td>
                                             <tr>
-
                                             </spring:bind>
 
                                             <spring:bind path="otherSocialMedia">
-
                                             <tr>
                                                 <td>Other Social Media:</td> 
                                                 <td><form:textarea path="otherSocialMedia" rows="2" cols="30" />
                                                     <form:errors path="otherSocialMedia" cssClass="help-inline" /></td>
                                             </tr>
-
                                         </spring:bind>
+                                    
                                     </table>
-
                                 </div>
-
                             </div>
 
-
                             <div class="col-md-6 padding-left-10 padding-right-20">
-
                                 <div class="section-200 sm-margin-top-20" id="rowTwoDivTwoChild">
-
                                     <spring:bind path="background">
-
                                         Background: &nbsp;
                                         <form:textarea path="background" rows="2" cols="30" />
                                         <form:errors path="background" cssClass="help-inline" />
@@ -129,52 +103,44 @@
                                     </spring:bind>
                                 </div>
 
-
                                 <div class="section-200" id="rowTwoDivTwoSecondChild">
                                     <table>
+                                    
                                         <spring:bind path="linkedInCurrentCompany">
-
                                             <tr>
                                                 <td>Current Company:</td>
                                                 <td><form:textarea path="linkedInCurrentCompany" rows="2" cols="30" />
                                                     <form:errors path="linkedInCurrentCompany" cssClass="help-inline" /></td>
                                             </tr>
-
                                         </spring:bind>
 
                                         <spring:bind path="linkedInCurrentJobTitle">
-
                                             <tr>
                                                 <td>Current Job Title:</td>
                                                 <td><form:textarea path="linkedInCurrentJobTitle" rows="2" cols="30" />
                                                     <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" /></td>
                                             </tr>
-
                                         </spring:bind>
+                                    
                                     </table>
 
                                     <spring:bind path="userType">
                                         <form:hidden path="userType"></form:hidden>
                                     </spring:bind>
+                                    
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
 
                     <!-- Content Bottom -->
                     <div class="row margin-top-20">
-
                         <div class="col-sm-12 padding-left-20 padding-right-20">
-
                             <div class="col-sm-12">
-
                                 <div id="rowThreeDivOne">
                                     <table>
+                                        
                                         <spring:bind path="industry">
-
                                             <tr>
                                                 <td>Industry:</td>
                                                 <td><form:select path="industry" class="input-large" >
@@ -218,18 +184,16 @@
                                                     </form:select>
                                                     <form:errors path="industry" cssClass="help-inline" /></td>
                                             </tr>
-
                                         </spring:bind>
 
                                         <spring:bind path="areasOfExpertise">
-
                                             <tr>
                                                 <td>Expertise:</td>
                                                 <td><form:input path="areasOfExpertise" class="input-large" />
                                                     <form:errors path="areasOfExpertise" cssClass="help-inline" /></td>
                                             </tr>
-
                                         </spring:bind>
+                                    
                                     </table>
 
                                     <spring:bind path="email">
@@ -239,33 +203,24 @@
                                     <spring:bind path="linkedInId">
                                         <form:hidden path="linkedInId" />
                                     </spring:bind>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
+                    <!-- Update Profile Button -->
                     <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
-
                         <div class="col-sm-12 padding-left-20 padding-right-20">  
                             <div class="col-sm-12">
                                 <button class="btn btn-info" type="submit" id="editUpdateProfileButton">
                                     Update Profile
                                 </button>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
-            </form:form>
-
-            <!-- BOOTSTRAP! -->
-            <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
-            <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-        </div>
+            </div>
+        </form:form>
     </body>
 </html>

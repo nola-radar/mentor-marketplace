@@ -1,19 +1,37 @@
 <nav class="navbar navbar-default" role="navigation" id="navDefault">
+
+    <!-- BOOTSTRAP! -->
+    <link rel="stylesheet" href="/mentormarketplace/resources/js/bootstrap-3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/mentormarketplace/resources/css/navigationBar.css"  type="text/css"/>
+    <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
+    
+    <!-- CSS and JS Plug-Ins -->
+    <script type="text/javascript" src="/mentormarketplace/resources/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/mentormarketplace/resources/js/bootstrap-multiselect/bootstrap-select.js"></script>
+    <script type="text/javascript" src="/mentormarketplace/resources/js/bootstrap-3.2.0/js/bootstrap.js"></script>
+
+    <!-- 
+    < %@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    < %@page contentType="text/html" pageEncoding="UTF-8"%>
+    
+    <script type="text/javascript" src="<c:url value="/resources/js/jquery/jquery.min.js" />"></script>
+    -->
+    
     
     <div class="container-fluid">
-        
+
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            
+
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            
+
             <img class="brand" src="/mentormarketplace/resources/img/logo.png" id="mentorLogo"/>
-        
+
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

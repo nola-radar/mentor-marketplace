@@ -44,6 +44,45 @@
 
 
 
+/* Bootstrap Multiselect Overrides*/
+
+.dropdown-menu {
+    padding: 0;
+    cursor: pointer;
+}
+.dropdown-menu.open {
+ border: none;
+ border: 1px #bfc2c5 solid;
+}
+.dropdown-menu li.selected > a {
+ border-radius: 4px;
+ color: #ffffff;
+ background-color: #3b73b9;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus {
+ border-radius: 4px;
+ background-color: #b7cbe5;
+}
+.dropdown-submenu:hover > a,
+.typeahead-faceted > ul > li:last-child a:hover,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+ border-radius: 4px;
+ background-color: #b7cbe5;
+}
+.dropdown-menu li.selected > a:hover,
+.dropdown-menu li.selected > a:focus {
+ background: #3b73b9;
+ border-radius: 4px;
+}
+i.glyphicon.glyphicon-ok.icon-ok.check-mark {
+    float: right;
+}
+
+
+
 /**
  *  Shared Register Container for Create Profiles Page
  **/

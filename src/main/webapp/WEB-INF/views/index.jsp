@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 
 <html>
+    
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,6 @@
         <!-- BOOTSTRAP! -->
         <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css" />"  type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/resources/css/navigationBar.css" />"  type="text/css"/>
-
     </head>
 
     <body>
@@ -78,7 +78,6 @@
         </div>
 
         <!-- Section Containing Connect, Meet, and Innovate -->
-    <center>
         <div class="row" id="titleBanner">
             <div class="row">
                 <center class="h3" style="text-align: center">Welcome to the Mentor Marketplace</center>
@@ -106,10 +105,7 @@
             </div>
         </div>
 
-    </center>
-
-    <!-- Section Explaining Mission of IdeaVillage -->
-    <center>
+        <!-- Section Explaining Mission of IdeaVillage -->
         <div class="row-fluid" id="secondFluid">
             <center>
                 <div class="span9 center">
@@ -118,11 +114,5 @@
                 </div>
             </center>
         </div>
-    </center>
-
-
-    <!-- BOOTSTRAP! -->
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="<c:url value="/resources/js/bootstrap.js" />"></script>
-</body>
+    </body>
 </html>
