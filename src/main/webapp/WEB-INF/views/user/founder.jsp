@@ -11,11 +11,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Founder Profile</title>
-
-        <!-- BOOTSTRAP! -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/mentormarketplace/resources/css/navigationBar.css"  type="text/css"/>
-        <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
     </head>
 
     <body id="createBody">
@@ -28,12 +23,23 @@
                 <!-- Top Row -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <div id="mfRowOne"> 
+                        <div id="mfRowOne" class="col-md-2"> 
                             <img src="${profile.profilePictureUrl}" id="mfImage"></img>
+                        </div>
+                        
+                        <div id="mfRowOne" class="col-md-8">
                             ${founder.getFirstName()} ${founder.getLastName()}
                             ${founder.getIndustry()}
-
-                            <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>
+                        </div> 
+                        
+                        <div id="mfRowOne" class="col-md-2">  
+                            <a href="<c:url value="editFounder" />">
+                            <button class="btn btn-info" type="submit" id="editProfileButton">
+                                 Edit Profile
+                            </button>
+                            </a>
+                            
+<!--                            <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>-->
                         </div>
                     </div>
                 </div>

@@ -163,29 +163,33 @@
         <div class="row margin-top-20">
             <div class="col-sm-12 padding-left-20 padding-right-20">
                 <div class="col-sm-12">
+                    
                     <!-- Bottom Content - Row 1 - Col 1 -->
                     <div id="createProfileFounderProgramPlan">
-                        <table>
+                        
                             <spring:bind path="programPlan">
-                                <tr>
-                                    <td>Program Plan:</td> 
-                                    <td><form:textarea path="programPlan" rows="2" cols="30" />
-                                <form:errors path="programPlan" cssClass="help-inline" /></td>
-                                </tr>
+                                <div class="form-group padding-top-10">
+                                    <label class="col-sm-2 control-label">Program Plan: </label>
+                                    <div class="col-sm-10">
+                                    <form:textarea class="form-control" path="programPlan" rows="2" />
+                                    <form:errors class="help-block" path="programPlan" cssClass="help-inline" />
+                                    </div>
+                                </div>
                             </spring:bind>
-
+                        
                             <spring:bind path="weeklyReports">
-                                <tr>
-                                    <td>Weekly Reports:</td>
-                                    <td><form:textarea path="weeklyReports" rows="2" cols="30" />
-                                <form:errors path="weeklyReports" cssClass="help-inline" /></td>
-                                </tr>
+                                <div class="form-group padding-top-10">
+                                    <label class="col-sm-2 control-label">Weekly Reports: </label>
+                                    <div class="col-sm-10">
+                                    <form:textarea class="form-control" path="weeklyReports" rows="2" />
+                                    <form:errors class="help-block" path="weeklyReports" cssClass="help-inline" />
+                                    </div>
+                                </div>
                             </spring:bind>
-                            
+                        
                             <spring:bind path="industry">
-                                
-                                    <td>Industry:</td>
-                                    <td>
+                                    Industry:
+                                    
                                     <!-- Build your select: -->
                                     <select class="selectpicker" multiple="multiple" path="industry">
                                         <option value="Accounting">Accounting</option>
@@ -226,19 +230,16 @@
                                         <option value="Venture Capital or Private Equity">Venture Capital or Private Equity</option>
                                         <option value="Other">Other</option>
                                     </select>
-                                    </td>
-                                </tr>
-
                             </spring:bind>
 
                             <spring:bind path="areasOfExpertise">
-
-                                <tr>
-                                    <td>Expertise:</td>
-                                    <td><form:input path="areasOfExpertise" class="input-large" />
-                                <form:errors path="areasOfExpertise" cssClass="help-inline" /></td>
-                                </tr>
-
+                                <div class="form-group padding-top-10">
+                                    <label class="col-sm-2 control-label">Expertise: </label>
+                                    <div class="col-sm-10">
+                                    <form:textarea class="form-control" path="areasOfExpertise" rows="2" />
+                                    <form:errors class="help-block" path="areasOfExpertise" cssClass="help-inline" />
+                                    </div>
+                                </div>
                             </spring:bind>
 
                             <spring:bind path="email">
@@ -256,7 +257,6 @@
                             <spring:bind path="userType">
                                 <form:hidden path="userType" value="founder"  />
                             </spring:bind>
-                        </table>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,6 @@
             </div>
         </div>
 
-
         <!-- Content Body -->
         <div class="row margin-top-20">
             <div class="col-sm-12">
