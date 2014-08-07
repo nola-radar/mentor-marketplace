@@ -1,0 +1,7 @@
+		           <spring:bind path="programPlan">
+                                <tr>
+                                    <td>Program Plan:</td> 
+                                    <td><form:textarea path="programPlan" rows="2" cols="30" />
+                                <form:errors path="programPlan" cssClass="help-inline" /></td>
+                                </tr>
+                            </spring:bind>

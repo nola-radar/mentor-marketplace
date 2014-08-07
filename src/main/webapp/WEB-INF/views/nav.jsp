@@ -1,14 +1,13 @@
 <nav class="navbar navbar-default" role="navigation" id="navDefault">
 
     <!-- BOOTSTRAP! -->
-    <link rel="stylesheet" href="/mentormarketplace/resources/js/bootstrap-3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/mentormarketplace/resources/components/bootstrap-3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/mentormarketplace/resources/css/navigationBar.css"  type="text/css"/>
     <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
     
     <!-- CSS and JS Plug-Ins -->
-    <script type="text/javascript" src="/mentormarketplace/resources/js/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/mentormarketplace/resources/js/bootstrap-multiselect/bootstrap-select.js"></script>
-    <script type="text/javascript" src="/mentormarketplace/resources/js/bootstrap-3.2.0/js/bootstrap.js"></script>
+    <script src="/mentormarketplace/resources/components/requirejs/require.js"></script>
+    <script src="/mentormarketplace/resources/js/require.config.js"></script>
 
     <!-- 
     < %@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

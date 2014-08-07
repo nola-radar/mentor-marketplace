@@ -11,7 +11,7 @@
         <title>Mentor Marketplace</title>
 
         <!-- BOOTSTRAP! -->
-        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css" />"  type="text/css"/>
+        <link rel="stylesheet" href="<c:url value="/resources/components/bootstrap-3.2.0/css/bootstrap.css" />"  type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/resources/css/navigationBar.css" />"  type="text/css"/>
     </head>
 
