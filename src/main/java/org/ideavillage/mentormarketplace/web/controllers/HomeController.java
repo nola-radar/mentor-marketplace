@@ -24,7 +24,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String displayHomePage() {
-        return "index";
+        return "index/index";
     }
 
     @RequestMapping(value = "/connect")

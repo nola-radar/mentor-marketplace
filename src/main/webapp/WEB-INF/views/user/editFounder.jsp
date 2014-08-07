@@ -1,21 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<!DOCTYPE html>
-
-<html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Founder Edit</title>
-    </head>
-
-    <body id="createBody">
-
-        <%@include file="../nav.jsp" %>
+        <!-- Header -->
+        <%@include file="../header.jsp" %>
+        
         <form:form modelAttribute="registrationForm">
 
             <div class="container" id="editMainContainer">
@@ -189,7 +174,7 @@
                                             <tr>
                                                 <td>Industry:</td> 
 
-                                                <td><form:select path="industry" class="input-large" >
+                                                <td><form:select path="industry" class="selectpicker" multiple="multiple" >
                                                         <form:option value="Accounting" label="Accounting"/>
                                                         <form:option value="Advertising/Publication" label="Advertising/Publication"/>
                                                         <form:option value="Agriculture" label="Agriculture"/>
@@ -275,5 +260,11 @@
                 </div>
             </div>
         </form:form>
-    </body>
-</html>
+        
+        
+        <script type="text/javascript">
+            require(['dropdown']);
+        </script>
+                                    
+        <!-- Footer -->
+        <%@include file="../footer.jsp" %>
