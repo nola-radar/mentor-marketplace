@@ -14,88 +14,90 @@
             <div class="col-sm-12">
                 <div class="col-md-6 padding-left-20 padding-right-10">
                     <div id="createProfileFounderInfo">
-
+                        <div class="form-group">
+                            
                         <spring:bind path="firstName">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label padding-top-10" style="width:15%">First Name: </label>
-                                <div class="col-sm-10 padding-top-10" style="width:85%">
+                            
+                                
+                                <label class="col-sm-2 control-label createProfileInputLabels padding-top-10">First Name: </label>
+                                <div class="col-sm-10 createProfileInputFields padding-top-10">
                                     <form:input class="form-control" path="firstName" rows="2" />
                                     <form:errors class="help-block" path="firstName" cssClass="help-inline" />
                                 </div>
-                            </div>
+                            
                         </spring:bind>
 
                         <spring:bind path="lastName">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" style="width:15%">Last Name: </label>
-                                <div class="col-sm-10" style="width:85%">
+                            
+                                <label class="col-sm-2 control-label createProfileInputLabels">Last Name: </label>
+                                <div class="col-sm-10 createProfileInputFields">
                                     <form:input class="form-control" path="lastName" rows="2" />
                                     <form:errors class="help-block" path="lastName" cssClass="help-inline" />
                                 </div>
-                            </div>
+                            
                         </spring:bind>
 
                         <spring:bind path="website">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Website: </label>
-                                <div class="col-sm-10">
+                            
+                                <label class="col-sm-2 control-label createProfileInputLabels">Website: </label>
+                                <div class="col-sm-10 createProfileInputFields">
                                     <form:input class="form-control" path="website" rows="2" />
                                     <form:errors class="help-block" path="website" cssClass="help-inline" />
                                 </div>
-                            </div>
+                            
                         </spring:bind>
 
                         <spring:bind path="facebook">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Facebook: </label>
-                                <div class="col-sm-10">
+                            
+                                <label class="col-sm-2 control-label createProfileInputLabels">Facebook: </label>
+                                <div class="col-sm-10 createProfileInputFields">
                                     <form:input class="form-control" path="facebook" rows="2" />
                                     <form:errors class="help-block" path="facebook" cssClass="help-inline" />
                                 </div>
-                            </div>
+                           
                         </spring:bind>
 
                         <spring:bind path="twitter">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Twitter: </label>
-                                <div class="col-sm-10">
+                           
+                                <label class="col-sm-2 control-label createProfileInputLabels">Twitter: </label>
+                                <div class="col-sm-10 createProfileInputFields">
                                     <form:input class="form-control" path="twitter" rows="2" />
                                     <form:errors class="help-block" path="twitter" cssClass="help-inline" />
                                 </div>
-                            </div>
+                           
                         </spring:bind>
 
                         <spring:bind path="otherSocialMedia">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Other Social Media: </label>
-                                <div class="col-sm-10">
+                           
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Other Social Media: </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
                                     <form:textarea class="form-control" path="otherSocialMedia" rows="2" />
                                     <form:errors class="help-block" path="otherSocialMedia" cssClass="help-inline" />
                                 </div>
-                            </div>
+                           
                         </spring:bind>
 
                         <spring:bind path="companyDetails">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Company Description: </label>
-                                <div class="col-sm-10">
+                            
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Company Description: </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
                                     <form:textarea class="form-control" path="companyDetails" rows="2" />
                                     <form:errors class="help-block" path="companyDetails" cssClass="help-inline" />
                                 </div>
-                            </div>
+                           
                         </spring:bind>
 
 
                         <spring:bind path="inspiration">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Inspiration: </label>
-                                <div class="col-sm-10">
+                           
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Inspiration: </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
                                     <form:textarea class="form-control" path="inspiration" rows="2" />
                                     <form:errors class="help-block" path="inspiration" cssClass="help-inline" />
                                 </div>
-                            </div>
+                           
                         </spring:bind>
-
+                        </div>
                     </div>
                 </div>
 
