@@ -22,9 +22,7 @@
                                  Edit Profile
                             </button>
                             </a>
-                            
-<!--                            <a href="<c:url value="editFounder" />"><img src="/mentormarketplace/resources/img/edit.png" id="mfLinkOne" /></a>-->
-                        </div>
+                       </div>
                     </div>
                 </div>
 

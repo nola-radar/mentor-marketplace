@@ -16,8 +16,53 @@
     </head>
 
     <body>
+        
+<!--    <div id="createProfileMainContainer">
+    
+         Navigate Bar 
+        <div class="row"> 
+            <div class="col-sm-12"> 
+                <div style="background-color:#2980b9; height:50;">
+                    <img class="brand" src="/mentormarketplace/resources/img/IdeaLogo.png" style="height:21px;"/>
+                        MENTOR MARKETPLACE
+                    <a href="auth/linkedin">
+                        <button class="btn btn-info" type="submit" id="editProfileButton">
+                            Edit Profile
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <!-- Navigate Bar -->
+         Section Contained Two Clouds and Register Buttons 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-4">
+                    <div style="background-color:#2980b9; height:400px;">
+                        Founder
+                        <p>For Companies Participating in the 2015 IDEAx Program</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div style="background-color:#2980b9; height:400px;">
+                    <a href="/auth/linkedin" class="btn btn-info" id="registerButtonMiddle">REGISTER</a>
+                    </div>
+                </div>
+                        
+                <div class="col-sm-4">
+                    <div style="background-color:#2980b9; height:400px;">
+                        Mentor
+                        <p>For Leaders Mentoring Companies in the 2015 IDEAx Program</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+-->
+         Navigate Bar 
         <div class="navbar navbar-fixed-top-idea" id="indexNav"> 
 
             <div class="navbar-inner-idea"> 
@@ -39,7 +84,7 @@
             </div>
         </div>
 
-        <!-- Section Contained Two Clouds and Register Buttons -->
+         Section Contained Two Clouds and Register Buttons 
         <div class="hero-unit-idea">
             <img src="/mentormarketplace/resources/img/indexBack.png" id="indexHalfmoom">
             <div class="row-fluid">
@@ -77,7 +122,7 @@
             </div>
         </div>
 
-        <!-- Section Containing Connect, Meet, and Innovate -->
+         Section Containing Connect, Meet, and Innovate 
         <div class="row" id="titleBanner">
             <div class="row">
                 <center class="h3" style="text-align: center">Welcome to the Mentor Marketplace</center>
@@ -105,7 +150,7 @@
             </div>
         </div>
 
-        <!-- Section Explaining Mission of IdeaVillage -->
+         Section Explaining Mission of IdeaVillage 
         <div class="row-fluid" id="secondFluid">
             <center>
                 <div class="span9 center">
@@ -114,5 +159,6 @@
                 </div>
             </center>
         </div>
+
     </body>
 </html>
