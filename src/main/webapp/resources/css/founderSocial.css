@@ -123,6 +123,33 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
     margin-bottom: 5px;
 }
 
+
+/* Top Text Fields account for the padding.*/
+.createProfileTopInputLabels {
+    height: 60px;
+    padding-top: 10px;
+}
+
+.createProfileTopInputFields {
+    height: 60px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+.createProfileTopTextAreaLabels {
+    height: 80px;
+    padding-top: 10px;
+}
+
+.createProfileTopTextAreaFields {
+    height: 80px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+
+/* Shared Profile CSS IDs */
+
 #createProfileMenu {
     background-color:#203747;
     color:white;
@@ -130,9 +157,6 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-}
-.section-200 + .section-200 {
-    margin-top: 20px;
 }
 
 #createProfileMentorIndustry {
@@ -146,6 +170,15 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
     width:150px;
 }
 
+.section-200 {
+    height:200px;
+    background-color:#f6f6f6;
+    color:black;
+}
+
+.section-200 + .section-200 {
+    margin-top: 20px;
+}
 
 
 /**
@@ -162,34 +195,23 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
     color:black;
 }
 
-.section-200 {
-    height:200px;
-    background-color:#f6f6f6;
-    color:black;
-}
-
-.section-200 + .section-200 {
-    margin-top: 20px;
-}
-
-
 
 /**
  *  createFounder.jps specific CSS 
  **/
 #createProfileFounderInfo {
     background-color:#f6f6f6;
-    height:520px;
+    height:530px;
 }
 
 #createProfileFounderLogo {
-    height:250px;
+    height:200px;
     background-color:#f6f6f6;
 }
 
 #createProfileFounderStatus {
     background-color:#f6f6f6;
-    height:250px;
+    height:310px;
 }
 
 #createProfileFounderProgramPlan {

@@ -1,3 +1,94 @@
+body {
+    background: #eeeeee;
+}
+
+/* ------------------------------------------
+    Nav Bar
+   ------------------------------------------ */
+
+.navbar-default.navbar-bg-blue {
+    background: #2980b9;
+    border: none;
+    
+}
+
+.navbar-default.navbar-bg-darkblue {
+    background: #000000;
+    border: none;
+    
+}
+
+.navbar.navbar-bg-blue {
+    margin-bottom: 0px;
+}
+
+.navbar-bg-blue .navbar-right {
+    margin-top: 7px;
+}
+
+.navbar-default.navbar-bg-blue .navbar-brand {
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+
+/* ------------------------------------------
+    Index Page
+   ------------------------------------------ */
+
+#indexRegistrationPage {
+    
+    background: url(../img/Rounded-Earth.png) no-repeat center bottom #2980b9;
+    background-size: 150% 140px;
+    padding-top: 20px;
+}
+
+.indexContainer {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.indexGraphic {
+    width: 900px;
+    height: 365px;
+    background: url(../img/thoughtBubbles.png) no-repeat left top;
+    position: relative;
+}
+
+.indexGraphicTextLeft {
+    position: absolute;
+    top: 215px;
+    left: 80px;
+}
+
+.indexGrpahicTextRight {
+    position: absolute;
+    top: 215px;
+    right: 100px;
+}
+
+.indexRegistationButton {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.indexRegistrationInfo {
+    background: #e3e3e3;
+}
+
+.indexTopic {
+    background: url(../img/Blurb_Circle.png) no-repeat center 40px;
+    background-size: 120px 120px;
+    padding-top: 160px;
+    padding-bottom: 40px;
+}
+
+.indexMissionStatement {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
 /* Below is css for the create page */
 #createBody {
     background-color:#e3e3e3;

@@ -1,5 +1,5 @@
 <form:form modelAttribute="registrationForm">
-    
+
     <div id="createProfileMainContainer">
 
         <!-- Top Row -->
@@ -14,202 +14,189 @@
             <div class="col-sm-12">
                 <div class="col-md-6 padding-left-20 padding-right-10">
                     <div id="createProfileMentorSocialInfo">
-                        
-                        <table>
-                            
-                            <spring:bind path="firstName">
 
-                                <tr>
-                                    <td>First Name:</td>
-                                    <td><form:input path="firstName" class="input-large" />
-                                <form:errors path="firstName" cssClass="help-inline" /></td>
-                                </tr>
+                        <spring:bind path="firstName">
 
-                            </spring:bind>
+                            <label class="col-sm-3 control-label createProfileTopInputLabels">First Name: </label>
+                            <div class="col-sm-9 createProfileTopInputFields">
+                                <form:input class="form-control" path="firstName" rows="2" />
+                                <form:errors class="help-block" path="firstName" cssClass="help-inline" />
+                            </div>
 
-                            <spring:bind path="lastName">
+                        </spring:bind>
 
-                                <tr>
-                                    <td>Last Name:</td>
-                                    <td><form:input path="lastName" class="input-large" />
-                                <form:errors path="lastName" cssClass="help-inline" /></td>
-                                </tr>
+                        <spring:bind path="lastName">
 
-                            </spring:bind>
+                            <label class="col-sm-3 control-label createProfileInputLabels">Last Name: </label>
+                            <div class="col-sm-9 createProfileInputFields">
+                                <form:input class="form-control" path="lastName" rows="2" />
+                                <form:errors class="help-block" path="lastName" cssClass="help-inline" />
+                            </div>
 
-                            <spring:bind path="website">
+                        </spring:bind>
 
-                                <tr>
-                                    <td>Website:</td>
-                                    <td><form:input path="website" class="input-large" />
-                                <form:errors path="website" cssClass="help-inline" /></td>
-                                </tr>
+                        <spring:bind path="website">
 
-                            </spring:bind>
+                            <label class="col-sm-3 control-label createProfileInputLabels">Website: </label>
+                            <div class="col-sm-9 createProfileInputFields">
+                                <form:input class="form-control" path="website" rows="2" />
+                                <form:errors class="help-block" path="website" cssClass="help-inline" />
+                            </div>
 
-                            <spring:bind path="facebook">
+                        </spring:bind>
 
-                                <tr>
-                                    <td>Facebook:</td>
-                                    <td><form:input path="facebook" class="input-large" />
-                                <form:errors path="facebook" cssClass="help-inline" /></td>
-                                </tr>
+                        <spring:bind path="facebook">
 
-                            </spring:bind>
+                            <label class="col-sm-3 control-label createProfileInputLabels">Facebook: </label>
+                            <div class="col-sm-9 createProfileInputFields">
+                                <form:input class="form-control" path="facebook" rows="2" />
+                                <form:errors class="help-block" path="facebook" cssClass="help-inline" />
+                            </div>
 
-                            <spring:bind path="twitter">
+                        </spring:bind>
 
-                                <tr>
-                                    <td>Twitter:</td>
-                                    <td><form:input path="twitter" class="input-large" />
-                                <form:errors path="twitter" cssClass="help-inline" /></td>
-                                </tr>
+                        <spring:bind path="twitter">
 
-                            </spring:bind>
+                            <label class="col-sm-3 control-label createProfileInputLabels">Twitter: </label>
+                            <div class="col-sm-9 createProfileInputFields">
+                                <form:input class="form-control" path="twitter" rows="2" />
+                                <form:errors class="help-block" path="twitter" cssClass="help-inline" />
+                            </div>
 
-                            <spring:bind path="otherSocialMedia">
+                        </spring:bind>
 
-                                <tr>
-                                    <td>Other Social Media:</td>
-                                    <td><form:textarea path="otherSocialMedia" rows="5" cols="30" />
-                                <form:errors path="otherSocialMedia" cssClass="help-inline" /></td>
-                                </tr>
+                        <spring:bind path="otherSocialMedia">
 
-                            </spring:bind>
-                        </table>
+                            <label class="col-sm-3 control-label createProfileTextAreaLabels">Other Social Media: </label>
+                            <div class="col-sm-9 createProfileTextAreaFields">
+                                <form:textarea class="form-control" path="otherSocialMedia" rows="2" />
+                                <form:errors class="help-block" path="otherSocialMedia" cssClass="help-inline" />
+                            </div>
+
+                        </spring:bind>
                     </div>
                 </div>
 
                 <div class="col-md-6 padding-left-10 padding-right-20">
                     <div class="section-200 sm-margin-top-20" id="createProfileMentorCompany">
-                        <table>
-                            <spring:bind path="linkedInCurrentCompany">
 
-                                <tr>
-                                    <td>Current Company:</td>
-                                    <td><form:input path="linkedInCurrentCompany" class="input-large" />
-                                <form:errors path="linkedInCurrentCompany" cssClass="help-inline" /></td>
-                                </tr>
+                        <spring:bind path="linkedInCurrentCompany">
+                            <label class="col-sm-3 control-label createProfileTopInputLabels">Current Company: </label>
+                            <div class="col-sm-9 createProfileTopInputFields">
+                                <form:input class="form-control" path="linkedInCurrentCompany" rows="2" />
+                                <form:errors class="help-block" path="linkedInCurrentCompany" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
 
-                            </spring:bind>
+                        <spring:bind path="linkedInCurrentJobTitle">
+                            <label class="col-sm-3 control-label createProfileInputLabels">Current Job Title: </label>
+                            <div class="col-sm-9 createProfileInputFields">
+                                <form:input class="form-control" path="linkedInCurrentJobTitle" rows="2" />
+                                <form:errors class="help-block" path="linkedInCurrentJobTitle" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
 
-                            <spring:bind path="linkedInCurrentJobTitle">
+                        <spring:bind path="linkedInPictureURL">
+                            <label class="col-sm-3 control-label createProfileInputLabels">LinkedIn Picture: </label>
+                            <div class="col-sm-9 createProfileInputFields">
+                                <form:input class="form-control" path="linkedInPictureURL" rows="2" />
+                                <form:errors class="help-block" path="linkedInPictureURL" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
 
-                                <tr>
-                                    <td>Current Job Title:</td>
-                                    <td><form:input path="linkedInCurrentJobTitle" class="input-large" />
-                                <form:errors path="linkedInCurrentJobTitle" cssClass="help-inline" /></td>
-                                </tr>
-
-                            </spring:bind>
-
-                            <spring:bind path="linkedInPictureURL">
-
-                                <tr>
-                                    <td>LinkedIn Picture:</td> 
-                                    <td><form:input path="linkedInPictureURL" class="input-large"/>
-                                <form:errors path="linkedInPictureURL" cssClass="help-inline" /></td>
-                                </tr>
-
-                            </spring:bind>
-                        </table>
                     </div>
 
                     <div class="section-200">
-                        <table>
-                            <spring:bind path="background">
 
-                                <tr>
-                                    <td>Background:</td>
-                                    <td><form:textarea path="background" rows="4" cols="30" />
-                                <form:errors path="linkedInPictureURL" cssClass="help-inline" /></td>
-                                </tr>
+                        <spring:bind path="background">
+                            <label class="col-sm-3 control-label createProfileTopInputLabels">Background: </label>
+                            <div class="col-sm-9 createProfileTopInputFields">
+                                <form:input class="form-control" path="background" rows="2" />
+                                <form:errors class="help-block" path="background" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
 
-                            </spring:bind>
-                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Content Bottom -->
         <div class="row margin-top-20">
             <div class="col-sm-12 padding-left-20 padding-right-20">
                 <div class="col-sm-12">
                     <div id="createProfileMentorIndustry">
-                        <table>
-                            
-                            <spring:bind path="industry">
-                                <tr>
-                                    <td>Industry:</td> 
-                                    <td><form:select path="industry" class="input-large" >
-                                    <form:option value="Accounting" label="Accounting"/>
-                                    <form:option value="Advertising/Publication" label="Advertising/Publication"/>
-                                    <form:option value="Agriculture" label="Agriculture"/>
-                                    <form:option value="Angel Funding" label="Angel Funding"/>
-                                    <form:option value="Apparel/Accessories" label="Apparel/Accessories"/>
-                                    <form:option value="Architecture/Design" label="Architecture/Design"/>
-                                    <form:option value="Arts, Entertainment/Recreation" label="Arts, Entertainment/Recreation"/>
-                                    <form:option value="Automotive" label="Automotive"/>
-                                    <form:option value="Biotechnology/Health/Medical" label="Biotechnology/Health/Medical"/>
-                                    <form:option value="Communication Services" label="Communication Services"/>
-                                    <form:option value="Computer/Software" label="Computer/Software"/>
-                                    <form:option value="E-commerce" label="E-commerce"/>
-                                    <form:option value="Energy" label="Energy"/>
-                                    <form:option value="Education/Training" label="Education/Training"/>
-                                    <form:option value="Environmental" label="Environmental"/>
-                                    <form:option value="Financial Services" label="Financial Services"/>
-                                    <form:option value="Food/Beverage" label="Food/Beverage"/>
-                                    <form:option value="Health Care/Biotech" label="Health Care/Biotech"/>
-                                    <form:option value="Manufacturing" label="Manufacturing"/>
-                                    <form:option value="Marketing/PR" label="Marketing/PR"/>
-                                    <form:option value="Media Services" label="Media Services"/>
-                                    <form:option value="Mining Industry" label="Mining Industry"/>
-                                    <form:option value="Multimedia/Internet/Online services" label="Multimedia/Internet/Online services"/>
-                                    <form:option value="Office Equipment" label="Office Equipment"/>
-                                    <form:option value="Oil/Gas" label="Oil/Gas"/>
-                                    <form:option value="Plumbing" label="Plumbing"/>
-                                    <form:option value="Printing/Graphics" label="Printing/Graphics"/>
-                                    <form:option value="Product Licensing" label="Product Licensing"/>
-                                    <form:option value="Real Estate" label="Real Estate"/>
-                                    <form:option value="Retail or eCommerce" label="Retail or eCommerce"/>
-                                    <form:option value="SaaS" label="SaaS"/>
-                                    <form:option value="Social Entrepreneurship" label="Social Entrepreneurship"/>
-                                    <form:option value="Sports/Fitness Services" label="Sports/Fitness Services"/>
-                                    <form:option value="Television/Film" label="Television/Film"/>
-                                    <form:option value="Travel/Transportation" label="Travel/Transportation"/>
-                                    <form:option value="Venture Capital or Private Equity" label="Venture Capital or Private Equity"/>
-                                    <form:option value="Other" label="Other"/>
-                                </form:select>
-                                <form:errors path="industry" cssClass="help-inline" /></td>
-                                </tr>
-                            </spring:bind>
 
-                            <spring:bind path="areasOfExpertise">
-                                <tr>
-                                    <td>Expertise:</td>
-                                    <td><form:input path="areasOfExpertise" class="input-large" />
-                                <form:errors path="areasOfExpertise" cssClass="help-inline" /></td>
-                                </tr>
-                            </spring:bind>
+                        <spring:bind path="industry">
+                            <label class="col-sm-2 control-label createProfileTopInputLabels">Industry: </label>
 
-                            <spring:bind path="email">
-                                    <form:hidden path="email" />
-                            </spring:bind>
+                            <!-- Multi-Select: -->
+                            <div class="col-sm-10 createProfileTopInputFields">
+                                <select class="selectpicker" multiple="multiple" path="industry">
+                                    <option value="Accounting">Accounting</option>
+                                    <option value="Advertising/Publication">Advertising/Publication</option>
+                                    <option value="Agriculture">Agriculture</option>
+                                    <option value="Angel Funding">Angel Funding</option>
+                                    <option value="Apparel/Accessories">Apparel/Accessories</option>
+                                    <option value="Architecture/Design">Architecture/Design</option>
+                                    <option value="Arts, Entertainment/Recreation">Arts, Entertainment/Recreation</option>
+                                    <option value="Automotive">Automotive</option>
+                                    <option value="Biotechnology/Health/Medical">Biotechnology/Health/Medical</option>
+                                    <option value="Communication Services">Communication Services</option>
+                                    <option value="Computer/Software">Computer/Software</option>
+                                    <option value="E-commerce">E-commerce</option>
+                                    <option value="Energy">Energy</option>
+                                    <option value="Education/Training">Education/Training</option>
+                                    <option value="Environmental">Environmental</option>
+                                    <option value="Financial Services">Financial Services</option>
+                                    <option value="Food/Beverage">Food/Beverage</option>
+                                    <option value="Health Care/Biotech">Health Care/Biotech</option>
+                                    <option value="Manufacturing">Manufacturing</option>
+                                    <option value="Marketing/PR">Marketing/PR</option>
+                                    <option value="Media Services">Media Services</option>
+                                    <option value="Mining Industry">Mining Industry</option>
+                                    <option value="Multimedia/Internet/Online services">Multimedia/Internet/Online services</option>
+                                    <option value="Office Equipment">Office Equipment</option>
+                                    <option value="Oil/Gas">Oil/Gas</option>
+                                    <option value="Plumbing">Plumbing</option>
+                                    <option value="Printing/Graphics">Printing/Graphics</option>
+                                    <option value="Product Licensing">Product Licensing</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Retail or eCommerce">Retail or eCommerce</option>
+                                    <option value="SaaS">SaaS</option>
+                                    <option value="Social Entrepreneurship">Social Entrepreneurship</option>
+                                    <option value="Sports/Fitness Services">Sports/Fitness Services</option>
+                                    <option value="Television/Film">Television/Film</option>
+                                    <option value="Travel/Transportation">Travel/Transportation</option>
+                                    <option value="Venture Capital or Private Equity">Venture Capital or Private Equity</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </spring:bind>
 
-                            <spring:bind path="linkedInId">
-                                <form:hidden path="linkedInId" />
-                            </spring:bind>
+                        <spring:bind path="areasOfExpertise">
+                            <label class="col-sm-2 control-label">Expertise: </label>
+                            <div class="col-sm-10">
+                                <form:textarea class="form-control" path="areasOfExpertise" rows="2" />
+                                <form:errors class="help-block" path="areasOfExpertise" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
 
-                            <spring:bind path="isAdmin">
-                                <form:hidden path="isAdmin" />
-                            </spring:bind>
+                        <spring:bind path="email">
+                            <form:hidden path="email" />
+                        </spring:bind>
 
-                            <spring:bind path="userType">
-                                <form:hidden path="userType" value="mentor"  />
-                            </spring:bind>
-                                    
-                        </table>
+                        <spring:bind path="linkedInId">
+                            <form:hidden path="linkedInId" />
+                        </spring:bind>
+
+                        <spring:bind path="isAdmin">
+                            <form:hidden path="isAdmin" />
+                        </spring:bind>
+
+                        <spring:bind path="userType">
+                            <form:hidden path="userType" value="mentor"  />
+                        </spring:bind>
                     </div>
                 </div>
             </div>
