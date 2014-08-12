@@ -19,6 +19,11 @@
 
         <nav class="navbar navbar-default navbar-static-top navbar-bg-blue" role="navigation">
             <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <img class="brand" src="/mentormarketplace/resources/img/logo.png" id="mentorLogo"/>
+                </div>
+                
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Mentor Marketplace</a>
                 </div>
