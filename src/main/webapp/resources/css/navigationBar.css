@@ -3,7 +3,7 @@ body {
 }
 
 /* ------------------------------------------
-    Nav Bar
+    Index Page Nav Bar
    ------------------------------------------ */
 
 .navbar-default.navbar-bg-blue {
@@ -13,7 +13,7 @@ body {
 }
 
 .navbar-default.navbar-bg-darkblue {
-    background: #000000;
+    background: #203747;
     border: none;
     
 }
@@ -22,13 +22,36 @@ body {
     margin-bottom: 0px;
 }
 
+.navbar.navbar-bg-darkblue {
+    margin-bottom: 0px;
+}
+
 .navbar-bg-blue .navbar-right {
+    margin-top: 7px;
+}
+
+.navbar-bg-darkblue .navbar-right {
     margin-top: 7px;
 }
 
 .navbar-default.navbar-bg-blue .navbar-brand {
     color: #FFFFFF;
     text-transform: uppercase;
+}
+
+.navbar-default.navbar-bg-darkblue .navbar-brand {
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+#mentorLogo {
+    height:40px;
+    margin: 5px 40px 5px 40px;
+}
+
+#navBarLogOutButton {
+    background-color:#27ae60;
+    border-radius: 0;
 }
 
 
@@ -89,6 +112,12 @@ body {
 }
 
 
+/*
+    Navigation Bar
+ */
+
+ 
+
 /* Below is css for the create page */
 #createBody {
     background-color:#e3e3e3;
@@ -110,13 +139,6 @@ body {
     background-color:#203747;
     border-radius:0;
     margin-bottom:0px;
-}
-
-#mentorLogo {
-    margin-bottom:5px;
-    height:35px;
-    margin-top:5px;
-    margin-left:40px;
 }
 
 #mentorNavButton {
