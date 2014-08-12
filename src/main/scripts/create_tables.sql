@@ -1,11 +1,11 @@
 -- I would recommend using pgAdmin to create the tables,
 -- then copy the sql from the 'SQL Pane' to here
 -- so we have scripts that we can run on the servers.
--- Table: mmuser
+-- Table: Mmuser
 
--- DROP TABLE mmuser;
+-- DROP TABLE Mmuser;
 
-CREATE TABLE mmuser
+CREATE TABLE Mmuser
 (
   id serial NOT NULL,
   email character varying(255) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE mmuser
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE mmuser
+ALTER TABLE Mmuser
   OWNER TO ideavillage;
 
 
@@ -39,10 +39,10 @@ CREATE TABLE mentor
   facebook character varying(255),
   twitter character varying(255),
   othersocialmedia character varying(255),
-  mmuser bigint NOT NULL,
+  Mmuser bigint NOT NULL,
   CONSTRAINT mentor_pkey PRIMARY KEY (id),
-  CONSTRAINT foreign_key_mmuser FOREIGN KEY (mmuser)
-      REFERENCES mmuser (id) MATCH SIMPLE
+  CONSTRAINT foreign_key_Mmuser FOREIGN KEY (Mmuser)
+      REFERENCES Mmuser (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
@@ -69,7 +69,7 @@ CREATE TABLE founder
   facebook character varying(255),
   twitter character varying(255),
   othersocialmedia character varying(255),
-  mmuser bigint NOT NULL,
+  Mmuser bigint NOT NULL,
   logo character varying(255),
   tagline character varying(255),
   elevatorpitch text,
@@ -82,8 +82,8 @@ CREATE TABLE founder
   programplan text,
   weeklyreports text,
   CONSTRAINT founder_pkey PRIMARY KEY (id),
-  CONSTRAINT foreign_key_mmuser FOREIGN KEY (mmuser)
-      REFERENCES mmuser (id) MATCH SIMPLE
+  CONSTRAINT foreign_key_Mmuser FOREIGN KEY (Mmuser)
+      REFERENCES Mmuser (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (

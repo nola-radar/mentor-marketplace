@@ -34,28 +34,28 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Founder.findAll", query = "SELECT f FROM Founder f"),
     @NamedQuery(name = "Founder.findById", query = "SELECT f FROM Founder f WHERE f.id = :id"),
-    @NamedQuery(name = "Founder.findByFirstname", query = "SELECT f FROM Founder f WHERE f.firstname = :firstname"),
-    @NamedQuery(name = "Founder.findByLastname", query = "SELECT f FROM Founder f WHERE f.lastname = :lastname"),
-    @NamedQuery(name = "Founder.findByLinkedinpictureurl", query = "SELECT f FROM Founder f WHERE f.linkedinpictureurl = :linkedinpictureurl"),
-    @NamedQuery(name = "Founder.findByLinkedincurrentcompany", query = "SELECT f FROM Founder f WHERE f.linkedincurrentcompany = :linkedincurrentcompany"),
-    @NamedQuery(name = "Founder.findByLinkedincurrentjobtitle", query = "SELECT f FROM Founder f WHERE f.linkedincurrentjobtitle = :linkedincurrentjobtitle"),
+    @NamedQuery(name = "Founder.findByFirstName", query = "SELECT f FROM Founder f WHERE f.firstName = :firstName"),
+    @NamedQuery(name = "Founder.findByLastName", query = "SELECT f FROM Founder f WHERE f.lastName = :lastName"),
+    @NamedQuery(name = "Founder.findByLinkedInPictureUrl", query = "SELECT f FROM Founder f WHERE f.linkedInPictureUrl = :linkedInPictureUrl"),
+    @NamedQuery(name = "Founder.findByLinkedInCurrentCompany", query = "SELECT f FROM Founder f WHERE f.linkedInCurrentCompany = :linkedInCurrentCompany"),
+    @NamedQuery(name = "Founder.findByLinkedInCurrentJobTitle", query = "SELECT f FROM Founder f WHERE f.linkedInCurrentJobTitle = :linkedInCurrentJobTitle"),
     @NamedQuery(name = "Founder.findByWebsite", query = "SELECT f FROM Founder f WHERE f.website = :website"),
     @NamedQuery(name = "Founder.findByFacebook", query = "SELECT f FROM Founder f WHERE f.facebook = :facebook"),
     @NamedQuery(name = "Founder.findByTwitter", query = "SELECT f FROM Founder f WHERE f.twitter = :twitter"),
-    @NamedQuery(name = "Founder.findByOthersocialmedia", query = "SELECT f FROM Founder f WHERE f.othersocialmedia = :othersocialmedia"),
+    @NamedQuery(name = "Founder.findByOtherSocialMedia", query = "SELECT f FROM Founder f WHERE f.otherSocialMedia = :otherSocialMedia"),
     @NamedQuery(name = "Founder.findByLogo", query = "SELECT f FROM Founder f WHERE f.logo = :logo"),
     @NamedQuery(name = "Founder.findByTagline", query = "SELECT f FROM Founder f WHERE f.tagline = :tagline"),
-    @NamedQuery(name = "Founder.findByLinkedinid", query = "SELECT f FROM Founder f WHERE f.linkedinid = :linkedinid"),
+    @NamedQuery(name = "Founder.findByLinkedInId", query = "SELECT f FROM Founder f WHERE f.linkedInId = :linkedInId"),
     @NamedQuery(name = "Founder.findByBackground", query = "SELECT f FROM Founder f WHERE f.background = :background"),
-    @NamedQuery(name = "Founder.findByElevatorpitch", query = "SELECT f FROM Founder f WHERE f.elevatorpitch = :elevatorpitch"),
-    @NamedQuery(name = "Founder.findByImmediateneeds", query = "SELECT f FROM Founder f WHERE f.immediateneeds = :immediateneeds"),
-    @NamedQuery(name = "Founder.findByCompanydetails", query = "SELECT f FROM Founder f WHERE f.companydetails = :companydetails"),
+    @NamedQuery(name = "Founder.findByElevatorPitch", query = "SELECT f FROM Founder f WHERE f.elevatorPitch = :elevatorPitch"),
+    @NamedQuery(name = "Founder.findByImmediateNeeds", query = "SELECT f FROM Founder f WHERE f.immediateNeeds = :immediateNeeds"),
+    @NamedQuery(name = "Founder.findByCompanyDetails", query = "SELECT f FROM Founder f WHERE f.companyDetails = :companyDetails"),
     @NamedQuery(name = "Founder.findByInspiration", query = "SELECT f FROM Founder f WHERE f.inspiration = :inspiration"),
     @NamedQuery(name = "Founder.findByStatus", query = "SELECT f FROM Founder f WHERE f.status = :status"),
     @NamedQuery(name = "Founder.findByVision", query = "SELECT f FROM Founder f WHERE f.vision = :vision"),
-    @NamedQuery(name = "Founder.findByNeworleans", query = "SELECT f FROM Founder f WHERE f.neworleans = :neworleans"),
-    @NamedQuery(name = "Founder.findByProgramplan", query = "SELECT f FROM Founder f WHERE f.programplan = :programplan"),
-    @NamedQuery(name = "Founder.findByWeeklyreports", query = "SELECT f FROM Founder f WHERE f.weeklyreports = :weeklyreports")})
+    @NamedQuery(name = "Founder.findByNewOrleans", query = "SELECT f FROM Founder f WHERE f.newOrleans = :newOrleans"),
+    @NamedQuery(name = "Founder.findByProgramPlan", query = "SELECT f FROM Founder f WHERE f.programPlan = :programPlan"),
+    @NamedQuery(name = "Founder.findByWeeklyReports", query = "SELECT f FROM Founder f WHERE f.weeklyReports = :weeklyReports")})
 public class Founder implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -64,20 +64,20 @@ public class Founder implements Serializable {
     @Column(name = "id")
     private Integer id;
     @Size(max = 255)
-    @Column(name = "firstname")
-    private String firstname;
+    @Column(name = "first_name")
+    private String firstName;
     @Size(max = 255)
-    @Column(name = "lastname")
-    private String lastname;
+    @Column(name = "last_name")
+    private String lastName;
     @Size(max = 255)
-    @Column(name = "linkedinpictureurl")
-    private String linkedinpictureurl;
+    @Column(name = "linked_in_picture_url")
+    private String linkedInPictureUrl;
     @Size(max = 255)
-    @Column(name = "linkedincurrentcompany")
-    private String linkedincurrentcompany;
+    @Column(name = "linked_in_current_company")
+    private String linkedInCurrentCompany;
     @Size(max = 255)
-    @Column(name = "linkedincurrentjobtitle")
-    private String linkedincurrentjobtitle;
+    @Column(name = "linked_in_current_job_title")
+    private String linkedInCurrentJobTitle;
     @Size(max = 255)
     @Column(name = "website")
     private String website;
@@ -88,8 +88,8 @@ public class Founder implements Serializable {
     @Column(name = "twitter")
     private String twitter;
     @Size(max = 255)
-    @Column(name = "othersocialmedia")
-    private String othersocialmedia;
+    @Column(name = "other_social_media")
+    private String otherSocialMedia;
     @Size(max = 255)
     @Column(name = "logo")
     private String logo;
@@ -97,20 +97,20 @@ public class Founder implements Serializable {
     @Column(name = "tagline")
     private String tagline;
     @Size(max = 255)
-    @Column(name = "linkedinid")
-    private String linkedinid;
+    @Column(name = "linked_in_id")
+    private String linkedInId;
     @Size(max = 2147483647)
     @Column(name = "background")
     private String background;
     @Size(max = 2147483647)
-    @Column(name = "elevatorpitch")
-    private String elevatorpitch;
+    @Column(name = "elevator_pitch")
+    private String elevatorPitch;
     @Size(max = 2147483647)
-    @Column(name = "immediateneeds")
-    private String immediateneeds;
+    @Column(name = "immediate_needs")
+    private String immediateNeeds;
     @Size(max = 2147483647)
-    @Column(name = "companydetails")
-    private String companydetails;
+    @Column(name = "company_details")
+    private String companyDetails;
     @Size(max = 2147483647)
     @Column(name = "inspiration")
     private String inspiration;
@@ -121,14 +121,14 @@ public class Founder implements Serializable {
     @Column(name = "vision")
     private String vision;
     @Size(max = 2147483647)
-    @Column(name = "neworleans")
-    private String neworleans;
+    @Column(name = "new_orleans")
+    private String newOrleans;
     @Size(max = 2147483647)
-    @Column(name = "programplan")
-    private String programplan;
+    @Column(name = "program_plan")
+    private String programPlan;
     @Size(max = 2147483647)
-    @Column(name = "weeklyreports")
-    private String weeklyreports;
+    @Column(name = "weekly_reports")
+    private String weeklyReports;
     @OneToMany(mappedBy = "founderId")
     private Collection<FounderExpertise> founderExpertiseCollection;
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
@@ -152,44 +152,44 @@ public class Founder implements Serializable {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getLinkedinpictureurl() {
-        return linkedinpictureurl;
+    public String getLinkedInPictureUrl() {
+        return linkedInPictureUrl;
     }
 
-    public void setLinkedinpictureurl(String linkedinpictureurl) {
-        this.linkedinpictureurl = linkedinpictureurl;
+    public void setLinkedInPictureUrl(String linkedInPictureUrl) {
+        this.linkedInPictureUrl = linkedInPictureUrl;
     }
 
-    public String getLinkedincurrentcompany() {
-        return linkedincurrentcompany;
+    public String getLinkedInCurrentCompany() {
+        return linkedInCurrentCompany;
     }
 
-    public void setLinkedincurrentcompany(String linkedincurrentcompany) {
-        this.linkedincurrentcompany = linkedincurrentcompany;
+    public void setLinkedInCurrentCompany(String linkedInCurrentCompany) {
+        this.linkedInCurrentCompany = linkedInCurrentCompany;
     }
 
-    public String getLinkedincurrentjobtitle() {
-        return linkedincurrentjobtitle;
+    public String getLinkedInCurrentJobTitle() {
+        return linkedInCurrentJobTitle;
     }
 
-    public void setLinkedincurrentjobtitle(String linkedincurrentjobtitle) {
-        this.linkedincurrentjobtitle = linkedincurrentjobtitle;
+    public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
+        this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
     }
 
     public String getWebsite() {
@@ -216,12 +216,12 @@ public class Founder implements Serializable {
         this.twitter = twitter;
     }
 
-    public String getOthersocialmedia() {
-        return othersocialmedia;
+    public String getOtherSocialMedia() {
+        return otherSocialMedia;
     }
 
-    public void setOthersocialmedia(String othersocialmedia) {
-        this.othersocialmedia = othersocialmedia;
+    public void setOtherSocialMedia(String otherSocialMedia) {
+        this.otherSocialMedia = otherSocialMedia;
     }
 
     public String getLogo() {
@@ -240,12 +240,12 @@ public class Founder implements Serializable {
         this.tagline = tagline;
     }
 
-    public String getLinkedinid() {
-        return linkedinid;
+    public String getLinkedInId() {
+        return linkedInId;
     }
 
-    public void setLinkedinid(String linkedinid) {
-        this.linkedinid = linkedinid;
+    public void setLinkedInId(String linkedInId) {
+        this.linkedInId = linkedInId;
     }
 
     public String getBackground() {
@@ -256,28 +256,28 @@ public class Founder implements Serializable {
         this.background = background;
     }
 
-    public String getElevatorpitch() {
-        return elevatorpitch;
+    public String getElevatorPitch() {
+        return elevatorPitch;
     }
 
-    public void setElevatorpitch(String elevatorpitch) {
-        this.elevatorpitch = elevatorpitch;
+    public void setElevatorPitch(String elevatorPitch) {
+        this.elevatorPitch = elevatorPitch;
     }
 
-    public String getImmediateneeds() {
-        return immediateneeds;
+    public String getImmediateNeeds() {
+        return immediateNeeds;
     }
 
-    public void setImmediateneeds(String immediateneeds) {
-        this.immediateneeds = immediateneeds;
+    public void setImmediateNeeds(String immediateNeeds) {
+        this.immediateNeeds = immediateNeeds;
     }
 
-    public String getCompanydetails() {
-        return companydetails;
+    public String getCompanyDetails() {
+        return companyDetails;
     }
 
-    public void setCompanydetails(String companydetails) {
-        this.companydetails = companydetails;
+    public void setCompanyDetails(String companyDetails) {
+        this.companyDetails = companyDetails;
     }
 
     public String getInspiration() {
@@ -304,28 +304,28 @@ public class Founder implements Serializable {
         this.vision = vision;
     }
 
-    public String getNeworleans() {
-        return neworleans;
+    public String getNewOrleans() {
+        return newOrleans;
     }
 
-    public void setNeworleans(String neworleans) {
-        this.neworleans = neworleans;
+    public void setNewOrleans(String newOrleans) {
+        this.newOrleans = newOrleans;
     }
 
-    public String getProgramplan() {
-        return programplan;
+    public String getProgramPlan() {
+        return programPlan;
     }
 
-    public void setProgramplan(String programplan) {
-        this.programplan = programplan;
+    public void setProgramPlan(String programPlan) {
+        this.programPlan = programPlan;
     }
 
-    public String getWeeklyreports() {
-        return weeklyreports;
+    public String getWeeklyReports() {
+        return weeklyReports;
     }
 
-    public void setWeeklyreports(String weeklyreports) {
-        this.weeklyreports = weeklyreports;
+    public void setWeeklyReports(String weeklyReports) {
+        this.weeklyReports = weeklyReports;
     }
 
     @XmlTransient

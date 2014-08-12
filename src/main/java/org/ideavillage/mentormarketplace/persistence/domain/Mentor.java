@@ -34,18 +34,18 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Mentor.findAll", query = "SELECT m FROM Mentor m"),
     @NamedQuery(name = "Mentor.findById", query = "SELECT m FROM Mentor m WHERE m.id = :id"),
-    @NamedQuery(name = "Mentor.findByLinkedinid", query = "SELECT m FROM Mentor m WHERE m.linkedinid = :linkedinid"),
-    @NamedQuery(name = "Mentor.findByFirstname", query = "SELECT m FROM Mentor m WHERE m.firstname = :firstname"),
-    @NamedQuery(name = "Mentor.findByLastname", query = "SELECT m FROM Mentor m WHERE m.lastname = :lastname"),
+    @NamedQuery(name = "Mentor.findByLinkedInId", query = "SELECT m FROM Mentor m WHERE m.linkedInId = :linkedInId"),
+    @NamedQuery(name = "Mentor.findByFirstName", query = "SELECT m FROM Mentor m WHERE m.firstName = :firstName"),
+    @NamedQuery(name = "Mentor.findByLastName", query = "SELECT m FROM Mentor m WHERE m.lastName = :lastName"),
     @NamedQuery(name = "Mentor.findByIndustry", query = "SELECT m FROM Mentor m WHERE m.industry = :industry"),
     @NamedQuery(name = "Mentor.findByBackground", query = "SELECT m FROM Mentor m WHERE m.background = :background"),
-    @NamedQuery(name = "Mentor.findByLinkedinpictureurl", query = "SELECT m FROM Mentor m WHERE m.linkedinpictureurl = :linkedinpictureurl"),
-    @NamedQuery(name = "Mentor.findByLinkedincurrentcompany", query = "SELECT m FROM Mentor m WHERE m.linkedincurrentcompany = :linkedincurrentcompany"),
-    @NamedQuery(name = "Mentor.findByLinkedincurrentjobtitle", query = "SELECT m FROM Mentor m WHERE m.linkedincurrentjobtitle = :linkedincurrentjobtitle"),
+    @NamedQuery(name = "Mentor.findByLinkedInPictureUrl", query = "SELECT m FROM Mentor m WHERE m.linkedInPictureUrl = :linkedInPictureUrl"),
+    @NamedQuery(name = "Mentor.findByLinkedInCurrentCompany", query = "SELECT m FROM Mentor m WHERE m.linkedInCurrentCompany = :linkedInCurrentCompany"),
+    @NamedQuery(name = "Mentor.findByLinkedInCurrentJobTitle", query = "SELECT m FROM Mentor m WHERE m.linkedInCurrentJobTitle = :linkedInCurrentJobTitle"),
     @NamedQuery(name = "Mentor.findByWebsite", query = "SELECT m FROM Mentor m WHERE m.website = :website"),
     @NamedQuery(name = "Mentor.findByFacebook", query = "SELECT m FROM Mentor m WHERE m.facebook = :facebook"),
     @NamedQuery(name = "Mentor.findByTwitter", query = "SELECT m FROM Mentor m WHERE m.twitter = :twitter"),
-    @NamedQuery(name = "Mentor.findByOthersocialmedia", query = "SELECT m FROM Mentor m WHERE m.othersocialmedia = :othersocialmedia")})
+    @NamedQuery(name = "Mentor.findByOtherSocialMedia", query = "SELECT m FROM Mentor m WHERE m.otherSocialMedia = :otherSocialMedia")})
 public class Mentor implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -54,14 +54,14 @@ public class Mentor implements Serializable {
     @Column(name = "id")
     private Integer id;
     @Size(max = 255)
-    @Column(name = "linkedinid")
-    private String linkedinid;
+    @Column(name = "linked_in_id")
+    private String linkedInId;
     @Size(max = 255)
-    @Column(name = "firstname")
-    private String firstname;
+    @Column(name = "first_name")
+    private String firstName;
     @Size(max = 255)
-    @Column(name = "lastname")
-    private String lastname;
+    @Column(name = "last_name")
+    private String lastName;
     @Size(max = 255)
     @Column(name = "industry")
     private String industry;
@@ -69,14 +69,14 @@ public class Mentor implements Serializable {
     @Column(name = "background")
     private String background;
     @Size(max = 255)
-    @Column(name = "linkedinpictureurl")
-    private String linkedinpictureurl;
+    @Column(name = "linked_in_picture_url")
+    private String linkedInPictureUrl;
     @Size(max = 255)
-    @Column(name = "linkedincurrentcompany")
-    private String linkedincurrentcompany;
+    @Column(name = "linked_in_current_company")
+    private String linkedInCurrentCompany;
     @Size(max = 255)
-    @Column(name = "linkedincurrentjobtitle")
-    private String linkedincurrentjobtitle;
+    @Column(name = "linked_in_current_job_title")
+    private String linkedInCurrentJobTitle;
     @Size(max = 255)
     @Column(name = "website")
     private String website;
@@ -87,8 +87,8 @@ public class Mentor implements Serializable {
     @Column(name = "twitter")
     private String twitter;
     @Size(max = 255)
-    @Column(name = "othersocialmedia")
-    private String othersocialmedia;
+    @Column(name = "other_social_media")
+    private String otherSocialMedia;
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Mmuser mmuser;
@@ -112,28 +112,28 @@ public class Mentor implements Serializable {
         this.id = id;
     }
 
-    public String getLinkedinid() {
-        return linkedinid;
+    public String getLinkedInId() {
+        return linkedInId;
     }
 
-    public void setLinkedinid(String linkedinid) {
-        this.linkedinid = linkedinid;
+    public void setLinkedInId(String linkedInId) {
+        this.linkedInId = linkedInId;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getIndustry() {
@@ -152,28 +152,28 @@ public class Mentor implements Serializable {
         this.background = background;
     }
 
-    public String getLinkedinpictureurl() {
-        return linkedinpictureurl;
+    public String getLinkedInPictureUrl() {
+        return linkedInPictureUrl;
     }
 
-    public void setLinkedinpictureurl(String linkedinpictureurl) {
-        this.linkedinpictureurl = linkedinpictureurl;
+    public void setLinkedInPictureUrl(String linkedInPictureUrl) {
+        this.linkedInPictureUrl = linkedInPictureUrl;
     }
 
-    public String getLinkedincurrentcompany() {
-        return linkedincurrentcompany;
+    public String getLinkedInCurrentCompany() {
+        return linkedInCurrentCompany;
     }
 
-    public void setLinkedincurrentcompany(String linkedincurrentcompany) {
-        this.linkedincurrentcompany = linkedincurrentcompany;
+    public void setLinkedInCurrentCompany(String linkedInCurrentCompany) {
+        this.linkedInCurrentCompany = linkedInCurrentCompany;
     }
 
-    public String getLinkedincurrentjobtitle() {
-        return linkedincurrentjobtitle;
+    public String getLinkedInCurrentJobTitle() {
+        return linkedInCurrentJobTitle;
     }
 
-    public void setLinkedincurrentjobtitle(String linkedincurrentjobtitle) {
-        this.linkedincurrentjobtitle = linkedincurrentjobtitle;
+    public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
+        this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
     }
 
     public String getWebsite() {
@@ -200,12 +200,12 @@ public class Mentor implements Serializable {
         this.twitter = twitter;
     }
 
-    public String getOthersocialmedia() {
-        return othersocialmedia;
+    public String getOtherSocialMedia() {
+        return otherSocialMedia;
     }
 
-    public void setOthersocialmedia(String othersocialmedia) {
-        this.othersocialmedia = othersocialmedia;
+    public void setOtherSocialMedia(String otherSocialMedia) {
+        this.otherSocialMedia = otherSocialMedia;
     }
 
     public Mmuser getMmuser() {

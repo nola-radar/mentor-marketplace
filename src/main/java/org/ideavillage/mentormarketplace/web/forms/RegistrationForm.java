@@ -1,13 +1,18 @@
 package org.ideavillage.mentormarketplace.web.forms;
 
+import java.util.Collection;
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
-import org.ideavillage.mentormarketplace.persistence.domain.MMUser;
+import org.ideavillage.mentormarketplace.persistence.domain.FounderExpertise;
+import org.ideavillage.mentormarketplace.persistence.domain.FounderIndustry;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
+import org.ideavillage.mentormarketplace.persistence.domain.MentorExpertise;
+import org.ideavillage.mentormarketplace.persistence.domain.MentorIndustry;
+import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
 
 /**
  *
@@ -36,11 +41,19 @@ public class RegistrationForm {
 
     @Size(max = 2147483647)
     @Column(name = "industry")
-    private String industry;
+    private Collection<FounderIndustry> founderIndustryCollection;
 
     @Size(max = 2147483647)
-    @Column(name = "areasofexpertise")
-    private String areasOfExpertise;
+    @Column(name = "industry")
+    private Collection<FounderExpertise> founderExpertiseCollection;
+
+    @Size(max = 2147483647)
+    @Column(name = "industry")
+    private Collection<MentorIndustry> mentorIndustryCollection;
+
+    @Size(max = 2147483647)
+    @Column(name = "industry")
+    private Collection<MentorExpertise> mentorExpertiseCollection;
 
     @Size(max = 2147483647)
     @Column(name = "background")
@@ -121,9 +134,6 @@ public class RegistrationForm {
     @Size(max = 2147483647)
     @Column(name = "userType")
     private String userType;
-    
-    @Column(name = "isAdmin")
-    private boolean isAdmin;
 
     @Column(name = "isAdmin")
     private boolean isAdmin;
@@ -132,10 +142,10 @@ public class RegistrationForm {
         Mentor mentor = new Mentor();
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
-        mentor.setIndustry(this.industry);
-        mentor.setAreasOfExpertise(this.areasOfExpertise);
+        mentor.setMentorIndustryCollection(mentorIndustryCollection);
+        mentor.setMentorExpertiseCollection(mentorExpertiseCollection);
         mentor.setBackground(this.background);
-        mentor.setLinkedInPictureURL(this.linkedInPictureURL);
+        mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         mentor.setWebsite(this.website);
@@ -145,14 +155,14 @@ public class RegistrationForm {
         mentor.setLinkedInId(this.linkedInId);
         return mentor;
     }
-    
-    public Mentor editMentor (Mentor mentor) {
+
+    public Mentor editMentor(Mentor mentor) {
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
-        mentor.setIndustry(this.industry);
-        mentor.setAreasOfExpertise(this.areasOfExpertise);
+        mentor.setMentorIndustryCollection(mentorIndustryCollection);
+        mentor.setMentorExpertiseCollection(mentorExpertiseCollection);
         mentor.setBackground(this.background);
-        mentor.setLinkedInPictureURL(this.linkedInPictureURL);
+        mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         mentor.setWebsite(this.website);
@@ -162,14 +172,14 @@ public class RegistrationForm {
         mentor.setLinkedInId(this.linkedInId);
         return mentor;
     }
-    
-    public Founder editFounder (Founder founder) {
+
+    public Founder editFounder(Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setIndustry(this.industry);
-        founder.setAreasOfExpertise(this.areasOfExpertise);
+        founder.setFounderIndustryCollection(founderIndustryCollection);
+        founder.setFounderExpertiseCollection(founderExpertiseCollection);
         founder.setBackground(this.background);
-        founder.setLinkedInPictureURL(this.linkedInPictureURL);
+        founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         founder.setWebsite(this.website);
@@ -195,10 +205,10 @@ public class RegistrationForm {
         Founder founder = new Founder();
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setIndustry(this.industry);
-        founder.setAreasOfExpertise(this.areasOfExpertise);
+        founder.setFounderIndustryCollection(founderIndustryCollection);
+        founder.setFounderExpertiseCollection(founderExpertiseCollection);
         founder.setBackground(this.background);
-        founder.setLinkedInPictureURL(this.linkedInPictureURL);
+        founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         founder.setWebsite(this.website);
@@ -272,20 +282,36 @@ public class RegistrationForm {
         this.lastName = lastName;
     }
 
-    public String getIndustry() {
-        return industry;
+    public Collection<FounderIndustry> getFounderIndustry() {
+        return founderIndustryCollection;
     }
 
-    public void setIndustry(String industry) {
-        this.industry = industry;
+    public void setFounderIndustry(Collection<FounderIndustry> founderIndustryCollection) {
+        this.founderIndustryCollection = founderIndustryCollection;
     }
 
-    public String getAreasOfExpertise() {
-        return areasOfExpertise;
+    public Collection<FounderExpertise> getFounderExpertise() {
+        return founderExpertiseCollection;
     }
 
-    public void setAreasOfExpertise(String areasOfExpertise) {
-        this.areasOfExpertise = areasOfExpertise;
+    public void setFounderExpertise(Collection<FounderExpertise> founderExpertiseCollection) {
+        this.founderExpertiseCollection = founderExpertiseCollection;
+    }
+
+    public Collection<MentorIndustry> getMentorIndustry() {
+        return mentorIndustryCollection;
+    }
+
+    public void setMentorIndustry(Collection<MentorIndustry> mentorIndustryCollection) {
+        this.mentorIndustryCollection = mentorIndustryCollection;
+    }
+
+    public Collection<MentorExpertise> getMentorExpertise() {
+        return mentorExpertiseCollection;
+    }
+
+    public void setMentorExpertise(Collection<MentorExpertise> mentorExpertiseCollection) {
+        this.mentorExpertiseCollection = mentorExpertiseCollection;
     }
 
     public String getBackground() {
@@ -439,7 +465,7 @@ public class RegistrationForm {
     public void setWeeklyReports(String weeklyReports) {
         this.weeklyReports = weeklyReports;
     }
-    
+
     public void setIsAdmin(boolean isadmin) {
         this.isAdmin = isadmin;
     }

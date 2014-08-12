@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
@@ -35,10 +34,11 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Mmuser.findAll", query = "SELECT m FROM Mmuser m"),
     @NamedQuery(name = "Mmuser.findById", query = "SELECT m FROM Mmuser m WHERE m.id = :id"),
     @NamedQuery(name = "Mmuser.findByEmail", query = "SELECT m FROM Mmuser m WHERE m.email = :email"),
-    @NamedQuery(name = "Mmuser.findByUsertype", query = "SELECT m FROM Mmuser m WHERE m.usertype = :usertype"),
-    @NamedQuery(name = "Mmuser.findByLinkedinid", query = "SELECT m FROM Mmuser m WHERE m.linkedinid = :linkedinid"),
-    @NamedQuery(name = "Mmuser.findByIsadmin", query = "SELECT m FROM Mmuser m WHERE m.isadmin = :isadmin")})
+    @NamedQuery(name = "Mmuser.findByUserType", query = "SELECT m FROM Mmuser m WHERE m.userType = :userType"),
+    @NamedQuery(name = "Mmuser.findByLinkedInId", query = "SELECT m FROM Mmuser m WHERE m.linkedInId = :linkedInId"),
+    @NamedQuery(name = "Mmuser.findByIsAdmin", query = "SELECT m FROM Mmuser m WHERE m.isAdmin = :isAdmin")})
 public class Mmuser implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,17 +52,17 @@ public class Mmuser implements Serializable {
     @Column(name = "email")
     private String email;
     @Size(max = 255)
-    @Column(name = "usertype")
-    private String usertype;
+    @Column(name = "user_type")
+    private String userType;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
-    @Column(name = "linkedinid")
-    private String linkedinid;
+    @Column(name = "linked_in_id")
+    private String linkedInId;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "isadmin")
-    private boolean isadmin;
+    @Column(name = "is_admin")
+    private boolean isAdmin;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser")
     private Collection<Mentor> mentorCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser")
@@ -75,11 +75,17 @@ public class Mmuser implements Serializable {
         this.id = id;
     }
 
-    public Mmuser(Integer id, String email, String linkedinid, boolean isadmin) {
+    public Mmuser(Integer id, String email, String linkedInId, boolean isAdmin) {
         this.id = id;
         this.email = email;
-        this.linkedinid = linkedinid;
-        this.isadmin = isadmin;
+        this.linkedInId = linkedInId;
+        this.isAdmin = isAdmin;
+    }
+
+    public Mmuser(String email, String linkedInId, boolean isAdmin) {
+        this.email = email;
+        this.linkedInId = linkedInId;
+        this.isAdmin = isAdmin;
     }
 
     public Integer getId() {
@@ -98,28 +104,28 @@ public class Mmuser implements Serializable {
         this.email = email;
     }
 
-    public String getUsertype() {
-        return usertype;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setUsertype(String usertype) {
-        this.usertype = usertype;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
-    public String getLinkedinid() {
-        return linkedinid;
+    public String getLinkedInId() {
+        return linkedInId;
     }
 
-    public void setLinkedinid(String linkedinid) {
-        this.linkedinid = linkedinid;
+    public void setLinkedInId(String linkedInId) {
+        this.linkedInId = linkedInId;
     }
 
-    public boolean getIsadmin() {
-        return isadmin;
+    public boolean getIsAdmin() {
+        return isAdmin;
     }
 
-    public void setIsadmin(boolean isadmin) {
-        this.isadmin = isadmin;
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     @XmlTransient
@@ -164,5 +170,5 @@ public class Mmuser implements Serializable {
     public String toString() {
         return "org.ideavillage.mentormarketplace.persistence.domain.Mmuser[ id=" + id + " ]";
     }
-    
+
 }

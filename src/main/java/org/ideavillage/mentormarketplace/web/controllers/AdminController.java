@@ -1,13 +1,12 @@
 package org.ideavillage.mentormarketplace.web.controllers;
 
 import org.ideavillage.mentormarketplace.core.services.RepositoryUserDetailsService;
-import org.ideavillage.mentormarketplace.persistence.domain.MMUser;
-import org.ideavillage.mentormarketplace.persistence.repositories.MMUserRepository;
+import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
+import org.ideavillage.mentormarketplace.persistence.repositories.MmuserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.linkedin.api.LinkedIn;
-import org.springframework.social.security.SocialUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AdminController {
 
     @Autowired
-    private MMUserRepository mmUserRepository;
+    private MmuserRepository mmUserRepository;
 
     @Autowired
     private ConnectionRepository connectionRepository;
@@ -41,7 +40,7 @@ public class AdminController {
             return "redirect:/";
         }
         String loggedInUserEmail = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
-        MMUser currentUser = mmUserRepository.findByEmail(loggedInUserEmail);
+        Mmuser currentUser = mmUserRepository.findByEmail(loggedInUserEmail);
 
         if (currentUser.getIsAdmin()) {
             return "admin/dashboard";

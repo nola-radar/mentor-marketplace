@@ -23,7 +23,7 @@ public class DomainSuite extends TestCase {
     public static Test suite() {
         TestSuite suite = new TestSuite("DomainSuite");
         suite.addTest(MentorTest.suite());
-        suite.addTest(MMUserTest.suite());
+        suite.addTest(MmuserTest.suite());
         suite.addTest(FounderTest.suite());
         return suite;
     }

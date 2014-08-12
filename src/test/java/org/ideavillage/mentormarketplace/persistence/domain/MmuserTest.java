@@ -15,15 +15,15 @@ import junit.framework.TestSuite;
  *
  * @author 212412062
  */
-public class MMUserTest extends TestCase {
+public class MmuserTest extends TestCase {
 
   
-    public MMUserTest(String testName) {
+    public MmuserTest(String testName) {
         super(testName);
     }
 
     public static Test suite() {
-        TestSuite suite = new TestSuite(MMUserTest.class);
+        TestSuite suite = new TestSuite(MmuserTest.class);
         return suite;
     }
     
@@ -38,11 +38,11 @@ public class MMUserTest extends TestCase {
     }
 
 //    /**
-//     * Test of getId method, of class MMUser.
+//     * Test of getId method, of class Mmuser.
 //     */
 //    public void testGetId() {
 //        System.out.println("getId");
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        Long expResult = null;
 //        Long result = instance.getId();
 //        assertEquals(expResult, result);
@@ -51,23 +51,23 @@ public class MMUserTest extends TestCase {
 //    }
 //
 //    /**
-//     * Test of setId method, of class MMUser.
+//     * Test of setId method, of class Mmuser.
 //     */
 //    public void testSetId() {
 //        System.out.println("setId");
 //        Long id = null;
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        instance.setId(id);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
 //
 //    /**
-//     * Test of getEmail method, of class MMUser.
+//     * Test of getEmail method, of class Mmuser.
 //     */
 //    public void testGetEmail() {
 //        System.out.println("getEmail");
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        String expResult = "";
 //        String result = instance.getEmail();
 //        assertEquals(expResult, result);
@@ -76,23 +76,23 @@ public class MMUserTest extends TestCase {
 //    }
 //
 //    /**
-//     * Test of setEmail method, of class MMUser.
+//     * Test of setEmail method, of class Mmuser.
 //     */
 //    public void testSetEmail() {
 //        System.out.println("setEmail");
 //        String email = "";
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        instance.setEmail(email);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
 //
 //    /**
-//     * Test of getLinkedInId method, of class MMUser.
+//     * Test of getLinkedInId method, of class Mmuser.
 //     */
 //    public void testGetLinkedInId() {
 //        System.out.println("getLinkedInId");
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        String expResult = "";
 //        String result = instance.getLinkedInId();
 //        assertEquals(expResult, result);
@@ -101,23 +101,23 @@ public class MMUserTest extends TestCase {
 //    }
 //
 //    /**
-//     * Test of setLinkedInId method, of class MMUser.
+//     * Test of setLinkedInId method, of class Mmuser.
 //     */
 //    public void testSetLinkedInId() {
 //        System.out.println("setLinkedInId");
 //        String linkedinid = "";
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        instance.setLinkedInId(linkedinid);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
 //
 //    /**
-//     * Test of hashCode method, of class MMUser.
+//     * Test of hashCode method, of class Mmuser.
 //     */
 //    public void testHashCode() {
 //        System.out.println("hashCode");
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        int expResult = 0;
 //        int result = instance.hashCode();
 //        assertEquals(expResult, result);
@@ -126,12 +126,12 @@ public class MMUserTest extends TestCase {
 //    }
 //
 //    /**
-//     * Test of equals method, of class MMUser.
+//     * Test of equals method, of class Mmuser.
 //     */
 //    public void testEquals() {
 //        System.out.println("equals");
 //        Object object = null;
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        boolean expResult = false;
 //        boolean result = instance.equals(object);
 //        assertEquals(expResult, result);
@@ -140,11 +140,11 @@ public class MMUserTest extends TestCase {
 //    }
 //
 //    /**
-//     * Test of toString method, of class MMUser.
+//     * Test of toString method, of class Mmuser.
 //     */
 //    public void testToString() {
 //        System.out.println("toString");
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        String expResult = "";
 //        String result = instance.toString();
 //        assertEquals(expResult, result);
@@ -153,11 +153,11 @@ public class MMUserTest extends TestCase {
 //    }
 //
 //    /**
-//     * Test of getMentorCollection method, of class MMUser.
+//     * Test of getMentorCollection method, of class Mmuser.
 //     */
 //    public void testGetMentorCollection() {
 //        System.out.println("getMentorCollection");
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        Collection<Mentor> expResult = null;
 //        Collection<Mentor> result = instance.getMentorCollection();
 //        assertEquals(expResult, result);
@@ -166,12 +166,12 @@ public class MMUserTest extends TestCase {
 //    }
 //
 //    /**
-//     * Test of setMentorCollection method, of class MMUser.
+//     * Test of setMentorCollection method, of class Mmuser.
 //     */
 //    public void testSetMentorCollection() {
 //        System.out.println("setMentorCollection");
 //        Collection<Mentor> mentorCollection = null;
-//        MMUser instance = new MMUser();
+//        Mmuser instance = new Mmuser();
 //        instance.setMentorCollection(mentorCollection);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");

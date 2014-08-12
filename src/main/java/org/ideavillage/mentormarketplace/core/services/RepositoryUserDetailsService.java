@@ -1,8 +1,8 @@
 package org.ideavillage.mentormarketplace.core.services;
 
 import java.util.ArrayList;
-import org.ideavillage.mentormarketplace.persistence.domain.MMUser;
-import org.ideavillage.mentormarketplace.persistence.repositories.MMUserRepository;
+import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
+import org.ideavillage.mentormarketplace.persistence.repositories.MmuserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class RepositoryUserDetailsService implements UserDetailsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(RepositoryUserDetailsService.class);
 
     @Autowired
-    private MMUserRepository repository;
+    private MmuserRepository repository;
 
     /**
      * Loads the user information.
@@ -37,7 +37,7 @@ public class RepositoryUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         LOGGER.info("Loading user by username: {}", username);
 
-        MMUser user = repository.findByEmail(username);
+        Mmuser user = repository.findByEmail(username);
         LOGGER.info("Found user: {}", user);
 
         if (user == null) {
@@ -46,7 +46,7 @@ public class RepositoryUserDetailsService implements UserDetailsService {
 
         ArrayList<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        
+
         if (user.getIsAdmin()) {
             authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         }

@@ -1,18 +1,18 @@
 --Initial table setup script for Ideavillage
 --V1 
-CREATE TABLE mmuser
+CREATE TABLE MMUser
 (
 id SERIAL NOT NULL,
 email VARCHAR(255) NOT NULL,
-usertype VARCHAR(255),
-linkedinid VARCHAR(255) NOT NULL,
-isadmin BOOLEAN NOT NULL DEFAULT FALSE,
+user_type VARCHAR(255),
+linked_in_id VARCHAR(255) NOT NULL,
+is_admin BOOLEAN NOT NULL DEFAULT FALSE,
 CONSTRAINT user_pkey PRIMARY KEY (id)
 )
 WITH (
 OIDS=FALSE
 );
-ALTER TABLE mmuser
+ALTER TABLE MMUser
 OWNER TO ideavillage;
 
 
@@ -20,22 +20,22 @@ OWNER TO ideavillage;
 CREATE TABLE mentor
 (
 id serial NOT NULL,
-linkedinid VARCHAR(255),
-firstname VARCHAR(255),
-lastname VARCHAR(255),
+linked_in_id VARCHAR(255),
+first_name VARCHAR(255),
+last_name VARCHAR(255),
 industry VARCHAR(255),
 background text,
-linkedinpictureurl VARCHAR(255),
-linkedincurrentcompany VARCHAR(255),
-linkedincurrentjobtitle VARCHAR(255),
+linked_in_picture_url VARCHAR(255),
+linked_in_current_company VARCHAR(255),
+linked_in_current_job_title VARCHAR(255),
 website VARCHAR(255),
 facebook VARCHAR(255),
 twitter VARCHAR(255),
-othersocialmedia VARCHAR(255),
-mmuser bigint NOT NULL,
+other_social_media VARCHAR(255),
+MMUser bigint NOT NULL,
 CONSTRAINT mentor_pkey PRIMARY KEY (id),
-CONSTRAINT foreign_key_mmuser FOREIGN KEY (mmuser)
-    REFERENCES mmuser (id) MATCH SIMPLE
+CONSTRAINT foreign_key_Mmuser FOREIGN KEY (Mmuser)
+    REFERENCES MMUser (id) MATCH SIMPLE
     ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
@@ -49,32 +49,32 @@ OWNER TO ideavillage;
 CREATE TABLE founder
 (
 id serial NOT NULL,
-firstname VARCHAR(255),
-lastname VARCHAR(255),
-linkedinpictureurl VARCHAR(255),
-linkedincurrentcompany VARCHAR(255),
-linkedincurrentjobtitle VARCHAR(255),
+first_name VARCHAR(255),
+last_name VARCHAR(255),
+linked_in_picture_url VARCHAR(255),
+linked_in_current_company VARCHAR(255),
+linked_in_current_job_title VARCHAR(255),
 website VARCHAR(255),
 facebook VARCHAR(255),
 twitter VARCHAR(255),
-othersocialmedia VARCHAR(255),
-mmuser bigint NOT NULL,
+other_social_media VARCHAR(255),
+MMUser bigint NOT NULL,
 logo VARCHAR(255),
 tagline VARCHAR(255),
-linkedinid VARCHAR(255),
+linked_in_id VARCHAR(255),
 background text,
-elevatorpitch text,
-immediateneeds text,
-companydetails text,
+elevator_pitch text,
+immediate_needs text,
+company_details text,
 inspiration text,
 status text,
 vision text,
-neworleans text,
-programplan text,
-weeklyreports text,
+new_orleans text,
+program_plan text,
+weekly_reports text,
 CONSTRAINT founder_pkey PRIMARY KEY (id),
-CONSTRAINT foreign_key_mmuser FOREIGN KEY (mmuser)
-    REFERENCES mmuser (id) MATCH SIMPLE
+CONSTRAINT foreign_key_Mmuser FOREIGN KEY (MMUser)
+    REFERENCES MMUser (id) MATCH SIMPLE
     ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (

@@ -432,8 +432,8 @@ public class MentorTest extends TestCase {
 //    public void testGetMmuser() {
 //        System.out.println("getMmuser");
 //        Mentor instance = new Mentor();
-//        MMUser expResult = null;
-//        MMUser result = instance.getMmuser();
+//        Mmuser expResult = null;
+//        Mmuser result = instance.getMmuser();
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
@@ -444,9 +444,9 @@ public class MentorTest extends TestCase {
 //     */
 //    public void testSetMmuser() {
 //        System.out.println("setMmuser");
-//        MMUser mmuser = null;
+//        Mmuser Mmuser = null;
 //        Mentor instance = new Mentor();
-//        instance.setMmuser(mmuser);
+//        instance.setMmuser(Mmuser);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }

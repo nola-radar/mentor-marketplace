@@ -9,20 +9,20 @@ package org.ideavillage.mentormarketplace.persistence.repositories;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.ideavillage.mentormarketplace.persistence.domain.MMUser;
+import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
 
 /**
  *
  * @author 212412062
  */
-public class MMUserRepositoryTest extends TestCase {
+public class MmuserRepositoryTest extends TestCase {
     
-    public MMUserRepositoryTest(String testName) {
+    public MmuserRepositoryTest(String testName) {
         super(testName);
     }
 
     public static Test suite() {
-        TestSuite suite = new TestSuite(MMUserRepositoryTest.class);
+        TestSuite suite = new TestSuite(MmuserRepositoryTest.class);
         return suite;
     }
     
@@ -37,26 +37,26 @@ public class MMUserRepositoryTest extends TestCase {
     }
 
 //    /**
-//     * Test of findByEmail method, of class MMUserRepository.
+//     * Test of findByEmail method, of class MmuserRepository.
 //     */
 //    public void testFindByEmail() {
 //        System.out.println("findByEmail");
 //        String email = "";
-//        MMUserRepository instance = new MMUserRepositoryImpl();
-//        MMUser expResult = null;
-//        MMUser result = instance.findByEmail(email);
+//        MmuserRepository instance = new MmuserRepositoryImpl();
+//        Mmuser expResult = null;
+//        Mmuser result = instance.findByEmail(email);
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
 //
 //    /**
-//     * Test of countByEmail method, of class MMUserRepository.
+//     * Test of countByEmail method, of class MmuserRepository.
 //     */
 //    public void testCountByEmail() {
 //        System.out.println("countByEmail");
 //        String email = "";
-//        MMUserRepository instance = new MMUserRepositoryImpl();
+//        MmuserRepository instance = new MmuserRepositoryImpl();
 //        long expResult = 0L;
 //        long result = instance.countByEmail(email);
 //        assertEquals(expResult, result);
@@ -65,26 +65,26 @@ public class MMUserRepositoryTest extends TestCase {
 //    }
 //
 //    /**
-//     * Test of findByLinkedInId method, of class MMUserRepository.
+//     * Test of findByLinkedInId method, of class MmuserRepository.
 //     */
 //    public void testFindByLinkedInId() {
 //        System.out.println("findByLinkedInId");
 //        String linkedInId = "";
-//        MMUserRepository instance = new MMUserRepositoryImpl();
-//        MMUser expResult = null;
-//        MMUser result = instance.findByLinkedInId(linkedInId);
+//        MmuserRepository instance = new MmuserRepositoryImpl();
+//        Mmuser expResult = null;
+//        Mmuser result = instance.findByLinkedInId(linkedInId);
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
 //
 //    /**
-//     * Test of countByLinkedInId method, of class MMUserRepository.
+//     * Test of countByLinkedInId method, of class MmuserRepository.
 //     */
 //    public void testCountByLinkedInId() {
 //        System.out.println("countByLinkedInId");
 //        String linkedInId = "";
-//        MMUserRepository instance = new MMUserRepositoryImpl();
+//        MmuserRepository instance = new MmuserRepositoryImpl();
 //        long expResult = 0L;
 //        long result = instance.countByLinkedInId(linkedInId);
 //        assertEquals(expResult, result);
@@ -92,9 +92,9 @@ public class MMUserRepositoryTest extends TestCase {
 //        fail("The test case is a prototype.");
 //    }
 //
-//    public class MMUserRepositoryImpl implements MMUserRepository {
+//    public class MmuserRepositoryImpl implements MmuserRepository {
 //
-//        public MMUser findByEmail(String email) {
+//        public Mmuser findByEmail(String email) {
 //            return null;
 //        }
 //
@@ -102,7 +102,7 @@ public class MMUserRepositoryTest extends TestCase {
 //            return 0L;
 //        }
 //
-//        public MMUser findByLinkedInId(String linkedInId) {
+//        public Mmuser findByLinkedInId(String linkedInId) {
 //            return null;
 //        }
 //

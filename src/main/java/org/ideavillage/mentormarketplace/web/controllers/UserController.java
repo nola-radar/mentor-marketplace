@@ -1,12 +1,12 @@
 package org.ideavillage.mentormarketplace.web.controllers;
 
 import javax.validation.Valid;
-import org.ideavillage.mentormarketplace.persistence.domain.MMUser;
+import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
 import org.ideavillage.mentormarketplace.persistence.repositories.FounderRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MentorRepository;
-import org.ideavillage.mentormarketplace.persistence.repositories.MMUserRepository;
+import org.ideavillage.mentormarketplace.persistence.repositories.MmuserRepository;
 import org.ideavillage.mentormarketplace.web.forms.RegistrationForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -35,13 +35,13 @@ import org.springframework.web.context.request.WebRequest;
 public class UserController {
     
     Connection<LinkedIn> globalConnection;
-    MMUser globalUser;
+    Mmuser globalUser;
     Founder globalFounder;
     Mentor globalMentor;
     
     @Autowired
-    private MMUserRepository mmUserRepository;
-
+    private MmuserRepository mmUserRepository;
+    
     @Autowired
     private MentorRepository mentorRepository;
 
@@ -75,8 +75,8 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/register";
         }
-        MMUser user = new MMUser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getUserType(), registrationForm.getIsAdmin());
-        MMUser savedUser = mmUserRepository.save(user);
+        Mmuser user = new Mmuser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getIsAdmin());
+        Mmuser savedUser = mmUserRepository.save(user);
         
         //Will save user as founder or mentor depending on user type field
         if (registrationForm.getUserType().equals("mentor")) {
@@ -107,7 +107,7 @@ public class UserController {
         model.addAttribute("profile", connection.getApi().profileOperations().getUserProfileFull());
         String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
         //below is code determining to send user to founder profile or mentor profile jsp
-        MMUser user = mmUserRepository.findByEmail(email);
+        Mmuser user = mmUserRepository.findByEmail(email);
         globalUser = user;
         String utype = user.getUserType();
         String utypeparsed = utype.substring(0, 7);
@@ -125,7 +125,7 @@ public class UserController {
         if (null == globalConnection) {
             return "redirect:/index/";
         }
-        MMUser user = mmUserRepository.findOne(id);
+        Mmuser user = mmUserRepository.findOne(id);
         if (null == user) {
             return "redirect:/index/";
         }
@@ -139,7 +139,7 @@ public class UserController {
         if (null == globalConnection) {
             return "redirect:/index/";
         }
-        //MMUser user = mmUserRepository.findByEmail(email);
+        //Mmuser user = mmUserRepository.findByEmail(email);
         Founder founder = founderRepository.findByLinkedInId(globalUser.getLinkedInId());
         globalFounder = founder;
         model.addAttribute("founder",founder);
@@ -172,8 +172,8 @@ public class UserController {
         registrationForm.setElevatorPitch(globalFounder.getElevatorPitch());
         registrationForm.setProgramPlan(globalFounder.getProgramPlan());
         registrationForm.setWeeklyReports(globalFounder.getWeeklyReports());
-        registrationForm.setIndustry(globalFounder.getIndustry());
-        registrationForm.setAreasOfExpertise(globalFounder.getAreasOfExpertise());
+        registrationForm.setFounderIndustry(globalFounder.getFounderIndustryCollection());
+        registrationForm.setFounderExpertise(globalFounder.getFounderExpertiseCollection());
         registrationForm.setImmediateNeeds(globalFounder.getImmediateNeeds());
         registrationForm.setStatus(globalFounder.getStatus());
         registrationForm.setVision(globalFounder.getVision());
@@ -230,8 +230,8 @@ public class UserController {
         registrationForm.setFacebook(globalMentor.getFacebook());
         registrationForm.setTwitter(globalMentor.getTwitter());
         registrationForm.setOtherSocialMedia(globalMentor.getOtherSocialMedia());
-        registrationForm.setIndustry(globalMentor.getIndustry());
-        registrationForm.setAreasOfExpertise(globalMentor.getAreasOfExpertise());
+        registrationForm.setMentorExpertise(globalMentor.getMentorExpertiseCollection());
+        registrationForm.setMentorIndustry(globalMentor.getMentorIndustryCollection());
         registrationForm.setUserType(globalUser.getUserType());
         registrationForm.setLinkedInId(globalMentor.getLinkedInId());
         registrationForm.setEmail(globalUser.getEmail());
