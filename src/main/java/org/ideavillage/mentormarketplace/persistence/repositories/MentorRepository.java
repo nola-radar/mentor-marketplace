@@ -48,10 +48,6 @@ public interface MentorRepository extends PagingAndSortingRepository<Mentor, Lon
     Page<Mentor> findByFirstName(String firstName, Pageable pageable);
     
     Page<Mentor> findByLastName(String lastName, Pageable pageable);
-
-    Page<Mentor> findByIndustry(String industry, Pageable pageable);
-    
-    Page<Mentor> findByAreasOfExpertise(String areasOfExpertise, Pageable pageable);
     
     Page<Mentor> findByBackground(String background, Pageable pageable);
     

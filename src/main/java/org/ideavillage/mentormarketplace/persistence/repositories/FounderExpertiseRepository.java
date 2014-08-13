@@ -8,8 +8,6 @@ package org.ideavillage.mentormarketplace.persistence.repositories;
 
 import org.ideavillage.mentormarketplace.persistence.domain.FounderExpertise;
 import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 /**
  *
