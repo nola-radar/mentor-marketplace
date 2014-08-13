@@ -34,17 +34,22 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Expertise.findById", query = "SELECT e FROM Expertise e WHERE e.id = :id"),
     @NamedQuery(name = "Expertise.findByExpertise", query = "SELECT e FROM Expertise e WHERE e.expertise = :expertise")})
 public class Expertise implements Serializable {
+    
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    
     @Size(max = 255)
     @Column(name = "expertise")
     private String expertise;
+    
     @OneToMany(mappedBy = "expertiseId")
     private Collection<MentorExpertise> mentorExpertiseCollection;
+    
     @OneToMany(mappedBy = "expertiseId")
     private Collection<FounderExpertise> founderExpertiseCollection;
 

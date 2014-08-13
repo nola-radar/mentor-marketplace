@@ -6,10 +6,21 @@
 
 package org.ideavillage.mentormarketplace.persistence.repositories;
 
+import org.ideavillage.mentormarketplace.persistence.domain.FounderExpertise;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 /**
  *
  * @author jlbates
  */
-public class FounderExpertiseRepository {
+public interface FounderExpertiseRepository extends PagingAndSortingRepository<FounderExpertise, Long> {
+    
+    FounderExpertise findById(Integer id);
+    
+    FounderExpertise findByFounderId(Integer founderId);
+    
+    FounderExpertise findByExpertiseId(Integer expertiseId);
     
 }

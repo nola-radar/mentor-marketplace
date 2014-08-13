@@ -57,83 +57,110 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Founder.findByProgramPlan", query = "SELECT f FROM Founder f WHERE f.programPlan = :programPlan"),
     @NamedQuery(name = "Founder.findByWeeklyReports", query = "SELECT f FROM Founder f WHERE f.weeklyReports = :weeklyReports")})
 public class Founder implements Serializable {
+    
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    
     @Size(max = 255)
     @Column(name = "first_name")
     private String firstName;
+    
     @Size(max = 255)
     @Column(name = "last_name")
     private String lastName;
+    
     @Size(max = 255)
     @Column(name = "linked_in_picture_url")
     private String linkedInPictureUrl;
+    
     @Size(max = 255)
     @Column(name = "linked_in_current_company")
     private String linkedInCurrentCompany;
+    
     @Size(max = 255)
     @Column(name = "linked_in_current_job_title")
     private String linkedInCurrentJobTitle;
+    
     @Size(max = 255)
     @Column(name = "website")
     private String website;
+    
     @Size(max = 255)
     @Column(name = "facebook")
     private String facebook;
+    
     @Size(max = 255)
     @Column(name = "twitter")
     private String twitter;
+    
     @Size(max = 255)
     @Column(name = "other_social_media")
     private String otherSocialMedia;
+    
     @Size(max = 255)
     @Column(name = "logo")
     private String logo;
+    
     @Size(max = 255)
     @Column(name = "tagline")
     private String tagline;
+    
     @Size(max = 255)
     @Column(name = "linked_in_id")
     private String linkedInId;
+    
     @Size(max = 2147483647)
     @Column(name = "background")
     private String background;
+    
     @Size(max = 2147483647)
     @Column(name = "elevator_pitch")
     private String elevatorPitch;
+    
     @Size(max = 2147483647)
     @Column(name = "immediate_needs")
     private String immediateNeeds;
+    
     @Size(max = 2147483647)
     @Column(name = "company_details")
     private String companyDetails;
+    
     @Size(max = 2147483647)
     @Column(name = "inspiration")
     private String inspiration;
+    
     @Size(max = 2147483647)
     @Column(name = "status")
     private String status;
+    
     @Size(max = 2147483647)
     @Column(name = "vision")
     private String vision;
+    
     @Size(max = 2147483647)
     @Column(name = "new_orleans")
     private String newOrleans;
+    
     @Size(max = 2147483647)
     @Column(name = "program_plan")
     private String programPlan;
+    
     @Size(max = 2147483647)
     @Column(name = "weekly_reports")
     private String weeklyReports;
+    
     @OneToMany(mappedBy = "founderId")
     private Collection<FounderExpertise> founderExpertiseCollection;
+    
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Mmuser mmuser;
+    
     @OneToMany(mappedBy = "founderId")
     private Collection<FounderIndustry> founderIndustryCollection;
 
