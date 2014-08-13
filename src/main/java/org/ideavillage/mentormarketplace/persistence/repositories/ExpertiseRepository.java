@@ -9,8 +9,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @author jlbates
  */
 public interface ExpertiseRepository extends PagingAndSortingRepository<Expertise, Long> {
-
-    Expertise findById(Integer id);
-    
-    Expertise findByExpertise(String expertise);
+    //Only uses findAll();
 }

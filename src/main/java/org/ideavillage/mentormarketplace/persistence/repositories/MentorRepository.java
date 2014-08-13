@@ -19,32 +19,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface MentorRepository extends PagingAndSortingRepository<Mentor, Long> {
 
-    long countByFirstName(String firstName);
-
-    long countByLastName(String lastName);
-
-    long countByIndustry(String industry);
-    
-    long countByAreasOfExpertise(String areasOfExpertise);
-    
-    long countByBackground(String background);
-    
-    long countByWebsite(String website);
-    
-    long countByFacebook(String facebook);
-    
-    long countByTwitter(String twitter);
-    
-    long countByOtherSocialMedia(String otherSocialMedia);
-    
-    long countByLinkedInId(String linkedInId);
-    
-    long countByLinkedInPictureURL(String linkedInPictureURL);
-    
-    long countByLinkedInCurrentCompany(String linkedInCurrentCompany);
-    
-    long countByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
-
     Page<Mentor> findByFirstName(String firstName, Pageable pageable);
     
     Page<Mentor> findByLastName(String lastName, Pageable pageable);

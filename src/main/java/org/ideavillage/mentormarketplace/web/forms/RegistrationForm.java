@@ -205,8 +205,8 @@ public class RegistrationForm {
         Founder founder = new Founder();
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setFounderIndustryCollection(founderIndustryCollection);
-        founder.setFounderExpertiseCollection(founderExpertiseCollection);
+        founder.setFounderIndustryCollection(this.founderIndustryCollection);
+        founder.setFounderExpertiseCollection(this.founderExpertiseCollection);
         founder.setBackground(this.background);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);

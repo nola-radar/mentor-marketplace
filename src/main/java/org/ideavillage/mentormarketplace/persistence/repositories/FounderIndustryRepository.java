@@ -6,6 +6,7 @@
 
 package org.ideavillage.mentormarketplace.persistence.repositories;
 
+import java.util.Collection;
 import org.ideavillage.mentormarketplace.persistence.domain.FounderIndustry;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
@@ -15,9 +16,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface FounderIndustryRepository extends PagingAndSortingRepository<FounderIndustry, Long> {
     
-    FounderIndustry findById(Integer id);
+    Collection<FounderIndustry> findByMentorId(Integer founderId);
     
-    FounderIndustry findByFounderId(Integer founderId);
-    
-    FounderIndustry findByIndustryId(Integer industryId);
+    Collection<FounderIndustry> findByExpertiseId(Integer industryId);
 }

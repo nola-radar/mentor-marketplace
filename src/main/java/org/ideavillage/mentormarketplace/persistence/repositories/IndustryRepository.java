@@ -9,9 +9,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @author jlbates
  */
 public interface IndustryRepository extends PagingAndSortingRepository<Industry, Long> {
-    
-    Industry findByIndustry(String industry);
-    
-    Industry findById(Integer industryId);
-    
+    //Only uses findAll();
 }

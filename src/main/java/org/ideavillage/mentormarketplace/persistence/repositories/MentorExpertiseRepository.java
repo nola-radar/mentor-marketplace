@@ -5,6 +5,7 @@
  */
 
 package org.ideavillage.mentormarketplace.persistence.repositories;
+import java.util.Collection;
 import org.ideavillage.mentormarketplace.persistence.domain.MentorExpertise;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
@@ -13,9 +14,9 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @author jlbates
  */
 public interface MentorExpertiseRepository extends PagingAndSortingRepository<MentorExpertise, Long>{
+
+    Collection<MentorExpertise> findByMentorId(Integer mentorId);
     
-    MentorExpertise findByMentorId(Integer mentorId);
-    
-    MentorExpertise findByExpertiseId(Integer expertiseId);
+    Collection<MentorExpertise> findByExpertiseId(Integer expertiseId);
     
 }

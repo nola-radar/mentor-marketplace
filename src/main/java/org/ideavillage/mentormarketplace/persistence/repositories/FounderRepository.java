@@ -39,33 +39,4 @@ public interface FounderRepository extends PagingAndSortingRepository<Founder, L
     Founder findByLinkedInCurrentCompany(String linkedInCurrentCompany);
 
     Founder findByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
-//
-//    long countByFirstName(String firstName);
-//
-//    long countByLastName(String lastName);
-//
-//    long countByIndustry(String industry);
-//    
-//    long countByAreasOfExpertise(String areasOfExpertise);
-//    
-//    long countByBackground(String background);
-//    
-//    long countByWebsite(String website);
-//    
-//    long countByFacebook(String facebook);
-//    
-//    long countByTwitter(String twitter);
-//    
-//    long countByOtherSocialMedia(String otherSocialMedia);
-//    
-//    long countByLinkedInId(String linkedInId);
-//    
-//    long countByLinkedInPictureURL(String linkedInPictureURL);
-//    
-//    long countByLinkedInCurrentCompany(String linkedInCurrentCompany);
-//    
-//    long countByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
-
-    //Founder findByMmUser(Long mmUser);
-    //possibly need to add new fields in database that were added to founder
 }

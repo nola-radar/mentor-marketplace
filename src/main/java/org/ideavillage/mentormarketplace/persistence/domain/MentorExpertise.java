@@ -31,15 +31,19 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "MentorExpertise.findAll", query = "SELECT m FROM MentorExpertise m"),
     @NamedQuery(name = "MentorExpertise.findById", query = "SELECT m FROM MentorExpertise m WHERE m.id = :id")})
 public class MentorExpertise implements Serializable {
+    
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    
     @JoinColumn(name = "mentor_id", referencedColumnName = "id")
     @ManyToOne
     private Mentor mentorId;
+    
     @JoinColumn(name = "expertise_id", referencedColumnName = "id")
     @ManyToOne
     private Expertise expertiseId;
