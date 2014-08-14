@@ -1,4 +1,3 @@
-
 package org.ideavillage.mentormarketplace.persistence.repositories;
 
 import org.ideavillage.mentormarketplace.persistence.domain.Industry;

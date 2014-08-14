@@ -16,28 +16,27 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @see <a href="http://docs.spring.io/spring-data/data-commons/docs/current/reference/html/repositories.html">Spring
  * Data Repositories</a>
  */
-
 public interface MentorRepository extends PagingAndSortingRepository<Mentor, Long> {
 
     Page<Mentor> findByFirstName(String firstName, Pageable pageable);
-    
+
     Page<Mentor> findByLastName(String lastName, Pageable pageable);
-    
+
     Page<Mentor> findByBackground(String background, Pageable pageable);
-    
+
     Page<Mentor> findByWebsite(String website, Pageable pageable);
-    
+
     Page<Mentor> findByFacebook(String facebook, Pageable pageable);
-    
+
     Page<Mentor> findByTwitter(String twitter, Pageable pageable);
-    
+
     Page<Mentor> findByOtherSocialMedia(String otherSocialMedia, Pageable pageable);
 
     Mentor findByLinkedInId(String linkedInId);
-    
+
     Mentor findByLinkedInPictureURL(String linkedInPictureURL);
-    
+
     Mentor findByLinkedInCurrentCompany(String linkedInCurrentCompany);
-    
+
     Mentor findByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
 }

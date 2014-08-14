@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
@@ -16,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -31,84 +23,86 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name = "mentor")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Mentor.findAll", query = "SELECT m FROM Mentor m"),
-    @NamedQuery(name = "Mentor.findById", query = "SELECT m FROM Mentor m WHERE m.id = :id"),
-    @NamedQuery(name = "Mentor.findByLinkedInId", query = "SELECT m FROM Mentor m WHERE m.linkedInId = :linkedInId"),
-    @NamedQuery(name = "Mentor.findByFirstName", query = "SELECT m FROM Mentor m WHERE m.firstName = :firstName"),
-    @NamedQuery(name = "Mentor.findByLastName", query = "SELECT m FROM Mentor m WHERE m.lastName = :lastName"),
-    @NamedQuery(name = "Mentor.findByIndustry", query = "SELECT m FROM Mentor m WHERE m.industry = :industry"),
-    @NamedQuery(name = "Mentor.findByBackground", query = "SELECT m FROM Mentor m WHERE m.background = :background"),
-    @NamedQuery(name = "Mentor.findByLinkedInPictureUrl", query = "SELECT m FROM Mentor m WHERE m.linkedInPictureUrl = :linkedInPictureUrl"),
-    @NamedQuery(name = "Mentor.findByLinkedInCurrentCompany", query = "SELECT m FROM Mentor m WHERE m.linkedInCurrentCompany = :linkedInCurrentCompany"),
-    @NamedQuery(name = "Mentor.findByLinkedInCurrentJobTitle", query = "SELECT m FROM Mentor m WHERE m.linkedInCurrentJobTitle = :linkedInCurrentJobTitle"),
-    @NamedQuery(name = "Mentor.findByWebsite", query = "SELECT m FROM Mentor m WHERE m.website = :website"),
-    @NamedQuery(name = "Mentor.findByFacebook", query = "SELECT m FROM Mentor m WHERE m.facebook = :facebook"),
-    @NamedQuery(name = "Mentor.findByTwitter", query = "SELECT m FROM Mentor m WHERE m.twitter = :twitter"),
-    @NamedQuery(name = "Mentor.findByOtherSocialMedia", query = "SELECT m FROM Mentor m WHERE m.otherSocialMedia = :otherSocialMedia")})
 public class Mentor implements Serializable {
+
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
+
     @Size(max = 255)
     @Column(name = "linked_in_id")
     private String linkedInId;
+
     @Size(max = 255)
     @Column(name = "first_name")
     private String firstName;
+
     @Size(max = 255)
     @Column(name = "last_name")
     private String lastName;
+
     @Size(max = 255)
     @Column(name = "industry")
     private String industry;
+
     @Size(max = 2147483647)
     @Column(name = "background")
     private String background;
+
     @Size(max = 255)
     @Column(name = "linked_in_picture_url")
     private String linkedInPictureUrl;
+
     @Size(max = 255)
     @Column(name = "linked_in_current_company")
     private String linkedInCurrentCompany;
+
     @Size(max = 255)
     @Column(name = "linked_in_current_job_title")
     private String linkedInCurrentJobTitle;
+
     @Size(max = 255)
     @Column(name = "website")
     private String website;
+
     @Size(max = 255)
     @Column(name = "facebook")
     private String facebook;
+
     @Size(max = 255)
     @Column(name = "twitter")
     private String twitter;
+
     @Size(max = 255)
     @Column(name = "other_social_media")
     private String otherSocialMedia;
+
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Mmuser mmuser;
+
     @OneToMany(mappedBy = "mentorId")
     private Collection<MentorExpertise> mentorExpertiseCollection;
+
     @OneToMany(mappedBy = "mentorId")
     private Collection<MentorIndustry> mentorIndustryCollection;
 
     public Mentor() {
     }
 
-    public Mentor(Integer id) {
+    public Mentor(Long id) {
         this.id = id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -258,5 +252,5 @@ public class Mentor implements Serializable {
     public String toString() {
         return "org.ideavillage.mentormarketplace.persistence.domain.Mentor[ id=" + id + " ]";
     }
-    
+
 }

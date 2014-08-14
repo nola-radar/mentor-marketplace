@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
@@ -14,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -29,37 +21,38 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name = "industry")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Industry.findAll", query = "SELECT i FROM Industry i"),
-    @NamedQuery(name = "Industry.findById", query = "SELECT i FROM Industry i WHERE i.id = :id"),
-    @NamedQuery(name = "Industry.findByIndustry", query = "SELECT i FROM Industry i WHERE i.industry = :industry")})
 public class Industry implements Serializable {
+
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
+
     @Size(max = 255)
     @Column(name = "industry")
     private String industry;
+
     @OneToMany(mappedBy = "industryId")
     private Collection<MentorIndustry> mentorIndustryCollection;
+
     @OneToMany(mappedBy = "industryId")
     private Collection<FounderIndustry> founderIndustryCollection;
 
     public Industry() {
     }
 
-    public Industry(Integer id) {
+    public Industry(Long id) {
         this.id = id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -113,5 +106,5 @@ public class Industry implements Serializable {
     public String toString() {
         return "org.ideavillage.mentormarketplace.persistence.domain.Industry[ id=" + id + " ]";
     }
-    
+
 }

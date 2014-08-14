@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
@@ -15,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -27,19 +19,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "founder_industry")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "FounderIndustry.findAll", query = "SELECT f FROM FounderIndustry f"),
-    @NamedQuery(name = "FounderIndustry.findById", query = "SELECT f FROM FounderIndustry f WHERE f.id = :id")})
 public class FounderIndustry implements Serializable {
+
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
+
     @JoinColumn(name = "industry_id", referencedColumnName = "id")
     @ManyToOne
     private Industry industryId;
+
     @JoinColumn(name = "founder_id", referencedColumnName = "id")
     @ManyToOne
     private Founder founderId;
@@ -47,15 +40,15 @@ public class FounderIndustry implements Serializable {
     public FounderIndustry() {
     }
 
-    public FounderIndustry(Integer id) {
+    public FounderIndustry(Long id) {
         this.id = id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -99,5 +92,5 @@ public class FounderIndustry implements Serializable {
     public String toString() {
         return "org.ideavillage.mentormarketplace.persistence.domain.FounderIndustry[ id=" + id + " ]";
     }
-    
+
 }
