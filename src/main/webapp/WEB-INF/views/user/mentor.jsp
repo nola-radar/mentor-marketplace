@@ -1,5 +1,8 @@
         <!-- Header -->
         <%@include file="../header.jsp" %>
+        
+        <!-- Navigation Bar -->
+        <%@include file="../index/nav.jsp" %>
 
         <div class="container" id="editMainContainer">
             <div id="profileMainContainer">

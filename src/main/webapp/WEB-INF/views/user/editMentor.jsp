@@ -1,6 +1,9 @@
         <!-- Header -->
         <%@include file="../header.jsp" %>
         
+        <!-- Navigation Bar -->
+        <%@include file="../index/nav.jsp" %>
+        
         <form:form modelAttribute="registrationForm">
             
             <div class="container" id="editMainContainer">

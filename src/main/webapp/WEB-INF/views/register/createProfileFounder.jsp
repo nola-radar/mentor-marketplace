@@ -1,6 +1,6 @@
 <form:form modelAttribute="registrationForm">
 
-    <div id="createProfileMainContainer">
+    <div id="createProfileContainer">
 
         <!-- Top Row -->
         <div class="row">
@@ -19,7 +19,7 @@
 
                             <label class="col-sm-3 control-label createProfileTopInputLabels">First Name: </label>
                             <div class="col-sm-9 createProfileTopInputFields">
-                                <form:input class="form-control" path="firstName" rows="2" />
+                                <form:input class="form-control input-sm" path="firstName" rows="2" />
                                 <form:errors class="help-block" path="firstName" cssClass="help-inline" />
                             </div>
 
@@ -29,7 +29,7 @@
 
                             <label class="col-sm-3 control-label createProfileInputLabels">Last Name: </label>
                             <div class="col-sm-9 createProfileInputFields">
-                                <form:input class="form-control" path="lastName" rows="2" />
+                                <form:input class="form-control input-sm" path="lastName" rows="2" />
                                 <form:errors class="help-block" path="lastName" cssClass="help-inline" />
                             </div>
 
@@ -39,7 +39,7 @@
 
                             <label class="col-sm-3 control-label createProfileInputLabels">Website: </label>
                             <div class="col-sm-9 createProfileInputFields">
-                                <form:input class="form-control" path="website" rows="2" />
+                                <form:input class="form-control input-sm" path="website" rows="2" />
                                 <form:errors class="help-block" path="website" cssClass="help-inline" />
                             </div>
 
@@ -49,7 +49,7 @@
 
                             <label class="col-sm-3 control-label createProfileInputLabels">Facebook: </label>
                             <div class="col-sm-9 createProfileInputFields">
-                                <form:input class="form-control" path="facebook" rows="2" />
+                                <form:input class="form-control input-sm" path="facebook" rows="2" />
                                 <form:errors class="help-block" path="facebook" cssClass="help-inline" />
                             </div>
 
@@ -59,7 +59,7 @@
 
                             <label class="col-sm-3 control-label createProfileInputLabels">Twitter: </label>
                             <div class="col-sm-9 createProfileInputFields">
-                                <form:input class="form-control" path="twitter" rows="2" />
+                                <form:input class="form-control input-sm" path="twitter" rows="2" />
                                 <form:errors class="help-block" path="twitter" cssClass="help-inline" />
                             </div>
 
@@ -69,7 +69,7 @@
 
                             <label class="col-sm-3 control-label createProfileTextAreaLabels">Other Social Media: </label>
                             <div class="col-sm-9 createProfileTextAreaFields">
-                                <form:textarea class="form-control" path="otherSocialMedia" rows="2" />
+                                <form:textarea class="form-control input-sm" path="otherSocialMedia" rows="2" />
                                 <form:errors class="help-block" path="otherSocialMedia" cssClass="help-inline" />
                             </div>
 
@@ -79,7 +79,7 @@
 
                             <label class="col-sm-3 control-label createProfileTextAreaLabels">Company Description: </label>
                             <div class="col-sm-9 createProfileTextAreaFields">
-                                <form:textarea class="form-control" path="companyDetails" rows="2" />
+                                <form:textarea class="form-control input-sm" path="companyDetails" rows="2" />
                                 <form:errors class="help-block" path="companyDetails" cssClass="help-inline" />
                             </div>
 
@@ -90,7 +90,7 @@
 
                             <label class="col-sm-3 control-label createProfileTextAreaLabels">Inspiration: </label>
                             <div class="col-sm-9 createProfileTextAreaFields">
-                                <form:textarea class="form-control" path="inspiration" rows="2" />
+                                <form:textarea class="form-control input-sm" path="inspiration" rows="2" />
                                 <form:errors class="help-block" path="inspiration" cssClass="help-inline" />
                             </div>
 
@@ -105,7 +105,7 @@
                         <spring:bind path="logo">
                             <label class="col-sm-3 control-label createProfileTopInputLabels">Logo: </label>
                             <div class="col-sm-9 createProfileTopInputFields">
-                                <form:input class="form-control" path="logo" rows="2" />
+                                <form:input class="form-control input-sm" path="logo" rows="2" />
                                 <form:errors class="help-block" path="logo" cssClass="help-inline" />
                             </div>
                         </spring:bind>
@@ -113,7 +113,7 @@
                         <spring:bind path="tagline">
                             <label class="col-sm-3 control-label createProfileInputLabels">Tagline: </label>
                             <div class="col-sm-9 createProfileInputFields">
-                                <form:input class="form-control" path="tagline" rows="2" />
+                                <form:input class="form-control input-sm" path="tagline" rows="2" />
                                 <form:errors class="help-block" path="tagline" cssClass="help-inline" />
                             </div>
                         </spring:bind>
@@ -121,7 +121,7 @@
                         <spring:bind path="elevatorPitch">
                             <label class="col-sm-3 control-label createProfileTextAreaLabels">Elevator Pitch: </label>
                             <div class="col-sm-9 createProfileTextAreaFields">
-                                <form:textarea class="form-control" path="elevatorPitch" rows="2" />
+                                <form:textarea class="form-control input-sm" path="elevatorPitch" rows="2" />
                                 <form:errors class="help-block" path="elevatorPitch" cssClass="help-inline" />
                             </div>
                         </spring:bind>
@@ -134,7 +134,7 @@
                         <spring:bind path="immediateNeeds">
                             <label class="col-sm-3 control-label createProfileTopTextAreaLabels">Immediate Needs: </label>
                             <div class="col-sm-9 createProfileTopTextAreaFields">
-                                <form:textarea class="form-control" path="immediateNeeds" rows="2" />
+                                <form:textarea class="form-control input-sm" path="immediateNeeds" rows="2" />
                                 <form:errors class="help-block" path="immediateNeeds" cssClass="help-inline" />
                             </div>
                         </spring:bind>
@@ -142,7 +142,7 @@
                         <spring:bind path="status">
                             <label class="col-sm-3 control-label createProfileTextAreaLabels">Status: </label>
                             <div class="col-sm-9 createProfileTextAreaFields">
-                                <form:textarea class="form-control" path="status" rows="2" />
+                                <form:textarea class="form-control input-sm" path="status" rows="2" />
                                 <form:errors class="help-block" path="status" cssClass="help-inline" />
                             </div>
                         </spring:bind>
@@ -150,7 +150,7 @@
                         <spring:bind path="vision">
                             <label class="col-sm-3 control-label createProfileTextAreaLabels">Vision: </label>
                             <div class="col-sm-9 createProfileTextAreaFields">
-                                <form:textarea class="form-control" path="vision" rows="2" />
+                                <form:textarea class="form-control input-sm" path="vision" rows="2" />
                                 <form:errors class="help-block" path="vision" cssClass="help-inline" />
                             </div>
                         </spring:bind>
@@ -158,7 +158,7 @@
                         <spring:bind path="newOrleans">
                             <label class="col-sm-3 control-label createProfileTextAreaLabels">New Orleans: </label>
                             <div class="col-sm-9 createProfileTextAreaFields">
-                                <form:textarea class="form-control" path="newOrleans" rows="2" />
+                                <form:textarea class="form-control input-sm" path="newOrleans" rows="2" />
                                 <form:errors class="help-block" path="newOrleans" cssClass="help-inline" />
                             </div>
                         </spring:bind>

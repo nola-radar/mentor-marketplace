@@ -1,13 +1,13 @@
-/**
+/*******************************************************
  *
+ * Mentor Marketplace CSS, using Bootstrap 3.2.0
  *
- *
- **/
+ *******************************************************/
 
 
-/**
- *   HELPER CLASSES
- **/
+/*******************************************************
+ *  Helper Classes
+ *******************************************************/
 
 .padding-left-35 { padding-left: 35px; }
 .padding-right-35 { padding-right: 35px; }
@@ -27,13 +27,12 @@
 .margin-top-10 { margin-top: 10px; }
 
 
-
-/* BOOTSTRAP OVERRIDES */
+/*******************************************************
+ *  Bootstrap Overrides and Media Queries
+ *******************************************************/
 
 @media (max-width: 769px) {
-    .col-sm-12 {
-        width: 100%;
-    }
+    .col-sm-12 { width: 100%; }
 }
 
 @media (max-width: 992px) {
@@ -47,8 +46,9 @@
 }
 
 
-
-/* Bootstrap Multiselect Overrides*/
+/*******************************************************
+ *  Bootstrap Multiselect Overrides
+ *******************************************************/
 
 .dropdown-menu {
     padding: 0;
@@ -86,23 +86,147 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
 }
 
 
+/*******************************************************
+ *  Shared Pages CSS
+ *******************************************************/
 
-/**
- *  Shared Register Container for Create Profiles Page
- **/
+body {
+    background: #e3e3e3;
+}
 
 #registerMainContainer {
     padding-left: 40px;
     padding-right: 40px;
-    background-color:#f6f6f6;
+    background-color: #f6f6f6;
+}
+
+/*******************************************************
+ *  Navigation Bar
+ *******************************************************/
+
+.navbar-default.navbar-bg-darkblue {
+    background: #203747;
+    border: none;
+    
+}
+
+.navbar.navbar-bg-darkblue {
+    margin-bottom: 0px;
+}
+
+.navbar-default.navbar-bg-darkblue .navbar-brand {
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.navbar-bg-darkblue .navbar-right {
+    margin-top: 7px;
+}
+
+#navBarLogo {
+    height: 40px;
+    margin: 5px 40px 5px 40px;
+}
+
+#navBarLogOutButton {
+    background-color: #27ae60;
+    border-radius: 0;
+    margin-bottom: 7px;
 }
 
 
+/*******************************************************
+ *  Index Page Navigation Bar
+ *******************************************************/
 
-/* Shared Profile CSS IDs */
+.navbar-default.navbar-bg-blue {
+    background: #2980b9;
+    border: none;
+    
+}
+
+.navbar.navbar-bg-blue {
+    margin-bottom: 0px;
+}
+
+.navbar-bg-blue .navbar-right {
+    margin-top: 7px;
+}
+
+.navbar-default.navbar-bg-blue .navbar-brand {
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+
+/*******************************************************
+ *  Index Page
+ *******************************************************/
+
+#indexRegistrationPage {
+    
+    background: url(../img/Rounded-Earth.png) no-repeat center bottom #2980b9;
+    background-size: 150% 140px;
+    padding-top: 20px;
+}
+
+.indexContainer {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.indexGraphic {
+    width: 900px;
+    height: 365px;
+    background: url(../img/thoughtBubbles.png) no-repeat left top;
+    position: relative;
+}
+
+.indexGraphicTextLeft {
+    position: absolute;
+    top: 215px;
+    left: 80px;
+}
+
+.indexGrpahicTextRight {
+    position: absolute;
+    top: 215px;
+    right: 100px;
+}
+
+.indexRegistationButton {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.indexRegistrationInfo {
+    background: #e3e3e3;
+}
+
+.indexTopic {
+    background: url(../img/Blurb_Circle.png) no-repeat center 40px;
+    background-size: 120px 120px;
+    padding-top: 160px;
+    padding-bottom: 40px;
+}
+
+.indexMissionStatement {
+    background: #eeeeee;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/*******************************************************
+ *  Shared Create Profile CSS IDs
+ *******************************************************/
 
 #createProfileMainContainer {
-    background-color:#ffffff;
+    background-color: #eeeeee;
+}
+
+#createProfileContainer {
+    background-color: #ffffff;
 }
 
 .createProfileInputLabels {
@@ -124,7 +248,10 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
 }
 
 
-/* Top Text Fields account for the padding.*/
+/*******************************************************
+ *  Top Text Fields to Account for the Padding
+ *******************************************************/
+
 .createProfileTopInputLabels {
     height: 60px;
     padding-top: 10px;
@@ -148,32 +275,29 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
 }
 
 
-/* Shared Profile CSS IDs */
+/*******************************************************
+ *  Shared Create Profile CSS
+ *******************************************************/
 
 #createProfileMenu {
-    background-color:#203747;
-    color:white;
+    background-color: #203747;
+    color: white;
     height: 35px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
 }
 
-#createProfileMentorIndustry {
-    background-color:#f6f6f6;
-    height:300px;
-}
-
 #createProfileButton {
-    background:#27ae60;
-    border-radius:0%;
-    width:150px;
+    background: #27ae60;
+    border-radius: 0%;
+    width: 150px;
 }
 
 .section-200 {
-    height:200px;
-    background-color:#f6f6f6;
-    color:black;
+    height: 200px;
+    background-color: #f6f6f6;
+    color: black;
 }
 
 .section-200 + .section-200 {
@@ -181,135 +305,215 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
 }
 
 
-/**
- *  createMentor.jps specific CSS 
- **/
+/*******************************************************
+ *  Create Mentor specific CSS
+ *******************************************************/
 
 #createProfileMentorSocialInfo {
-    background-color:#f6f6f6; 
-    height:420px;
+    background-color: #f6f6f6; 
+    height: 420px;
 }
 
 #createProfileMentorCompany {
-    background-color:#f6f6f6;
-    color:black;
+    background-color: #f6f6f6;
+    color: black;
 }
 
+#createProfileMentorIndustry {
+    background-color: #f6f6f6;
+    height: 300px;
+}
 
-/**
- *  createFounder.jps specific CSS 
- **/
+/*******************************************************
+ *  Create Founder specific CSS
+ *******************************************************/
+
 #createProfileFounderInfo {
-    background-color:#f6f6f6;
-    height:530px;
+    background-color: #f6f6f6;
+    height: 550px;
 }
 
 #createProfileFounderLogo {
-    height:200px;
-    background-color:#f6f6f6;
+    height: 220px;
+    background-color: #f6f6f6;
 }
 
 #createProfileFounderStatus {
-    background-color:#f6f6f6;
-    height:310px;
+    background-color: #f6f6f6;
+    height: 310px;
 }
 
 #createProfileFounderProgramPlan {
-    background-color:#f6f6f6;
-    height:300px;
+    background-color: #f6f6f6;
+    height: 300px;
 }
+
+
+/*******************************************************
+ *  Profile specific CSS
+ *******************************************************/
+
+.profileMainContainer {
+    background-color: #eeeeee;
+    padding-bottom: 40px;
+}
+
+.profileLogoContent {
+    height: 140px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.profileLogoImage {
+    height: 70px;
+}
+
+.profileFounderName {
+    height: 70px;
+}
+
+.profileHeaderContents {
+    background-color: #203747;
+    height: 50px;
+}
+
+.profileBodyContentContainer {
+    background-color: #eeeeee;
+}
+
+#profileBodyContent {
+    background-color: #ffffff;
+    height: 860px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#profileExperience {
+    background-color: #f6f6f6; 
+    height: 420px;
+}
+
+#profileFounderLogo {
+    height: 200px;
+    background-color: #f6f6f6;
+}
+
+#profileSocialInfo {
+    height: 200px;
+    background-color: #f6f6f6;
+    margin-top: 20px;
+}
+
+#profileSkills {
+    background-color: #f6f6f6;
+    height: 300px;
+    margin-bottom: 100px;
+}
+
+
+/*******************************************************
+ *  Profile Labels CSS
+ *******************************************************/
+
+.profileLabels {
+    height: 40px;
+}
+
+.profileTextAreaLabels {
+    height: 60px;
+}
+
+.profileTopLabels {
+    height: 40px;
+    padding-top: 10px;
+}
+
+.profileTopTextAreaLabels {
+    height: 40px;
+    padding-top: 10px;
+}
+
+
+
+
+
+/*******************************************************
+ *  Outdated / Older CSS Below. Will be replaced soon.
+ *******************************************************/
+
 
 
 
 /* Below css for user/founder user/mentor */
 
 #mfMainContainer {
-    background-color:#f6f6f6;
-}
-
-#profileMainContainer {
-    background-color:#ffffff;
-    margin-top: 100px;
+    background-color: #f6f6f6;
 }
 
 #editProfileButton {
-    background:#27ae60;
-    border-radius:0%;
-    width:110px;
+    background: #27ae60;
+    border-radius: 0%;
+    width: 110px;
 }
 
 #mfRowOne {
-    background-color:#203747;
-    height:50px;
-}
-
-#mfImage {
-    bottom:20px;
-    left:40px;
-    position:absolute;
-    height:80px;
-    width:80px;
-    border-radius:5%;
+    background-color: #203747;
+    height: 50px;
 }
 
 #mfHOne {
-    bottom:40px;
-    left:130px;
-    position:absolute;
+    bottom: 40px;
+    left: 130px;
+    position: absolute;
 }
 
 #mfHTwo {
-    bottom:20px;
-    left:130px;
-    position:absolute;
+    bottom: 20px;
+    left: 130px;
+    position: absolute;
 }
 
 #mfRowThreeDivOne {
-    padding-right:5px;
-}
-
-#profileSocialInfo {
-    background-color:#f6f6f6;
-    height:520px;
+    padding-right: 5px;
 }
 
 #mfLinkOne {
     padding-top: 5px;
     padding-right: 20px;
-    height:30px;
-    width:70px;
-    position:absolute;
-    top:0px;
-    right:0px;
+    height: 30px;
+    width: 70px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 #mfRowThreeDivThree {
-    padding-left:5px;
+    padding-left: 5px;
 }
 
 #mfRowThreeDivFour {
-    background-color:white;
-    height:250px;
+    background-color: white;
+    height: 250px;
 }
 
 #mfLinkTwo {
-    padding:0;
-    height:30px;
-    width:30px;
-    position:absolute;
-    top:0;
-    right:10px;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 10px;
 }
 
 #mfRowThreeDivFive {
-    background-color:#f6f6f6;
-    height:250px;
+    background-color: #f6f6f6;
+    height: 250px;
 }
 
 #mfContentBottom  {
-    padding:10px;
-    background-color:#f6f6f6;
-    height:200px;
+    padding: 10px;
+    background-color: #f6f6f6;
+    height: 200px;
     margin-bottom: 25px;
 }
 
@@ -320,50 +524,50 @@ i.glyphicon.glyphicon-ok.icon-ok.check-mark {
 #editMainContainer {
     padding-left: 40px;
     padding-right: 40px;
-    background-color:#f6f6f6;
+    background-color: #f6f6f6;
 }
 
 #editProfileMainContainer {
-    background-color:#ffffff;
+    background-color: #ffffff;
     margin-top: 50px;
 }
 
 #editRowOne {
-    background-color:#203747;
-    height:50px;
+    background-color: #203747;
+    height: 50px;
 }
 
 #editRowTwoDivOne {
-    padding-right:5px;
+    padding-right: 5px;
 }
 
 #editProfileMentorSocialInfo {
-    background-color:#f6f6f6;
-    height:420px;
+    background-color: #f6f6f6;
+    height: 420px;
 }
 
 #rowTwoDivTwo {
-    padding-left:5px;
+    padding-left: 5px;
 }
 
 #rowTwoDivTwoChild {
-    background-color:white;
-    height:200px;
+    background-color: white;
+    height: 200px;
 }
 
 #rowTwoDivTwoSecondChild {
-    background-color:#f6f6f6;
-    height:200px;
+    background-color: #f6f6f6;
+    height: 200px;
 }
 
 #rowThreeDivOne {
-    padding:10px;
-    background-color:#f6f6f6;
-    height:240px;
+    padding: 10px;
+    background-color: #f6f6f6;
+    height: 240px;
 }
 
 #editUpdateProfileButton {
-    background:#27ae60;
-    border-radius:0%;
-    width:150px;
+    background: #27ae60;
+    border-radius: 0%;
+    width: 150px;
 }

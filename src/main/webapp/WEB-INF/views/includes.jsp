@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="/mentormarketplace/resources/components/bootstrap-multiselect/bootstrap-select.css" />
 
 <!-- CSS -->
-<link rel="stylesheet" href="/mentormarketplace/resources/css/navigationBar.css"  type="text/css"/>
 <link rel="stylesheet" href="/mentormarketplace/resources/css/founderSocial.css"  type="text/css"/>
 
 <!-- Java Script Plug-Ins -->

@@ -1,9 +1,12 @@
         <!-- Header -->
         <%@include file="../header.jsp" %>
+        
+        <!-- Navigation Bar -->
+        <%@include file="../index/nav.jsp" %>
 
         <!-- Create Profile Main Container -->
-        <div class="container" id="registerMainContainer">
-            
+        <div class="container" id="createProfileMainContainer">
+ 
             <!-- Tab Panes -->
             <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a href="#founder" data-toggle="tab">Founder</a></li>
