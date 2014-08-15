@@ -165,7 +165,7 @@ body {
 
 #indexRegistrationPage {
     
-    background: url(../img/Rounded-Earth.png) no-repeat center bottom #2980b9;
+    background: url(../img/Rounded_Earth.png) no-repeat center bottom #2980b9;
     background-size: 150% 140px;
     padding-top: 20px;
 }
@@ -178,7 +178,7 @@ body {
 .indexGraphic {
     width: 900px;
     height: 365px;
-    background: url(../img/thoughtBubbles.png) no-repeat left top;
+    background: url(../img/Thought_Bubbles.png) no-repeat left top;
     position: relative;
 }
 
@@ -218,7 +218,7 @@ body {
 
 
 /*******************************************************
- *  Shared Create Profile CSS IDs
+ *  Shared Create Profile CSS
  *******************************************************/
 
 #createProfileMainContainer {
@@ -227,6 +227,31 @@ body {
 
 #createProfileContainer {
     background-color: #ffffff;
+}
+
+#createProfileMenu {
+    background-color: #203747;
+    color: white;
+    height: 35px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#createProfileButton {
+    background: #27ae60;
+    border-radius: 0%;
+    width: 150px;
+}
+
+.section-200 {
+    height: 200px;
+    background-color: #f6f6f6;
+    color: black;
+}
+
+.section-200 + .section-200 {
+    margin-top: 20px;
 }
 
 .createProfileInputLabels {
@@ -272,36 +297,6 @@ body {
     height: 80px;
     margin-bottom: 5px;
     padding-top: 10px;
-}
-
-
-/*******************************************************
- *  Shared Create Profile CSS
- *******************************************************/
-
-#createProfileMenu {
-    background-color: #203747;
-    color: white;
-    height: 35px;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-#createProfileButton {
-    background: #27ae60;
-    border-radius: 0%;
-    width: 150px;
-}
-
-.section-200 {
-    height: 200px;
-    background-color: #f6f6f6;
-    color: black;
-}
-
-.section-200 + .section-200 {
-    margin-top: 20px;
 }
 
 
@@ -358,32 +353,39 @@ body {
     padding-bottom: 40px;
 }
 
-.profileLogoContent {
-    height: 140px;
+.profileLogoAndIndustryContent {
+    height: 170px;
     margin-left: 40px;
     margin-right: 40px;
 }
 
+.profileLogoContent {
+    height: 100px;
+}
+
+.profileIndustryContent {
+    height: 100px;
+}
+
 .profileLogoImage {
-    height: 70px;
+/*    top: 25px;
+    right: 23px;
+    position: absolute;*/
 }
 
-.profileFounderName {
-    height: 70px;
-}
-
-.profileHeaderContents {
+.profileHeader {
     background-color: #203747;
     height: 50px;
 }
 
 .profileBodyContentContainer {
     background-color: #eeeeee;
+    display: table;
 }
 
 #profileBodyContent {
     background-color: #ffffff;
-    height: 860px;
+    display: table;
     margin-left: 40px;
     margin-right: 40px;
 }
@@ -393,7 +395,7 @@ body {
     height: 420px;
 }
 
-#profileFounderLogo {
+#profileName {
     height: 200px;
     background-color: #f6f6f6;
 }
@@ -408,6 +410,14 @@ body {
     background-color: #f6f6f6;
     height: 300px;
     margin-bottom: 100px;
+}
+
+#profileEditButton {
+    background: #27ae60;
+    border-radius: 0%;
+    width: 125px;
+    margin-top: 7px;
+    float: right;
 }
 
 
@@ -429,10 +439,26 @@ body {
 }
 
 .profileTopTextAreaLabels {
-    height: 40px;
+    height: 60px;
     padding-top: 10px;
 }
 
+.profileNameLabels {
+    height: 145px;
+    padding-top: 85px;
+    text-align: right;
+}
+
+.profileImageLabels {
+    height: 145px;
+    padding-top: 45px;
+    margin-bottom: 5px;
+}
+
+#profileBelowImageLabel {
+    padding-top: 5px;
+    height: 45px;
+}
 
 
 
