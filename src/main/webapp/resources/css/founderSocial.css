@@ -54,20 +54,24 @@
     padding: 0;
     cursor: pointer;
 }
+
 .dropdown-menu.open {
  border: none;
  border: 1px #bfc2c5 solid;
 }
+
 .dropdown-menu li.selected > a {
  border-radius: 4px;
  color: #ffffff;
  background-color: #3b73b9;
 }
+
 .dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus {
  border-radius: 4px;
  background-color: #b7cbe5;
 }
+
 .dropdown-submenu:hover > a,
 .typeahead-faceted > ul > li:last-child a:hover,
 .dropdown-menu > .active > a,
@@ -76,11 +80,13 @@
  border-radius: 4px;
  background-color: #b7cbe5;
 }
+
 .dropdown-menu li.selected > a:hover,
 .dropdown-menu li.selected > a:focus {
  background: #3b73b9;
  border-radius: 4px;
 }
+
 i.glyphicon.glyphicon-ok.icon-ok.check-mark {
 
 }
@@ -99,6 +105,7 @@ body {
     padding-right: 40px;
     background-color: #f6f6f6;
 }
+
 
 /*******************************************************
  *  Navigation Bar
@@ -319,6 +326,7 @@ body {
     height: 300px;
 }
 
+
 /*******************************************************
  *  Create Founder specific CSS
  *******************************************************/
@@ -361,16 +369,23 @@ body {
 
 .profileLogoContent {
     height: 100px;
+    position: relative;
+    z-index: 100;
+    padding-top: 25px;
 }
 
 .profileIndustryContent {
     height: 100px;
 }
 
-.profileLogoImage {
+#profileLogoImage {
 /*    top: 25px;
     right: 23px;
     position: absolute;*/
+}
+
+#profileNameImage {
+	border-radius: 50px;
 }
 
 .profileHeader {
@@ -397,7 +412,7 @@ body {
 
 #profileName {
     height: 200px;
-    background-color: #f6f6f6;
+    background-color: #ffffff;
 }
 
 #profileSocialInfo {
@@ -409,8 +424,14 @@ body {
 #profileSkills {
     background-color: #f6f6f6;
     height: 300px;
+}
+
+#profileReports {
+    background-color: #f6f6f6;
+    height: 300px;
     margin-bottom: 100px;
 }
+
 
 #profileEditButton {
     background: #27ae60;
@@ -463,12 +484,11 @@ body {
 
 
 
+
+
 /*******************************************************
  *  Outdated / Older CSS Below. Will be replaced soon.
  *******************************************************/
-
-
-
 
 /* Below css for user/founder user/mentor */
 

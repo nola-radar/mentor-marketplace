@@ -17,7 +17,7 @@
 
             <div class="col-xs-10 profileIndustryContent">
                 <h4> The Idea Village </h4>
-                <p> Industry </p>
+                <p> ${mentor.getIndustry()} </p>
             </div>
 
             <!-- Header -->
@@ -63,7 +63,7 @@
                                     
                                     <div class="col-xs-4 profileImageLabels">
                                         <!-- Proxy Image used for Page Create. Remove once LinkedIn Images are up. -->
-                                        <img src="/mentormarketplace/resources/img/Profile_Logo.png" id="profileLogoImage"/>
+                                        <img src="/mentormarketplace/resources/img/Profile_Logo.png" id="profileNameImage"/>
                                         <!-- <img src="${profile.profilePictureUrl}"> -->
                                     </div>
                                         
@@ -72,12 +72,9 @@
 
                             <!-- Founder Profile Social Area -->
                             <div class="section-200" id="profileSocialInfo">
-                                                                
-                                    <label class="col-xs-4 control-label profileTopTextAreaLabels"> Industry: </label>
-                                    <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getIndustry()} </label>
-    
-                                    <label class="col-xs-4 control-label profileTextAreaLabels"> Current Company: </label>
-                                    <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getLinkedInCurrentCompany()} </label>
+                                    
+                                    <label class="col-xs-4 control-label profileTopTextAreaLabels"> Current Company: </label>
+                                    <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getLinkedInCurrentCompany()} </label>
     
                                     <label class="col-xs-4 control-label profileTextAreaLabels"> Job Title: </label>
                                     <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getLinkedInCurrentJobTitle()} </label>
@@ -90,7 +87,7 @@
                 <div class="col-sm-12 margin-top-20 padding-left-20 padding-right-20">
 
                     <!-- Bottom Content -->
-                    <div id="profileSkills">
+                    <div id="profileReports">
                                                     
                             <label class="col-xs-4 control-label profileTopTextAreaLabels"> Background: </label>
                             <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getBackground()} </label>
