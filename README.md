@@ -38,16 +38,20 @@ Go to http://localhost:8080/mentormarketplace to see the app.
 Running Flyway Migration
 ------------------------
 To run flyway migrations there are two ways to do this right now.
+
+From The Command Line
 `mvn compile flyway:migrate`
 
-Or
-`Right Click the project and access proporties inside netbeans`
-`Select the actions tab`
-`Click Add Custom Button on the Left`
-`Name the action "Flyway Migrate"`
-`In the Execute goals section type "compile flyway:migrate"`
-`Click Okay`
-`Now when you right click ideavillage in netbeans, under "Custom" you will see the Flyway Migrate action.  Using this will run Flyway and migrate your database to the latest version`
+Inside Netbeans
+
+1.Right Click the project and access proporties inside netbeans
+2.Select the actions tab
+3.Click Add Custom Button on the Left
+4.Name the action "Flyway Migrate"
+5.In the Execute goals section type "compile flyway:migrate"
+6.Click Okay
+
+Now when you right click ideavillage in netbeans, under "Custom" you will see the Flyway Migrate action.  Using this will run Flyway and migrate your database to the latest version.
 
 Making Flyway Migration Scripts
 --------------------------------
