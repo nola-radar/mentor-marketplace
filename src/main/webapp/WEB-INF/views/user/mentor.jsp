@@ -2,7 +2,7 @@
 <%@include file="../header.jsp" %>
 
 <!-- Navigation Bar -->
-<%@include file="../index/nav.jsp" %>
+<%@include file="../shared/navigationBar.jsp" %>
 
 <div class="container">
 
@@ -12,7 +12,7 @@
         <!-- Logo Area -->
         <div class="profileLogoAndIndustryContent padding-top-20">
             <div class="col-xs-2 profileLogoContent">
-                <img src="/mentormarketplace/resources/img/Profile_Logo.png" id="profileLogoImage"/>
+                <img src="<c:url value="/resources/img/Profile_Logo.png" />" id="profileLogoImage"/>
             </div>
 
             <div class="col-xs-10 profileIndustryContent">
@@ -26,7 +26,6 @@
             </div>
         </div>
 
-
         <!-- Body Contents -->
         <div class="profileBodyContentContainer">
             <div id="profileBodyContent">
@@ -36,19 +35,17 @@
 
                             <!-- Mentor Profile Experience Area -->
                             <div id="profileExperience">
-                                
-                                    <label class="col-xs-4 control-label profileTopLabels"> Website: </label>
-                                    <label class="col-xs-8 profileTopLabels"> ${mentor.getWebsite()} </label>
-    
-                                    <label class="col-xs-4 control-label profileLabels"> Facebook: </label>
-                                    <label class="col-xs-8 profileLabels"> ${mentor.getFacebook()} </label>
-    
-                                    <label class="col-xs-4 control-label profileLabels"> Twitter: </label>
-                                    <label class="col-xs-8 profileLabels"> ${mentor.getTwitter()} </label>
-    
-                                    <label class="col-xs-4 cotrol-label profileTextAreaLabels"> Other Social Media: </label>
-                                    <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getOtherSocialMedia()} </label>
-                                
+                                <label class="col-xs-4 control-label profileTopLabels"> Website: </label>
+                                <label class="col-xs-8 profileTopLabels"> ${mentor.getWebsite()} </label>
+
+                                <label class="col-xs-4 control-label profileLabels"> Facebook: </label>
+                                <label class="col-xs-8 profileLabels"> ${mentor.getFacebook()} </label>
+
+                                <label class="col-xs-4 control-label profileLabels"> Twitter: </label>
+                                <label class="col-xs-8 profileLabels"> ${mentor.getTwitter()} </label>
+
+                                <label class="col-xs-4 cotrol-label profileTextAreaLabels"> Other Social Media: </label>
+                                <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getOtherSocialMedia()} </label>
                             </div>
                         </div>
 
@@ -56,29 +53,24 @@
 
                             <!-- Mentor Profile Image Area -->
                             <div class="section-200 sm-margin-top-20" id="profileName">
-                                                                
-                                    <label class="col-xs-8 control-label profileNameLabels">
-                                        ${mentor.getFirstName()} ${mentor.getLastName()}
-                                    </label>
-                                    
-                                    <div class="col-xs-4 profileImageLabels">
-                                        <!-- Proxy Image used for Page Create. Remove once LinkedIn Images are up. -->
-                                        <img src="/mentormarketplace/resources/img/Profile_Logo.png" id="profileNameImage"/>
-                                        <!-- <img src="${profile.profilePictureUrl}"> -->
-                                    </div>
-                                        
-            
+                                <label class="col-xs-8 control-label profileNameLabels">
+                                    ${mentor.getFirstName()} ${mentor.getLastName()}
+                                </label>
+
+                                <div class="col-xs-4 profileImageLabels">
+                                    <!-- Proxy Image used for Page Create. Remove once LinkedIn Images are up. -->
+                                    <img src="<c:url value="/resources/img/Profile_Logo.png" />" id="profileNameImage"/>
+                                    <!-- <img src="${profile.profilePictureUrl}"> -->
+                                </div>
                             </div>
 
-                            <!-- Founder Profile Social Area -->
+                            <!-- Mentor Profile Social Area -->
                             <div class="section-200" id="profileSocialInfo">
-                                    
-                                    <label class="col-xs-4 control-label profileTopTextAreaLabels"> Current Company: </label>
-                                    <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getLinkedInCurrentCompany()} </label>
-    
-                                    <label class="col-xs-4 control-label profileTextAreaLabels"> Job Title: </label>
-                                    <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getLinkedInCurrentJobTitle()} </label>
-                                
+                                <label class="col-xs-4 control-label profileTopTextAreaLabels"> Current Company: </label>
+                                <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getLinkedInCurrentCompany()} </label>
+
+                                <label class="col-xs-4 control-label profileTextAreaLabels"> Job Title: </label>
+                                <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getLinkedInCurrentJobTitle()} </label>
                             </div>
                         </div>
                     </div>
@@ -88,17 +80,15 @@
 
                     <!-- Bottom Content -->
                     <div id="profileReports">
-                                                    
-                            <label class="col-xs-4 control-label profileTopTextAreaLabels"> Background: </label>
-                            <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getBackground()} </label>
+                        <label class="col-xs-4 control-label profileTopTextAreaLabels"> Background: </label>
+                        <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getBackground()} </label>
 
-                            <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
-                            <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getAreasOfExpertise()} </label>
-                                                    
+                        <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
+                        <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getAreasOfExpertise()} </label>
                     </div>
                 </div>   
-            </div>
-        </div> <!-- End of Body Contents -->
+            </div> <!-- End of Body Contents -->
+        </div> <!-- End of Body Contents Container -->
     </div> <!-- End of Main Profile Container -->
 </div>
 

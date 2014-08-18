@@ -2,10 +2,10 @@ require.config({
     
     paths: {
         
-        jquery: '/mentormarketplace/resources/components/jquery/jquery.min',
-        'bootstrap': '/mentormarketplace/resources/components/bootstrap-3.2.0/js/bootstrap',
-        'multiselect': '/mentormarketplace/resources/components/bootstrap-multiselect/bootstrap-select',
-        'dropdown': '/mentormarketplace/resources/js/dropdown'
+        jquery: '../resources/components/jquery/jquery.min',
+        'bootstrap': '../resources/components/bootstrap-3.2.0/js/bootstrap',
+        'multiselect': '../resources/components/bootstrap-multiselect/bootstrap-select',
+        'dropdown': '../resources/js/dropdown'
 
     },
     shim: {

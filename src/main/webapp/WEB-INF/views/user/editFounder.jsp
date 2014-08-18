@@ -2,7 +2,7 @@
         <%@include file="../header.jsp" %>
         
         <!-- Navigation Bar -->
-        <%@include file="../index/nav.jsp" %>
+        <%@include file="../shared/navigationBar.jsp" %>
      
         <form:form modelAttribute="registrationForm">
 
