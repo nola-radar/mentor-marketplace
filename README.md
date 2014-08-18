@@ -35,21 +35,22 @@ Run the project with the Maven embedded Tomcat:
 `mvn tomcat7:run`
 Go to http://localhost:8080/mentormarketplace to see the app.
 
-'Running Flyway Migration
+Running Flyway Migration
 ------------------------
 To run flyway migrations there are two ways to do this right now.
-'mvn compile flyway:migrate
+`mvn compile flyway:migrate`
 
 Or
-'Right Click the project and access proporties inside netbeans
-'Select the actions tab
-'Click Add Custom Button on the Left
-'Name the action "Flyway Migrate"
-'In the Execute goals section type "compile flyway:migrate"
-'Click Okay
-'Now when you right click ideavillage in netbeans, under "Custom" you will see the Flyway Migrate action.  Using this will run Flyway and migrate your database to the latest version
+`Right Click the project and access proporties inside netbeans`
+`Select the actions tab`
+`Click Add Custom Button on the Left`
+`Name the action "Flyway Migrate"`
+`In the Execute goals section type "compile flyway:migrate"`
+`Click Okay`
+`Now when you right click ideavillage in netbeans, under "Custom" you will see the Flyway Migrate action.  Using this will run Flyway and migrate your database to the latest version`
 
-'Making Flyway Migration Scripts
+Making Flyway Migration Scripts
 --------------------------------
 All Flway migration scripts need to be stored in the /src/main/resources directory under db.migration
-The naming scheme for each script is V#__some_name
+The naming scheme for each script is
+` V#__some_name`
