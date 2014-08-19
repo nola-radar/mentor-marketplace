@@ -87,11 +87,6 @@
  border-radius: 4px;
 }
 
-i.glyphicon.glyphicon-ok.icon-ok.check-mark {
-
-}
-
-
 /*******************************************************
  *  Shared Pages CSS
  *******************************************************/
@@ -378,12 +373,6 @@ body {
     height: 100px;
 }
 
-#profileLogoImage {
-/*    top: 25px;
-    right: 23px;
-    position: absolute;*/
-}
-
 #profileNameImage {
 	border-radius: 50px;
 }
@@ -482,90 +471,9 @@ body {
 }
 
 
-
-
-
-
 /*******************************************************
- *  Outdated / Older CSS Below. Will be replaced soon.
+ *  Edit Profile specific CSS
  *******************************************************/
-
-/* Below css for user/founder user/mentor */
-
-#mfMainContainer {
-    background-color: #f6f6f6;
-}
-
-#editProfileButton {
-    background: #27ae60;
-    border-radius: 0%;
-    width: 110px;
-}
-
-#mfRowOne {
-    background-color: #203747;
-    height: 50px;
-}
-
-#mfHOne {
-    bottom: 40px;
-    left: 130px;
-    position: absolute;
-}
-
-#mfHTwo {
-    bottom: 20px;
-    left: 130px;
-    position: absolute;
-}
-
-#mfRowThreeDivOne {
-    padding-right: 5px;
-}
-
-#mfLinkOne {
-    padding-top: 5px;
-    padding-right: 20px;
-    height: 30px;
-    width: 70px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-#mfRowThreeDivThree {
-    padding-left: 5px;
-}
-
-#mfRowThreeDivFour {
-    background-color: white;
-    height: 250px;
-}
-
-#mfLinkTwo {
-    padding: 0;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    top: 0;
-    right: 10px;
-}
-
-#mfRowThreeDivFive {
-    background-color: #f6f6f6;
-    height: 250px;
-}
-
-#mfContentBottom  {
-    padding: 10px;
-    background-color: #f6f6f6;
-    height: 200px;
-    margin-bottom: 25px;
-}
-
-
-
-/* Below is css for editFounder.jsp and editMentor.jsp */
 
 #editMainContainer {
     padding-left: 40px;
@@ -578,38 +486,14 @@ body {
     margin-top: 50px;
 }
 
-#editRowOne {
-    background-color: #203747;
-    height: 50px;
-}
-
-#editRowTwoDivOne {
-    padding-right: 5px;
-}
-
-#editProfileMentorSocialInfo {
-    background-color: #f6f6f6;
-    height: 420px;
-}
-
-#rowTwoDivTwo {
-    padding-left: 5px;
-}
-
-#rowTwoDivTwoChild {
-    background-color: white;
+#editProfileName {
     height: 200px;
+    background-color: #f6f6f6;
 }
 
-#rowTwoDivTwoSecondChild {
+#editProfileReports {
     background-color: #f6f6f6;
-    height: 200px;
-}
-
-#rowThreeDivOne {
-    padding: 10px;
-    background-color: #f6f6f6;
-    height: 240px;
+    height: 300px;
 }
 
 #editUpdateProfileButton {

@@ -15,6 +15,7 @@
                 <img src="<c:url value="/resources/img/Profile_Logo.png" />" id="profileLogoImage"/>
             </div>
 
+            <!-- Industry -->
             <div class="col-xs-10 profileIndustryContent">
                 <h4> The Idea Village </h4>
                 <p> ${mentor.getIndustry()} </p>

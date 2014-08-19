@@ -1,273 +1,249 @@
-        <!-- Header -->
-        <%@include file="../header.jsp" %>
-        
-        <!-- Navigation Bar -->
-        <%@include file="../shared/navigationBar.jsp" %>
-     
-        <form:form modelAttribute="registrationForm">
+<!-- Header -->
+<%@include file="../header.jsp" %>
 
-            <div class="container" id="editMainContainer">
-                <div id="editProfileMainContainer">
+<!-- Navigation Bar -->
+<%@include file="../shared/navigationBar.jsp" %>
 
-                    <!-- Top Row -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div id="createProfileMenu"> Edit Profile - Founder</div>
+<form:form modelAttribute="registrationForm">
+
+    <div class="container" id="editMainContainer">
+        <div id="editProfileMainContainer">
+
+            <!-- Top Row -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="createProfileMenu"> Edit Profile - Founder</div>
+                </div>
+            </div>
+
+            <!-- Content Body -->
+            <div class="row margin-top-20">
+                <div class="col-sm-12">
+                    <div class="col-md-6 padding-left-20 padding-right-10">
+                        <div id="profileExperience">
+                            <spring:bind path="website">
+                                <label class="col-sm-3 control-label createProfileTopInputLabels">Website: </label>
+                                <div class="col-sm-9 createProfileTopInputFields">
+                                    <form:input class="form-control input-sm" path="website" rows="2" />
+                                    <form:errors class="help-block" path="website" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="facebook">
+                                <label class="col-sm-3 control-label createProfileInputLabels">Facebook: </label>
+                                <div class="col-sm-9 createProfileInputFields">
+                                    <form:input class="form-control input-sm" path="facebook" rows="2" />
+                                    <form:errors class="help-block" path="facebook" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="twitter">
+                                <label class="col-sm-3 control-label createProfileInputLabels">Twitter: </label>
+                                <div class="col-sm-9 createProfileInputFields">
+                                    <form:input class="form-control input-sm" path="twitter" rows="2" />
+                                    <form:errors class="help-block" path="twitter" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="otherSocialMedia">
+                                <label class="col-sm-3 control-label createProfileTextAreaLabels">Other Social Media: </label>
+                                <div class="col-sm-9 createProfileTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="otherSocialMedia" rows="2" />
+                                    <form:errors class="help-block" path="otherSocialMedia" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="companyDetails">
+                                <label class="col-sm-3 control-label createProfileTextAreaLabels">Company Description: </label>
+                                <div class="col-sm-9 createProfileTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="companyDetails" rows="2" />
+                                    <form:errors class="help-block" path="companyDetails" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="newOrleans">
+                                <label class="col-sm-3 control-label createProfileTextAreaLabels">New Orleans: </label>
+                                <div class="col-sm-9 createProfileTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="newOrleans" rows="2" />
+                                    <form:errors class="help-block" path="newOrleans" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
                         </div>
                     </div>
 
-                    <!-- Content Body -->
-                    <div class="row margin-top-20">
-                        <div class="col-sm-12">
-                            <div class="col-md-6 padding-left-20 padding-right-10">
-                                <div id="editProfileMentorSocialInfo">
-                                    <table>
-                                        
-                                        <spring:bind path="firstName">
-                                            <tr>
-                                                <td>First Name:</td>
-                                                <td><form:input path="firstName" class="input-large" />
-                                                    <form:errors path="firstName" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="lastName">
-                                            <tr>
-                                                <td>Last Name:</td>
-                                                <td><form:input path="lastName" class="input-large" />
-                                                    <form:errors path="lastName" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="website">
-                                            <tr>
-                                                <td>Website:</td>
-                                                <td><form:input path="website" class="input-large" />
-                                                    <form:errors path="website" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="facebook">
-                                            <tr>
-                                                <td>Facebook:</td>
-                                                <td><form:input path="facebook" class="input-large" />
-                                                    <form:errors path="facebook" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="twitter">
-                                            <tr>
-                                                <td>Twitter:</td>
-                                                <td><form:input path="twitter" class="input-large" />
-                                                    <form:errors path="twitter" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="otherSocialMedia">
-                                            <tr>
-                                                <td>Other Social Media:</td>
-                                                <td><form:textarea path="otherSocialMedia" rows="2" cols="30" />
-                                                    <form:errors path="otherSocialMedia" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="companyDetails">
-                                            <tr>
-                                                <td>Company Description:</td>
-                                                <td><form:textarea path="companyDetails" rows="2" cols="30" />
-                                                    <form:errors path="companyDetails" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="inspiration">
-                                            <tr>
-                                                <td>Inspiration:</td>
-                                                <td><form:textarea path="inspiration" rows="2" cols="30" />
-                                                    <form:errors path="inspiration" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-                                            
-                                    </table>
+                    <div class="col-md-6 padding-left-10 padding-right-20">
+                        <div class="section-200 sm-margin-top-20" id="editProfileName">
+                            <spring:bind path="firstName">
+                                <label class="col-sm-3 control-label createProfileTopInputLabels">First Name: </label>
+                                <div class="col-sm-9 createProfileTopInputFields">
+                                    <form:input class="form-control input-sm" path="firstName" rows="2" />
+                                    <form:errors class="help-block" path="firstName" cssClass="help-inline" />
                                 </div>
-                            </div>
+                            </spring:bind>
 
-                            <div class="col-md-6 padding-left-10 padding-right-20">
-                                <div class="section-200 sm-margin-top-20" id="rowTwoDivTwoChild">
-                                    <table>
-                                        
-                                        <spring:bind path="logo">
-                                            <tr>
-                                                <td>Logo:</td>
-                                                <td><form:input path="logo" class="input-large" />
-                                                    <form:errors path="logo" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="tagline">
-                                            <tr>
-                                                <td>Tagline:</td> 
-                                                <td><form:input path="tagline" class="input-large" />
-                                                    <form:errors path="tagline" cssClass="help-inline"/></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="elevatorPitch">
-                                            <tr>
-                                                <td>Elevator Pitch:</td> 
-                                                <td><form:textarea path="elevatorPitch" rows="2" cols="30" />
-                                                    <form:errors path="elevatorPitch" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-                                    </table>
+                            <spring:bind path="lastName">
+                                <label class="col-sm-3 control-label createProfileInputLabels">Last Name: </label>
+                                <div class="col-sm-9 createProfileInputFields">
+                                    <form:input class="form-control input-sm" path="lastName" rows="2" />
+                                    <form:errors class="help-block" path="lastName" cssClass="help-inline" />
                                 </div>
-
-                                <div class="section-200" id="rowTwoDivTwoSecondChild">
-                                    <table>
-                                        
-                                        <spring:bind path="immediateNeeds">
-                                            <tr>
-                                                <td>Immediate Needs: &nbsp;</td>
-                                                <td><form:textarea path="immediateNeeds" rows="2" cols="30" />
-                                                    <form:errors path="immediateNeeds" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="status">
-                                            <tr>
-                                                <td>Status:</td>
-                                                <td><form:textarea path="status" rows="2" cols="30" />
-                                                    <form:errors path="status" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="vision">
-                                            <tr>
-                                                <td>Vision:</td>
-                                                <td><form:textarea path="vision" rows="2" cols="30" />
-                                                    <form:errors path="vision" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="newOrleans">
-                                            <tr>
-                                                <td>New Orleans:</td>
-                                                <td><form:textarea path="newOrleans" rows="2" cols="30" />
-                                                    <form:errors path="newOrleans" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-
-                                        <spring:bind path="userType">
-                                            <form:hidden path="userType"></form:hidden>
-                                        </spring:bind>
-
-                                    </table>
+                            </spring:bind>
+                                
+                            <spring:bind path="linkedInPictureURL">
+                                <label class="col-sm-3 control-label createProfileInputLabels">LinkedIn Picture: </label>
+                                <div class="col-sm-9 createProfileInputFields">
+                                    <form:input class="form-control input-sm" path="linkedInPictureURL" rows="2" />
+                                    <form:errors class="help-block" path="linkedInPictureURL" cssClass="help-inline" />
                                 </div>
-                            </div>
+                            </spring:bind>
                         </div>
-                    </div>                 
-                    
-                    <!-- Content Bottom -->
-                    <div class="row margin-top-20">
-                        <div class="col-sm-12 padding-left-20 padding-right-20">
-                            <div class="col-sm-12">
-                                <div id="rowThreeDivOne">
-                                    <table>
-                                        <spring:bind path="industry">
-                                            <tr>
-                                                <td>Industry:</td> 
 
-                                                <td><form:select path="industry" class="selectpicker" multiple="multiple" >
-                                                        <form:option value="Accounting" label="Accounting"/>
-                                                        <form:option value="Advertising/Publication" label="Advertising/Publication"/>
-                                                        <form:option value="Agriculture" label="Agriculture"/>
-                                                        <form:option value="Angel Funding" label="Angel Funding"/>
-                                                        <form:option value="Apparel/Accessories" label="Apparel/Accessories"/>
-                                                        <form:option value="Architecture/Design" label="Architecture/Design"/>
-                                                        <form:option value="Arts, Entertainment/Recreation" label="Arts, Entertainment/Recreation"/>
-                                                        <form:option value="Automotive" label="Automotive"/>
-                                                        <form:option value="Biotechnology/Health/Medical" label="Biotechnology/Health/Medical"/>
-                                                        <form:option value="Communication Services" label="Communication Services"/>
-                                                        <form:option value="Computer/Software" label="Computer/Software"/>
-                                                        <form:option value="E-commerce" label="E-commerce"/>
-                                                        <form:option value="Energy" label="Energy"/>
-                                                        <form:option value="Education/Training" label="Education/Training"/>
-                                                        <form:option value="Environmental" label="Environmental"/>
-                                                        <form:option value="Financial Services" label="Financial Services"/>
-                                                        <form:option value="Food/Beverage" label="Food/Beverage"/>
-                                                        <form:option value="Health Care/Biotech" label="Health Care/Biotech"/>
-                                                        <form:option value="Manufacturing" label="Manufacturing"/>
-                                                        <form:option value="Marketing/PR" label="Marketing/PR"/>
-                                                        <form:option value="Media Services" label="Media Services"/>
-                                                        <form:option value="Mining Industry" label="Mining Industry"/>
-                                                        <form:option value="Multimedia/Internet/Online services" label="Multimedia/Internet/Online services"/>
-                                                        <form:option value="Office Equipment" label="Office Equipment"/>
-                                                        <form:option value="Oil/Gas" label="Oil/Gas"/>
-                                                        <form:option value="Plumbing" label="Plumbing"/>
-                                                        <form:option value="Printing/Graphics" label="Printing/Graphics"/>
-                                                        <form:option value="Product Licensing" label="Product Licensing"/>
-                                                        <form:option value="Real Estate" label="Real Estate"/>
-                                                        <form:option value="Retail or eCommerce" label="Retail or eCommerce"/>
-                                                        <form:option value="SaaS" label="SaaS"/>
-                                                        <form:option value="Social Entrepreneurship" label="Social Entrepreneurship"/>
-                                                        <form:option value="Sports/Fitness Services" label="Sports/Fitness Services"/>
-                                                        <form:option value="Television/Film" label="Television/Film"/>
-                                                        <form:option value="Travel/Transportation" label="Travel/Transportation"/>
-                                                        <form:option value="Venture Capital or Private Equity" label="Venture Capital or Private Equity"/>
-                                                        <form:option value="Other" label="Other"/>
-                                                    </form:select>
-                                                    <form:errors path="industry" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="areasOfExpertise">
-                                            <tr>
-                                                <td>Expertise:</td>
-                                                <td><form:input path="areasOfExpertise" class="input-large" />
-                                                    <form:errors path="areasOfExpertise" cssClass="help-inline" /></td>
-                                            </tr>
-                                        </spring:bind>
-
-                                        <spring:bind path="email">
-                                            <form:hidden path="email" />
-                                        </spring:bind>
-
-                                        <spring:bind path="linkedInId">
-                                            <form:hidden path="linkedInId" />
-                                        </spring:bind>
-
-                                        <spring:bind path="isAdmin">
-                                            <form:hidden path="isAdmin" />
-                                        </spring:bind>
-
-                                        <spring:bind path="userType">
-                                            <form:hidden path="userType"/>
-                                        </spring:bind>
-                                            
-                                    </table>
+                        <div class="section-200" id="profileSocialInfo">
+                            <spring:bind path="logo">
+                                <label class="col-sm-3 control-label createProfileTopInputLabels">Logo: </label>
+                                <div class="col-sm-9 createProfileTopInputFields">
+                                    <form:input class="form-control input-sm" path="logo" rows="2" />
+                                    <form:errors class="help-block" path="logo" cssClass="help-inline" />
                                 </div>
-                            </div>
+                            </spring:bind>
+
+                            <spring:bind path="tagline">
+                                <label class="col-sm-3 control-label createProfileInputLabels">Tagline: </label>
+                                <div class="col-sm-9 createProfileInputFields">
+                                    <form:input class="form-control input-sm" path="tagline" rows="2" />
+                                    <form:errors class="help-block" path="tagline" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="elevatorPitch">
+                                <label class="col-sm-3 control-label createProfileTextAreaLabels">Elevator Pitch: </label>
+                                <div class="col-sm-9 createProfileTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="elevatorPitch" rows="2" />
+                                    <form:errors class="help-block" path="elevatorPitch" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
                         </div>
                     </div>
+                </div>
+            </div>                 
 
-                    <!-- Update Profile Button -->
-                    <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
-                        <div class="col-sm-12 padding-left-20 padding-right-20">  
-                            <div class="col-sm-12">
-                                <button class="btn btn-info" type="submit" id="editUpdateProfileButton">
-                                    Update Profile
-                                </button>
-                            </div>
+            <!-- Bottom Content -->
+            <div class="row margin-top-20">
+                <div class="col-sm-12 padding-left-20 padding-right-20">
+                    <div class="col-sm-12">
+
+                        <!-- Bottom Content - Row 1 - Col 1 -->
+                        <div id="profileSkills">
+
+                            <spring:bind path="immediateNeeds">
+                                <label class="col-sm-2 control-label createProfileTopTextAreaLabels">Immediate Needs: </label>
+                                <div class="col-sm-10 createProfileTopTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="immediateNeeds" rows="2" />
+                                    <form:errors class="help-block" path="immediateNeeds" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="vision">
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Vision: </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="vision" rows="2" />
+                                    <form:errors class="help-block" path="vision" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="areasOfExpertise">
+                                <label class="col-sm-2 control-label">Expertise: </label>
+                                <div class="col-sm-10">
+                                    <form:textarea class="form-control" path="areasOfExpertise" rows="2" />
+                                    <form:errors class="help-block" path="areasOfExpertise" cssClass="help-inline" />
+                                </div>
+                            </spring:bind> 
+
                         </div>
                     </div>
                 </div>
             </div>
-        </form:form>
-        
-        
-        <script type="text/javascript">
-            require(['dropdown']);
-        </script>
-                                    
-        <!-- Footer -->
-        <%@include file="../footer.jsp" %>
+
+            <!-- Bottom Content -->
+            <div class="row margin-top-20">
+                <div class="col-sm-12 padding-left-20 padding-right-20">
+                    <div class="col-sm-12">
+
+                        <!-- Bottom Content - Row 1 - Col 1 -->
+                        <div id="editProfileReports">
+
+                            <spring:bind path="programPlan">
+                                <label class="col-sm-2 control-label createProfileTopTextAreaLabels">Program Plan: </label>
+                                <div class="col-sm-10 createProfileTopTextAreaFields">
+                                    <form:textarea class="form-control" path="programPlan" rows="2" />
+                                    <form:errors class="help-block" path="programPlan" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="weeklyReports">
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Weekly Reports: </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
+                                    <form:textarea class="form-control" path="weeklyReports" rows="2" />
+                                    <form:errors class="help-block" path="weeklyReports" cssClass="help-inline" />
+                                </div>
+
+                            </spring:bind>
+
+                            <spring:bind path="areasOfExpertise">
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Expertise: </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
+                                    <form:textarea class="form-control" path="areasOfExpertise" rows="2" />
+                                    <form:errors class="help-block" path="areasOfExpertise" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="industry">
+                                <label class="col-sm-2 control-label createProfileInputLabels">Industry: </label>
+                                <div class="col-sm-10 createProfileInputFields">
+                                    <select class="selectpicker" multiple="multiple" path="industry">
+                                        <%@include file="../shared/industryOptions.jsp" %>
+                                    </select>
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="email">
+                                <form:hidden path="email" />
+                            </spring:bind>
+
+                            <spring:bind path="linkedInId">
+                                <form:hidden path="linkedInId" />
+                            </spring:bind>
+
+                            <spring:bind path="isAdmin">
+                                <form:hidden path="isAdmin" />
+                            </spring:bind>
+
+                            <spring:bind path="userType">
+                                <form:hidden path="userType" value="founder"  />
+                            </spring:bind>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update Profile Button -->
+            <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
+                <div class="col-sm-12 padding-left-20 padding-right-20">  
+                    <div class="col-sm-12">
+                        <button class="btn btn-info" type="submit" id="editUpdateProfileButton">
+                            Update Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form:form>
+
+<script type="text/javascript">
+    require(['dropdown']);
+</script>
+
+<!-- Footer -->
+<%@include file="../footer.jsp" %>
