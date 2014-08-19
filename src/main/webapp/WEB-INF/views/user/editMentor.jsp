@@ -151,6 +151,7 @@
                                 <form:hidden path="userType" value="founder"  />
                             </spring:bind>
                         </div>
+
                     </div>
                 </div>
             </div>
