@@ -12,7 +12,6 @@ import org.ideavillage.mentormarketplace.persistence.domain.FounderIndustry;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
 import org.ideavillage.mentormarketplace.persistence.domain.MentorExpertise;
 import org.ideavillage.mentormarketplace.persistence.domain.MentorIndustry;
-import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
 
 /**
  *
@@ -31,111 +30,71 @@ public class RegistrationForm {
     @Size(min = 1, max = 255)
     private String linkedInId;
 
-    @Size(max = 2147483647)
-    @Column(name = "firstname")
+    @Size(max = 255)
     private String firstName;
 
-    @Size(max = 2147483647)
-    @Column(name = "lastname")
+    @Size(max = 255)
     private String lastName;
 
-    @Size(max = 2147483647)
-    @Column(name = "industry")
     private Collection<FounderIndustry> founderIndustryCollection;
 
-    @Size(max = 2147483647)
-    @Column(name = "industry")
     private Collection<FounderExpertise> founderExpertiseCollection;
 
-    @Size(max = 2147483647)
-    @Column(name = "industry")
     private Collection<MentorIndustry> mentorIndustryCollection;
 
-    @Size(max = 2147483647)
-    @Column(name = "industry")
     private Collection<MentorExpertise> mentorExpertiseCollection;
 
-    @Size(max = 2147483647)
-    @Column(name = "background")
     private String background;
 
-    @Size(max = 2147483647)
-    @Column(name = "website")
+    @Size(max = 255)
     private String website;
 
-    @Size(max = 2147483647)
-    @Column(name = "facebook")
+    @Size(max = 255)
     private String facebook;
 
-    @Size(max = 2147483647)
-    @Column(name = "twitter")
+    @Size(max = 255)
     private String twitter;
 
-    @Size(max = 2147483647)
-    @Column(name = "othersocialmedia")
+    @Size(max = 255)
     private String otherSocialMedia;
 
-    @Size(max = 2147483647)
-    @Column(name = "linkedinpictureurl")
+    @Size(max = 255)
     private String linkedInPictureURL;
 
-    @Size(max = 2147483647)
-    @Column(name = "linkedincurrentcompany")
+    @Size(max = 255)
     private String linkedInCurrentCompany;
 
-    @Size(max = 2147483647)
+    @Size(max = 255)
     @Column(name = "linkedincurrentjobtitle")
     private String linkedInCurrentJobTitle;
 
-    @Size(max = 2147483647)
-    @Column(name = "logo")
+    @Size(max = 255)
     private String logo;
 
-    @Size(max = 2147483647)
-    @Column(name = "tagline")
+    @Size(max = 255)
     private String tagline;
 
-    @Size(max = 2147483647)
-    @Column(name = "elevatorPitch")
     private String elevatorPitch;
 
-    @Size(max = 2147483647)
-    @Column(name = "immediateNeeds")
     private String immediateNeeds;
 
-    @Size(max = 2147483647)
-    @Column(name = "companyDetails")
     private String companyDetails;
 
-    @Size(max = 2147483647)
-    @Column(name = "inspiration")
     private String inspiration;
 
-    @Size(max = 2147483647)
-    @Column(name = "status")
     private String status;
 
-    @Size(max = 2147483647)
-    @Column(name = "vision")
     private String vision;
 
-    @Size(max = 2147483647)
-    @Column(name = "newOrleans")
     private String newOrleans;
 
-    @Size(max = 2147483647)
-    @Column(name = "programPlan")
     private String programPlan;
 
-    @Size(max = 2147483647)
-    @Column(name = "weeklyReports")
     private String weeklyReports;
 
-    @Size(max = 2147483647)
-    @Column(name = "userType")
+    @Size(max = 255)
     private String userType;
 
-    @Column(name = "isAdmin")
     private boolean isAdmin;
 
     public Mentor getMentor() {
