@@ -1,0 +1,260 @@
+/* Below is css for the create page */
+#createBody {
+    background-color:#e3e3e3;
+}
+
+#navBarLogo {
+    height:21px;
+    padding-left:40px;
+    padding-right:20px;
+}
+
+
+#navHeader {
+    color:white;
+    margin-top:12px;
+}
+
+#navDefault {
+    background-color:#203747;
+    border-radius:0;
+    margin-bottom:0px;
+}
+
+#mentorLogo {
+    margin-bottom:5px;
+    height:35px;
+    margin-top:5px;
+    margin-left:40px;
+}
+
+#mentorNavButton {
+    margin-right:40px;
+    background-color:#27ae60;
+    border-radius:0;
+    height:30px;
+    border:0;
+    color:white;
+}
+
+.hero-unit-idea1 {
+  z-index:0;
+  position:relative;
+  height:50px;
+  margin:0;
+  padding:0;
+  /*margin-bottom: 30px;*/
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: lightgray;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+#navCreate {
+    padding:5px;
+    background-color:lightgray;
+    width:100%;
+    height:40px;
+}
+/* Below is css for the INDEX page */
+
+#indexRadio {
+    padding:0;
+    border:0;
+    margin:0;
+    font-size:12px;
+}
+
+#pwrap {
+    max-width:153px;
+    max-height:60px;
+}
+
+#cloudText1 {
+    font-size:12px;
+    z-index:9999;
+    position:relative;
+    right:25px;
+    top:25px;
+}
+
+#cloudText2 {
+    font-size:12px;
+    z-index:9999;
+    position:relative;
+    left:35px;
+    top:25px;
+}
+
+#cloudParagraph {
+    line-height:20px;
+    height: 5.0em; /* exactly three lines */
+    overflow:hidden;
+}
+
+#titleBanner {
+    background-color:#E0E0E0;
+    padding-top: 60px;
+}
+
+#firstFluid {
+    background-color:#E0E0E0;
+    padding-top: 60px;
+    height:350px;
+}
+
+#secondFluid {
+    background-color:#F8F8F8;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#indexCircle {
+    height:140px;
+    width:140px;
+}
+
+#indexHalfmoom {
+    z-index:-1;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:315px;
+}
+
+.hero-unit-idea {
+  z-index:0;
+  position:relative;
+  height:280px;
+  padding: 60px;
+  padding-top: 100px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #2980b9;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+#indexForm {
+    padding-right:40px;
+}
+
+#indexButton {
+    background:#339900;
+    width:100px;
+    border-radius:0%;
+}
+
+#indexButton2 {
+    background:#339900;
+    width:100px;
+    border-radius:0%;
+}
+
+#indexButton3 {
+    background:#27ae60;
+    width:100px;
+    border-radius:0%;
+}
+
+#indexLink {
+    color:white;
+    font-family: 'Lato', sans-serif;
+    /*padding-left:60px;*/
+}
+
+#navIndex {
+    background-color: #2980b9;
+}
+
+.navbar-fixed-top-idea, .navbar-fixed-bottom-idea {
+position: fixed;
+right: 0;
+left: 0;
+z-index: 1030;
+margin-bottom: 0px;
+background-color: #2980b9;
+}
+
+.navbar-inner-idea {
+  min-height: 40px;
+  /* padding-right: 20px;
+  padding-left: 20px; */
+  background-color: #2980b9;
+  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  /* border: 1px solid #d4d4d4; */
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+#indexNav {
+  margin-bottom:0px;
+}
+
+/*
+ * Additions by Trent
+*/
+
+.center {
+   margin: 0 auto !important;
+   float: none !important;
+}
+
+.splashblurbs{
+    margin-left: 30px !important;
+}
+
+/*
+ * Setting the font
+ */
+
+@font-face {
+    font-family: Lato, Helvetica, sans-serif;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+}
+
+h5{
+    font-family: 'Lato', sans-serif;
+}
+
+h4{
+    font-family: 'Lato', sans-serif;
+}
+
+h3{
+    font-family: 'Lato', sans-serif;
+}
+
+center{
+    font-family: 'Lato', sans-serif;
+}
+
+.h3{
+    font-size: 28px;
+}
+
+/*
+ * The following code is normal boot. Above IdeaVillage custom css
+*/
