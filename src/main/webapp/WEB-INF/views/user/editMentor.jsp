@@ -23,8 +23,8 @@
                         <div id="profileExperience">
 
                             <spring:bind path="website">
-                                <label class="col-sm-3 control-label createProfileInputLabels">Website: </label>
-                                <div class="col-sm-9 createProfileInputFields">
+                                <label class="col-sm-3 control-label createProfileTopInputLabels">Website: </label>
+                                <div class="col-sm-9 createProfileTopInputFields">
                                     <form:input class="form-control input-sm" path="website" rows="2" />
                                     <form:errors class="help-block" path="website" cssClass="help-inline" />
                                 </div>
