@@ -55,12 +55,4 @@
                 <goal>flyway:migrate</goal>
             </goals>
         </action>
-        <action>
-            <actionName>CUSTOM-Flyway Migrate</actionName>
-            <displayName>Flyway Migrate</displayName>
-            <goals>
-                <goal>compile</goal>
-                <goal>flyway:migrate</goal>
-            </goals>
-        </action>
     </actions>
