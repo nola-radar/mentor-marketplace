@@ -76,6 +76,7 @@
                                 <label class="col-xs-8 profileTopLabels"> ${founder.getLogo()} </label>
 
                                 <label class="col-xs-4 control-label" id="profileBelowImageLabel"> Tags: </label>
+                                <!-- Tag not in Controller. Once Tag is in the Controller, replace 'tag' with ${founder.getLogo()} -->
                                 <label class="col-xs-8" id="profileBelowImageLabel"> tag </label>
 
                                 <label class="col-xs-4 control-label profileTextAreaLabels"> Elevator Pitch: </label>
