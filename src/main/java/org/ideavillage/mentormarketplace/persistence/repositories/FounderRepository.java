@@ -18,25 +18,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface FounderRepository extends PagingAndSortingRepository<Founder, Long> {
 
-    Page<Founder> findByFirstName(String firstName, Pageable pageable);
-
-    Page<Founder> findByLastName(String lastName, Pageable pageable);
-
-    Page<Founder> findByBackground(String background, Pageable pageable);
-
-    Page<Founder> findByWebsite(String website, Pageable pageable);
-
-    Page<Founder> findByFacebook(String facebook, Pageable pageable);
-
-    Page<Founder> findByTwitter(String twitter, Pageable pageable);
-
-    Page<Founder> findByOtherSocialMedia(String otherSocialMedia, Pageable pageable);
-
     Founder findByLinkedInId(String linkedInId);
 
-    Founder findByLinkedInPictureURL(String linkedInPictureURL);
-
-    Founder findByLinkedInCurrentCompany(String linkedInCurrentCompany);
-
-    Founder findByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
 }

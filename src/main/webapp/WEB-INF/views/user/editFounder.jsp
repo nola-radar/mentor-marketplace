@@ -186,7 +186,6 @@
                                     <form:textarea class="form-control" path="weeklyReports" rows="2" />
                                     <form:errors class="help-block" path="weeklyReports" cssClass="help-inline" />
                                 </div>
-
                             </spring:bind>
 
                             <spring:bind path="areasOfExpertise">
@@ -212,10 +211,6 @@
 
                             <spring:bind path="linkedInId">
                                 <form:hidden path="linkedInId" />
-                            </spring:bind>
-
-                            <spring:bind path="isAdmin">
-                                <form:hidden path="isAdmin" />
                             </spring:bind>
 
                             <spring:bind path="userType">

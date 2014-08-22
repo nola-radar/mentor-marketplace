@@ -1,8 +1,6 @@
 package org.ideavillage.mentormarketplace.persistence.repositories;
 
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
@@ -18,25 +16,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface MentorRepository extends PagingAndSortingRepository<Mentor, Long> {
 
-    Page<Mentor> findByFirstName(String firstName, Pageable pageable);
-
-    Page<Mentor> findByLastName(String lastName, Pageable pageable);
-
-    Page<Mentor> findByBackground(String background, Pageable pageable);
-
-    Page<Mentor> findByWebsite(String website, Pageable pageable);
-
-    Page<Mentor> findByFacebook(String facebook, Pageable pageable);
-
-    Page<Mentor> findByTwitter(String twitter, Pageable pageable);
-
-    Page<Mentor> findByOtherSocialMedia(String otherSocialMedia, Pageable pageable);
-
     Mentor findByLinkedInId(String linkedInId);
 
-    Mentor findByLinkedInPictureURL(String linkedInPictureURL);
-
-    Mentor findByLinkedInCurrentCompany(String linkedInCurrentCompany);
-
-    Mentor findByLinkedInCurrentJobTitle(String linkedInCurrentJobTitle);
 }

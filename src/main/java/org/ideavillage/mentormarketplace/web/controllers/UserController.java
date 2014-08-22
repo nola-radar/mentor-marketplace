@@ -76,6 +76,7 @@ public class UserController {
             return "user/register";
         }
         Mmuser user = new Mmuser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getIsAdmin());
+        user.setUserType(registrationForm.getUserType());
         Mmuser savedUser = mmUserRepository.save(user);
         
         //Will save user as founder or mentor depending on user type field
@@ -110,9 +111,8 @@ public class UserController {
         Mmuser user = mmUserRepository.findByEmail(email);
         globalUser = user;
         String utype = user.getUserType();
-        String utypeparsed = utype.substring(0, 7);
         // redirect to founder.jsp if user type is founder
-        if (utypeparsed.equals("founder")) {
+        if (utype.equals("founder")) {
             return "redirect:/user/founder";
         } else {
             return "redirect:/user/mentor";
