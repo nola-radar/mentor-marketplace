@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="navbar-right">
-                    <button type="button" class="btn btn-success"> LOG IN </button>
+                    <a href="<c:url value="/auth/linkedin" />" class="btn btn-success"> LOG IN </a>
                 </div>
             </div>
         </nav>
