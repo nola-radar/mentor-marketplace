@@ -18,7 +18,7 @@
             <!-- Industry -->
             <div class="col-xs-10 profileIndustryContent">
                 <h4> The Idea Village </h4>
-                <p> ${mentor.getIndustry()} </p>
+                <%--<p> ${mentor.getIndustry()} </p>--%>
             </div>
 
             <!-- Header -->
@@ -84,7 +84,7 @@
                         <label class="col-xs-4 control-label profileTopTextAreaLabels"> Background: </label>
                         <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getBackground()} </label>
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
-                        <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getAreasOfExpertise()} </label>
+                        <%--<label class="col-xs-8 profileTextAreaLabels"> ${mentor.getAreasOfExpertise()} </label>--%>
                     </div>
                 </div>   
             </div> <!-- End of Body Contents -->

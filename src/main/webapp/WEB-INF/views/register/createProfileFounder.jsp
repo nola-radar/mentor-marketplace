@@ -193,7 +193,7 @@
 
                         </spring:bind>
 
-                        <spring:bind path="industry">
+                        <%--<spring:bind path="industry">
                             <label class="col-sm-2 control-label createProfileInputLabels">Industry: </label>
                             <div class="col-sm-10 createProfileInputFields">
                                 <select class="selectpicker" multiple="multiple" path="industry">
@@ -208,7 +208,7 @@
                                 <form:textarea class="form-control" path="areasOfExpertise" rows="2" />
                                 <form:errors class="help-block" path="areasOfExpertise" cssClass="help-inline" />
                             </div>
-                        </spring:bind>
+                        </spring:bind>--%>
 
                         <spring:bind path="email">
                             <form:hidden path="email" />

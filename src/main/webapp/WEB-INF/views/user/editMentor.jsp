@@ -118,7 +118,7 @@
                                 </div>
                             </spring:bind>
 
-                            <spring:bind path="areasOfExpertise">
+                            <%--<spring:bind path="areasOfExpertise">
                                 <label class="col-sm-2 control-label createProfileTextAreaLabels">Expertise: </label>
                                 <div class="col-sm-10 createProfileTextAreaFields">
                                     <form:textarea class="form-control" path="areasOfExpertise" rows="2" />
@@ -133,7 +133,7 @@
                                         <%@include file="../shared/industryOptions.jsp" %>
                                     </select>
                                 </div>
-                            </spring:bind>
+                            </spring:bind>--%>
 
                             <spring:bind path="email">
                                 <form:hidden path="email" />
