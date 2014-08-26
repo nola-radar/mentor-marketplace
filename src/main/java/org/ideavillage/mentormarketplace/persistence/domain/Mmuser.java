@@ -6,10 +6,12 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -58,8 +60,8 @@ public class Mmuser implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser")
     private Collection<Mentor> mentorCollection;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser")
-    private Collection<Founder> founderCollection;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "mmuser", fetch = FetchType.EAGER)
+    private Founder founder;
 
     public Mmuser() {
     }
@@ -131,12 +133,12 @@ public class Mmuser implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Founder> getFounderCollection() {
-        return founderCollection;
+    public Founder getFounder() {
+        return founder;
     }
 
-    public void setFounderCollection(Collection<Founder> founderCollection) {
-        this.founderCollection = founderCollection;
+    public void setFounder(Founder founder) {
+        this.founder = founder;
     }
 
     @Override

@@ -4,7 +4,7 @@
 <!-- Navigation Bar -->
 <%@include file="../shared/navigationBar.jsp" %>
 
-<form:form modelAttribute="registrationForm">
+<form:form modelAttribute="founder" action="editFounder">
 
     <div class="container" id="editMainContainer">
         <div id="editProfileMainContainer">
@@ -89,11 +89,11 @@
                                 </div>
                             </spring:bind>
                                 
-                            <spring:bind path="linkedInPictureURL">
+                            <spring:bind path="linkedInPictureUrl">
                                 <label class="col-sm-3 control-label createProfileInputLabels">LinkedIn Picture: </label>
                                 <div class="col-sm-9 createProfileInputFields">
-                                    <form:input class="form-control input-sm" path="linkedInPictureURL" rows="2" />
-                                    <form:errors class="help-block" path="linkedInPictureURL" cssClass="help-inline" />
+                                    <form:input class="form-control input-sm" path="linkedInPictureUrl" rows="2" />
+                                    <form:errors class="help-block" path="linkedInPictureUrl" cssClass="help-inline" />
                                 </div>
                             </spring:bind>
                         </div>
@@ -205,17 +205,12 @@
                                 </div>
                             </spring:bind>--%>
 
-                            <spring:bind path="email">
-                                <form:hidden path="email" />
-                            </spring:bind>
-
                             <spring:bind path="linkedInId">
                                 <form:hidden path="linkedInId" />
                             </spring:bind>
 
-                            <spring:bind path="userType">
-                                <form:hidden path="userType" value="founder"  />
-                            </spring:bind>
+                            <form:hidden path="mmuser.id"></form:hidden>
+
                         </div>
                     </div>
                 </div>

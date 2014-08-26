@@ -22,7 +22,7 @@
 
             <!-- Header -->
             <div class="col-xs-12 profileHeader">
-                <a href="<c:url value="editFounder" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
             </div>
         </div>
 
