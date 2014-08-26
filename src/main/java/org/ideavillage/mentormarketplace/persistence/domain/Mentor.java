@@ -89,15 +89,15 @@ public class Mentor implements Serializable {
     @ManyToOne(optional = false)
     private Mmuser mmuser;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "mentor_expertise", catalog = "mentormarketplace", joinColumns = {
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "mentor_expertise",  joinColumns = {
         @JoinColumn(name = "mentor_id", nullable = false)},
       inverseJoinColumns = {
           @JoinColumn(name = "expertise_id", nullable = false)})
     private Collection<Expertise> expertiseCollection;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "mentor_industry", catalog = "mentormarketplace", joinColumns = {
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "mentor_industry",  joinColumns = {
         @JoinColumn(name = "mentor_id", nullable = false)},
       inverseJoinColumns = {
           @JoinColumn(name = "industry_id", nullable = false)})
