@@ -3,12 +3,16 @@ package org.ideavillage.mentormarketplace.persistence.domain;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -85,11 +89,19 @@ public class Mentor implements Serializable {
     @ManyToOne(optional = false)
     private Mmuser mmuser;
 
-    @OneToMany(mappedBy = "mentorId")
-    private Collection<MentorExpertise> mentorExpertiseCollection;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "mentor_expertise", catalog = "mentormarketplace", joinColumns = {
+        @JoinColumn(name = "mentor_id", nullable = false)},
+      inverseJoinColumns = {
+          @JoinColumn(name = "expertise_id", nullable = false)})
+    private Collection<Expertise> expertiseCollection;
 
-    @OneToMany(mappedBy = "mentorId")
-    private Collection<MentorIndustry> mentorIndustryCollection;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "mentor_industry", catalog = "mentormarketplace", joinColumns = {
+        @JoinColumn(name = "mentor_id", nullable = false)},
+      inverseJoinColumns = {
+          @JoinColumn(name = "industry_id", nullable = false)})
+    private Collection<Industry> industryCollection;
 
     public Mentor() {
     }
@@ -210,22 +222,20 @@ public class Mentor implements Serializable {
         this.mmuser = mmuser;
     }
 
-    @XmlTransient
-    public Collection<MentorExpertise> getMentorExpertiseCollection() {
-        return mentorExpertiseCollection;
+    public Collection<Expertise> getExpertiseCollection() {
+        return expertiseCollection;
     }
 
-    public void setMentorExpertiseCollection(Collection<MentorExpertise> mentorExpertiseCollection) {
-        this.mentorExpertiseCollection = mentorExpertiseCollection;
+    public void setExpertiseCollection(Collection<Expertise> expertiseCollection) {
+        this.expertiseCollection = expertiseCollection;
     }
 
-    @XmlTransient
-    public Collection<MentorIndustry> getMentorIndustryCollection() {
-        return mentorIndustryCollection;
+    public Collection<Industry> getIndustryCollection() {
+        return industryCollection;
     }
 
-    public void setMentorIndustryCollection(Collection<MentorIndustry> mentorIndustryCollection) {
-        this.mentorIndustryCollection = mentorIndustryCollection;
+    public void setIndustryCollection(Collection<Industry> industryCollection) {
+        this.industryCollection = industryCollection;
     }
 
     @Override

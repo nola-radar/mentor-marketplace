@@ -3,18 +3,20 @@ package org.ideavillage.mentormarketplace.persistence.domain;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -121,15 +123,23 @@ public class Founder implements Serializable {
     @Column(name = "weekly_reports")
     private String weeklyReports;
 
-    @OneToMany(mappedBy = "founderId")
-    private Collection<FounderExpertise> founderExpertiseCollection;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "founder_expertise", catalog = "mentormarketplace", joinColumns = {
+        @JoinColumn(name = "founder_id", nullable = false)},
+      inverseJoinColumns = {
+          @JoinColumn(name = "expertise_id", nullable = false)})
+    private Collection<Expertise> expertiseCollection;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "founder_industry", catalog = "mentormarketplace", joinColumns = {
+        @JoinColumn(name = "founder_id", nullable = false)},
+      inverseJoinColumns = {
+          @JoinColumn(name = "industry_id", nullable = false)})
+    private Collection<Industry> industryCollection;
 
     @OneToOne(optional = false)
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
     private Mmuser mmuser;
-
-    @OneToMany(mappedBy = "founderId")
-    private Collection<FounderIndustry> founderIndustryCollection;
 
     public Founder() {
     }
@@ -322,15 +332,6 @@ public class Founder implements Serializable {
         this.weeklyReports = weeklyReports;
     }
 
-    @XmlTransient
-    public Collection<FounderExpertise> getFounderExpertiseCollection() {
-        return founderExpertiseCollection;
-    }
-
-    public void setFounderExpertiseCollection(Collection<FounderExpertise> founderExpertiseCollection) {
-        this.founderExpertiseCollection = founderExpertiseCollection;
-    }
-
     public Mmuser getMmuser() {
         return mmuser;
     }
@@ -339,13 +340,21 @@ public class Founder implements Serializable {
         this.mmuser = mmuser;
     }
 
-    @XmlTransient
-    public Collection<FounderIndustry> getFounderIndustryCollection() {
-        return founderIndustryCollection;
+    // New Getters and Setters for Industry and Expertise
+    public Collection<Expertise> getExpertiseCollection() {
+        return expertiseCollection;
     }
 
-    public void setFounderIndustryCollection(Collection<FounderIndustry> founderIndustryCollection) {
-        this.founderIndustryCollection = founderIndustryCollection;
+    public void setExpertiseCollection(Collection<Expertise> expertiseCollection) {
+        this.expertiseCollection = expertiseCollection;
+    }
+
+    public Collection<Industry> getIndustryCollection() {
+        return industryCollection;
+    }
+
+    public void setIndustryCollection(Collection<Industry> industryCollection) {
+        this.industryCollection = industryCollection;
     }
 
     @Override

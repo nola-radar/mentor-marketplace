@@ -5,9 +5,11 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -35,11 +37,11 @@ public class Industry implements Serializable {
     @Column(name = "industry")
     private String industry;
 
-    @OneToMany(mappedBy = "industryId")
-    private Collection<MentorIndustry> mentorIndustryCollection;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "industryCollection")
+    private Collection<Mentor> mentorIndustryCollection;
 
-    @OneToMany(mappedBy = "industryId")
-    private Collection<FounderIndustry> founderIndustryCollection;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "industryCollection")
+    private Collection<Founder> founderIndustryCollection;
 
     public Industry() {
     }
@@ -64,21 +66,23 @@ public class Industry implements Serializable {
         this.industry = industry;
     }
 
+     // New Getters and Setters for Mentor Industry
     @XmlTransient
-    public Collection<MentorIndustry> getMentorIndustryCollection() {
+    public Collection<Mentor> getMentorIndustryCollection() {
         return mentorIndustryCollection;
     }
 
-    public void setMentorIndustryCollection(Collection<MentorIndustry> mentorIndustryCollection) {
+    public void setMentorIndustryCollection(Collection<Mentor> mentorIndustryCollection) {
         this.mentorIndustryCollection = mentorIndustryCollection;
     }
 
+    // New Getters and Setters for Founder Industry
     @XmlTransient
-    public Collection<FounderIndustry> getFounderIndustryCollection() {
+    public Collection<Founder> getFounderIndustryCollection() {
         return founderIndustryCollection;
     }
 
-    public void setFounderIndustryCollection(Collection<FounderIndustry> founderIndustryCollection) {
+    public void setFounderIndustryCollection(Collection<Founder> founderIndustryCollection) {
         this.founderIndustryCollection = founderIndustryCollection;
     }
 

@@ -6,12 +6,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
-import org.ideavillage.mentormarketplace.persistence.domain.FounderExpertise;
-import org.ideavillage.mentormarketplace.persistence.domain.FounderIndustry;
+import org.ideavillage.mentormarketplace.persistence.domain.Industry;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
-import org.ideavillage.mentormarketplace.persistence.domain.MentorExpertise;
-import org.ideavillage.mentormarketplace.persistence.domain.MentorIndustry;
+
 
 /**
  *
@@ -36,13 +35,13 @@ public class RegistrationForm {
     @Size(max = 255)
     private String lastName;
 
-    private Collection<FounderIndustry> founderIndustryCollection;
+    private Collection<Industry> founderIndustryCollection;
 
-    private Collection<FounderExpertise> founderExpertiseCollection;
+    private Collection<Expertise> founderExpertiseCollection;
 
-    private Collection<MentorIndustry> mentorIndustryCollection;
+    private Collection<Industry> mentorIndustryCollection;
 
-    private Collection<MentorExpertise> mentorExpertiseCollection;
+    private Collection<Expertise> mentorExpertiseCollection;
 
     private String background;
 
@@ -101,8 +100,8 @@ public class RegistrationForm {
         Mentor mentor = new Mentor();
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
-        mentor.setMentorIndustryCollection(mentorIndustryCollection);
-        mentor.setMentorExpertiseCollection(mentorExpertiseCollection);
+        mentor.setIndustryCollection(mentorIndustryCollection);
+        mentor.setExpertiseCollection(mentorExpertiseCollection);
         mentor.setBackground(this.background);
         mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -118,8 +117,8 @@ public class RegistrationForm {
     public Mentor editMentor(Mentor mentor) {
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
-        mentor.setMentorIndustryCollection(mentorIndustryCollection);
-        mentor.setMentorExpertiseCollection(mentorExpertiseCollection);
+        mentor.setIndustryCollection(mentorIndustryCollection);
+        mentor.setExpertiseCollection(mentorExpertiseCollection);
         mentor.setBackground(this.background);
         mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -135,8 +134,8 @@ public class RegistrationForm {
     public Founder editFounder(Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setFounderIndustryCollection(founderIndustryCollection);
-        founder.setFounderExpertiseCollection(founderExpertiseCollection);
+        founder.setIndustryCollection(founderIndustryCollection);
+        founder.setExpertiseCollection(founderExpertiseCollection);
         founder.setBackground(this.background);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -164,8 +163,8 @@ public class RegistrationForm {
         Founder founder = new Founder();
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setFounderIndustryCollection(this.founderIndustryCollection);
-        founder.setFounderExpertiseCollection(this.founderExpertiseCollection);
+        founder.setIndustryCollection(this.founderIndustryCollection);
+        founder.setExpertiseCollection(this.founderExpertiseCollection);
         founder.setBackground(this.background);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -241,35 +240,35 @@ public class RegistrationForm {
         this.lastName = lastName;
     }
 
-    public Collection<FounderIndustry> getFounderIndustry() {
+    public Collection<Industry> getFounderIndustry() {
         return founderIndustryCollection;
     }
 
-    public void setFounderIndustry(Collection<FounderIndustry> founderIndustryCollection) {
+    public void setFounderIndustry(Collection<Industry> founderIndustryCollection) {
         this.founderIndustryCollection = founderIndustryCollection;
     }
 
-    public Collection<FounderExpertise> getFounderExpertise() {
+    public Collection<Expertise> getFounderExpertise() {
         return founderExpertiseCollection;
     }
 
-    public void setFounderExpertise(Collection<FounderExpertise> founderExpertiseCollection) {
+    public void setFounderExpertise(Collection<Expertise> founderExpertiseCollection) {
         this.founderExpertiseCollection = founderExpertiseCollection;
     }
 
-    public Collection<MentorIndustry> getMentorIndustry() {
+    public Collection<Industry> getMentorIndustry() {
         return mentorIndustryCollection;
     }
 
-    public void setMentorIndustry(Collection<MentorIndustry> mentorIndustryCollection) {
+    public void setMentorIndustry(Collection<Industry> mentorIndustryCollection) {
         this.mentorIndustryCollection = mentorIndustryCollection;
     }
 
-    public Collection<MentorExpertise> getMentorExpertise() {
+    public Collection<Expertise> getMentorExpertise() {
         return mentorExpertiseCollection;
     }
 
-    public void setMentorExpertise(Collection<MentorExpertise> mentorExpertiseCollection) {
+    public void setMentorExpertise(Collection<Expertise> mentorExpertiseCollection) {
         this.mentorExpertiseCollection = mentorExpertiseCollection;
     }
 

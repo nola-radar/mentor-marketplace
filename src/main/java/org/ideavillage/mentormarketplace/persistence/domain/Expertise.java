@@ -5,9 +5,11 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -35,11 +37,11 @@ public class Expertise implements Serializable {
     @Column(name = "expertise")
     private String expertise;
 
-    @OneToMany(mappedBy = "expertiseId")
-    private Collection<MentorExpertise> mentorExpertiseCollection;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "expertiseCollection")
+    private Collection<Mentor> mentorExpertiseCollection;
 
-    @OneToMany(mappedBy = "expertiseId")
-    private Collection<FounderExpertise> founderExpertiseCollection;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "expertiseCollection")
+    private Collection<Founder> founderExpertiseCollection;
 
     public Expertise() {
     }
@@ -64,21 +66,23 @@ public class Expertise implements Serializable {
         this.expertise = expertise;
     }
 
+    // New Getters and Setters for Mentor Expertise
     @XmlTransient
-    public Collection<MentorExpertise> getMentorExpertiseCollection() {
+    public Collection<Mentor> getMentorExpertiseCollection() {
         return mentorExpertiseCollection;
     }
 
-    public void setMentorExpertiseCollection(Collection<MentorExpertise> mentorExpertiseCollection) {
+    public void setMentorExpertiseCollection(Collection<Mentor> mentorExpertiseCollection) {
         this.mentorExpertiseCollection = mentorExpertiseCollection;
     }
 
+    // New Getters and Setters for Founder Expertise
     @XmlTransient
-    public Collection<FounderExpertise> getFounderExpertiseCollection() {
+    public Collection<Founder> getFounderExpertiseCollection() {
         return founderExpertiseCollection;
     }
 
-    public void setFounderExpertiseCollection(Collection<FounderExpertise> founderExpertiseCollection) {
+    public void setFounderExpertiseCollection(Collection<Founder> founderExpertiseCollection) {
         this.founderExpertiseCollection = founderExpertiseCollection;
     }
 
