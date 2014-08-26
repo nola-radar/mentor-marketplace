@@ -23,7 +23,7 @@ public class RepositoriesSuite extends TestCase {
     public static Test suite() {
         TestSuite suite = new TestSuite("RepositoriesSuite");
         suite.addTest(MmuserRepositoryTest.suite());
-        suite.addTest(FounderRepositoryTest.suite());
+//        suite.addTest(FounderRepositoryTest.suite());
         suite.addTest(MentorRepositoryTest.suite());
         return suite;
     }
