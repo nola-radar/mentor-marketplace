@@ -132,7 +132,7 @@
                     <div class="section-200" id="createProfileFounderStatus">
 
                         <spring:bind path="immediateNeeds">
-                            <label class="col-sm-3 control-label createProfileTopTextAreaLabels">Immediate Needs: </label>
+                            <label class="col-sm-3 control-label createProfileTopTextAreaLabels">Immediate Needs:</label>
                             <div class="col-sm-9 createProfileTopTextAreaFields">
                                 <form:textarea class="form-control input-sm" path="immediateNeeds" rows="2" />
                                 <form:errors class="help-block" path="immediateNeeds" cssClass="help-inline" />
@@ -190,25 +190,15 @@
                                 <form:textarea class="form-control" path="weeklyReports" rows="2" />
                                 <form:errors class="help-block" path="weeklyReports" cssClass="help-inline" />
                             </div>
-
                         </spring:bind>
 
-                        <%--<spring:bind path="industry">
-                            <label class="col-sm-2 control-label createProfileInputLabels">Industry: </label>
+<!--                        <spring:bind path="founderIndustryList">
+                            <label class="col-sm-2 control-label createProfileInputLabels">Industry:</label>
                             <div class="col-sm-10 createProfileInputFields">
-                                <select class="selectpicker" multiple="multiple" path="industry">
-                                    <%@include file="../shared/industryOptions.jsp" %>
-                                </select>
+                                <form:select cssClass="selectpicker" items="${industryList}" itemValue="id" itemLabel="industry"  multiple="multiple" path="founderIndustryList">                                   
+                                </form:select>
                             </div>
-                        </spring:bind>
-
-                        <spring:bind path="areasOfExpertise">
-                            <label class="col-sm-2 control-label">Expertise: </label>
-                            <div class="col-sm-10">
-                                <form:textarea class="form-control" path="areasOfExpertise" rows="2" />
-                                <form:errors class="help-block" path="areasOfExpertise" cssClass="help-inline" />
-                            </div>
-                        </spring:bind>--%>
+                        </spring:bind>-->
 
                         <spring:bind path="email">
                             <form:hidden path="email" />

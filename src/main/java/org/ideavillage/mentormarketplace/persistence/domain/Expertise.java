@@ -1,7 +1,7 @@
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -37,11 +36,11 @@ public class Expertise implements Serializable {
     @Column(name = "expertise")
     private String expertise;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "expertiseCollection")
-    private Collection<Mentor> mentorExpertiseCollection;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "expertiseList")
+    private List<Mentor> mentorExpertiseList;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "expertiseCollection")
-    private Collection<Founder> founderExpertiseCollection;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "expertiseList")
+    private List<Founder> founderExpertiseList;
 
     public Expertise() {
     }
@@ -68,22 +67,22 @@ public class Expertise implements Serializable {
 
     // New Getters and Setters for Mentor Expertise
     @XmlTransient
-    public Collection<Mentor> getMentorExpertiseCollection() {
-        return mentorExpertiseCollection;
+    public List<Mentor> getMentorExpertiseList() {
+        return mentorExpertiseList;
     }
 
-    public void setMentorExpertiseCollection(Collection<Mentor> mentorExpertiseCollection) {
-        this.mentorExpertiseCollection = mentorExpertiseCollection;
+    public void setMentorExpertiseList(List<Mentor> mentorExpertiseList) {
+        this.mentorExpertiseList = mentorExpertiseList;
     }
 
     // New Getters and Setters for Founder Expertise
     @XmlTransient
-    public Collection<Founder> getFounderExpertiseCollection() {
-        return founderExpertiseCollection;
+    public List<Founder> getFounderExpertiseList() {
+        return founderExpertiseList;
     }
 
-    public void setFounderExpertiseCollection(Collection<Founder> founderExpertiseCollection) {
-        this.founderExpertiseCollection = founderExpertiseCollection;
+    public void setFounderExpertiseList(List<Founder> founderExpertiseList) {
+        this.founderExpertiseList = founderExpertiseList;
     }
 
     @Override

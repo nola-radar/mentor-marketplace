@@ -1,7 +1,7 @@
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -37,11 +36,11 @@ public class Industry implements Serializable {
     @Column(name = "industry")
     private String industry;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "industryCollection")
-    private Collection<Mentor> mentorIndustryCollection;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "industryList")
+    private List<Mentor> mentorIndustryList;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "industryCollection")
-    private Collection<Founder> founderIndustryCollection;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "industryList")
+    private List<Founder> founderIndustryList;
 
     public Industry() {
     }
@@ -66,24 +65,24 @@ public class Industry implements Serializable {
         this.industry = industry;
     }
 
-     // New Getters and Setters for Mentor Industry
+    // New Getters and Setters for Mentor Industry
     @XmlTransient
-    public Collection<Mentor> getMentorIndustryCollection() {
-        return mentorIndustryCollection;
+    public List<Mentor> getMentorIndustryList() {
+        return mentorIndustryList;
     }
 
-    public void setMentorIndustryCollection(Collection<Mentor> mentorIndustryCollection) {
-        this.mentorIndustryCollection = mentorIndustryCollection;
+    public void setMentorIndustryList(List<Mentor> mentorIndustryList) {
+        this.mentorIndustryList = mentorIndustryList;
     }
 
     // New Getters and Setters for Founder Industry
     @XmlTransient
-    public Collection<Founder> getFounderIndustryCollection() {
-        return founderIndustryCollection;
+    public List<Founder> getFounderIndustryList() {
+        return founderIndustryList;
     }
 
-    public void setFounderIndustryCollection(Collection<Founder> founderIndustryCollection) {
-        this.founderIndustryCollection = founderIndustryCollection;
+    public void setFounderIndustryList(List<Founder> founderIndustryList) {
+        this.founderIndustryList = founderIndustryList;
     }
 
     @Override

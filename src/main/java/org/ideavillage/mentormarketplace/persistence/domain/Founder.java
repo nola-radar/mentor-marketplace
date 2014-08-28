@@ -1,7 +1,7 @@
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -124,18 +124,18 @@ public class Founder implements Serializable {
     private String weeklyReports;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "founder_expertise",  joinColumns = {
+    @JoinTable(name = "founder_expertise", joinColumns = {
         @JoinColumn(name = "founder_id", nullable = false)},
       inverseJoinColumns = {
           @JoinColumn(name = "expertise_id", nullable = false)})
-    private Collection<Expertise> expertiseCollection;
+    private List<Expertise> expertiseList;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "founder_industry", joinColumns = {
         @JoinColumn(name = "founder_id", nullable = false)},
       inverseJoinColumns = {
           @JoinColumn(name = "industry_id", nullable = false)})
-    private Collection<Industry> industryCollection;
+    private List<Industry> industryList;
 
     @OneToOne(optional = false)
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
@@ -366,20 +366,20 @@ public class Founder implements Serializable {
     }
 
     // New Getters and Setters for Industry and Expertise
-    public Collection<Expertise> getExpertiseCollection() {
-        return expertiseCollection;
+    public List<Expertise> getExpertiseList() {
+        return expertiseList;
     }
 
-    public void setExpertiseCollection(Collection<Expertise> expertiseCollection) {
-        this.expertiseCollection = expertiseCollection;
+    public void setExpertiseList(List<Expertise> expertiseList) {
+        this.expertiseList = expertiseList;
     }
 
-    public Collection<Industry> getIndustryCollection() {
-        return industryCollection;
+    public List<Industry> getIndustryList() {
+        return industryList;
     }
 
-    public void setIndustryCollection(Collection<Industry> industryCollection) {
-        this.industryCollection = industryCollection;
+    public void setIndustryList(List<Industry> industryList) {
+        this.industryList = industryList;
     }
 
     @Override

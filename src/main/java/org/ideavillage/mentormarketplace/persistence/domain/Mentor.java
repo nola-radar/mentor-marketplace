@@ -1,7 +1,7 @@
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,12 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -85,23 +83,23 @@ public class Mentor implements Serializable {
     @Column(name = "other_social_media")
     private String otherSocialMedia;
 
+    @OneToOne(optional = false)
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
-    @ManyToOne(optional = false)
     private Mmuser mmuser;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "mentor_expertise",  joinColumns = {
+    @JoinTable(name = "mentor_expertise", joinColumns = {
         @JoinColumn(name = "mentor_id", nullable = false)},
       inverseJoinColumns = {
           @JoinColumn(name = "expertise_id", nullable = false)})
-    private Collection<Expertise> expertiseCollection;
+    private List<Expertise> expertiseList;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "mentor_industry",  joinColumns = {
+    @JoinTable(name = "mentor_industry", joinColumns = {
         @JoinColumn(name = "mentor_id", nullable = false)},
       inverseJoinColumns = {
           @JoinColumn(name = "industry_id", nullable = false)})
-    private Collection<Industry> industryCollection;
+    private List<Industry> industryList;
 
     public Mentor() {
     }
@@ -222,20 +220,20 @@ public class Mentor implements Serializable {
         this.mmuser = mmuser;
     }
 
-    public Collection<Expertise> getExpertiseCollection() {
-        return expertiseCollection;
+    public List<Expertise> getExpertiseList() {
+        return expertiseList;
     }
 
-    public void setExpertiseCollection(Collection<Expertise> expertiseCollection) {
-        this.expertiseCollection = expertiseCollection;
+    public void setExpertiseList(List<Expertise> expertiseList) {
+        this.expertiseList = expertiseList;
     }
 
-    public Collection<Industry> getIndustryCollection() {
-        return industryCollection;
+    public List<Industry> getIndustryList() {
+        return industryList;
     }
 
-    public void setIndustryCollection(Collection<Industry> industryCollection) {
-        this.industryCollection = industryCollection;
+    public void setIndustryList(List<Industry> industryList) {
+        this.industryList = industryList;
     }
 
     @Override

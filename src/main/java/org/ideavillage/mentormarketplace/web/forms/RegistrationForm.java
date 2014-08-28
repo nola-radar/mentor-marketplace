@@ -1,6 +1,6 @@
 package org.ideavillage.mentormarketplace.web.forms;
 
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -10,7 +10,6 @@ import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
 import org.ideavillage.mentormarketplace.persistence.domain.Industry;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
-
 
 /**
  *
@@ -35,13 +34,13 @@ public class RegistrationForm {
     @Size(max = 255)
     private String lastName;
 
-    private Collection<Industry> founderIndustryCollection;
+    private List<Industry> founderIndustryList;
 
-    private Collection<Expertise> founderExpertiseCollection;
+    private List<Expertise> founderExpertiseList;
 
-    private Collection<Industry> mentorIndustryCollection;
+    private List<Industry> mentorIndustryList;
 
-    private Collection<Expertise> mentorExpertiseCollection;
+    private List<Expertise> mentorExpertiseList;
 
     private String background;
 
@@ -100,8 +99,8 @@ public class RegistrationForm {
         Mentor mentor = new Mentor();
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
-        mentor.setIndustryCollection(mentorIndustryCollection);
-        mentor.setExpertiseCollection(mentorExpertiseCollection);
+        mentor.setIndustryList(mentorIndustryList);
+        mentor.setExpertiseList(mentorExpertiseList);
         mentor.setBackground(this.background);
         mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -117,8 +116,8 @@ public class RegistrationForm {
     public Mentor editMentor(Mentor mentor) {
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
-        mentor.setIndustryCollection(mentorIndustryCollection);
-        mentor.setExpertiseCollection(mentorExpertiseCollection);
+        mentor.setIndustryList(mentorIndustryList);
+        mentor.setExpertiseList(mentorExpertiseList);
         mentor.setBackground(this.background);
         mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -134,8 +133,8 @@ public class RegistrationForm {
     public Founder editFounder(Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setIndustryCollection(founderIndustryCollection);
-        founder.setExpertiseCollection(founderExpertiseCollection);
+        founder.setIndustryList(founderIndustryList);
+        founder.setExpertiseList(founderExpertiseList);
         founder.setBackground(this.background);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -163,8 +162,8 @@ public class RegistrationForm {
         Founder founder = new Founder();
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setIndustryCollection(this.founderIndustryCollection);
-        founder.setExpertiseCollection(this.founderExpertiseCollection);
+        founder.setIndustryList(this.founderIndustryList);
+        founder.setExpertiseList(this.founderExpertiseList);
         founder.setBackground(this.background);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -240,36 +239,36 @@ public class RegistrationForm {
         this.lastName = lastName;
     }
 
-    public Collection<Industry> getFounderIndustry() {
-        return founderIndustryCollection;
+    public List<Industry> getFounderIndustry() {
+        return founderIndustryList;
     }
 
-    public void setFounderIndustry(Collection<Industry> founderIndustryCollection) {
-        this.founderIndustryCollection = founderIndustryCollection;
+    public void setFounderIndustry(List<Industry> founderIndustryList) {
+        this.founderIndustryList = founderIndustryList;
     }
 
-    public Collection<Expertise> getFounderExpertise() {
-        return founderExpertiseCollection;
+    public List<Expertise> getFounderExpertise() {
+        return founderExpertiseList;
     }
 
-    public void setFounderExpertise(Collection<Expertise> founderExpertiseCollection) {
-        this.founderExpertiseCollection = founderExpertiseCollection;
+    public void setFounderExpertise(List<Expertise> founderExpertiseList) {
+        this.founderExpertiseList = founderExpertiseList;
     }
 
-    public Collection<Industry> getMentorIndustry() {
-        return mentorIndustryCollection;
+    public List<Industry> getMentorIndustry() {
+        return mentorIndustryList;
     }
 
-    public void setMentorIndustry(Collection<Industry> mentorIndustryCollection) {
-        this.mentorIndustryCollection = mentorIndustryCollection;
+    public void setMentorIndustry(List<Industry> mentorIndustryList) {
+        this.mentorIndustryList = mentorIndustryList;
     }
 
-    public Collection<Expertise> getMentorExpertise() {
-        return mentorExpertiseCollection;
+    public List<Expertise> getMentorExpertise() {
+        return mentorExpertiseList;
     }
 
-    public void setMentorExpertise(Collection<Expertise> mentorExpertiseCollection) {
-        this.mentorExpertiseCollection = mentorExpertiseCollection;
+    public void setMentorExpertise(List<Expertise> mentorExpertiseList) {
+        this.mentorExpertiseList = mentorExpertiseList;
     }
 
     public String getBackground() {

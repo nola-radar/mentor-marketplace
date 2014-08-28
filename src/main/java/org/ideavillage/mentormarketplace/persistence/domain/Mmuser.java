@@ -1,7 +1,6 @@
 package org.ideavillage.mentormarketplace.persistence.domain;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,7 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -57,8 +55,8 @@ public class Mmuser implements Serializable {
     @Column(name = "is_admin")
     private boolean isAdmin;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mmuser")
-    private Collection<Mentor> mentorCollection;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "mmuser")
+    private Mentor mentor;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "mmuser", fetch = FetchType.EAGER)
     private Founder founder;
@@ -124,12 +122,12 @@ public class Mmuser implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Mentor> getMentorCollection() {
-        return mentorCollection;
+    public Mentor getMentor() {
+        return mentor;
     }
 
-    public void setMentorCollection(Collection<Mentor> mentorCollection) {
-        this.mentorCollection = mentorCollection;
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
     }
 
     @XmlTransient
