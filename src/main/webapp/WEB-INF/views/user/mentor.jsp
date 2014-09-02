@@ -39,16 +39,16 @@
                             <!-- Mentor Profile Experience Area -->
                             <div id="profileExperience">
                                 <label class="col-xs-4 control-label profileTopLabels"> Website: </label>
-                                <label class="col-xs-8 profileTopLabels" id= "profileDisplayText"> ${mentor.getWebsite()} </label>
+                                <label class="col-xs-8 profileTopLabels" id="profileDisplayText"> ${mentor.getWebsite()} </label>
 
                                 <label class="col-xs-4 control-label profileLabels"> Facebook: </label>
-                                <label class="col-xs-8 profileLabels" id= "profileDisplayText"> ${mentor.getFacebook()} </label>
+                                <label class="col-xs-8 profileLabels" id="profileDisplayText"> ${mentor.getFacebook()} </label>
 
                                 <label class="col-xs-4 control-label profileLabels"> Twitter: </label>
-                                <label class="col-xs-8 profileLabels" id= "profileDisplayText"> ${mentor.getTwitter()} </label>
+                                <label class="col-xs-8 profileLabels" id="profileDisplayText"> ${mentor.getTwitter()} </label>
 
                                 <label class="col-xs-4 cotrol-label profileTextAreaLabels"> Other Social Media: </label>
-                                <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${mentor.getOtherSocialMedia()} </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${mentor.getOtherSocialMedia()} </label>
                             </div>
                         </div>
 
@@ -68,10 +68,10 @@
                             <!-- Mentor Profile Social Area -->
                             <div class="section-200" id="profileSocialInfo">
                                 <label class="col-xs-4 control-label profileTopTextAreaLabels"> Current Company: </label>
-                                <label class="col-xs-8 profileTopTextAreaLabels" id= "profileDisplayText"> ${mentor.getLinkedInCurrentCompany()} </label>
+                                <label class="col-xs-8 profileTopTextAreaLabels" id="profileDisplayText"> ${mentor.getLinkedInCurrentCompany()} </label>
 
                                 <label class="col-xs-4 control-label profileTextAreaLabels"> Job Title: </label>
-                                <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${mentor.getLinkedInCurrentJobTitle()} </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${mentor.getLinkedInCurrentJobTitle()} </label>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                     <!-- Bottom Content -->
                     <div id="profileReports">
                         <label class="col-xs-4 control-label profileTopTextAreaLabels"> Background: </label>
-                        <label class="col-xs-8 profileTopTextAreaLabels" id= "profileDisplayText"> ${mentor.getBackground()} </label>
+                        <label class="col-xs-8 profileTopTextAreaLabels" id="profileDisplayText"> ${mentor.getBackground()} </label>
 
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
                         <c:forEach items="${mentor.getExpertiseList()}" var="expertise">

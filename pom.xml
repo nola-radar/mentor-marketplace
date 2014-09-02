@@ -119,7 +119,7 @@
         </dependency>
         <dependency>
             <groupId>junit</groupId>
-            <version>$(junit.version}</version>
+            <version>${junit.version}</version>
             <artifactId>junit</artifactId>
             <scope>test</scope>
             <type>jar</type>

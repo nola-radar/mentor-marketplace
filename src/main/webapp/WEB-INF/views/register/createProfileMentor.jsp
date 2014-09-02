@@ -153,6 +153,8 @@
                         <spring:bind path="userType">
                             <form:hidden path="userType" value="mentor"  />
                         </spring:bind>
+
+                        <form:hidden path="linkedInPictureURL" />
                     </div>
                 </div>
             </div>

@@ -227,9 +227,9 @@
                         <spring:bind path="userType">
                             <form:hidden path="userType" value="founder"  />
                         </spring:bind>
-                        
-                            <form:hidden path="linkedInPictureURL" />
-                        
+
+                        <form:hidden path="linkedInPictureURL" />
+
                     </div>
                 </div>
             </div>
