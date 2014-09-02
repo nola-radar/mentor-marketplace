@@ -61,26 +61,35 @@ public class UserController {
         }
         String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
         Mmuser user = mmUserRepository.findByEmail(email);
+        
         return "redirect:/user/profile/" + user.getId() + "/";
     }
 
     @RequestMapping(value = "/profile/{id}/", method = RequestMethod.GET)
     public String viewProfileForId(WebRequest request, Model model, @PathVariable("id") Long id) {
+        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        if (null == connection) {
+            // TODO: Need an error page
+            return "redirect:/";
+        }
         Mmuser user = mmUserRepository.findOne(id);
         if (null == user) {
             // TODO: Need an error page
             return "redirect:/";
         }
+        String pictureUrl = connection.getApi().profileOperations().getUserProfileFull().getProfilePictureUrl();
         String utype = user.getUserType();
         // redirect to founder.jsp if user type is founder
         if (utype.contains("founder")) {
             Founder founder = founderRepository.findByMmuser(user);
+            founder.setLinkedInPictureUrl(pictureUrl);
             founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
             founder.setExpertiseList(expertiseRepository.findByFounderExpertiseList(founder));
             model.addAttribute("founder", founder);
             return "user/founder";
         } else {
             Mentor mentor = mentorRepository.findByMmuser(user);
+            mentor.setLinkedInPictureUrl(pictureUrl);
             mentor.setIndustryList(industryRepository.findByMentorIndustryList(mentor));
             mentor.setExpertiseList(expertiseRepository.findByMentorExpertiseList(mentor));
             model.addAttribute("mentor", mentor);

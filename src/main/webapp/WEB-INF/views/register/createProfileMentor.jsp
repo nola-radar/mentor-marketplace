@@ -99,15 +99,6 @@
                                 <form:errors class="help-block" path="linkedInCurrentJobTitle" cssClass="help-inline" />
                             </div>
                         </spring:bind>
-
-                        <spring:bind path="linkedInPictureURL">
-                            <label class="col-sm-3 control-label createProfileInputLabels">LinkedIn Picture: </label>
-                            <div class="col-sm-9 createProfileInputFields">
-                                <form:input class="form-control input-sm" path="linkedInPictureURL" rows="2" />
-                                <form:errors class="help-block" path="linkedInPictureURL" cssClass="help-inline" />
-                            </div>
-                        </spring:bind>
-
                     </div>
 
                     <div class="section-200">

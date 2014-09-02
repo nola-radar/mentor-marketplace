@@ -12,13 +12,13 @@
         <!-- Logo Area -->
         <div class="profileLogoAndIndustryContent padding-top-20">
             <div class="col-xs-2 profileLogoContent">
-                <img src="<c:url value="/resources/img/Profile_Logo.png" />" id="profileLogoImage"/>
+                <img src="${founder.getLinkedInPictureUrl()}">
             </div>
 
             <div class="col-xs-10 profileIndustryContent">
                 <h4> The Idea Village </h4>
                 <c:forEach items="${founder.getIndustryList()}" var="industry">
-                    <p>${industry.industry}</p>
+                    <div>${industry.industry}</div>
                 </c:forEach>
             </div>
 
@@ -38,22 +38,22 @@
                             <!-- Founder Profile Experience Area -->
                             <div id="profileExperience">
                                 <label class="col-xs-4 control-label profileTopLabels"> Website: </label>
-                                <label class="col-xs-8 profileTopLabels"> ${founder.getWebsite()} </label>
+                                <label class="col-xs-8 profileTopLabels" id= "profileDisplayText"> ${founder.getWebsite()} </label>
 
                                 <label class="col-xs-4 control-label profileLabels"> Facebook: </label>
-                                <label class="col-xs-8 profileLabels"> ${founder.getFacebook()} </label>
+                                <label class="col-xs-8 profileLabels" id= "profileDisplayText"> ${founder.getFacebook()} </label>
 
                                 <label class="col-xs-4 control-label profileLabels"> Twitter: </label>
-                                <label class="col-xs-8 profileLabels"> ${founder.getTwitter()} </label>
+                                <label class="col-xs-8 profileLabels" id= "profileDisplayText"> ${founder.getTwitter()} </label>
 
                                 <label class="col-xs-4 cotrol-label profileTextAreaLabels"> Other Social Media: </label>
-                                <label class="col-xs-8 profileTextAreaLabels"> ${founder.getOtherSocialMedia()} </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${founder.getOtherSocialMedia()} </label>
 
                                 <label class="col-xs-4 control-label profileTextAreaLabels"> Company Details: </label>
-                                <label class="col-xs-8 profileTextAreaLabels"> ${founder.getCompanyDetails()} </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${founder.getCompanyDetails()} </label>
 
                                 <label class="col-xs-4 control-label profileTextAreaLabels"> New Orleans: </label>
-                                <label class="col-xs-8 profileTextAreaLabels"> ${founder.getNewOrleans()} </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${founder.getNewOrleans()} </label>
                             </div>
                         </div>
 
@@ -66,23 +66,17 @@
                                 </label>
 
                                 <div class="col-xs-4 profileImageLabels">
-                                    <!-- Proxy Image used for Page Create. Remove once LinkedIn Images are up. -->
-                                    <img src="<c:url value="/resources/img/Profile_Logo.png" />" id="profileNameImage"/>
-                                    <!-- <img src="${profile.profilePictureUrl}"> -->
+                                    <img id="profileNameImage" src="${founder.getLinkedInPictureUrl()}">
                                 </div>
                             </div>
 
                             <!-- Founder Profile Social Area -->
                             <div class="section-200" id="profileSocialInfo">
                                 <label class="col-xs-4 control-label profileTopLabels"> Logo: </label>
-                                <label class="col-xs-8 profileTopLabels"> ${founder.getLogo()} </label>
-
-                                <label class="col-xs-4 control-label" id="profileBelowImageLabel"> Tags: </label>
-                                <!-- Tag not in Controller. Once Tag is in the Controller, replace 'tag' with ${founder.getLogo()} -->
-                                <label class="col-xs-8" id="profileBelowImageLabel"> tag </label>
+                                <label class="col-xs-8 profileTopLabels" id= "profileDisplayText" id= "profileDisplayText"> ${founder.getLogo()} </label>
 
                                 <label class="col-xs-4 control-label profileTextAreaLabels"> Elevator Pitch: </label>
-                                <label class="col-xs-8 profileTextAreaLabels"> ${founder.getElevatorPitch()} </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${founder.getElevatorPitch()} </label>
                             </div>
                         </div>
                     </div>
@@ -93,13 +87,13 @@
                     <!-- Bottom Content -->
                     <div id="profileSkills">
                         <label class="col-xs-4 control-label profileTopTextAreaLabels"> Immediate Needs: </label>
-                        <label class="col-xs-8 profileTopTextAreaLabels"> ${founder.getImmediateNeeds()} </label>
+                        <label class="col-xs-8 profileTopTextAreaLabels" id= "profileDisplayText"> ${founder.getImmediateNeeds()} </label>
 
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Vision: </label>
-                        <label class="col-xs-8 profileTextAreaLabels"> ${founder.getVision()} </label>
+                        <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${founder.getVision()} </label>
 
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
-                        <label class="col-xs-8 profileTextAreaLabels">
+                        <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText">
                             <c:forEach items="${founder.getExpertiseList()}" var="expertise">
                                 <p>${expertise.expertise}</p>
                             </c:forEach>
@@ -112,13 +106,13 @@
                     <!-- Bottom Content -->
                     <div id="profileReports">
                         <label class="col-xs-4 control-label profileTopTextAreaLabels"> Status: </label>
-                        <label class="col-xs-8 profileTopTextAreaLabels"> ${founder.getStatus()} </label>
+                        <label class="col-xs-8 profileTopTextAreaLabels" id= "profileDisplayText"> ${founder.getStatus()} </label>
 
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Program Plan: </label>
-                        <label class="col-xs-8 profileTextAreaLabels"> ${founder.getProgramPlan()} </label>
+                        <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${founder.getProgramPlan()} </label>
 
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Weekly Reports: </label>
-                        <label class="col-xs-8 profileTextAreaLabels"> ${founder.getWeeklyReports()} </label>
+                        <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${founder.getWeeklyReports()} </label>
                     </div>
                 </div>
             </div> <!-- End of Body Contents -->

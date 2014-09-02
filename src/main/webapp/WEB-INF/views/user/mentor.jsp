@@ -12,13 +12,15 @@
         <!-- Logo Area -->
         <div class="profileLogoAndIndustryContent padding-top-20">
             <div class="col-xs-2 profileLogoContent">
-                <img src="<c:url value="/resources/img/Profile_Logo.png" />" id="profileLogoImage"/>
+                <img src="${mentor.getLinkedInPictureUrl()}">
             </div>
 
             <!-- Industry -->
             <div class="col-xs-10 profileIndustryContent">
                 <h4> The Idea Village </h4>
-                <%--<p> ${mentor.getIndustry()} </p>--%>
+                <c:forEach items="${mentor.getIndustryList()}" var="industry">
+                    <div>${industry.industry}</div>
+                </c:forEach>
             </div>
 
             <!-- Header -->
@@ -37,16 +39,16 @@
                             <!-- Mentor Profile Experience Area -->
                             <div id="profileExperience">
                                 <label class="col-xs-4 control-label profileTopLabels"> Website: </label>
-                                <label class="col-xs-8 profileTopLabels"> ${mentor.getWebsite()} </label>
+                                <label class="col-xs-8 profileTopLabels" id= "profileDisplayText"> ${mentor.getWebsite()} </label>
 
                                 <label class="col-xs-4 control-label profileLabels"> Facebook: </label>
-                                <label class="col-xs-8 profileLabels"> ${mentor.getFacebook()} </label>
+                                <label class="col-xs-8 profileLabels" id= "profileDisplayText"> ${mentor.getFacebook()} </label>
 
                                 <label class="col-xs-4 control-label profileLabels"> Twitter: </label>
-                                <label class="col-xs-8 profileLabels"> ${mentor.getTwitter()} </label>
+                                <label class="col-xs-8 profileLabels" id= "profileDisplayText"> ${mentor.getTwitter()} </label>
 
                                 <label class="col-xs-4 cotrol-label profileTextAreaLabels"> Other Social Media: </label>
-                                <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getOtherSocialMedia()} </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${mentor.getOtherSocialMedia()} </label>
                             </div>
                         </div>
 
@@ -59,19 +61,17 @@
                                 </label>
 
                                 <div class="col-xs-4 profileImageLabels">
-                                    <!-- Proxy Image used for Page Create. Remove once LinkedIn Images are up. -->
-                                    <img src="<c:url value="/resources/img/Profile_Logo.png" />" id="profileNameImage"/>
-                                    <!-- <img src="${profile.profilePictureUrl}"> -->
+                                    <img src="${mentor.getLinkedInPictureUrl()}">
                                 </div>
                             </div>
 
                             <!-- Mentor Profile Social Area -->
                             <div class="section-200" id="profileSocialInfo">
                                 <label class="col-xs-4 control-label profileTopTextAreaLabels"> Current Company: </label>
-                                <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getLinkedInCurrentCompany()} </label>
+                                <label class="col-xs-8 profileTopTextAreaLabels" id= "profileDisplayText"> ${mentor.getLinkedInCurrentCompany()} </label>
 
                                 <label class="col-xs-4 control-label profileTextAreaLabels"> Job Title: </label>
-                                <label class="col-xs-8 profileTextAreaLabels"> ${mentor.getLinkedInCurrentJobTitle()} </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id= "profileDisplayText"> ${mentor.getLinkedInCurrentJobTitle()} </label>
                             </div>
                         </div>
                     </div>
@@ -82,9 +82,12 @@
                     <!-- Bottom Content -->
                     <div id="profileReports">
                         <label class="col-xs-4 control-label profileTopTextAreaLabels"> Background: </label>
-                        <label class="col-xs-8 profileTopTextAreaLabels"> ${mentor.getBackground()} </label>
+                        <label class="col-xs-8 profileTopTextAreaLabels" id= "profileDisplayText"> ${mentor.getBackground()} </label>
+
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
-                        <%--<label class="col-xs-8 profileTextAreaLabels"> ${mentor.getAreasOfExpertise()} </label>--%>
+                        <c:forEach items="${mentor.getExpertiseList()}" var="expertise">
+                            <p>${expertise.expertise}</p>
+                        </c:forEach>
                     </div>
                 </div>   
             </div> <!-- End of Body Contents -->
