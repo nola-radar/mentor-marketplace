@@ -23,7 +23,7 @@
             delete-cookies="JSESSIONID"/>
         <!-- Anyone can access these urls -->
         <security:intercept-url pattern="/auth/**" access="permitAll"/>
-        <security:intercept-url pattern="/user/register/**" access="permitAll"/>
+        <security:intercept-url pattern="/register/**" access="permitAll"/>
         <security:intercept-url pattern="/" access="permitAll"/>
 
         <!-- The rest of our application is protected. -->
@@ -62,7 +62,7 @@
         <constructor-arg index="3" ref="connectionFactoryLocator"/>
 
         <!-- Sets the url of the registration form. -->
-        <property name="signupUrl" value="/user/register"/>
+        <property name="signupUrl" value="/register"/>
         <property name="postLoginUrl" value="/user/profile"/>
         <property name="defaultFailureUrl" value="/?error=authentication_failure"/>
     </bean>

@@ -2,10 +2,10 @@ require.config({
     
     paths: {
         
-        jquery: '../resources/components/jquery/jquery.min',
-        'bootstrap': '../resources/components/bootstrap-3.2.0/js/bootstrap',
-        'multiselect': '../resources/components/bootstrap-multiselect/bootstrap-select',
-        'dropdown': '../resources/js/dropdown'
+        jquery: 'components/jquery/jquery.min',
+        'bootstrap': 'components/bootstrap-3.2.0/js/bootstrap',
+        'multiselect': 'components/bootstrap-multiselect/bootstrap-select',
+        'dropdown': 'js/dropdown'
 
     },
     shim: {

@@ -11,3 +11,10 @@
 <!-- Java Script Plug-Ins -->
 <script src="<c:url value="/resources/components/requirejs/require.js" />" > </script>
 <script src="<c:url value="/resources/js/require.config.js" />" > </script>
+<script type="text/javascript">
+    require.config({
+        baseUrl: '${pageContext.request.contextPath}/resources/'
+    });
+    require(['jquery','bootstrap'], function($) {
+    });
+</script>

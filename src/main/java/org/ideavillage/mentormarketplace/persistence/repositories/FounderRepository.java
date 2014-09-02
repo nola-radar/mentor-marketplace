@@ -1,8 +1,8 @@
 package org.ideavillage.mentormarketplace.persistence.repositories;
 
+import java.util.List;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
@@ -20,4 +20,7 @@ public interface FounderRepository extends PagingAndSortingRepository<Founder, L
 
     Founder findByLinkedInId(String linkedInId);
 
+    Founder findByMmuser(Mmuser mmuser);
+
+    List<Founder> findByIndustryListIndustryAndExpertiseListExpertise(String industry, String expertise);
 }

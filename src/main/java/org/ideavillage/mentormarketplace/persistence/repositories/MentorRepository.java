@@ -1,6 +1,8 @@
 package org.ideavillage.mentormarketplace.persistence.repositories;
 
+import java.util.List;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
+import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
@@ -18,4 +20,7 @@ public interface MentorRepository extends PagingAndSortingRepository<Mentor, Lon
 
     Mentor findByLinkedInId(String linkedInId);
 
+    Mentor findByMmuser(Mmuser mmuser);
+
+    List<Mentor> findByIndustryListIndustryAndExpertiseListExpertise(String industry, String expertise);
 }

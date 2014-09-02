@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <form:form modelAttribute="registrationForm">
 
     <div id="createProfileContainer">
@@ -127,22 +131,21 @@
                 <div class="col-sm-12">
                     <div id="createProfileMentorIndustry">
 
-                        <%--<spring:bind path="industry">
-                            <label class="col-sm-2 control-label createProfileTopInputLabels">Industry: </label>
-                            <div class="col-sm-10 createProfileTopInputFields">
-                                <select class="selectpicker" multiple="multiple" path="industry">
-                                    <%@include file="../shared/industryOptions.jsp" %>
-                                </select>
-                            </div>
-                        </spring:bind>
+                        <label class="col-sm-2 control-label createProfileInputLabels">Industry:</label>
+                        <div class="col-sm-10 createProfileInputFields">
+                            <form:select cssClass="selectpicker" items="${industryList}" itemValue="id"
+                                         itemLabel="industry"  multiple="multiple" path="industryList">                                   
+                            </form:select>
+                            <form:errors class="help-block" path="industryList" cssClass="help-inline" />
+                        </div>
 
-                        <spring:bind path="areasOfExpertise">
-                            <label class="col-sm-2 control-label">Expertise: </label>
-                            <div class="col-sm-10">
-                                <form:textarea class="form-control input-sm" path="areasOfExpertise" rows="2" />
-                                <form:errors class="help-block" path="areasOfExpertise" cssClass="help-inline" />
-                            </div>
-                        </spring:bind>--%>
+                        <label class="col-sm-2 control-label">Expertise: </label>
+                        <div class="col-sm-10 createProfileInputFields">
+                            <form:select cssClass="selectpicker" items="${expertiseList}" itemValue="id"
+                                         itemLabel="expertise"  multiple="multiple" path="expertiseList">                                   
+                            </form:select>
+                            <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
+                        </div>
 
                         <spring:bind path="email">
                             <form:hidden path="email" />

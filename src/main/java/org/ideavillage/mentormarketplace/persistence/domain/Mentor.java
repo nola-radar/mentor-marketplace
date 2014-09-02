@@ -3,10 +3,8 @@ package org.ideavillage.mentormarketplace.persistence.domain;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -87,18 +85,16 @@ public class Mentor implements Serializable {
     @JoinColumn(name = "mmuser", referencedColumnName = "id")
     private Mmuser mmuser;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "mentor_expertise", joinColumns = {
-        @JoinColumn(name = "mentor_id", nullable = false)},
-      inverseJoinColumns = {
-          @JoinColumn(name = "expertise_id", nullable = false)})
+        @JoinColumn(name = "mentor_id", referencedColumnName = "id")}, inverseJoinColumns = {
+        @JoinColumn(name = "expertise_id", referencedColumnName = "id")})
+    @ManyToMany()
     private List<Expertise> expertiseList;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "mentor_industry", joinColumns = {
-        @JoinColumn(name = "mentor_id", nullable = false)},
-      inverseJoinColumns = {
-          @JoinColumn(name = "industry_id", nullable = false)})
+        @JoinColumn(name = "mentor_id", referencedColumnName = "id")}, inverseJoinColumns = {
+        @JoinColumn(name = "industry_id", referencedColumnName = "id")})
+    @ManyToMany()
     private List<Industry> industryList;
 
     public Mentor() {

@@ -34,13 +34,9 @@ public class RegistrationForm {
     @Size(max = 255)
     private String lastName;
 
-    private List<Industry> founderIndustryList;
+    private List<Industry> industryList;
 
-    private List<Expertise> founderExpertiseList;
-
-    private List<Industry> mentorIndustryList;
-
-    private List<Expertise> mentorExpertiseList;
+    private List<Expertise> expertiseList;
 
     private String background;
 
@@ -99,8 +95,8 @@ public class RegistrationForm {
         Mentor mentor = new Mentor();
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
-        mentor.setIndustryList(mentorIndustryList);
-        mentor.setExpertiseList(mentorExpertiseList);
+        mentor.setIndustryList(this.industryList);
+        mentor.setExpertiseList(this.expertiseList);
         mentor.setBackground(this.background);
         mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -116,8 +112,8 @@ public class RegistrationForm {
     public Mentor editMentor(Mentor mentor) {
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
-        mentor.setIndustryList(mentorIndustryList);
-        mentor.setExpertiseList(mentorExpertiseList);
+        mentor.setIndustryList(this.industryList);
+        mentor.setExpertiseList(this.expertiseList);
         mentor.setBackground(this.background);
         mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -133,8 +129,8 @@ public class RegistrationForm {
     public Founder editFounder(Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setIndustryList(founderIndustryList);
-        founder.setExpertiseList(founderExpertiseList);
+        founder.setIndustryList(industryList);
+        founder.setExpertiseList(expertiseList);
         founder.setBackground(this.background);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -162,8 +158,8 @@ public class RegistrationForm {
         Founder founder = new Founder();
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setIndustryList(this.founderIndustryList);
-        founder.setExpertiseList(this.founderExpertiseList);
+        founder.setIndustryList(this.industryList);
+        founder.setExpertiseList(this.expertiseList);
         founder.setBackground(this.background);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
@@ -239,36 +235,20 @@ public class RegistrationForm {
         this.lastName = lastName;
     }
 
-    public List<Industry> getFounderIndustry() {
-        return founderIndustryList;
+    public List<Industry> getIndustryList() {
+        return industryList;
     }
 
-    public void setFounderIndustry(List<Industry> founderIndustryList) {
-        this.founderIndustryList = founderIndustryList;
+    public void setIndustryList(List<Industry> industryList) {
+        this.industryList = industryList;
     }
 
-    public List<Expertise> getFounderExpertise() {
-        return founderExpertiseList;
+    public List<Expertise> getExpertiseList() {
+        return expertiseList;
     }
 
-    public void setFounderExpertise(List<Expertise> founderExpertiseList) {
-        this.founderExpertiseList = founderExpertiseList;
-    }
-
-    public List<Industry> getMentorIndustry() {
-        return mentorIndustryList;
-    }
-
-    public void setMentorIndustry(List<Industry> mentorIndustryList) {
-        this.mentorIndustryList = mentorIndustryList;
-    }
-
-    public List<Expertise> getMentorExpertise() {
-        return mentorExpertiseList;
-    }
-
-    public void setMentorExpertise(List<Expertise> mentorExpertiseList) {
-        this.mentorExpertiseList = mentorExpertiseList;
+    public void setExpertiseList(List<Expertise> expertiseList) {
+        this.expertiseList = expertiseList;
     }
 
     public String getBackground() {

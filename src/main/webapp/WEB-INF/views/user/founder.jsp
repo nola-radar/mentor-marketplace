@@ -17,7 +17,9 @@
 
             <div class="col-xs-10 profileIndustryContent">
                 <h4> The Idea Village </h4>
-                <%--<p> ${founder.getIndustry()} </p>--%>
+                <c:forEach items="${founder.getIndustryList()}" var="industry">
+                    <p>${industry.industry}</p>
+                </c:forEach>
             </div>
 
             <!-- Header -->
@@ -97,7 +99,11 @@
                         <label class="col-xs-8 profileTextAreaLabels"> ${founder.getVision()} </label>
 
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
-                        <%--<label class="col-xs-8 profileTextAreaLabels"> ${founder.getAreasOfExpertise()} </label>--%>
+                        <label class="col-xs-8 profileTextAreaLabels">
+                            <c:forEach items="${founder.getExpertiseList()}" var="expertise">
+                                <p>${expertise.expertise}</p>
+                            </c:forEach>
+                        </label>
                     </div>
                 </div> 
 
