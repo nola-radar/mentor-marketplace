@@ -144,31 +144,6 @@ public class Founder implements Serializable {
         this.id = id;
     }
 
-    public Founder(String firstName, String lastName, String linkedInPictureUrl, String linkedInCurrentCompany, String linkedInCurrentJobTitle, String website, String facebook, String twitter, String otherSocialMedia, String logo, String tagline, String linkedInId, String background, String elevatorPitch, String immediateNeeds, String companyDetails, String inspiration, String status, String vision, String newOrleans, String programPlan, String weeklyReports) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.linkedInPictureUrl = linkedInPictureUrl;
-        this.linkedInCurrentCompany = linkedInCurrentCompany;
-        this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
-        this.website = website;
-        this.facebook = facebook;
-        this.twitter = twitter;
-        this.otherSocialMedia = otherSocialMedia;
-        this.logo = logo;
-        this.tagline = tagline;
-        this.linkedInId = linkedInId;
-        this.background = background;
-        this.elevatorPitch = elevatorPitch;
-        this.immediateNeeds = immediateNeeds;
-        this.companyDetails = companyDetails;
-        this.inspiration = inspiration;
-        this.status = status;
-        this.vision = vision;
-        this.newOrleans = newOrleans;
-        this.programPlan = programPlan;
-        this.weeklyReports = weeklyReports;
-    }
-
     public Long getId() {
         return id;
     }

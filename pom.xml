@@ -32,6 +32,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <flyway.version>2.3.1</flyway.version>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencies>
@@ -118,8 +119,8 @@
         </dependency>
         <dependency>
             <groupId>junit</groupId>
+            <version>$(junit.version}</version>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
             <scope>test</scope>
             <type>jar</type>
         </dependency>
