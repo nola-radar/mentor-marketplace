@@ -61,35 +61,26 @@ public class UserController {
         }
         String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
         Mmuser user = mmUserRepository.findByEmail(email);
-        
         return "redirect:/user/profile/" + user.getId() + "/";
     }
 
     @RequestMapping(value = "/profile/{id}/", method = RequestMethod.GET)
     public String viewProfileForId(WebRequest request, Model model, @PathVariable("id") Long id) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            // TODO: Need an error page
-            return "redirect:/";
-        }
         Mmuser user = mmUserRepository.findOne(id);
         if (null == user) {
             // TODO: Need an error page
             return "redirect:/";
         }
-        String pictureUrl = connection.getApi().profileOperations().getUserProfileFull().getProfilePictureUrl();
         String utype = user.getUserType();
         // redirect to founder.jsp if user type is founder
         if (utype.contains("founder")) {
             Founder founder = founderRepository.findByMmuser(user);
-            founder.setLinkedInPictureUrl(pictureUrl);
             founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
             founder.setExpertiseList(expertiseRepository.findByFounderExpertiseList(founder));
             model.addAttribute("founder", founder);
             return "user/founder";
         } else {
             Mentor mentor = mentorRepository.findByMmuser(user);
-            mentor.setLinkedInPictureUrl(pictureUrl);
             mentor.setIndustryList(industryRepository.findByMentorIndustryList(mentor));
             mentor.setExpertiseList(expertiseRepository.findByMentorExpertiseList(mentor));
             model.addAttribute("mentor", mentor);
@@ -105,13 +96,10 @@ public class UserController {
             // TODO: Need an error page
             return "redirect:/";
         }
-
         Iterable<Industry> industryList = industryRepository.findAll();
         model.addAttribute("industryList", industryList);
-
         Iterable<Expertise> expertiseList = expertiseRepository.findAll();
         model.addAttribute("expertiseList", expertiseList);
-
         String utype = user.getUserType();
         // redirect to founder.jsp if user type is founder
         if (utype.contains("founder")) {
@@ -131,7 +119,7 @@ public class UserController {
 
     @RequestMapping(value = "/profile/{id}/editFounder", method = RequestMethod.POST)
     public String processFounderEdit(BindingResult result, @PathVariable("id") Long id,
-            @Valid @ModelAttribute("founder") Founder founder) {
+      @Valid @ModelAttribute("founder") Founder founder) {
         if (result.hasErrors()) {
             return "user/editFounder";
         }
@@ -141,7 +129,7 @@ public class UserController {
 
     @RequestMapping(value = "/profile/{id}/editMentor", method = RequestMethod.POST)
     public String processMentorEdit(BindingResult result, @PathVariable("id") Long id,
-            @Valid @ModelAttribute("mentor") Mentor mentor) {
+      @Valid @ModelAttribute("mentor") Mentor mentor) {
         if (result.hasErrors()) {
             return "user/editMentor";
         }

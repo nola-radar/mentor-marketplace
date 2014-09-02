@@ -65,6 +65,7 @@ public class RegisterController {
             registrationForm.setEmail(connection.fetchUserProfile().getEmail());
             registrationForm.setLinkedInId(connection.createData().getProviderUserId());
             registrationForm.setIsAdmin(false);
+            registrationForm.setLinkedInPictureURL(connection.createData().getImageUrl());
         }
 
         Iterable<Industry> industryList = industryRepository.findAll();
