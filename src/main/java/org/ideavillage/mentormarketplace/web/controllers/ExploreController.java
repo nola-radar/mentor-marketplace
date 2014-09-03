@@ -2,9 +2,11 @@ package org.ideavillage.mentormarketplace.web.controllers;
 
 import java.util.List;
 import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
+import org.ideavillage.mentormarketplace.persistence.domain.Founder;
 import org.ideavillage.mentormarketplace.persistence.domain.Industry;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
 import org.ideavillage.mentormarketplace.persistence.repositories.ExpertiseRepository;
+import org.ideavillage.mentormarketplace.persistence.repositories.FounderRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.IndustryRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MentorRepository;
 import org.ideavillage.mentormarketplace.web.forms.ExploreForm;
@@ -31,8 +33,11 @@ public class ExploreController {
     @Autowired
     private MentorRepository mentorRepository;
 
+    @Autowired
+    private FounderRepository founderRepository;
+
     @RequestMapping(value = "/mentors", method = {RequestMethod.GET, RequestMethod.POST})
-    public String explore(Model model, @ModelAttribute("exploreForm") ExploreForm exploreForm) {
+    public String exploreMentors(Model model, @ModelAttribute("exploreForm") ExploreForm exploreForm) {
         Iterable<Industry> industryList = industryRepository.findAll();
         model.addAttribute("industryList", industryList);
 
@@ -55,5 +60,31 @@ public class ExploreController {
 
         model.addAttribute("mentors", mentors);
         return "explore/mentors";
+    }
+
+    @RequestMapping(value = "/founders", method = {RequestMethod.GET, RequestMethod.POST})
+    public String exploreFounders(Model model, @ModelAttribute("exploreForm") ExploreForm exploreForm) {
+        Iterable<Industry> industryList = industryRepository.findAll();
+        model.addAttribute("industryList", industryList);
+
+        Iterable<Expertise> expertiseList = expertiseRepository.findAll();
+        model.addAttribute("expertiseList", expertiseList);
+
+        List<Founder> founders = null;
+
+        if (null != exploreForm.getIndustryList() && !exploreForm.getIndustryList().isEmpty()
+                && null != exploreForm.getExpertiseList() && !exploreForm.getExpertiseList().isEmpty()) {
+            founders = founderRepository.findByIndustryListInAndExpertiseListIn(exploreForm.getIndustryList(),
+                    exploreForm.getExpertiseList());
+        } else if (null != exploreForm.getIndustryList() && !exploreForm.getIndustryList().isEmpty()) {
+            founders = founderRepository.findByIndustryListIn(exploreForm.getIndustryList());
+        } else if (null != exploreForm.getExpertiseList() && !exploreForm.getExpertiseList().isEmpty()) {
+            founders = founderRepository.findByExpertiseListIn(exploreForm.getExpertiseList());
+        } else {
+            founders = founderRepository.findAll();
+        }
+
+        model.addAttribute("founders", founders);
+        return "explore/founders";
     }
 }
