@@ -30,8 +30,7 @@ public class RepositoryUserDetailsService implements UserDetailsService {
      *
      * @param username The username of the requested user.
      * @return The information of the user.
-     * @throws UsernameNotFoundException Thrown if no user is found with the
-     * given username.
+     * @throws UsernameNotFoundException Thrown if no user is found with the given username.
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -49,6 +48,12 @@ public class RepositoryUserDetailsService implements UserDetailsService {
 
         if (user.getIsAdmin()) {
             authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        }
+
+        if ("founder".equals(user.getUserType())) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_FOUNDER"));
+        } else if ("mentor".equals(user.getUserType())) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_MENTOR"));
         }
 
         SocialUser principal = new SocialUser(user.getEmail(), "SocialUser", authorities);
