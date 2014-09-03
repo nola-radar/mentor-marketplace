@@ -15,6 +15,7 @@ require.config({
         'jquery-csv': [
             'jquery'
         ],
+        'bootstrap': ['jquery'],
         'bootstrap-switch': ['jquery'],
         'bootstrap-timepicker': ['jquery'],
         "col-reorder-amd": {
