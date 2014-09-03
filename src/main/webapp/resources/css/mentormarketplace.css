@@ -56,20 +56,20 @@
 }
 
 .dropdown-menu.open {
- border: none;
- border: 1px #bfc2c5 solid;
+    border: none;
+    border: 1px #bfc2c5 solid;
 }
 
 .dropdown-menu li.selected > a {
- border-radius: 4px;
- color: #ffffff;
- background-color: #3b73b9;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #3b73b9;
 }
 
 .dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus {
- border-radius: 4px;
- background-color: #b7cbe5;
+    border-radius: 4px;
+    background-color: #b7cbe5;
 }
 
 .dropdown-submenu:hover > a,
@@ -77,14 +77,14 @@
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
- border-radius: 4px;
- background-color: #b7cbe5;
+    border-radius: 4px;
+    background-color: #b7cbe5;
 }
 
 .dropdown-menu li.selected > a:hover,
 .dropdown-menu li.selected > a:focus {
- background: #3b73b9;
- border-radius: 4px;
+    background: #3b73b9;
+    border-radius: 4px;
 }
 
 /*******************************************************
@@ -109,7 +109,6 @@ body {
 .navbar-default.navbar-bg-darkblue {
     background: #203747;
     border: none;
-    
 }
 
 .navbar.navbar-bg-darkblue {
@@ -144,7 +143,6 @@ body {
 .navbar-default.navbar-bg-blue {
     background: #2980b9;
     border: none;
-    
 }
 
 .navbar.navbar-bg-blue {
@@ -166,7 +164,6 @@ body {
  *******************************************************/
 
 #indexRegistrationPage {
-    
     background: url(../img/Rounded_Earth.png) no-repeat center bottom #2980b9;
     background-size: 150% 140px;
     padding-top: 20px;
@@ -376,7 +373,7 @@ body {
 }
 
 #profileNameImage {
-	border-radius: 50px;
+    border-radius: 50px;
 }
 
 .profileHeader {
@@ -506,4 +503,55 @@ body {
     background: #27ae60;
     border-radius: 0%;
     width: 150px;
+}
+
+/*******************************************************
+ *  Explore specific CSS
+ *******************************************************/
+
+#exploreMainContainer {
+    background-color: #eee;
+    padding: 50px 50px;
+}
+
+.body-content {
+    background-color: white;
+    padding: 20px 20px;
+}
+
+#browseText {
+    font-size: 1.8em;
+    display: inline-block;
+}
+
+.exploreProfilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+}
+
+.exploreDislpayName {
+    font-size: 20px;
+}
+
+.explore-list {
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+.explore-list > li.row {
+    padding: 10px 10px;
+}
+
+#searchHeader > form {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    color: white;
+}
+
+#searchHeader button[type="submit"] {
+    border-radius: 0;
 }

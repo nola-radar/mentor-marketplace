@@ -1,0 +1,59 @@
+package org.ideavillage.mentormarketplace.web.controllers;
+
+import java.util.List;
+import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
+import org.ideavillage.mentormarketplace.persistence.domain.Industry;
+import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
+import org.ideavillage.mentormarketplace.persistence.repositories.ExpertiseRepository;
+import org.ideavillage.mentormarketplace.persistence.repositories.IndustryRepository;
+import org.ideavillage.mentormarketplace.persistence.repositories.MentorRepository;
+import org.ideavillage.mentormarketplace.web.forms.ExploreForm;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ *
+ */
+@Controller
+@RequestMapping(value = "/explore")
+public class ExploreController {
+
+    @Autowired
+    private IndustryRepository industryRepository;
+
+    @Autowired
+    private ExpertiseRepository expertiseRepository;
+
+    @Autowired
+    private MentorRepository mentorRepository;
+
+    @RequestMapping(value = "/mentors", method = {RequestMethod.GET, RequestMethod.POST})
+    public String explore(Model model, @ModelAttribute("exploreForm") ExploreForm exploreForm) {
+        Iterable<Industry> industryList = industryRepository.findAll();
+        model.addAttribute("industryList", industryList);
+
+        Iterable<Expertise> expertiseList = expertiseRepository.findAll();
+        model.addAttribute("expertiseList", expertiseList);
+
+        List<Mentor> mentors = null;
+
+        if (null != exploreForm.getIndustryList() && !exploreForm.getIndustryList().isEmpty()
+                && null != exploreForm.getExpertiseList() && !exploreForm.getExpertiseList().isEmpty()) {
+            mentors = mentorRepository.findByIndustryListInAndExpertiseListIn(exploreForm.getIndustryList(),
+                    exploreForm.getExpertiseList());
+        } else if (null != exploreForm.getIndustryList() && !exploreForm.getIndustryList().isEmpty()) {
+            mentors = mentorRepository.findByIndustryListIn(exploreForm.getIndustryList());
+        } else if (null != exploreForm.getExpertiseList() && !exploreForm.getExpertiseList().isEmpty()) {
+            mentors = mentorRepository.findByExpertiseListIn(exploreForm.getExpertiseList());
+        } else {
+            mentors = mentorRepository.findAll();
+        }
+
+        model.addAttribute("mentors", mentors);
+        return "explore/mentors";
+    }
+}

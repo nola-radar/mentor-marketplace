@@ -1,9 +1,11 @@
 package org.ideavillage.mentormarketplace.persistence.repositories;
 
 import java.util.List;
+import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
+import org.ideavillage.mentormarketplace.persistence.domain.Industry;
 import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
 import org.ideavillage.mentormarketplace.persistence.domain.Mmuser;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * A Spring repository for getting Mentors from the database. Check the Spring Data documentation for the list of
@@ -16,11 +18,15 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @see <a href="http://docs.spring.io/spring-data/data-commons/docs/current/reference/html/repositories.html">Spring
  * Data Repositories</a>
  */
-public interface MentorRepository extends PagingAndSortingRepository<Mentor, Long> {
+public interface MentorRepository extends JpaRepository<Mentor, Long> {
 
     Mentor findByLinkedInId(String linkedInId);
 
     Mentor findByMmuser(Mmuser mmuser);
 
-    List<Mentor> findByIndustryListIndustryAndExpertiseListExpertise(String industry, String expertise);
+    List<Mentor> findByIndustryListInAndExpertiseListIn(List<Industry> industries, List<Expertise> expertises);
+
+    List<Mentor> findByIndustryListIn(List<Industry> industries);
+
+    List<Mentor> findByExpertiseListIn(List<Expertise> expertises);
 }
