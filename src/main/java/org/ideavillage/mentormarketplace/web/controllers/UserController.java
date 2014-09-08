@@ -118,8 +118,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/profile/{id}/editFounder", method = RequestMethod.POST)
-    public String processFounderEdit(BindingResult result, @PathVariable("id") Long id,
-      @Valid @ModelAttribute("founder") Founder founder) {
+    public String processFounderEdit(@PathVariable("id") Long id,
+      @Valid @ModelAttribute("founder") Founder founder, BindingResult result) {
         if (result.hasErrors()) {
             return "user/editFounder";
         }
@@ -128,11 +128,12 @@ public class UserController {
     }
 
     @RequestMapping(value = "/profile/{id}/editMentor", method = RequestMethod.POST)
-    public String processMentorEdit(BindingResult result, @PathVariable("id") Long id,
-      @Valid @ModelAttribute("mentor") Mentor mentor) {
+    public String processMentorEdit(@PathVariable("id") Long id,
+      @Valid @ModelAttribute("mentor") Mentor mentor, BindingResult result) {
         if (result.hasErrors()) {
             return "user/editMentor";
         }
+      
         mentorRepository.save(mentor);
         return "redirect:/user/profile/" + id + "/";
     }
