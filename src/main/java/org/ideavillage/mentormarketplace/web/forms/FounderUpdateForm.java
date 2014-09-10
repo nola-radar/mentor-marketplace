@@ -124,7 +124,7 @@ public class FounderUpdateForm {
         return founder;
     }
 
-    public Founder editFounder(Founder founder) {
+    public Founder setFounder(Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
         founder.setIndustryList(industryList);

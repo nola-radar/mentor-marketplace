@@ -107,13 +107,17 @@ public class UserController {
             Founder founder = founderRepository.findByMmuser(user);
             founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
             founder.setExpertiseList(expertiseRepository.findByFounderExpertiseList(founder));
-            model.addAttribute("founder", founder);
+            FounderUpdateForm founderEditForm = new FounderUpdateForm();
+            founderEditForm.setFounder(founder);
+            model.addAttribute("founderUpdateForm", founderEditForm);
             return "user/editFounder";
         } else {
             Mentor mentor = mentorRepository.findByMmuser(user);
             mentor.setIndustryList(industryRepository.findByMentorIndustryList(mentor));
             mentor.setExpertiseList(expertiseRepository.findByMentorExpertiseList(mentor));
-            model.addAttribute("mentor", mentor);
+            MentorUpdateForm mentorEditForm = new MentorUpdateForm();
+            mentorEditForm.setMentor(mentor);
+            model.addAttribute("mentorUpdateForm", mentorEditForm);
             return "user/editMentor";
         }
     }
