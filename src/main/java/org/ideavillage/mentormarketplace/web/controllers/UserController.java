@@ -102,9 +102,8 @@ public class UserController {
         model.addAttribute("industryList", industryList);
         Iterable<Expertise> expertiseList = expertiseRepository.findAll();
         model.addAttribute("expertiseList", expertiseList);
-        String utype = user.getUserType();
-        // redirect to founder.jsp if user type is founder
-        if (utype.contains("founder")) {
+
+        if (user.getUserType().equals("founder")) {
             Founder founder = founderRepository.findByMmuser(user);
             founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
             founder.setExpertiseList(expertiseRepository.findByFounderExpertiseList(founder));
