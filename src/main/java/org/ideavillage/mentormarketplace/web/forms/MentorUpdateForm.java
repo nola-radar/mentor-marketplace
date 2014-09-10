@@ -39,7 +39,6 @@ public class MentorUpdateForm {
     private String lastName;
 
     private List<Industry> industryList;
-
     private List<Expertise> expertiseList;
 
     private String background;
@@ -63,7 +62,6 @@ public class MentorUpdateForm {
     private String linkedInCurrentCompany;
 
     @Size(max = 255)
-    @Column(name = "linkedincurrentjobtitle")
     private String linkedInCurrentJobTitle;
 
     @Size(max = 255)

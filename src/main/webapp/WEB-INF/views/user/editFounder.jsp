@@ -4,7 +4,7 @@
 <!-- Navigation Bar -->
 <%@include file="../shared/navigationBar.jsp" %>
 
-<form:form modelAttribute="founder" action="editFounder">
+<form:form modelAttribute="founderUpdateForm" action="editFounder">
 
     <div class="container" id="editMainContainer">
         <div id="editProfileMainContainer">

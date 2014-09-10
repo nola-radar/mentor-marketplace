@@ -11,6 +11,8 @@ import org.ideavillage.mentormarketplace.persistence.repositories.FounderReposit
 import org.ideavillage.mentormarketplace.persistence.repositories.IndustryRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MentorRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MmuserRepository;
+import org.ideavillage.mentormarketplace.web.forms.FounderUpdateForm;
+import org.ideavillage.mentormarketplace.web.forms.MentorUpdateForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionRepository;
@@ -119,22 +121,23 @@ public class UserController {
 
     @RequestMapping(value = "/profile/{id}/editFounder", method = RequestMethod.POST)
     public String processFounderEdit(@PathVariable("id") Long id,
-      @Valid @ModelAttribute("founder") Founder founder, BindingResult result) {
+            @Valid @ModelAttribute("founderUpdateForm") FounderUpdateForm founderUpdateForm, BindingResult result) {
         if (result.hasErrors()) {
             return "user/editFounder";
         }
-        founderRepository.save(founder);
+        Founder editedFounder = founderUpdateForm.getFounder();
+        founderRepository.save(editedFounder);
         return "redirect:/user/profile/" + id + "/";
     }
 
     @RequestMapping(value = "/profile/{id}/editMentor", method = RequestMethod.POST)
     public String processMentorEdit(@PathVariable("id") Long id,
-      @Valid @ModelAttribute("mentor") Mentor mentor, BindingResult result) {
+            @Valid @ModelAttribute("mentorUpdateForm") MentorUpdateForm mentorUpdateForm, BindingResult result) {
         if (result.hasErrors()) {
             return "user/editMentor";
         }
-      
-        mentorRepository.save(mentor);
+        Mentor editedMentor = mentorUpdateForm.getMentor();
+        mentorRepository.save(editedMentor);
         return "redirect:/user/profile/" + id + "/";
     }
 }
