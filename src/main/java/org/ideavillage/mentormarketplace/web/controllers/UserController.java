@@ -90,57 +90,57 @@ public class UserController {
         }
     }
 
-    // page that user is redirected to if they want to edit their profile (founder)
-    @RequestMapping(value = "/profile/{id}/edit", method = RequestMethod.GET)
-    public String viewEditFounder(WebRequest request, Model model, @PathVariable("id") Long id) {
-        Mmuser user = mmUserRepository.findOne(id);
-        if (null == user) {
-            // TODO: Need an error page
-            return "redirect:/";
-        }
-        Iterable<Industry> industryList = industryRepository.findAll();
-        model.addAttribute("industryList", industryList);
-        Iterable<Expertise> expertiseList = expertiseRepository.findAll();
-        model.addAttribute("expertiseList", expertiseList);
-
-        if (user.getUserType().equals("founder")) {
-            Founder founder = founderRepository.findByMmuser(user);
-            founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
-            founder.setExpertiseList(expertiseRepository.findByFounderExpertiseList(founder));
-            FounderUpdateForm founderEditForm = new FounderUpdateForm();
-            founderEditForm.setFounder(founder);
-            model.addAttribute("founderUpdateForm", founderEditForm);
-            return "user/editFounder";
-        } else {
-            Mentor mentor = mentorRepository.findByMmuser(user);
-            mentor.setIndustryList(industryRepository.findByMentorIndustryList(mentor));
-            mentor.setExpertiseList(expertiseRepository.findByMentorExpertiseList(mentor));
-            MentorUpdateForm mentorEditForm = new MentorUpdateForm();
-            mentorEditForm.setMentor(mentor);
-            model.addAttribute("mentorUpdateForm", mentorEditForm);
-            return "user/editMentor";
-        }
-    }
-
-    @RequestMapping(value = "/profile/{id}/editFounder", method = RequestMethod.POST)
-    public String processFounderEdit(@PathVariable("id") Long id,
-            @Valid @ModelAttribute("founderUpdateForm") FounderUpdateForm founderUpdateForm, BindingResult result) {
-        if (result.hasErrors()) {
-            return "user/editFounder";
-        }
-        Founder editedFounder = founderUpdateForm.getFounder();
-        founderRepository.save(editedFounder);
-        return "redirect:/user/profile/" + id + "/";
-    }
-
-    @RequestMapping(value = "/profile/{id}/editMentor", method = RequestMethod.POST)
-    public String processMentorEdit(@PathVariable("id") Long id,
-            @Valid @ModelAttribute("mentorUpdateForm") MentorUpdateForm mentorUpdateForm, BindingResult result) {
-        if (result.hasErrors()) {
-            return "user/editMentor";
-        }
-        Mentor editedMentor = mentorUpdateForm.getMentor();
-        mentorRepository.save(editedMentor);
-        return "redirect:/user/profile/" + id + "/";
-    }
+//    // page that user is redirected to if they want to edit their profile (founder)
+//    @RequestMapping(value = "/profile/{id}/edit", method = RequestMethod.GET)
+//    public String viewEditFounder(WebRequest request, Model model, @PathVariable("id") Long id) {
+//        Mmuser user = mmUserRepository.findOne(id);
+//        if (null == user) {
+//            // TODO: Need an error page
+//            return "redirect:/";
+//        }
+//        Iterable<Industry> industryList = industryRepository.findAll();
+//        model.addAttribute("industryList", industryList);
+//        Iterable<Expertise> expertiseList = expertiseRepository.findAll();
+//        model.addAttribute("expertiseList", expertiseList);
+//
+//        if (user.getUserType().equals("founder")) {
+//            Founder founder = founderRepository.findByMmuser(user);
+//            founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
+//            founder.setExpertiseList(expertiseRepository.findByFounderExpertiseList(founder));
+//            FounderUpdateForm founderEditForm = new FounderUpdateForm();
+//            founderEditForm.setFounder(founder);
+//            model.addAttribute("founderUpdateForm", founderEditForm);
+//            return "user/editFounder";
+//        } else {
+//            Mentor mentor = mentorRepository.findByMmuser(user);
+//            mentor.setIndustryList(industryRepository.findByMentorIndustryList(mentor));
+//            mentor.setExpertiseList(expertiseRepository.findByMentorExpertiseList(mentor));
+//            MentorUpdateForm mentorEditForm = new MentorUpdateForm();
+//            mentorEditForm.setMentor(mentor);
+//            model.addAttribute("mentorUpdateForm", mentorEditForm);
+//            return "user/editMentor";
+//        }
+//    }
+//
+//    @RequestMapping(value = "/profile/{id}/editFounder", method = RequestMethod.POST)
+//    public String processFounderEdit(@PathVariable("id") Long id,
+//            @Valid @ModelAttribute("founderUpdateForm") FounderUpdateForm founderUpdateForm, BindingResult result) {
+//        if (result.hasErrors()) {
+//            return "user/editFounder";
+//        }
+//        Founder editedFounder = founderUpdateForm.getFounder();
+//        founderRepository.save(editedFounder);
+//        return "redirect:/user/profile/" + id + "/";
+//    }
+//
+//    @RequestMapping(value = "/profile/{id}/editMentor", method = RequestMethod.POST)
+//    public String processMentorEdit(@PathVariable("id") Long id,
+//            @Valid @ModelAttribute("mentorUpdateForm") MentorUpdateForm mentorUpdateForm, BindingResult result) {
+//        if (result.hasErrors()) {
+//            return "user/editMentor";
+//        }
+//        Mentor editedMentor = mentorUpdateForm.getMentor();
+//        mentorRepository.save(editedMentor);
+//        return "redirect:/user/profile/" + id + "/";
+//    }
 }
