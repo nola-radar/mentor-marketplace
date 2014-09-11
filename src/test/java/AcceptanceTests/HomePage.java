@@ -2,7 +2,6 @@ package AcceptanceTests;
 
 import java.io.IOException;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,15 +22,15 @@ public class HomePage {
     String baseUrl = "http://localhost:8080/mentormarketplace/";
 
     /**
-     * Starts a new instance of Chromedriver and directs it to Mentor Market Place 
-     * Note: The current driver file is set to the linux version.
-     * Change the path to "src/test/java/Webdrivers/chromedriver.exe" to use the Windows driver.
+     * Starts a new instance of Chromedriver and directs it to Mentor Market Place Note: The current driver file is set
+     * to the windows version. Change the path below "src/test/java/Webdrivers/chromedriver.exe" to use a different
+     * driver.
      */
     @BeforeClass
     public void setUp() {
         System.out.println("Setting up webdriver");
         //Set the webdriver to use and the path to the webdriver
-        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
         //Give our newly setup driver the base url for mentor marketplace.  This serves as a
         //launching point for all tests.
@@ -47,7 +46,7 @@ public class HomePage {
     public void closeBrowser() throws IOException {
         driver.quit();
     }
-    
+
     @Test
     public void testlogInAcceptanceTestUser() throws Exception {
         //Set up Linkedin Credentials for Admin
@@ -66,12 +65,12 @@ public class HomePage {
         //verify we're viewing the testing profile
         assertTrue(driver.findElement(By.id("founderProfile")).isDisplayed());
     }
-    
+
     @Test
-    public void testlogOutUser() throws Exception{
+    public void testlogOutUser() throws Exception {
         System.out.println("Logging out the user");
         driver.findElement(By.id("navBarLogOutButton")).click();
-                //Set up a wait to use while navigating between pages
+        //Set up a wait to use while navigating between pages
         WebDriverWait wait = new WebDriverWait(driver, 10);
         //Wait for the page to load
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("indexRegistrationPage")));
