@@ -1,0 +1,559 @@
+/*******************************************************
+ *
+ * Mentor Marketplace CSS, using Bootstrap 3.2.0
+ *
+ *******************************************************/
+
+
+/*******************************************************
+ *  Helper Classes
+ *******************************************************/
+
+.padding-left-35 { padding-left: 35px; }
+.padding-right-35 { padding-right: 35px; }
+
+.padding-bottom-20 { padding-bottom: 20px; }
+.padding-left-20 { padding-left: 20px; }
+.padding-right-20 { padding-right: 20px; }
+.padding-top-20 { padding-top: 20px; }
+
+.padding-left-10 { padding-left: 10px; }
+.padding-right-10 { padding-right: 10px; }
+.padding-top-10 { padding-top: 10px; }
+
+.margin-top-20 { margin-top: 20px; }
+.margin-bottom-20 { margin-bottom: 20px; }
+
+.margin-top-10 { margin-top: 10px; }
+
+
+/*******************************************************
+ *  Bootstrap Overrides and Media Queries
+ *******************************************************/
+
+@media (max-width: 769px) {
+    .col-sm-12 { width: 100%; }
+}
+
+@media (max-width: 992px) {
+    .padding-left-10 { padding-left: 20px; }
+    .padding-right-10 { padding-right: 20px; }
+    .sm-margin-top-20 { margin-top: 20px;}
+}
+
+.col-sm-12 {
+    display: table;
+}
+
+
+/*******************************************************
+ *  Bootstrap Multiselect Overrides
+ *******************************************************/
+
+.dropdown-menu {
+    padding: 0;
+    cursor: pointer;
+}
+
+.dropdown-menu.open {
+    border: none;
+    border: 1px #bfc2c5 solid;
+}
+
+.dropdown-menu li.selected > a {
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #3b73b9;
+}
+
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus {
+    border-radius: 4px;
+    background-color: #b7cbe5;
+}
+
+.dropdown-submenu:hover > a,
+.typeahead-faceted > ul > li:last-child a:hover,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+    border-radius: 4px;
+    background-color: #b7cbe5;
+}
+
+.dropdown-menu li.selected > a:hover,
+.dropdown-menu li.selected > a:focus {
+    background: #3b73b9;
+    border-radius: 4px;
+}
+
+/*******************************************************
+ *  Shared Pages CSS
+ *******************************************************/
+
+body {
+    background: #e3e3e3;
+}
+
+#registerMainContainer {
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #f6f6f6;
+}
+
+
+/*******************************************************
+ *  Navigation Bar
+ *******************************************************/
+
+.navbar-default.navbar-bg-darkblue {
+    background: #203747;
+    border: none;
+}
+
+.navbar.navbar-bg-darkblue {
+    margin-bottom: 0px;
+}
+
+.navbar-default.navbar-bg-darkblue .navbar-brand {
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.navbar-bg-darkblue .navbar-right {
+    margin-top: 7px;
+}
+
+#navBarLogo {
+    height: 40px;
+    margin: 5px 40px 5px 40px;
+}
+
+/*******************************************************
+ *  Index Page Navigation Bar
+ *******************************************************/
+
+.navbar-default.navbar-bg-blue {
+    background: #2980b9;
+    border: none;
+}
+
+.navbar.navbar-bg-blue {
+    margin-bottom: 0px;
+}
+
+.navbar-bg-blue .navbar-right {
+    margin-top: 7px;
+}
+
+.navbar-default.navbar-bg-blue .navbar-brand {
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+
+/*******************************************************
+ *  Index Page
+ *******************************************************/
+
+#indexRegistrationPage {
+    background: url(../img/Rounded_Earth.png) no-repeat center bottom #2980b9;
+    background-size: 150% 140px;
+    padding-top: 20px;
+}
+
+.indexContainer {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.indexGraphic {
+    width: 900px;
+    height: 365px;
+    background: url(../img/Thought_Bubbles.png) no-repeat left top;
+    position: relative;
+}
+
+.indexGraphicTextLeft {
+    position: absolute;
+    top: 215px;
+    left: 80px;
+}
+
+.indexGrpahicTextRight {
+    position: absolute;
+    top: 215px;
+    right: 100px;
+}
+
+.indexRegistationButton {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.indexRegistrationInfo {
+    background: #e3e3e3;
+}
+
+.indexTopic {
+    background: url(../img/Blurb_Circle.png) no-repeat center 40px;
+    background-size: 120px 120px;
+    padding-top: 160px;
+    padding-bottom: 40px;
+}
+
+.indexMissionStatement {
+    background: #eeeeee;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/*******************************************************
+ *  Shared Create Profile CSS
+ *******************************************************/
+
+#createProfileMainContainer {
+    background-color: #eeeeee;
+}
+
+#createProfileContainer {
+    background-color: #ffffff;
+}
+
+#createProfileMenu {
+    background-color: #203747;
+    color: white;
+    height: 35px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#createProfileButton {
+    background: #27ae60;
+    border-radius: 0%;
+    width: 150px;
+}
+
+.section-200 {
+    height: 200px;
+    background-color: #f6f6f6;
+    color: black;
+}
+
+.section-200 + .section-200 {
+    margin-top: 20px;
+}
+
+.createProfileInputLabels {
+    height: 50px;
+}
+
+.createProfileInputFields {
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.createProfileTextAreaLabels {
+    height: 70px;
+}
+
+.createProfileTextAreaFields {
+    height: 70px;
+    margin-bottom: 5px;
+}
+
+
+/*******************************************************
+ *  Top Text Fields to Account for the Padding
+ *******************************************************/
+
+.createProfileTopInputLabels {
+    height: 60px;
+    padding-top: 10px;
+}
+
+.createProfileTopInputFields {
+    height: 60px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+.createProfileTopTextAreaLabels {
+    height: 80px;
+    padding-top: 10px;
+}
+
+.createProfileTopTextAreaFields {
+    height: 80px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+
+/*******************************************************
+ *  Create Mentor specific CSS
+ *******************************************************/
+
+#createProfileMentorSocialInfo {
+    background-color: #f6f6f6; 
+    height: 420px;
+}
+
+#createProfileMentorCompany {
+    background-color: #f6f6f6;
+    color: black;
+}
+
+#createProfileMentorIndustry {
+    background-color: #f6f6f6;
+    height: 300px;
+}
+
+
+/*******************************************************
+ *  Create Founder specific CSS
+ *******************************************************/
+
+#createProfileFounderInfo {
+    background-color: #f6f6f6;
+    height: 550px;
+}
+
+#createProfileFounderLogo {
+    height: 220px;
+    background-color: #f6f6f6;
+}
+
+#createProfileFounderStatus {
+    background-color: #f6f6f6;
+    height: 310px;
+}
+
+#createProfileFounderProgramPlan {
+    background-color: #f6f6f6;
+    height: 300px;
+}
+
+
+/*******************************************************
+ *  Profile specific CSS
+ *******************************************************/
+
+.profileMainContainer {
+    background-color: #eeeeee;
+    padding-bottom: 40px;
+}
+
+.profileLogoAndIndustryContent {
+    height: 170px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.profileLogoContent {
+    height: 100px;
+    position: relative;
+    z-index: 100;
+    padding-top: 25px;
+}
+
+.profileIndustryContent {
+    height: 100px;
+    display: inline;
+    float: right;
+}
+
+#profileNameImage {
+    border-radius: 50px;
+}
+
+.profileHeader {
+    background-color: #203747;
+    height: 50px;
+}
+
+.profileBodyContentContainer {
+    background-color: #eeeeee;
+    display: table;
+}
+
+#profileBodyContent {
+    background-color: #ffffff;
+    display: table;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#profileExperience {
+    background-color: #f6f6f6; 
+    height: 420px;
+}
+
+#profileName {
+    height: 200px;
+    background-color: #ffffff;
+}
+
+#profileSocialInfo {
+    height: 200px;
+    background-color: #f6f6f6;
+    margin-top: 20px;
+}
+
+#profileSkills {
+    background-color: #f6f6f6;
+    height: 300px;
+}
+
+#profileReports {
+    background-color: #f6f6f6;
+    height: 300px;
+    margin-bottom: 100px;
+}
+
+
+#profileEditButton {
+    background: #27ae60;
+    border-radius: 0%;
+    width: 125px;
+    margin-top: 7px;
+    float: right;
+}
+
+
+/*******************************************************
+ *  Profile Labels CSS
+ *******************************************************/
+
+.profileLabels {
+    height: 40px;
+}
+
+.profileTextAreaLabels {
+    height: 60px;
+}
+
+.profileTopLabels {
+    height: 40px;
+    padding-top: 10px;
+}
+
+.profileTopTextAreaLabels {
+    height: 60px;
+    padding-top: 10px;
+}
+
+.profileNameLabels {
+    height: 145px;
+    padding-top: 85px;
+    text-align: right;
+}
+
+.profileImageLabels {
+    height: 145px;
+    padding-top: 45px;
+    margin-bottom: 5px;
+}
+
+#profileBelowImageLabel {
+    padding-top: 5px;
+    height: 45px;
+}
+
+#profileDisplayText{
+    font-weight:normal;
+}
+
+
+/*******************************************************
+ *  Edit Profile specific CSS
+ *******************************************************/
+
+#editMainContainer {
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #f6f6f6;
+}
+
+#editProfileMainContainer {
+    background-color: #ffffff;
+    margin-top: 50px;
+}
+
+#editProfileName {
+    height: 200px;
+    background-color: #f6f6f6;
+}
+
+#editProfileReports {
+    background-color: #f6f6f6;
+    height: 300px;
+}
+
+#editUpdateProfileButton {
+    background: #27ae60;
+    border-radius: 0%;
+    width: 150px;
+}
+
+/*******************************************************
+ *  Explore specific CSS
+ *******************************************************/
+
+#exploreMainContainer {
+    background-color: #eee;
+    padding: 50px 50px;
+}
+
+.body-content {
+    background-color: white;
+    padding: 20px 20px;
+}
+
+#browseText {
+    font-size: 1.8em;
+    display: inline-block;
+}
+
+.exploreProfilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+}
+
+.exploreDislpayName {
+    font-size: 20px;
+}
+
+.explore-list {
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+.explore-list > li.row {
+    padding: 10px 10px;
+}
+
+#searchHeader > form {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    color: white;
+}
+
+#searchHeader button[type="submit"] {
+    border-radius: 0;
+}
+
+.btn.btn-success {
+    border-radius: 0;
+    background-color: #27ae60;
+}
+
+#navBarExploreButton {
+    margin-right: 15px;
+}
