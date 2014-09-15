@@ -4,7 +4,7 @@
 <!-- Navigation Bar -->
 <%@include file="../shared/navigationBar.jsp" %>
 
-<div class="container">
+<div class="container" id="founderProfile">
 
     <!-- Main Profile Container -->
     <div class="profileMainContainer">

@@ -16,10 +16,11 @@
         <security:form-login
             login-page="/auth/linkedin"
             authentication-failure-url="/?error=bad_credentials"/>
-        <!-- Configures the logout function -->
+        <!-- Configures the logout function. Redirects to home on success -->
         <security:logout
             logout-url="/logout"
             logout-success-url="/"
+            invalidate-session="true"
             delete-cookies="JSESSIONID"/>
         <!-- Anyone can access these urls -->
         <security:intercept-url pattern="/auth/**" access="permitAll"/>
