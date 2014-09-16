@@ -143,6 +143,14 @@
                                 </div>
                             </spring:bind>
 
+                            <spring:bind path="status">
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Status: </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="status" rows="2" />
+                                    <form:errors class="help-block" path="status" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
                         </div>
                     </div>
                 </div>
