@@ -87,15 +87,7 @@
                                     <form:input class="form-control input-sm" path="lastName" rows="2" />
                                     <form:errors class="help-block" path="lastName" cssClass="help-inline" />
                                 </div>
-                            </spring:bind>
-                                
-                            <spring:bind path="linkedInPictureUrl">
-                                <label class="col-sm-3 control-label createProfileInputLabels">LinkedIn Picture: </label>
-                                <div class="col-sm-9 createProfileInputFields">
-                                    <form:input class="form-control input-sm" path="linkedInPictureUrl" rows="2" />
-                                    <form:errors class="help-block" path="linkedInPictureUrl" cssClass="help-inline" />
-                                </div>
-                            </spring:bind>
+                            </spring:bind>                               
                         </div>
 
                         <div class="section-200" id="profileSocialInfo">
@@ -195,12 +187,6 @@
                                 </form:select>
                                 <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
                             </div>
-
-                            <spring:bind path="linkedInId">
-                                <form:hidden path="linkedInId" />
-                            </spring:bind>
-
-                            <form:hidden path="mmuser.id"></form:hidden>
 
                         </div>
                     </div>

@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.ideavillage.mentormarketplace.web.forms;
 
 import java.util.List;
-import javax.persistence.Column;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
 import org.ideavillage.mentormarketplace.persistence.domain.Industry;
@@ -21,16 +12,6 @@ import org.ideavillage.mentormarketplace.persistence.domain.Industry;
  */
 public class FounderUpdateForm {
 
-    @NotNull
-    @NotEmpty
-    @Size(min = 1, max = 255)
-    @Email
-    private String email;
-
-    @NotNull
-    @NotEmpty
-    @Size(min = 1, max = 255)
-    private String linkedInId;
 
     @Size(max = 255)
     private String firstName;
@@ -41,8 +22,6 @@ public class FounderUpdateForm {
     private List<Industry> industryList;
 
     private List<Expertise> expertiseList;
-
-    private String background;
 
     @Size(max = 255)
     private String website;
@@ -55,16 +34,6 @@ public class FounderUpdateForm {
 
     @Size(max = 255)
     private String otherSocialMedia;
-
-    @Size(max = 255)
-    private String linkedInPictureURL;
-
-    @Size(max = 255)
-    private String linkedInCurrentCompany;
-
-    @Size(max = 255)
-    @Column(name = "linkedincurrentjobtitle")
-    private String linkedInCurrentJobTitle;
 
     @Size(max = 255)
     private String logo;
@@ -90,10 +59,6 @@ public class FounderUpdateForm {
 
     private String weeklyReports;
 
-    @Size(max = 255)
-    private String userType;
-
-    private boolean isAdmin;
 
     public Founder getFounder() {
         Founder founder = new Founder();
@@ -101,10 +66,6 @@ public class FounderUpdateForm {
         founder.setLastName(this.lastName);
         founder.setIndustryList(this.industryList);
         founder.setExpertiseList(this.expertiseList);
-        founder.setBackground(this.background);
-        founder.setLinkedInPictureUrl(this.linkedInPictureURL);
-        founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
-        founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         founder.setWebsite(this.website);
         founder.setFacebook(this.facebook);
         founder.setTwitter(this.twitter);
@@ -120,19 +81,14 @@ public class FounderUpdateForm {
         founder.setNewOrleans(this.newOrleans);
         founder.setProgramPlan(this.programPlan);
         founder.setWeeklyReports(this.weeklyReports);
-        founder.setLinkedInId(this.linkedInId);
         return founder;
     }
 
-    public Founder setFounder(Founder founder) {
+    public Founder mergeFounderFormWithFounder(Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setIndustryList(industryList);
-        founder.setExpertiseList(expertiseList);
-        founder.setBackground(this.background);
-        founder.setLinkedInPictureUrl(this.linkedInPictureURL);
-        founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
-        founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
+        founder.setIndustryList(this.industryList);
+        founder.setExpertiseList(this.expertiseList);
         founder.setWebsite(this.website);
         founder.setFacebook(this.facebook);
         founder.setTwitter(this.twitter);
@@ -148,32 +104,29 @@ public class FounderUpdateForm {
         founder.setNewOrleans(this.newOrleans);
         founder.setProgramPlan(this.programPlan);
         founder.setWeeklyReports(this.weeklyReports);
-        founder.setLinkedInId(this.linkedInId);
         return founder;
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
-    }
-
-    public String getLinkedInId() {
-        return linkedInId;
-    }
-
-    public void setLinkedInId(String linkedInId) {
-        this.linkedInId = linkedInId;
+    
+    public void pullFounder(Founder founder){
+        setFirstName(founder.getFirstName());
+        setLastName(founder.getLastName());
+        setIndustryList(founder.getIndustryList());
+        setExpertiseList(founder.getExpertiseList());
+        setWebsite(founder.getWebsite());
+        setFacebook(founder.getFacebook());
+        setTwitter(founder.getTwitter());
+        setOtherSocialMedia(founder.getOtherSocialMedia());
+        setLogo(founder.getLogo());
+        setTagline(founder.getTagline());
+        setElevatorPitch(founder.getElevatorPitch());
+        setImmediateNeeds(founder.getImmediateNeeds());
+        setCompanyDetails(founder.getCompanyDetails());
+        setInspiration(founder.getInspiration());
+        setStatus(founder.getStatus());
+        setVision(founder.getVision());
+        setNewOrleans(founder.getNewOrleans());
+        setProgramPlan(founder.getProgramPlan());
+        setWeeklyReports(founder.getWeeklyReports());    
     }
 
     public String getFirstName() {
@@ -208,14 +161,6 @@ public class FounderUpdateForm {
         this.expertiseList = expertiseList;
     }
 
-    public String getBackground() {
-        return background;
-    }
-
-    public void setBackground(String background) {
-        this.background = background;
-    }
-
     public String getWebsite() {
         return website;
     }
@@ -246,30 +191,6 @@ public class FounderUpdateForm {
 
     public void setOtherSocialMedia(String otherSocialMedia) {
         this.otherSocialMedia = otherSocialMedia;
-    }
-
-    public String getLinkedInPictureURL() {
-        return linkedInPictureURL;
-    }
-
-    public void setLinkedInPictureURL(String linkedInPictureURL) {
-        this.linkedInPictureURL = linkedInPictureURL;
-    }
-
-    public String getLinkedInCurrentCompany() {
-        return linkedInCurrentCompany;
-    }
-
-    public void setLinkedInCurrentCompany(String linkedInCurrentCompany) {
-        this.linkedInCurrentCompany = linkedInCurrentCompany;
-    }
-
-    public String getLinkedInCurrentJobTitle() {
-        return linkedInCurrentJobTitle;
-    }
-
-    public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
-        this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
     }
 
     public String getLogo() {
@@ -358,13 +279,5 @@ public class FounderUpdateForm {
 
     public void setWeeklyReports(String weeklyReports) {
         this.weeklyReports = weeklyReports;
-    }
-
-    public void setIsAdmin(boolean isadmin) {
-        this.isAdmin = isadmin;
-    }
-
-    public boolean getIsAdmin() {
-        return isAdmin;
     }
 }
