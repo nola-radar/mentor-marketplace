@@ -31,7 +31,7 @@ public class ProfilePage {
     public void setUp() {
         System.out.println("Setting up webdriver");
         //Set the webdriver to use and the path to the webdriver
-        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
         //Give our newly setup driver the base url for mentor marketplace.  This serves as a
         //launching point for all tests.
