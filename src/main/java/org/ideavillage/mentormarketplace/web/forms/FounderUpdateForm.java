@@ -12,7 +12,6 @@ import org.ideavillage.mentormarketplace.persistence.domain.Industry;
  */
 public class FounderUpdateForm {
 
-
     @Size(max = 255)
     private String firstName;
 
@@ -59,7 +58,6 @@ public class FounderUpdateForm {
 
     private String weeklyReports;
 
-
     public Founder getFounder() {
         Founder founder = new Founder();
         founder.setFirstName(this.firstName);
@@ -84,7 +82,7 @@ public class FounderUpdateForm {
         return founder;
     }
 
-    public Founder mergeFounderFormWithFounder(Founder founder) {
+    public Founder populateForm(Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
         founder.setIndustryList(this.industryList);
@@ -106,8 +104,8 @@ public class FounderUpdateForm {
         founder.setWeeklyReports(this.weeklyReports);
         return founder;
     }
-    
-    public void pullFounder(Founder founder){
+
+    public void pullFounder(Founder founder) {
         setFirstName(founder.getFirstName());
         setLastName(founder.getLastName());
         setIndustryList(founder.getIndustryList());
@@ -126,7 +124,7 @@ public class FounderUpdateForm {
         setVision(founder.getVision());
         setNewOrleans(founder.getNewOrleans());
         setProgramPlan(founder.getProgramPlan());
-        setWeeklyReports(founder.getWeeklyReports());    
+        setWeeklyReports(founder.getWeeklyReports());
     }
 
     public String getFirstName() {

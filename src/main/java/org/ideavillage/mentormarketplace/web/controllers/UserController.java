@@ -91,7 +91,6 @@ public class UserController {
         }
     }
 
-
     // Edit page for founder and mentor
     @RequestMapping(value = "/profile/{id}/edit", method = RequestMethod.GET)
     public String viewEditProfile(WebRequest request, Model model, @PathVariable("id") Long id) {
@@ -127,10 +126,11 @@ public class UserController {
             return "user/editMentor";
         }
     }
+
     //Merges the edited user form with the user in the database and saves the result
     @RequestMapping(value = "/profile/{id}/editFounder", method = RequestMethod.POST)
     public String processFounderEdit(@PathVariable("id") Long id,
-      @Valid @ModelAttribute("founderUpdateForm") FounderUpdateForm founderUpdateForm, BindingResult result) {
+            @Valid @ModelAttribute("founderUpdateForm") FounderUpdateForm founderUpdateForm, BindingResult result) {
         if (result.hasErrors()) {
             return "user/editFounder";
         }
@@ -138,14 +138,14 @@ public class UserController {
         if (null == mergeFounder) {
             return "redirect:/";
         }
-        Founder editedFounder = founderUpdateForm.mergeFounderFormWithFounder(mergeFounder);
+        Founder editedFounder = founderUpdateForm.populateForm(mergeFounder);
         founderRepository.save(editedFounder);
         return "redirect:/user/profile/" + id + "/";
     }
 
     @RequestMapping(value = "/profile/{id}/editMentor", method = RequestMethod.POST)
     public String processMentorEdit(@PathVariable("id") Long id,
-      @Valid @ModelAttribute("mentorUpdateForm") MentorUpdateForm mentorUpdateForm, BindingResult result) {
+            @Valid @ModelAttribute("mentorUpdateForm") MentorUpdateForm mentorUpdateForm, BindingResult result) {
         if (result.hasErrors()) {
             return "user/editMentor";
         }
@@ -153,7 +153,7 @@ public class UserController {
         if (null == mentorProfile) {
             return "redirect:/";
         }
-        Mentor editedMentor = mentorUpdateForm.mergeMentorFormWithMentor(mentorProfile);
+        Mentor editedMentor = mentorUpdateForm.populateForm(mentorProfile);
         mentorRepository.save(editedMentor);
         return "redirect:/user/profile/" + id + "/";
     }

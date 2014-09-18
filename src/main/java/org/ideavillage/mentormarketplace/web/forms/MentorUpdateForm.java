@@ -19,7 +19,7 @@ public class MentorUpdateForm {
     private String lastName;
 
     private List<Industry> industryList;
-    
+
     private List<Expertise> expertiseList;
 
     private String background;
@@ -49,8 +49,8 @@ public class MentorUpdateForm {
         mentor.setOtherSocialMedia(this.otherSocialMedia);
         return mentor;
     }
-    
-    public void pullMentor(Mentor mentor){
+
+    public void pullMentor(Mentor mentor) {
         setFirstName(mentor.getFirstName());
         setLastName(mentor.getLastName());
         setIndustryList(mentor.getIndustryList());
@@ -61,8 +61,8 @@ public class MentorUpdateForm {
         setTwitter(mentor.getTwitter());
         setOtherSocialMedia(mentor.getOtherSocialMedia());
     }
-    
-    public Mentor mergeMentorFormWithMentor(Mentor mentor) {
+
+    public Mentor populateForm(Mentor mentor) {
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
         mentor.setIndustryList(this.industryList);
@@ -74,7 +74,6 @@ public class MentorUpdateForm {
         mentor.setOtherSocialMedia(this.otherSocialMedia);
         return mentor;
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -147,5 +146,4 @@ public class MentorUpdateForm {
     public void setOtherSocialMedia(String otherSocialMedia) {
         this.otherSocialMedia = otherSocialMedia;
     }
-
 }
