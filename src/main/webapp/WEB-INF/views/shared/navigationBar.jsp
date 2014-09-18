@@ -13,7 +13,10 @@
         </div>
 
         <div class="navbar-right">
-            <button type="button" class="btn btn-success" id="navBarLogOutButton">LOG OUT</button>
+            <c:url value="/logout" var="logoutUrl" /> 
+            <form:form action="${logoutUrl}" method="POST">
+                <button type="submit" class="btn btn-success" id="navBarLogOutButton">LOG OUT</button>
+            </form:form>
         </div>
 
         <div class="navbar-right">

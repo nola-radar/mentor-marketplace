@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="indexRegistationButton">
-                    <a href="<c:url value="/auth/linkedin" />" class="btn btn-success"> REGISTER </a>
+                    <a href="<c:url value="/auth/linkedin" />" class="btn btn-success" id="registrationButton"> REGISTER </a>
                 </div>
             </div>
         </div>
