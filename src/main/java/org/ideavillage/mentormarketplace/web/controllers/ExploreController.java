@@ -74,12 +74,12 @@ public class ExploreController {
 
         if (null != exploreForm.getIndustryList() && !exploreForm.getIndustryList().isEmpty()
                 && null != exploreForm.getExpertiseList() && !exploreForm.getExpertiseList().isEmpty()) {
-            founders = founderRepository.findByIndustryListInAndExpertiseListIn(exploreForm.getIndustryList(),
+            founders = founderRepository.findDistinctByIndustryListInAndExpertiseListIn(exploreForm.getIndustryList(),
                     exploreForm.getExpertiseList());
         } else if (null != exploreForm.getIndustryList() && !exploreForm.getIndustryList().isEmpty()) {
-            founders = founderRepository.findByIndustryListIn(exploreForm.getIndustryList());
+            founders = founderRepository.findDistinctByIndustryListIn(exploreForm.getIndustryList());
         } else if (null != exploreForm.getExpertiseList() && !exploreForm.getExpertiseList().isEmpty()) {
-            founders = founderRepository.findByExpertiseListIn(exploreForm.getExpertiseList());
+            founders = founderRepository.findDistinctByExpertiseListIn(exploreForm.getExpertiseList());
         } else {
             founders = founderRepository.findAll();
         }

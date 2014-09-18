@@ -35,18 +35,25 @@
 
         <div class="col-md-12 body-content">
             <ul class="explore-list">
-                <c:forEach var="founder" items="${founders}">
-                    <li class="row">
-                        <a href="<c:url value="/user/profile/${founder.mmuser.id}/"/>">
-                            <div class="col-md-3">
-                                <img class="exploreProfilePic" alt="${founder.firstName} ${founder.lastName}" src="<c:out value="${founder.linkedInPictureUrl}"/>" />
-                            </div>
-                            <div class="col-md-9">
-                                <span class="exploreDislpayName">${founder.firstName} ${founder.lastName}</span>
-                            </div>
-                        </a>
-                    </li>
-                </c:forEach>
+                <c:choose>
+                    <c:when test="${founders.size() == 0}">
+                        <h1>No records matched your selection</h1>
+                    </c:when>
+                    <c:otherwise>
+                        <c:forEach var="founder" items="${founders}">
+                            <li class="row">
+                                <a href="<c:url value="/user/profile/${founder.mmuser.id}/"/>">
+                                    <div class="col-md-3">
+                                        <img class="exploreProfilePic" alt="${founder.firstName} ${founder.lastName}" src="<c:out value="${founder.linkedInPictureUrl}"/>" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <span class="exploreDislpayName">${founder.firstName} ${founder.lastName}</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </c:forEach>
+                    </c:otherwise>
+                </c:choose>
             </ul>
         </div>
     </div>
