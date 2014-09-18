@@ -62,7 +62,7 @@
                             <spring:bind path="firstName">
                                 <label class="col-sm-3 control-label createProfileTopInputLabels">First Name: </label>
                                 <div class="col-sm-9 createProfileTopInputFields">
-                                    <form:input class="form-control input-sm" path="firstName" rows="2" />
+                                    <form:input class="form-control input-sm" id="firstNameEdit" value='<%=request.getParameter("firstName")%>' path="firstName" rows="2" />
                                     <form:errors class="help-block" path="firstName" cssClass="help-inline" />
                                 </div>
                             </spring:bind>

@@ -1,6 +1,10 @@
 package AcceptanceTests;
 
 import java.io.IOException;
+import junit.framework.Assert;
+import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,9 +20,10 @@ import org.testng.annotations.Test;
  *
  * @author jlbates
  */
-public class HomePage {
+public class ProfilePage {
 
     private static WebDriver driver;
+    WebElement element1;
     String baseUrl = "http://localhost:8080/mentormarketplace/";
 
     /**
@@ -30,7 +35,7 @@ public class HomePage {
     public void setUp() {
         System.out.println("Setting up webdriver");
         //Set the webdriver to use and the path to the webdriver
-        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver");
         driver = new ChromeDriver();
         //Give our newly setup driver the base url for mentor marketplace.  This serves as a
         //launching point for all tests.
@@ -47,8 +52,7 @@ public class HomePage {
         driver.quit();
     }
 
-    @Test
-    public void testlogInAcceptanceTestFounder() throws Exception {
+    public void logInAcceptanceTestFounder() throws Exception {
         //Set up Linkedin Credentials for Admin
         String acceptanceTestUserName = "acceptancetestuser@gmail.com";
         String acceptanceTestPassword = "qualityassurance";
@@ -62,11 +66,8 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         //Wait for the page to load
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
-        //verify we're viewing the testing profile
-        assertTrue(driver.findElement(By.id("founderProfile")).isDisplayed());
     }
 
-    @Test
     public void logInAcceptanceTestMentor() throws Exception {
         //Set up Linkedin Credentials for Admin
         String acceptanceTestUserName = "acceptancetestmentor@gmail.com";
@@ -83,15 +84,61 @@ public class HomePage {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
     }
 
-    @Test
-    public void testlogOutUser() throws Exception {
+    public void logOutUser() throws Exception {
         System.out.println("Logging out the user");
         driver.findElement(By.id("navBarLogOutButton")).click();
         //Set up a wait to use while navigating between pages
         WebDriverWait wait = new WebDriverWait(driver, 10);
         //Wait for the page to load
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("indexRegistrationPage")));
-        assertTrue(driver.findElement(By.id("indexRegistrationPage")).isDisplayed());
+    }
+
+    @Test
+    public void testEditProfileOnFounderFirstName() throws Exception {
+        logInAcceptanceTestFounder();
+        //Click Edit
+        driver.findElement(By.id("profileEditButton")).click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        //Wait for the page to load
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstNameEdit")));
+        //Verify the starting name of the user
+        assertTrue(driver.findElement(By.id("firstNameEdit")).getAttribute("value").contains("Bob"));
+        //Clear the name text, add a new name, save it, then verify the name change happened.
+        driver.findElement(By.id("firstNameEdit")).clear();
+        driver.findElement(By.id("firstNameEdit")).sendKeys("Jim");
+        driver.findElement(By.id("editUpdateProfileButton")).click();
+        assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Jim Slidell"));
+        //Change the name back to it's original value and make sure the change worked
+        driver.findElement(By.id("profileEditButton")).click();
+        driver.findElement(By.id("firstNameEdit")).clear();
+        driver.findElement(By.id("firstNameEdit")).sendKeys("Bob");
+        driver.findElement(By.id("editUpdateProfileButton")).click();
+        assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Bob Slidell"));
+        logOutUser();
+    }
+
+    @Test
+    public void testEditProfileOnMentorFirstName() throws Exception {
+        logInAcceptanceTestMentor();
+        //Click Edit
+        driver.findElement(By.id("profileEditButton")).click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        //Wait for the page to load
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstNameEdit")));
+        //Verify the starting name of the user
+        assertTrue(driver.findElement(By.id("firstNameEdit")).getAttribute("value").contains("Gary"));
+        //Clear the name text, add a new name, save it, then verify the name change happened.
+        driver.findElement(By.id("firstNameEdit")).clear();
+        driver.findElement(By.id("firstNameEdit")).sendKeys("Jim");
+        driver.findElement(By.id("editUpdateProfileButton")).click();
+        assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Jim Busey"));
+        //Change the name back to it's original value and make sure the change worked
+        driver.findElement(By.id("profileEditButton")).click();
+        driver.findElement(By.id("firstNameEdit")).clear();
+        driver.findElement(By.id("firstNameEdit")).sendKeys("Gary");
+        driver.findElement(By.id("editUpdateProfileButton")).click();
+        assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Gary Busey"));
+        logOutUser();
     }
 
 }
