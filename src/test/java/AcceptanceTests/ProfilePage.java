@@ -129,7 +129,7 @@ public class ProfilePage {
         //Set up a wait to use while navigating between pages
         WebDriverWait wait = new WebDriverWait(driver, 10);
         //Wait for the page to load
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mentorProfile")));
     }
 
     public void logOutUser() throws Exception {
