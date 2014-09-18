@@ -62,13 +62,13 @@ public class ProfilePage {
         driver.findElement(By.id("firstNameEdit")).clear();
         driver.findElement(By.id("firstNameEdit")).sendKeys("Jim");
         driver.findElement(By.id("editUpdateProfileButton")).click();
-        assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Jim Slidell"));
+        assertTrue(driver.findElement(By.id("profileFullName")).getText().contentEquals("Jim Slidell"));
         //Change the name back to it's original value and make sure the change worked
         driver.findElement(By.id("profileEditButton")).click();
         driver.findElement(By.id("firstNameEdit")).clear();
         driver.findElement(By.id("firstNameEdit")).sendKeys("Bob");
         driver.findElement(By.id("editUpdateProfileButton")).click();
-        assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Bob Slidell"));
+        assertTrue(driver.findElement(By.id("profileFullName")).getText().contentEquals("Bob Slidell"));
         logOutUser();
     }
 
@@ -86,13 +86,13 @@ public class ProfilePage {
         driver.findElement(By.id("firstNameEdit")).clear();
         driver.findElement(By.id("firstNameEdit")).sendKeys("Jim");
         driver.findElement(By.id("editUpdateProfileButton")).click();
-        assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Jim Busey"));
+        assertTrue(driver.findElement(By.id("profileFullName")).getText().contentEquals("Jim Busey"));
         //Change the name back to it's original value and make sure the change worked
         driver.findElement(By.id("profileEditButton")).click();
         driver.findElement(By.id("firstNameEdit")).clear();
         driver.findElement(By.id("firstNameEdit")).sendKeys("Gary");
         driver.findElement(By.id("editUpdateProfileButton")).click();
-        assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Gary Busey"));
+        assertTrue(driver.findElement(By.id("profileFullName")).getText().contentEquals("Gary Busey"));
         logOutUser();
     }
 
