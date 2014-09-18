@@ -48,12 +48,12 @@ public class ExploreController {
 
         if (null != exploreForm.getIndustryList() && !exploreForm.getIndustryList().isEmpty()
                 && null != exploreForm.getExpertiseList() && !exploreForm.getExpertiseList().isEmpty()) {
-            mentors = mentorRepository.findByIndustryListInAndExpertiseListIn(exploreForm.getIndustryList(),
+            mentors = mentorRepository.findDistinctByIndustryListInAndExpertiseListIn(exploreForm.getIndustryList(),
                     exploreForm.getExpertiseList());
         } else if (null != exploreForm.getIndustryList() && !exploreForm.getIndustryList().isEmpty()) {
-            mentors = mentorRepository.findByIndustryListIn(exploreForm.getIndustryList());
+            mentors = mentorRepository.findDistinctByIndustryListIn(exploreForm.getIndustryList());
         } else if (null != exploreForm.getExpertiseList() && !exploreForm.getExpertiseList().isEmpty()) {
-            mentors = mentorRepository.findByExpertiseListIn(exploreForm.getExpertiseList());
+            mentors = mentorRepository.findDistinctByExpertiseListIn(exploreForm.getExpertiseList());
         } else {
             mentors = mentorRepository.findAll();
         }
