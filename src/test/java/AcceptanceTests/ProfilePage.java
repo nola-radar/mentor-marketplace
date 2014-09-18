@@ -35,7 +35,7 @@ public class ProfilePage {
     public void setUp() {
         System.out.println("Setting up webdriver");
         //Set the webdriver to use and the path to the webdriver
-        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/java/Webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
         //Give our newly setup driver the base url for mentor marketplace.  This serves as a
         //launching point for all tests.
@@ -50,47 +50,6 @@ public class ProfilePage {
     @AfterClass
     public void closeBrowser() throws IOException {
         driver.quit();
-    }
-
-    public void logInAcceptanceTestFounder() throws Exception {
-        //Set up Linkedin Credentials for Admin
-        String acceptanceTestUserName = "acceptancetestuser@gmail.com";
-        String acceptanceTestPassword = "qualityassurance";
-        //Log into Mentor Marketplace as our acceptance test user
-        System.out.println("Logging in as test user");
-        driver.findElement(By.id("registrationButton")).click();
-        driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(acceptanceTestUserName);
-        driver.findElement(By.id("session_password-oauth2SAuthorizeForm")).sendKeys(acceptanceTestPassword);
-        driver.findElement(By.name("authorize")).click();
-        //Set up a wait to use while navigating between pages
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        //Wait for the page to load
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
-    }
-
-    public void logInAcceptanceTestMentor() throws Exception {
-        //Set up Linkedin Credentials for Admin
-        String acceptanceTestUserName = "acceptancetestmentor@gmail.com";
-        String acceptanceTestPassword = "qualityassurance";
-        //Log into Mentor Marketplace as our acceptance test user
-        System.out.println("Logging in as test user");
-        driver.findElement(By.id("registrationButton")).click();
-        driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(acceptanceTestUserName);
-        driver.findElement(By.id("session_password-oauth2SAuthorizeForm")).sendKeys(acceptanceTestPassword);
-        driver.findElement(By.name("authorize")).click();
-        //Set up a wait to use while navigating between pages
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        //Wait for the page to load
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
-    }
-
-    public void logOutUser() throws Exception {
-        System.out.println("Logging out the user");
-        driver.findElement(By.id("navBarLogOutButton")).click();
-        //Set up a wait to use while navigating between pages
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        //Wait for the page to load
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("indexRegistrationPage")));
     }
 
     @Test
@@ -139,6 +98,47 @@ public class ProfilePage {
         driver.findElement(By.id("editUpdateProfileButton")).click();
         assertTrue(driver.findElement(By.id("profileFullName")).getAttribute("value").contentEquals("Gary Busey"));
         logOutUser();
+    }
+
+    public void logInAcceptanceTestFounder() throws Exception {
+        //Set up Linkedin Credentials for Admin
+        String acceptanceTestUserName = "acceptancetestuser@gmail.com";
+        String acceptanceTestPassword = "qualityassurance";
+        //Log into Mentor Marketplace as our acceptance test user
+        System.out.println("Logging in as test user");
+        driver.findElement(By.id("registrationButton")).click();
+        driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(acceptanceTestUserName);
+        driver.findElement(By.id("session_password-oauth2SAuthorizeForm")).sendKeys(acceptanceTestPassword);
+        driver.findElement(By.name("authorize")).click();
+        //Set up a wait to use while navigating between pages
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        //Wait for the page to load
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
+    }
+
+    public void logInAcceptanceTestMentor() throws Exception {
+        //Set up Linkedin Credentials for Admin
+        String acceptanceTestUserName = "acceptancetestmentor@gmail.com";
+        String acceptanceTestPassword = "qualityassurance";
+        //Log into Mentor Marketplace as our acceptance test user
+        System.out.println("Logging in as test user");
+        driver.findElement(By.id("registrationButton")).click();
+        driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(acceptanceTestUserName);
+        driver.findElement(By.id("session_password-oauth2SAuthorizeForm")).sendKeys(acceptanceTestPassword);
+        driver.findElement(By.name("authorize")).click();
+        //Set up a wait to use while navigating between pages
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        //Wait for the page to load
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
+    }
+
+    public void logOutUser() throws Exception {
+        System.out.println("Logging out the user");
+        driver.findElement(By.id("navBarLogOutButton")).click();
+        //Set up a wait to use while navigating between pages
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        //Wait for the page to load
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("indexRegistrationPage")));
     }
 
 }

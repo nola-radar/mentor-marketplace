@@ -64,6 +64,7 @@ public class HomePage {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
         //verify we're viewing the testing profile
         assertTrue(driver.findElement(By.id("founderProfile")).isDisplayed());
+        logOutUser();
     }
 
     @Test
@@ -81,10 +82,12 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         //Wait for the page to load
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
+        logOutUser();
     }
 
     @Test
     public void testlogOutUser() throws Exception {
+        logInAcceptanceTestFounder();
         System.out.println("Logging out the user");
         driver.findElement(By.id("navBarLogOutButton")).click();
         //Set up a wait to use while navigating between pages
@@ -92,6 +95,32 @@ public class HomePage {
         //Wait for the page to load
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("indexRegistrationPage")));
         assertTrue(driver.findElement(By.id("indexRegistrationPage")).isDisplayed());
+    }
+
+    public void logOutUser() throws Exception {
+        System.out.println("Logging out the user");
+        driver.findElement(By.id("navBarLogOutButton")).click();
+        //Set up a wait to use while navigating between pages
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        //Wait for the page to load
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("indexRegistrationPage")));
+        assertTrue(driver.findElement(By.id("indexRegistrationPage")).isDisplayed());
+    }
+
+    public void logInAcceptanceTestFounder() throws Exception {
+        //Set up Linkedin Credentials for Admin
+        String acceptanceTestUserName = "acceptancetestuser@gmail.com";
+        String acceptanceTestPassword = "qualityassurance";
+        //Log into Mentor Marketplace as our acceptance test user
+        System.out.println("Logging in as test user");
+        driver.findElement(By.id("registrationButton")).click();
+        driver.findElement(By.id("session_key-oauth2SAuthorizeForm")).sendKeys(acceptanceTestUserName);
+        driver.findElement(By.id("session_password-oauth2SAuthorizeForm")).sendKeys(acceptanceTestPassword);
+        driver.findElement(By.name("authorize")).click();
+        //Set up a wait to use while navigating between pages
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        //Wait for the page to load
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("founderProfile")));
     }
 
 }
