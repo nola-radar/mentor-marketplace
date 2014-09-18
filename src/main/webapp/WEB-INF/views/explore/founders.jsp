@@ -49,6 +49,9 @@
                                     <div class="col-md-9">
                                         <span class="exploreDislpayName">${founder.firstName} ${founder.lastName}</span>
                                     </div>
+                                    <div class="col-md-9">
+                                        <span class="titleAndCompany">${founder.linkedInCurrentJobTitle} at ${founder.linkedInCurrentCompany}</span>
+                                    </div>
                                 </a>
                             </li>
                         </c:forEach>
