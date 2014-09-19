@@ -59,7 +59,7 @@ public class UserController {
             // TODO: Need an error page
             return "redirect:/";
         }
-        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
+        String email = connection.fetchUserProfile().getEmail();
         Mmuser user = mmUserRepository.findByEmail(email);
         return "redirect:/user/profile/" + user.getId() + "/";
     }
