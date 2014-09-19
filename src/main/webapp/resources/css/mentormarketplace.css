@@ -555,5 +555,9 @@ body {
 }
 
 #navBarExploreButton {
-    margin-right: 15px;
+    margin-right: 7px;
+}
+
+#navBarProfileButton{
+    margin-right:7px;
 }

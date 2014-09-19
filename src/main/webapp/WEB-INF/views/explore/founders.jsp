@@ -27,9 +27,10 @@
                     <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
                 </div>
 
-                <div class="pull-right">
+                <div class="navbar-right">
                     <button class="btn btn-success" type="submit">SEARCH</button>
                 </div>
+
             </form:form>
         </div>
 
