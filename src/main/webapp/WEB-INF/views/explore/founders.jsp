@@ -30,7 +30,6 @@
                 <div class="navbar-right">
                     <button class="btn btn-success" type="submit">SEARCH</button>
                 </div>
-
             </form:form>
         </div>
 

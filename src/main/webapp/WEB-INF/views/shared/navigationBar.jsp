@@ -18,13 +18,13 @@
                 <button type="submit" class="btn btn-success" id="navBarLogOutButton">LOG OUT</button>
             </form:form>
         </div>
-             
+
         <div class="navbar-right" id="navBarProfileButton">
-            <a href="<c:url value="/user/profile" />"
-               <button class="btn btn-success">MY PROFILE</button>
+            <a href="<c:url value="/user/profile"/>">
+                <button class="btn btn-success">MY PROFILE</button>
             </a>
         </div>
-               
+
         <div class="navbar-right">
             <sec:authorize access="hasRole('ROLE_MENTOR')">
                 <a href="<c:url value="/explore/founders"/>">
