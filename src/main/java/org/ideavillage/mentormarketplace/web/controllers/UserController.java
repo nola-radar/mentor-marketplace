@@ -55,6 +55,9 @@ public class UserController {
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
     public String viewProfile(WebRequest request, Model model) {
         Mmuser loggedInUser = getLoggedInUser();
+        if(getLoggedInUser() == null){
+            return "redirerct:/";
+        }
         return "redirect:/user/profile/" + loggedInUser.getId() + "/";
     }
 
