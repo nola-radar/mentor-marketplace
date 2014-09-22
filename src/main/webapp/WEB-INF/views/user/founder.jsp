@@ -49,8 +49,8 @@
                                 <label class="col-xs-4 cotrol-label profileTextAreaLabels"> Other Social Media: </label>
                                 <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getOtherSocialMedia()} </label>
 
-                                <label class="col-xs-4 control-label profileTextAreaLabels"> Company Details: </label>
-                                <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getCompanyDetails()} </label>
+                                <label class="col-xs-4 control-label profileTextAreaLabels"> Education: </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getEducation()} </label>
 
                                 <label class="col-xs-4 control-label profileTextAreaLabels"> New Orleans: </label>
                                 <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getNewOrleans()} </label>
