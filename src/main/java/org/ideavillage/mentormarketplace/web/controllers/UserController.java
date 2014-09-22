@@ -12,6 +12,8 @@ import org.ideavillage.mentormarketplace.persistence.repositories.IndustryReposi
 import org.ideavillage.mentormarketplace.persistence.repositories.MentorRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MmuserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.linkedin.api.LinkedIn;
@@ -53,22 +55,23 @@ public class UserController {
     private ConnectionRepository connectionRepository;
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    public String viewProfile(WebRequest request, Model model) {
-        Mmuser loggedInUser = getLoggedInUser();
-        if(getLoggedInUser() == null){
+    public String viewProfile(WebRequest request, Model model, Authentication authentication) {
+        Mmuser loggedInUser = mmUserRepository.findByEmail(authentication.getName());
+        if (loggedInUser == null) {
             return "redirerct:/";
         }
         return "redirect:/user/profile/" + loggedInUser.getId() + "/";
     }
 
     @RequestMapping(value = "/profile/{id}/", method = RequestMethod.GET)
-    public String viewProfileForId(WebRequest request, Model model, @PathVariable("id") Long id) {
+    public String viewProfileForId(WebRequest request, Model model, @PathVariable("id") Long id, Authentication authentication) {
         Mmuser user = mmUserRepository.findOne(id);
+        Mmuser loggedInUser = mmUserRepository.findByEmail(authentication.getName());
         if (null == user) {
             // TODO: Need an error page
             return "redirect:/";
         }
-        Boolean canEditProfile = user.getId().equals(getLoggedInUser().getId());
+        Boolean canEditProfile = user.equals(loggedInUser);
         model.addAttribute("canEditProfile", canEditProfile);
         String utype = user.getUserType();
         if (utype.contains("founder")) {
@@ -88,8 +91,8 @@ public class UserController {
 
     // page that user is redirected to if they want to edit their profile (founder)
     @RequestMapping(value = "/profile/{id}/edit", method = RequestMethod.GET)
-    public String viewEditFounder(WebRequest request, Model model, @PathVariable("id") Long id) {
-        Mmuser loggedInUser = getLoggedInUser();
+    public String viewEditFounder(WebRequest request, Model model, @PathVariable("id") Long id, Authentication authentication) {
+        Mmuser loggedInUser = mmUserRepository.findByEmail(authentication.getName());
         if (null == loggedInUser | loggedInUser.getId() != id) {
             // TODO: Need an error page
             return "redirect:/";
@@ -132,15 +135,5 @@ public class UserController {
         }
         mentorRepository.save(mentor);
         return "redirect:/user/profile/" + id + "/";
-    }
-
-    /**
-     * Helper method that gets the currently logged in user *
-     */
-    private Mmuser getLoggedInUser() {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        String loggedInUserEmail = connection.fetchUserProfile().getEmail();
-        Mmuser loggedInUser = mmUserRepository.findByEmail(loggedInUserEmail);
-        return loggedInUser;
     }
 }
