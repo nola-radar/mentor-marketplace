@@ -5,10 +5,6 @@
 <%@include file="../shared/navigationBar.jsp" %>
 
 <div class="container" id="founderProfile">
-    
-    <security:authorize access="isAuthenticated()">
-    authenticated as ${id}
-    </security:authorize>
 
     <!-- Main Profile Container -->
     <div class="profileMainContainer">
