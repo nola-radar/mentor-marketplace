@@ -54,14 +54,8 @@ public class UserController {
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
     public String viewProfile(WebRequest request, Model model) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
-            // TODO: Need an error page
-            return "redirect:/";
-        }
-        String email = connection.getApi().profileOperations().getUserProfileFull().getEmailAddress();
-        Mmuser user = mmUserRepository.findByEmail(email);
-        return "redirect:/user/profile/" + user.getId() + "/";
+        Mmuser loggedInUser = getLoggedInUser();
+        return "redirect:/user/profile/" + loggedInUser.getId() + "/";
     }
 
     @RequestMapping(value = "/profile/{id}/", method = RequestMethod.GET)
@@ -71,6 +65,8 @@ public class UserController {
             // TODO: Need an error page
             return "redirect:/";
         }
+        Boolean canEditProfile = user.getId().equals(getLoggedInUser().getId());
+        model.addAttribute("canEditProfile", canEditProfile);
         String utype = user.getUserType();
         if (utype.contains("founder")) {
             Founder founder = founderRepository.findByMmuser(user);
@@ -90,9 +86,7 @@ public class UserController {
     // page that user is redirected to if they want to edit their profile (founder)
     @RequestMapping(value = "/profile/{id}/edit", method = RequestMethod.GET)
     public String viewEditFounder(WebRequest request, Model model, @PathVariable("id") Long id) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        String loggedInUserEmail = connection.fetchUserProfile().getEmail();
-        Mmuser loggedInUser = mmUserRepository.findByEmail(loggedInUserEmail);
+        Mmuser loggedInUser = getLoggedInUser();
         if (null == loggedInUser | loggedInUser.getId() != id) {
             // TODO: Need an error page
             return "redirect:/";
@@ -135,5 +129,15 @@ public class UserController {
         }
         mentorRepository.save(mentor);
         return "redirect:/user/profile/" + id + "/";
+    }
+
+    /**
+     * Helper method that gets the currently logged in user *
+     */
+    private Mmuser getLoggedInUser() {
+        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
+        String loggedInUserEmail = connection.fetchUserProfile().getEmail();
+        Mmuser loggedInUser = mmUserRepository.findByEmail(loggedInUserEmail);
+        return loggedInUser;
     }
 }
