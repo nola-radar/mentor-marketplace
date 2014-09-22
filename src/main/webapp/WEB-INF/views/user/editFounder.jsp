@@ -54,7 +54,7 @@
                             </spring:bind>
 
                             <spring:bind path="education">
-                                <label class="col-sm-3 control-label createProfileTextAreaLabels">Company Description: </label>
+                                <label class="col-sm-3 control-label createProfileTextAreaLabels">Education: </label>
                                 <div class="col-sm-9 createProfileTextAreaFields">
                                     <form:textarea class="form-control input-sm" path="education" rows="2" />
                                     <form:errors class="help-block" path="education" cssClass="help-inline" />
