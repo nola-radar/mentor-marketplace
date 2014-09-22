@@ -72,7 +72,6 @@ public class UserController {
             return "redirect:/";
         }
         String utype = user.getUserType();
-        // redirect to founder.jsp if user type is founderz
         if (utype.contains("founder")) {
             Founder founder = founderRepository.findByMmuser(user);
             founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
