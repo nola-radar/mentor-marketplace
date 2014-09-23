@@ -44,8 +44,6 @@ public class FounderUpdateForm {
 
     private String immediateNeeds;
 
-    private String companyDetails;
-
     private String inspiration;
 
     private String status;
@@ -57,6 +55,10 @@ public class FounderUpdateForm {
     private String programPlan;
 
     private String weeklyReports;
+
+    private String experience;
+
+    private String education;
 
     public Founder getFounder() {
         Founder founder = new Founder();
@@ -72,7 +74,8 @@ public class FounderUpdateForm {
         founder.setTagline(this.tagline);
         founder.setElevatorPitch(this.elevatorPitch);
         founder.setImmediateNeeds(this.immediateNeeds);
-        founder.setCompanyDetails(this.companyDetails);
+        founder.setEducation(this.education);
+        founder.setExperience(this.experience);
         founder.setInspiration(this.inspiration);
         founder.setStatus(this.status);
         founder.setVision(this.vision);
@@ -95,7 +98,8 @@ public class FounderUpdateForm {
         founder.setTagline(this.tagline);
         founder.setElevatorPitch(this.elevatorPitch);
         founder.setImmediateNeeds(this.immediateNeeds);
-        founder.setCompanyDetails(this.companyDetails);
+        founder.setEducation(this.education);
+        founder.setExperience(this.experience);
         founder.setInspiration(this.inspiration);
         founder.setStatus(this.status);
         founder.setVision(this.vision);
@@ -118,7 +122,8 @@ public class FounderUpdateForm {
         setTagline(founder.getTagline());
         setElevatorPitch(founder.getElevatorPitch());
         setImmediateNeeds(founder.getImmediateNeeds());
-        setCompanyDetails(founder.getCompanyDetails());
+        setEducation(founder.getEducation());
+        setExperience(founder.getExperience());
         setInspiration(founder.getInspiration());
         setStatus(founder.getStatus());
         setVision(founder.getVision());
@@ -223,14 +228,6 @@ public class FounderUpdateForm {
         this.immediateNeeds = immediateNeeds;
     }
 
-    public String getCompanyDetails() {
-        return companyDetails;
-    }
-
-    public void setCompanyDetails(String companyDetails) {
-        this.companyDetails = companyDetails;
-    }
-
     public String getInspiration() {
         return inspiration;
     }
@@ -277,5 +274,21 @@ public class FounderUpdateForm {
 
     public void setWeeklyReports(String weeklyReports) {
         this.weeklyReports = weeklyReports;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
     }
 }
