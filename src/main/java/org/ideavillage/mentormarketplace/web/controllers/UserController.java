@@ -52,7 +52,8 @@ public class UserController {
     public String viewProfile(WebRequest request, Model model, Authentication authentication) {
         Mmuser loggedInUser = mmUserRepository.findByEmail(authentication.getName());
         if (loggedInUser == null) {
-            return "redirerct:/";
+            // TODO: Need an error page
+            return "redirect:/";
         }
         return "redirect:/user/profile/" + loggedInUser.getId() + "/";
     }
