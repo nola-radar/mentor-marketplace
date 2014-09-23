@@ -4,7 +4,7 @@
 <!-- Navigation Bar -->
 <%@include file="../shared/navigationBar.jsp" %>
 
-<form:form modelAttribute="mentor" action="editMentor">
+<form:form modelAttribute="mentorUpdateForm" action="editMentor">
 
     <div class="container" id="editMainContainer">
         <div id="editProfileMainContainer">
@@ -62,7 +62,7 @@
                             <spring:bind path="firstName">
                                 <label class="col-sm-3 control-label createProfileTopInputLabels">First Name: </label>
                                 <div class="col-sm-9 createProfileTopInputFields">
-                                    <form:input class="form-control input-sm" path="firstName" rows="2" />
+                                    <form:input class="form-control input-sm" id="firstNameEdit" path="firstName" rows="2" />
                                     <form:errors class="help-block" path="firstName" cssClass="help-inline" />
                                 </div>
                             </spring:bind>
@@ -74,18 +74,10 @@
                                     <form:errors class="help-block" path="lastName" cssClass="help-inline" />
                                 </div>
                             </spring:bind>
-
-                            <spring:bind path="linkedInPictureUrl">
-                                <label class="col-sm-3 control-label createProfileInputLabels">LinkedIn Picture: </label>
-                                <div class="col-sm-9 createProfileInputFields">
-                                    <form:input class="form-control input-sm" path="linkedInPictureUrl" rows="2" />
-                                    <form:errors class="help-block" path="linkedInPictureUrl" cssClass="help-inline" />
-                                </div>
-                            </spring:bind>
                         </div>
 
                         <div class="section-200">
-                            <spring:bind path="linkedInCurrentCompany">
+                            <spring:bind path="linkedInCurrentCompany">	 
                                 <label class="col-sm-3 control-label createProfileTopInputLabels">Current Company: </label>
                                 <div class="col-sm-9 createProfileTopInputFields">
                                     <form:input class="form-control input-sm" path="linkedInCurrentCompany" rows="2" />
@@ -93,7 +85,7 @@
                                 </div>
                             </spring:bind>
 
-                            <spring:bind path="linkedInCurrentJobTitle">
+                            <spring:bind path="linkedInCurrentJobTitle">	 
                                 <label class="col-sm-3 control-label createProfileInputLabels">Current Job Title: </label>
                                 <div class="col-sm-9 createProfileInputFields">
                                     <form:input class="form-control input-sm" path="linkedInCurrentJobTitle" rows="2" />
@@ -133,15 +125,7 @@
                                 </form:select>
                                 <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
                             </div>
-
-                            <spring:bind path="linkedInId">
-                                <form:hidden path="linkedInId" />
-                            </spring:bind>
-
-                            <form:hidden path="mmuser.id"></form:hidden>
-
                         </div>
-
                     </div>
                 </div>
             </div>

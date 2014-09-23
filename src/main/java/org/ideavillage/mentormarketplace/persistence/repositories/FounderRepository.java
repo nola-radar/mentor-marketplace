@@ -24,9 +24,11 @@ public interface FounderRepository extends JpaRepository<Founder, Long> {
 
     Founder findByMmuser(Mmuser mmuser);
 
-    List<Founder> findByIndustryListInAndExpertiseListIn(List<Industry> industries, List<Expertise> expertises);
+    Founder findByMmuserId(Long Id);
 
-    List<Founder> findByIndustryListIn(List<Industry> industries);
+    List<Founder> findDistinctByIndustryListInAndExpertiseListIn(List<Industry> industries, List<Expertise> expertises);
 
-    List<Founder> findByExpertiseListIn(List<Expertise> expertises);
+    List<Founder> findDistinctByIndustryListIn(List<Industry> industries);
+
+    List<Founder> findDistinctByExpertiseListIn(List<Expertise> expertises);
 }
