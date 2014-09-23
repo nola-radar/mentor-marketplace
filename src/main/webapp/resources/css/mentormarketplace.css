@@ -554,6 +554,6 @@ body {
     background-color: #27ae60;
 }
 
-#navBarExploreButton {
-    margin-right: 15px;
+.navbar-right {
+    margin-right:7px;
 }
