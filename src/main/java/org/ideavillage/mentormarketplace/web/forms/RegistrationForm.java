@@ -1,7 +1,6 @@
 package org.ideavillage.mentormarketplace.web.forms;
 
 import java.util.List;
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
@@ -59,7 +58,6 @@ public class RegistrationForm {
     private String linkedInCurrentCompany;
 
     @Size(max = 255)
-    @Column(name = "linkedincurrentjobtitle")
     private String linkedInCurrentJobTitle;
 
     @Size(max = 255)
