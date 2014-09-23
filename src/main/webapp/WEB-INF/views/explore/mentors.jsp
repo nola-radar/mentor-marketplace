@@ -35,21 +35,28 @@
 
         <div class="col-md-12 body-content">
             <ul class="explore-list">
-                <c:forEach var="mentor" items="${mentors}">
-                    <li class="row">
-                        <a href="<c:url value="/user/profile/${mentor.mmuser.id}/"/>">
-                            <div class="col-md-3">
-                                <img class="exploreProfilePic" alt="${mentor.firstName} ${mentor.lastName}" src="<c:out value="${mentor.linkedInPictureUrl}"/>" />
-                            </div>
-                            <div class="col-md-9">
-                                <span class="exploreDislpayName">${mentor.firstName} ${mentor.lastName}</span>
-                            </div>
-                            <div class="col-md-9">
-                                <span class="titleAndCompany">${mentor.linkedInCurrentJobTitle} at ${mentor.linkedInCurrentCompany}</span>
-                            </div>
-                        </a>
-                    </li>
-                </c:forEach>
+                <c:choose>
+                    <c:when test="${mentors.size() == 0}">
+                        <h1>No records matched your selection</h1>
+                    </c:when>
+                    <c:otherwise>
+                        <c:forEach var="mentor" items="${mentors}">
+                            <li class="row">
+                                <a href="<c:url value="/user/profile/${mentor.mmuser.id}/"/>">
+                                    <div class="col-md-3">
+                                        <img class="exploreProfilePic" alt="${mentor.firstName} ${mentor.lastName}" src="<c:out value="${mentor.linkedInPictureUrl}"/>" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <span class="exploreDislpayName">${mentor.firstName} ${mentor.lastName}</span>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <span class="titleAndCompany">${mentor.linkedInCurrentJobTitle} at ${mentor.linkedInCurrentCompany}</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </c:forEach>
+                    </c:otherwise>
+                </c:choose>
             </ul>
         </div>
     </div>
