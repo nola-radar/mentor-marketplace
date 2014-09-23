@@ -1,5 +1,6 @@
 package org.ideavillage.mentormarketplace.web.controllers;
 
+import java.util.List;
 import javax.validation.Valid;
 import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
@@ -11,6 +12,8 @@ import org.ideavillage.mentormarketplace.persistence.repositories.FounderReposit
 import org.ideavillage.mentormarketplace.persistence.repositories.IndustryRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MentorRepository;
 import org.ideavillage.mentormarketplace.persistence.repositories.MmuserRepository;
+import org.ideavillage.mentormarketplace.web.forms.FounderUpdateForm;
+import org.ideavillage.mentormarketplace.web.forms.MentorUpdateForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionRepository;
@@ -88,9 +91,9 @@ public class UserController {
         }
     }
 
-    // page that user is redirected to if they want to edit their profile (founder)
+    // Edit page for founder and mentor
     @RequestMapping(value = "/profile/{id}/edit", method = RequestMethod.GET)
-    public String viewEditFounder(WebRequest request, Model model, @PathVariable("id") Long id) {
+    public String viewEditProfile(WebRequest request, Model model, @PathVariable("id") Long id) {
         Mmuser user = mmUserRepository.findOne(id);
         if (null == user) {
             // TODO: Need an error page
@@ -101,39 +104,58 @@ public class UserController {
         Iterable<Expertise> expertiseList = expertiseRepository.findAll();
         model.addAttribute("expertiseList", expertiseList);
         String utype = user.getUserType();
-        // redirect to founder.jsp if user type is founder
         if (utype.contains("founder")) {
             Founder founder = founderRepository.findByMmuser(user);
-            founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
-            founder.setExpertiseList(expertiseRepository.findByFounderExpertiseList(founder));
-            model.addAttribute("founder", founder);
+            List<Industry> founderIndustryList = industryRepository.findByFounderIndustryList(founder);
+            List<Expertise> founderExpertiseList = expertiseRepository.findByFounderExpertiseList(founder);
+            founder.setIndustryList(founderIndustryList);
+            founder.setExpertiseList(founderExpertiseList);
+            FounderUpdateForm founderEditForm = new FounderUpdateForm();
+            founderEditForm.pullFounder(founder);
+            model.addAttribute("founderUpdateForm", founderEditForm);
             return "user/editFounder";
         } else {
             Mentor mentor = mentorRepository.findByMmuser(user);
-            mentor.setIndustryList(industryRepository.findByMentorIndustryList(mentor));
-            mentor.setExpertiseList(expertiseRepository.findByMentorExpertiseList(mentor));
-            model.addAttribute("mentor", mentor);
+            List<Industry> mentorIndustryList = industryRepository.findByMentorIndustryList(mentor);
+            List<Expertise> mentorExpertiseList = expertiseRepository.findByMentorExpertiseList(mentor);
+            mentor.setIndustryList(mentorIndustryList);
+            mentor.setExpertiseList(mentorExpertiseList);
+            MentorUpdateForm mentorEditForm = new MentorUpdateForm();
+            mentorEditForm.pullMentor(mentor);
+            model.addAttribute("mentorUpdateForm", mentorEditForm);
             return "user/editMentor";
         }
     }
 
+    //Merges the edited user form with the user in the database and saves the result
     @RequestMapping(value = "/profile/{id}/editFounder", method = RequestMethod.POST)
-    public String processFounderEdit(BindingResult result, @PathVariable("id") Long id,
-      @Valid @ModelAttribute("founder") Founder founder) {
+    public String processFounderEdit(@PathVariable("id") Long id,
+            @Valid @ModelAttribute("founderUpdateForm") FounderUpdateForm founderUpdateForm, BindingResult result) {
         if (result.hasErrors()) {
             return "user/editFounder";
         }
-        founderRepository.save(founder);
+        Founder mergeFounder = founderRepository.findByMmuserId(id);
+        if (null == mergeFounder) {
+            return "redirect:/";
+        }
+        Founder editedFounder = founderUpdateForm.populateForm(mergeFounder);
+        founderRepository.save(editedFounder);
         return "redirect:/user/profile/" + id + "/";
     }
 
     @RequestMapping(value = "/profile/{id}/editMentor", method = RequestMethod.POST)
-    public String processMentorEdit(BindingResult result, @PathVariable("id") Long id,
-      @Valid @ModelAttribute("mentor") Mentor mentor) {
+    public String processMentorEdit(@PathVariable("id") Long id,
+            @Valid @ModelAttribute("mentorUpdateForm") MentorUpdateForm mentorUpdateForm, BindingResult result) {
         if (result.hasErrors()) {
             return "user/editMentor";
         }
-        mentorRepository.save(mentor);
+        Mentor mentorProfile = mentorRepository.findByMmuserId(id);
+        if (null == mentorProfile) {
+            return "redirect:/";
+        }
+        Mentor editedMentor = mentorUpdateForm.populateForm(mentorProfile);
+        mentorRepository.save(editedMentor);
         return "redirect:/user/profile/" + id + "/";
     }
+
 }
