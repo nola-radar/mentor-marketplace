@@ -35,6 +35,12 @@ public class MentorUpdateForm {
 
     @Size(max = 255)
     private String otherSocialMedia;
+    
+    @Size(max=255)
+    private String linkedInCurrentCompany;
+    
+    @Size(max=255)
+    private String linkedInCurrentJobTitle;
 
     public Mentor getMentor() {
         Mentor mentor = new Mentor();
@@ -47,6 +53,8 @@ public class MentorUpdateForm {
         mentor.setFacebook(this.facebook);
         mentor.setTwitter(this.twitter);
         mentor.setOtherSocialMedia(this.otherSocialMedia);
+        mentor.setLinkedInCurrentCompany(linkedInCurrentCompany);
+        mentor.setLinkedInCurrentJobTitle(linkedInCurrentJobTitle);
         return mentor;
     }
 
@@ -60,6 +68,8 @@ public class MentorUpdateForm {
         setFacebook(mentor.getFacebook());
         setTwitter(mentor.getTwitter());
         setOtherSocialMedia(mentor.getOtherSocialMedia());
+        setLinkedInCurrentCompany(mentor.getLinkedInCurrentCompany());
+        setLinkedInCurrentJobTitle(mentor.getLinkedInCurrentJobTitle());
     }
 
     public Mentor populateForm(Mentor mentor) {
@@ -72,6 +82,8 @@ public class MentorUpdateForm {
         mentor.setFacebook(this.facebook);
         mentor.setTwitter(this.twitter);
         mentor.setOtherSocialMedia(this.otherSocialMedia);
+        mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
+        mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         return mentor;
     }
 
@@ -145,5 +157,21 @@ public class MentorUpdateForm {
 
     public void setOtherSocialMedia(String otherSocialMedia) {
         this.otherSocialMedia = otherSocialMedia;
+    }
+
+    public String getLinkedInCurrentCompany() {
+        return linkedInCurrentCompany;
+    }
+
+    public void setLinkedInCurrentCompany(String linkedInCurrentCompany) {
+        this.linkedInCurrentCompany = linkedInCurrentCompany;
+    }
+
+    public String getLinkedInCurrentJobTitle() {
+        return linkedInCurrentJobTitle;
+    }
+
+    public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
+        this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
     }
 }
