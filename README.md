@@ -62,5 +62,15 @@ The naming scheme for each script is
 Acceptance Tests
 ---------------------------
 Linkedin Testing Account Info:
-Login: acceptancetestuser@gmail.com
+
+LoginFounder: acceptancetestuser@gmail.com
 Pass: qualityassurance
+
+LoginMentor: acceptancetestmentor@gmail.com
+Pass: qualityassurance
+
+LoginFounder: foundertestidea@gmail.com
+Pass: testthefounder1
+
+LoginMentor: ivmmdeveloper@gmail.com
+Pass: ideavillage

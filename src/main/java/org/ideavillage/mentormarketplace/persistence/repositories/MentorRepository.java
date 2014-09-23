@@ -23,6 +23,8 @@ public interface MentorRepository extends JpaRepository<Mentor, Long> {
     Mentor findByLinkedInId(String linkedInId);
 
     Mentor findByMmuser(Mmuser mmuser);
+    
+    Mentor findByMmuserId(Long id);
 
     List<Mentor> findDistinctByIndustryListInAndExpertiseListIn(List<Industry> industries, List<Expertise> expertises);
 
