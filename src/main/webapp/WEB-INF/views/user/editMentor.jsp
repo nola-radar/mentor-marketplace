@@ -78,20 +78,20 @@
 
                         <div class="section-200">
                             <spring:bind path="linkedInCurrentCompany">	 
--                                <label class="col-sm-3 control-label createProfileTopInputLabels">Current Company: </label>
--                                <div class="col-sm-9 createProfileTopInputFields">
--                                    <form:input class="form-control input-sm" path="linkedInCurrentCompany" rows="2" />
--                                    <form:errors class="help-block" path="linkedInCurrentCompany" cssClass="help-inline" />
--                                </div>
--                            </spring:bind>
--
--                            <spring:bind path="linkedInCurrentJobTitle">	 
--                                <label class="col-sm-3 control-label createProfileInputLabels">Current Job Title: </label>
--                                <div class="col-sm-9 createProfileInputFields">
--                                    <form:input class="form-control input-sm" path="linkedInCurrentJobTitle" rows="2" />
--                                    <form:errors class="help-block" path="linkedInCurrentJobTitle" cssClass="help-inline" />
--                                </div>
--                            </spring:bind>
+                                <label class="col-sm-3 control-label createProfileTopInputLabels">Current Company: </label>
+                                <div class="col-sm-9 createProfileTopInputFields">
+                                    <form:input class="form-control input-sm" path="linkedInCurrentCompany" rows="2" />
+                                    <form:errors class="help-block" path="linkedInCurrentCompany" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="linkedInCurrentJobTitle">	 
+                                <label class="col-sm-3 control-label createProfileInputLabels">Current Job Title: </label>
+                                <div class="col-sm-9 createProfileInputFields">
+                                    <form:input class="form-control input-sm" path="linkedInCurrentJobTitle" rows="2" />
+                                    <form:errors class="help-block" path="linkedInCurrentJobTitle" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
                         </div>
                     </div>
                 </div>
