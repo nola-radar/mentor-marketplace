@@ -1,6 +1,5 @@
 package org.ideavillage.mentormarketplace.web.controllers;
 
-import java.util.List;
 import javax.validation.Valid;
 import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
@@ -16,10 +15,6 @@ import org.ideavillage.mentormarketplace.web.forms.FounderUpdateForm;
 import org.ideavillage.mentormarketplace.web.forms.MentorUpdateForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.social.connect.Connection;
-import org.springframework.social.connect.ConnectionRepository;
-import org.springframework.social.linkedin.api.LinkedIn;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,8 +26,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.WebRequest;
 
 /**
- *
- * @author 212395189
+ * Controller for viewing and editing profiles.
  */
 @Controller
 @RequestMapping(value = "/user")
@@ -53,9 +47,6 @@ public class UserController {
 
     @Autowired
     private ExpertiseRepository expertiseRepository;
-
-    @Autowired
-    private ConnectionRepository connectionRepository;
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
     public String viewProfile(WebRequest request, Model model, Authentication authentication) {
