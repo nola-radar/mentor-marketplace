@@ -13,18 +13,25 @@
         </div>
 
         <div class="navbar-right">
-            <button type="button" class="btn btn-success" id="navBarLogOutButton">LOG OUT</button>
+            <c:url value="/logout" var="logoutUrl" /> 
+            <form:form action="${logoutUrl}" method="POST">
+                <button type="submit" class="btn btn-success" id="navBarLogOutButton">LOG OUT</button>
+            </form:form>
+        </div>
+
+        <div class="navbar-right">
+            <a class="btn btn-success" id="navBarProfileButton" href="<c:url value="/user/profile"/>">MY PROFILE</a>
         </div>
 
         <div class="navbar-right">
             <sec:authorize access="hasRole('ROLE_MENTOR')">
-                <a href="<c:url value="/explore/founders"/>">
-                    <button type="button" class="btn btn-success" id="navBarExploreButton">EXPLORE FOUNDERS</button>
+                <a class="btn btn-success" id="navBarExploreButton" href="<c:url value="/explore/founders"/>">
+                    EXPLORE FOUNDERS
                 </a>
             </sec:authorize>
             <sec:authorize access="hasRole('ROLE_FOUNDER')">
-                <a href="<c:url value="/explore/mentors"/>">
-                    <button type="button" class="btn btn-success" id="navBarExploreButton">EXPLORE MENTORS</button>
+                <a class="btn btn-success" id="navBarExploreButton" href="<c:url value="/explore/mentors"/>">
+                    EXPLORE MENTORS
                 </a>
             </sec:authorize>
         </div>

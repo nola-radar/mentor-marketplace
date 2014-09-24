@@ -4,7 +4,7 @@
 <!-- Navigation Bar -->
 <%@include file="../shared/navigationBar.jsp" %>
 
-<div class="container">
+<div class="container" id="mentorProfile">
 
     <!-- Main Profile Container -->
     <div class="profileMainContainer">
@@ -25,7 +25,9 @@
 
             <!-- Header -->
             <div class="col-xs-12 profileHeader">
-                <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                <c:if test="${canEditProfile == true}">
+                    <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                </c:if>
             </div>
         </div>
 
@@ -56,7 +58,7 @@
 
                             <!-- Mentor Profile Image Area -->
                             <div class="section-200 sm-margin-top-20" id="profileName">
-                                <label class="col-xs-8 control-label profileNameLabels">
+                                <label class="col-xs-8 control-label profileNameLabels" id="profileFullName">
                                     ${mentor.getFirstName()} ${mentor.getLastName()}
                                 </label>
 

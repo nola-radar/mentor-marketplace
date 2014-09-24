@@ -4,7 +4,7 @@
 <!-- Navigation Bar -->
 <%@include file="../shared/navigationBar.jsp" %>
 
-<form:form modelAttribute="founder" action="editFounder">
+<form:form modelAttribute="founderUpdateForm" action="editFounder">
 
     <div class="container" id="editMainContainer">
         <div id="editProfileMainContainer">
@@ -53,11 +53,11 @@
                                 </div>
                             </spring:bind>
 
-                            <spring:bind path="companyDetails">
-                                <label class="col-sm-3 control-label createProfileTextAreaLabels">Company Description: </label>
+                            <spring:bind path="education">
+                                <label class="col-sm-3 control-label createProfileTextAreaLabels">Education: </label>
                                 <div class="col-sm-9 createProfileTextAreaFields">
-                                    <form:textarea class="form-control input-sm" path="companyDetails" rows="2" />
-                                    <form:errors class="help-block" path="companyDetails" cssClass="help-inline" />
+                                    <form:textarea class="form-control input-sm" path="education" rows="2" />
+                                    <form:errors class="help-block" path="education" cssClass="help-inline" />
                                 </div>
                             </spring:bind>
 
@@ -76,7 +76,7 @@
                             <spring:bind path="firstName">
                                 <label class="col-sm-3 control-label createProfileTopInputLabels">First Name: </label>
                                 <div class="col-sm-9 createProfileTopInputFields">
-                                    <form:input class="form-control input-sm" path="firstName" rows="2" />
+                                    <form:input class="form-control input-sm" id="firstNameEdit" path="firstName" rows="2" />
                                     <form:errors class="help-block" path="firstName" cssClass="help-inline" />
                                 </div>
                             </spring:bind>
@@ -87,15 +87,7 @@
                                     <form:input class="form-control input-sm" path="lastName" rows="2" />
                                     <form:errors class="help-block" path="lastName" cssClass="help-inline" />
                                 </div>
-                            </spring:bind>
-                                
-                            <spring:bind path="linkedInPictureUrl">
-                                <label class="col-sm-3 control-label createProfileInputLabels">LinkedIn Picture: </label>
-                                <div class="col-sm-9 createProfileInputFields">
-                                    <form:input class="form-control input-sm" path="linkedInPictureUrl" rows="2" />
-                                    <form:errors class="help-block" path="linkedInPictureUrl" cssClass="help-inline" />
-                                </div>
-                            </spring:bind>
+                            </spring:bind>                               
                         </div>
 
                         <div class="section-200" id="profileSocialInfo">
@@ -151,6 +143,14 @@
                                 </div>
                             </spring:bind>
 
+                            <spring:bind path="status">
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Status: </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="status" rows="2" />
+                                    <form:errors class="help-block" path="status" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
                         </div>
                     </div>
                 </div>
@@ -195,12 +195,6 @@
                                 </form:select>
                                 <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
                             </div>
-
-                            <spring:bind path="linkedInId">
-                                <form:hidden path="linkedInId" />
-                            </spring:bind>
-
-                            <form:hidden path="mmuser.id"></form:hidden>
 
                         </div>
                     </div>

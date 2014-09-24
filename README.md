@@ -58,3 +58,19 @@ Making Flyway Migration Scripts
 All Flway migration scripts need to be stored in the /src/main/resources directory under db.migration
 The naming scheme for each script is
 ` V#__some_name`
+
+Acceptance Tests
+---------------------------
+Linkedin Testing Account Info:
+
+LoginFounder: acceptancetestuser@gmail.com
+Pass: qualityassurance
+
+LoginMentor: acceptancetestmentor@gmail.com
+Pass: qualityassurance
+
+LoginFounder: foundertestidea@gmail.com
+Pass: testthefounder1
+
+LoginMentor: ivmmdeveloper@gmail.com
+Pass: ideavillage
