@@ -1,6 +1,5 @@
 package org.ideavillage.mentormarketplace.web.controllers;
 
-import java.util.List;
 import javax.validation.Valid;
 import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
@@ -15,9 +14,7 @@ import org.ideavillage.mentormarketplace.persistence.repositories.MmuserReposito
 import org.ideavillage.mentormarketplace.web.forms.FounderUpdateForm;
 import org.ideavillage.mentormarketplace.web.forms.MentorUpdateForm;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.social.connect.Connection;
-import org.springframework.social.connect.ConnectionRepository;
-import org.springframework.social.linkedin.api.LinkedIn;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,8 +26,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.WebRequest;
 
 /**
- *
- * @author 212395189
+ * Controller for viewing and editing profiles.
  */
 @Controller
 @RequestMapping(value = "/user")
@@ -52,30 +48,27 @@ public class UserController {
     @Autowired
     private ExpertiseRepository expertiseRepository;
 
-    @Autowired
-    private ConnectionRepository connectionRepository;
-
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    public String viewProfile(WebRequest request, Model model) {
-        Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);
-        if (null == connection) {
+    public String viewProfile(WebRequest request, Model model, Authentication authentication) {
+        Mmuser loggedInUser = mmUserRepository.findByEmail(authentication.getName());
+        if (loggedInUser == null) {
             // TODO: Need an error page
             return "redirect:/";
         }
-        String email = connection.fetchUserProfile().getEmail();
-        Mmuser user = mmUserRepository.findByEmail(email);
-        return "redirect:/user/profile/" + user.getId() + "/";
+        return "redirect:/user/profile/" + loggedInUser.getId() + "/";
     }
 
     @RequestMapping(value = "/profile/{id}/", method = RequestMethod.GET)
-    public String viewProfileForId(WebRequest request, Model model, @PathVariable("id") Long id) {
+    public String viewProfileForId(WebRequest request, Model model, @PathVariable("id") Long id, Authentication authentication) {
         Mmuser user = mmUserRepository.findOne(id);
+        Mmuser loggedInUser = mmUserRepository.findByEmail(authentication.getName());
         if (null == user) {
             // TODO: Need an error page
             return "redirect:/";
         }
+        Boolean canEditProfile = user.equals(loggedInUser);
+        model.addAttribute("canEditProfile", canEditProfile);
         String utype = user.getUserType();
-        // redirect to founder.jsp if user type is founder
         if (utype.contains("founder")) {
             Founder founder = founderRepository.findByMmuser(user);
             founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
@@ -93,9 +86,9 @@ public class UserController {
 
     // Edit page for founder and mentor
     @RequestMapping(value = "/profile/{id}/edit", method = RequestMethod.GET)
-    public String viewEditProfile(WebRequest request, Model model, @PathVariable("id") Long id) {
-        Mmuser user = mmUserRepository.findOne(id);
-        if (null == user) {
+    public String viewEditProfile(WebRequest request, Model model, @PathVariable("id") Long id, Authentication authentication) {
+        Mmuser loggedInUser = mmUserRepository.findByEmail(authentication.getName());
+        if (null == loggedInUser | loggedInUser.getId() != id) {
             // TODO: Need an error page
             return "redirect:/";
         }
@@ -103,23 +96,19 @@ public class UserController {
         model.addAttribute("industryList", industryList);
         Iterable<Expertise> expertiseList = expertiseRepository.findAll();
         model.addAttribute("expertiseList", expertiseList);
-        String utype = user.getUserType();
+        String utype = loggedInUser.getUserType();
         if (utype.contains("founder")) {
-            Founder founder = founderRepository.findByMmuser(user);
-            List<Industry> founderIndustryList = industryRepository.findByFounderIndustryList(founder);
-            List<Expertise> founderExpertiseList = expertiseRepository.findByFounderExpertiseList(founder);
-            founder.setIndustryList(founderIndustryList);
-            founder.setExpertiseList(founderExpertiseList);
+            Founder founder = founderRepository.findByMmuser(loggedInUser);
+            founder.setIndustryList(industryRepository.findByFounderIndustryList(founder));
+            founder.setExpertiseList(expertiseRepository.findByFounderExpertiseList(founder));
             FounderUpdateForm founderEditForm = new FounderUpdateForm();
             founderEditForm.pullFounder(founder);
             model.addAttribute("founderUpdateForm", founderEditForm);
             return "user/editFounder";
         } else {
-            Mentor mentor = mentorRepository.findByMmuser(user);
-            List<Industry> mentorIndustryList = industryRepository.findByMentorIndustryList(mentor);
-            List<Expertise> mentorExpertiseList = expertiseRepository.findByMentorExpertiseList(mentor);
-            mentor.setIndustryList(mentorIndustryList);
-            mentor.setExpertiseList(mentorExpertiseList);
+            Mentor mentor = mentorRepository.findByMmuser(loggedInUser);
+            mentor.setIndustryList(industryRepository.findByMentorIndustryList(mentor));
+            mentor.setExpertiseList(expertiseRepository.findByMentorExpertiseList(mentor));
             MentorUpdateForm mentorEditForm = new MentorUpdateForm();
             mentorEditForm.pullMentor(mentor);
             model.addAttribute("mentorUpdateForm", mentorEditForm);

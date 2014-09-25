@@ -37,7 +37,7 @@ public class RegistrationForm {
 
     private List<Expertise> expertiseList;
 
-    private String background;
+    private String experience;
 
     @Size(max = 255)
     private String website;
@@ -70,7 +70,7 @@ public class RegistrationForm {
 
     private String immediateNeeds;
 
-    private String companyDetails;
+    private String education;
 
     private String inspiration;
 
@@ -95,7 +95,7 @@ public class RegistrationForm {
         mentor.setLastName(this.lastName);
         mentor.setIndustryList(this.industryList);
         mentor.setExpertiseList(this.expertiseList);
-        mentor.setBackground(this.background);
+        mentor.setBackground(this.experience);
         mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
@@ -112,7 +112,7 @@ public class RegistrationForm {
         mentor.setLastName(this.lastName);
         mentor.setIndustryList(this.industryList);
         mentor.setExpertiseList(this.expertiseList);
-        mentor.setBackground(this.background);
+        mentor.setBackground(this.experience);
         mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
@@ -129,7 +129,7 @@ public class RegistrationForm {
         founder.setLastName(this.lastName);
         founder.setIndustryList(industryList);
         founder.setExpertiseList(expertiseList);
-        founder.setBackground(this.background);
+        founder.setExperience(this.experience);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
@@ -141,7 +141,7 @@ public class RegistrationForm {
         founder.setTagline(this.tagline);
         founder.setElevatorPitch(this.elevatorPitch);
         founder.setImmediateNeeds(this.immediateNeeds);
-        founder.setCompanyDetails(this.companyDetails);
+        founder.setEducation(this.education);
         founder.setInspiration(this.inspiration);
         founder.setStatus(this.status);
         founder.setVision(this.vision);
@@ -158,7 +158,7 @@ public class RegistrationForm {
         founder.setLastName(this.lastName);
         founder.setIndustryList(this.industryList);
         founder.setExpertiseList(this.expertiseList);
-        founder.setBackground(this.background);
+        founder.setExperience(this.experience);
         founder.setLinkedInPictureUrl(this.linkedInPictureURL);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
@@ -170,7 +170,7 @@ public class RegistrationForm {
         founder.setTagline(this.tagline);
         founder.setElevatorPitch(this.elevatorPitch);
         founder.setImmediateNeeds(this.immediateNeeds);
-        founder.setCompanyDetails(this.companyDetails);
+        founder.setEducation(this.education);
         founder.setInspiration(this.inspiration);
         founder.setStatus(this.status);
         founder.setVision(this.vision);
@@ -249,12 +249,12 @@ public class RegistrationForm {
         this.expertiseList = expertiseList;
     }
 
-    public String getBackground() {
-        return background;
+    public String getExperience() {
+        return experience;
     }
 
-    public void setBackground(String background) {
-        this.background = background;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 
     public String getWebsite() {
@@ -345,12 +345,12 @@ public class RegistrationForm {
         this.immediateNeeds = immediateNeeds;
     }
 
-    public String getCompanyDetails() {
-        return companyDetails;
+    public String getEducation() {
+        return education;
     }
 
-    public void setCompanyDetails(String companyDetails) {
-        this.companyDetails = companyDetails;
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getInspiration() {

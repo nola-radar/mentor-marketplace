@@ -24,7 +24,9 @@
 
             <!-- Header -->
             <div class="col-xs-12 profileHeader">
-                <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                <c:if test="${canEditProfile == true}">
+                    <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                </c:if>
             </div>
         </div>
 
@@ -49,8 +51,8 @@
                                 <label class="col-xs-4 cotrol-label profileTextAreaLabels"> Other Social Media: </label>
                                 <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getOtherSocialMedia()} </label>
 
-                                <label class="col-xs-4 control-label profileTextAreaLabels"> Company Details: </label>
-                                <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getCompanyDetails()} </label>
+                                <label class="col-xs-4 control-label profileTextAreaLabels"> Education: </label>
+                                <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getEducation()} </label>
 
                                 <label class="col-xs-4 control-label profileTextAreaLabels"> New Orleans: </label>
                                 <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getNewOrleans()} </label>

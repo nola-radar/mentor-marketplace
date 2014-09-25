@@ -82,8 +82,8 @@ public class Founder implements Serializable {
     private String linkedInId;
 
     @Size(max = 2147483647)
-    @Column(name = "background")
-    private String background;
+    @Column(name = "education")
+    private String education;
 
     @Size(max = 2147483647)
     @Column(name = "elevator_pitch")
@@ -94,8 +94,8 @@ public class Founder implements Serializable {
     private String immediateNeeds;
 
     @Size(max = 2147483647)
-    @Column(name = "company_details")
-    private String companyDetails;
+    @Column(name = "experience")
+    private String experience;
 
     @Size(max = 2147483647)
     @Column(name = "inspiration")
@@ -248,12 +248,12 @@ public class Founder implements Serializable {
         this.linkedInId = linkedInId;
     }
 
-    public String getBackground() {
-        return background;
+    public String getEducation() {
+        return education;
     }
 
-    public void setBackground(String background) {
-        this.background = background;
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getElevatorPitch() {
@@ -272,12 +272,12 @@ public class Founder implements Serializable {
         this.immediateNeeds = immediateNeeds;
     }
 
-    public String getCompanyDetails() {
-        return companyDetails;
+    public String getExperience() {
+        return experience;
     }
 
-    public void setCompanyDetails(String companyDetails) {
-        this.companyDetails = companyDetails;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 
     public String getInspiration() {

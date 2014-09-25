@@ -25,7 +25,9 @@
 
             <!-- Header -->
             <div class="col-xs-12 profileHeader">
-                <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                <c:if test="${canEditProfile == true}">
+                    <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                </c:if>
             </div>
         </div>
 
