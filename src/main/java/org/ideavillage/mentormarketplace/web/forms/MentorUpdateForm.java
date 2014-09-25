@@ -35,11 +35,11 @@ public class MentorUpdateForm {
 
     @Size(max = 255)
     private String otherSocialMedia;
-    
-    @Size(max=255)
+
+    @Size(max = 255)
     private String linkedInCurrentCompany;
-    
-    @Size(max=255)
+
+    @Size(max = 255)
     private String linkedInCurrentJobTitle;
 
     public Mentor getMentor() {

@@ -212,23 +212,9 @@
                             <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
                         </div>
 
-                        <spring:bind path="email">
-                            <form:hidden path="email" />
-                        </spring:bind>
-
-                        <spring:bind path="linkedInId">
-                            <form:hidden path="linkedInId" />
-                        </spring:bind>
-
-                        <spring:bind path="isAdmin">
-                            <form:hidden path="isAdmin" />
-                        </spring:bind>
-
                         <spring:bind path="userType">
                             <form:hidden path="userType" value="founder"  />
                         </spring:bind>
-
-                        <form:hidden path="linkedInPictureURL" />
 
                     </div>
                 </div>

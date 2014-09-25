@@ -100,6 +100,12 @@ public class Mentor implements Serializable {
     public Mentor() {
     }
 
+    //Constructor for merging a mentor with a mentor registration form
+    public Mentor(String linkedInPictureUrl, String linkedInId) {
+        this.linkedInPictureUrl = linkedInPictureUrl;
+        this.linkedInId = linkedInId;
+    }
+
     public Mentor(Long id) {
         this.id = id;
     }

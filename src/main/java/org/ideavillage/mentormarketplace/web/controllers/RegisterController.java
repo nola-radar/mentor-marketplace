@@ -60,25 +60,18 @@ public class RegisterController {
             Model model,
             @ModelAttribute("registrationForm") RegistrationForm registrationForm) {
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
-        if (connection != null) {
-            LinkedIn api = (LinkedIn) connection.getApi();
-            registrationForm.setEmail(connection.fetchUserProfile().getEmail());
-            registrationForm.setLinkedInId(connection.createData().getProviderUserId());
-            registrationForm.setIsAdmin(false);
-            registrationForm.setLinkedInPictureURL(connection.createData().getImageUrl());
+        if (connection == null) {
+            // TODO: Need an error page
+            return "redirect:/";
         }
-
         Iterable<Industry> industryList = industryRepository.findAll();
         model.addAttribute("industryList", industryList);
-
         Iterable<Expertise> expertiseList = expertiseRepository.findAll();
         model.addAttribute("expertiseList", expertiseList);
-
         HashMap<String, String> userTypes = new HashMap<>();
         userTypes.put("founder", "Founder");
         userTypes.put("mentor", "Mentor");
         model.addAttribute("userTypes", userTypes);
-
         return "register/create";
     }
 
@@ -93,17 +86,24 @@ public class RegisterController {
             model.addAttribute("userTypes", userTypes);
             return "register/create";
         }
-        Mmuser user = new Mmuser(registrationForm.getEmail(), registrationForm.getLinkedInId(), registrationForm.getIsAdmin());
+        Connection<?> userConnection = ProviderSignInUtils.getConnection(request);
+        LinkedIn api = (LinkedIn) userConnection.getApi();
+        String email = userConnection.fetchUserProfile().getEmail();
+        String linkedInId = userConnection.createData().getProviderUserId();
+        String linkedInPictureUrl = userConnection.createData().getImageUrl();
+        Boolean isAdmin = false;
+        Mmuser user = new Mmuser(email, linkedInId, isAdmin);
         user.setUserType(registrationForm.getUserType());
         Mmuser savedUser = mmUserRepository.save(user);
-
         //Will save user as founder or mentor depending on user type field
         if (registrationForm.getUserType().equals("mentor")) {
-            Mentor mentor = registrationForm.getMentor();
+            Mentor mergeMentor = new Mentor(linkedInPictureUrl, linkedInId);
+            Mentor mentor = registrationForm.mergeFormWithMentor(mergeMentor);
             mentor.setMmuser(savedUser);
             mentorRepository.save(mentor);
         } else {
-            Founder founder = registrationForm.getFounder();
+            Founder mergeFounder = new Founder(linkedInPictureUrl, linkedInId);
+            Founder founder = registrationForm.mergeFormWithFounder(mergeFounder);
             founder.setMmuser(savedUser);
             founderRepository.save(founder);
         }
