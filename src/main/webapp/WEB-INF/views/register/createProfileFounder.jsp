@@ -27,59 +27,43 @@
                         <div class="form-horizontal">
 
                             <div class="form-group">   
-                                <spring:bind path="firstName">
-
-                                    <label class="col-sm-4 control-label">First Name:</label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="firstName" />
-                                        <form:errors class="help-block" path="firstName" cssClass="help-inline" />
-                                    </div>
-
-                                </spring:bind>
-                            </div>
-
-                            <div class="form-group">  
-                                <spring:bind path="lastName">
-
-                                    <label class="col-sm-4 control-label">Last Name:</label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="lastName" />
-                                        <form:errors class="help-block" path="lastName" cssClass="help-inline" />
-                                    </div>
-
-                                </spring:bind>
-                            </div>
-
-                            <div class="form-group">  
-                                <spring:bind path="linkedInCurrentCompany">
-
-                                    <label class="col-sm-4 control-label">Title at company: </label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="linkedInCurrentCompany" />
-                                        <form:errors class="help-block" path="lastName" cssClass="help-inline" />
-                                    </div>
-
-                                </spring:bind>
-                            </div>
-
-                            <div class="form-group"> 
-                                <spring:bind path="education">
-                                    <label class="col-sm-4 control-label">Education: </label>
-                                    <div class="col-sm-8 ">
-                                        <form:textarea class="form-control input-sm textarea-resize-none" path="education" rows="5" />
-                                        <form:errors class="help-block" path="education" cssClass="help-inline" />
-                                    </div>
-                                </spring:bind>
+                                <label class="col-sm-4 control-label">First Name:</label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="firstName" />
+                                    <form:errors class="help-block" path="firstName" cssClass="help-inline" />
+                                </div>
                             </div>
 
                             <div class="form-group">
-                                <spring:bind path="experience">
-                                    <label class="col-sm-4 control-label">Experience: </label>
-                                    <div class="col-sm-8">
-                                        <form:textarea class="form-control input-sm textarea-resize-none" path="experience" rows="5" />
-                                        <form:errors class="help-block" path="experience" cssClass="help-inline" />
-                                    </div>
-                                </spring:bind>
+                                <label class="col-sm-4 control-label">Last Name:</label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="lastName" />
+                                    <form:errors class="help-block" path="lastName" cssClass="help-inline" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">  
+                                <label class="col-sm-4 control-label">Title at company: </label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="linkedInCurrentCompany" />
+                                    <form:errors class="help-block" path="lastName" cssClass="help-inline" />
+                                </div>
+                            </div>
+
+                            <div class="form-group"> 
+                                <label class="col-sm-4 control-label">Education: </label>
+                                <div class="col-sm-8 ">
+                                    <form:textarea class="form-control input-sm textarea-resize-none" path="education" rows="5" />
+                                    <form:errors class="help-block" path="education" cssClass="help-inline" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Experience: </label>
+                                <div class="col-sm-8">
+                                    <form:textarea class="form-control input-sm textarea-resize-none" path="experience" rows="5" />
+                                    <form:errors class="help-block" path="experience" cssClass="help-inline" />
+                                </div>
                             </div>  
 
                             <div class="form-group">
@@ -104,23 +88,19 @@
                         <div class="form-horizontal">
 
                             <div class="form-group">   
-                                <spring:bind path="linkedInCurrentCompany">
-                                    <label class="col-sm-4 control-label">Company Name:</label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="linkedInCurrentCompany" />
-                                        <form:errors class="help-block" path="linkedInCurrentCompany" cssClass="help-inline" />
-                                    </div>
-                                </spring:bind>
+                                <label class="col-sm-4 control-label">Company Name:</label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="linkedInCurrentCompany" />
+                                    <form:errors class="help-block" path="linkedInCurrentCompany" cssClass="help-inline" />
+                                </div>
                             </div>
 
                             <div class="form-group">   
-                                <spring:bind path="logo">
-                                    <label class="col-sm-4 control-label">Logo URL:</label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="logo" />
-                                        <form:errors class="help-block" path="logo" cssClass="help-inline" />
-                                    </div>
-                                </spring:bind>
+                                <label class="col-sm-4 control-label">Logo URL:</label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="logo" />
+                                    <form:errors class="help-block" path="logo" cssClass="help-inline" />
+                                </div>
                             </div>
 
                             <div class="form-group">  
@@ -134,43 +114,35 @@
                             </div>
 
                             <div class="form-group">   
-                                <spring:bind path="website">
-                                    <label class="col-sm-4 control-label">Website:</label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="website" />
-                                        <form:errors class="help-block" path="website" cssClass="help-inline" />
-                                    </div>
-                                </spring:bind>
+                                <label class="col-sm-4 control-label">Website:</label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="website" />
+                                    <form:errors class="help-block" path="website" cssClass="help-inline" />
+                                </div>
                             </div>
 
                             <div class="form-group">   
-                                <spring:bind path="facebook">
-                                    <label class="col-sm-4 control-label">Facebook:</label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="facebook" />
-                                        <form:errors class="help-block" path="facebook" cssClass="help-inline" />
-                                    </div>
-                                </spring:bind>
+                                <label class="col-sm-4 control-label">Facebook:</label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="facebook" />
+                                    <form:errors class="help-block" path="facebook" cssClass="help-inline" />
+                                </div>
                             </div>
 
                             <div class="form-group">   
-                                <spring:bind path="twitter">
-                                    <label class="col-sm-4 control-label">Twitter:</label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="twitter" />
-                                        <form:errors class="help-block" path="twitter" cssClass="help-inline" />
-                                    </div>
-                                </spring:bind>
+                                <label class="col-sm-4 control-label">Twitter:</label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="twitter" />
+                                    <form:errors class="help-block" path="twitter" cssClass="help-inline" />
+                                </div>
                             </div>
 
-                            <div class="form-group">   
-                                <spring:bind path="otherSocialMedia">
-                                    <label class="col-sm-4 control-label">Other Social Media:</label>
-                                    <div class="col-sm-8">
-                                        <form:input class="form-control input-sm" path="otherSocialMedia" />
-                                        <form:errors class="help-block" path="otherSocialMedia" cssClass="help-inline" />
-                                    </div>
-                                </spring:bind>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Other Social Media:</label>
+                                <div class="col-sm-8">
+                                    <form:input class="form-control input-sm" path="otherSocialMedia" />
+                                    <form:errors class="help-block" path="otherSocialMedia" cssClass="help-inline" />
+                                </div>
                             </div>
 
                         </div>                  
@@ -192,43 +164,35 @@
                                 <div class="form-horizontal">
 
                                     <div class="form-group">   
-                                        <spring:bind path="tagline">
-                                            <label class="col-sm-4 control-label">Tagline:</label>
-                                            <div class="col-sm-8">
-                                                <form:input class="form-control input-sm" path="tagline" />
-                                                <form:errors class="help-block" path="tagline" cssClass="help-inline" />
-                                            </div>
-                                        </spring:bind>
+                                        <label class="col-sm-4 control-label">Tagline:</label>
+                                        <div class="col-sm-8">
+                                            <form:input class="form-control input-sm" path="tagline" />
+                                            <form:errors class="help-block" path="tagline" cssClass="help-inline" />
+                                        </div>
                                     </div>
 
                                     <div class="form-group">   
-                                        <spring:bind path="inspiration">
-                                            <label class="col-sm-4 control-label">Inspiration:</label>
-                                            <div class="col-sm-8">
-                                                <form:textarea class="form-control input-sm textarea-resize-none" path="inspiration" />
-                                                <form:errors class="help-block" path="inspiration" cssClass="help-inline" />
-                                            </div>
-                                        </spring:bind>
+                                        <label class="col-sm-4 control-label">Inspiration:</label>
+                                        <div class="col-sm-8">
+                                            <form:textarea class="form-control input-sm textarea-resize-none" path="inspiration" />
+                                            <form:errors class="help-block" path="inspiration" cssClass="help-inline" />
+                                        </div>
                                     </div>
 
                                     <div class="form-group">   
-                                        <spring:bind path="elevatorPitch">
-                                            <label class="col-sm-4 control-label">Elevator Pitch:</label>
-                                            <div class="col-sm-8">
-                                                <form:textarea class="form-control input-sm textarea-resize-none" path="elevatorPitch" rows="4" />
-                                                <form:errors class="help-block" path="elevatorPitch" cssClass="help-inline" />
-                                            </div>
-                                        </spring:bind>
+                                        <label class="col-sm-4 control-label">Elevator Pitch:</label>
+                                        <div class="col-sm-8">
+                                            <form:textarea class="form-control input-sm textarea-resize-none" path="elevatorPitch" rows="4" />
+                                            <form:errors class="help-block" path="elevatorPitch" cssClass="help-inline" />
+                                        </div>
                                     </div>
 
                                     <div class="form-group">   
-                                        <spring:bind path="immediateNeeds">
-                                            <label class="col-sm-4 control-label">Immediate Needs:</label>
-                                            <div class="col-sm-8">
-                                                <form:textarea class="form-control input-sm textarea-resize-none" path="immediateNeeds" rows="2" />
-                                                <form:errors class="help-block" path="immediateNeeds" cssClass="help-inline" />
-                                            </div>
-                                        </spring:bind>
+                                        <label class="col-sm-4 control-label">Immediate Needs:</label>
+                                        <div class="col-sm-8">
+                                            <form:textarea class="form-control input-sm textarea-resize-none" path="immediateNeeds" rows="2" />
+                                            <form:errors class="help-block" path="immediateNeeds" cssClass="help-inline" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -236,73 +200,50 @@
 
                             <div class="col-xs-6">
                                 <div class="form-horizontal">
-                                    <div class="form-group">   
-                                        <spring:bind path="status">
-                                            <label class="col-sm-4 control-label">Status:</label>
-                                            <div class="col-sm-8">
-                                                <form:textarea class="form-control input-sm textarea-resize-none" path="status" rows="2" />
-                                                <form:errors class="help-block" path="status" cssClass="help-inline" />
-                                            </div>
-                                        </spring:bind>
+                                    <div class="form-group">                                           
+                                        <label class="col-sm-4 control-label">Status:</label>
+                                        <div class="col-sm-8">
+                                            <form:textarea class="form-control input-sm textarea-resize-none" path="status" rows="2" />
+                                            <form:errors class="help-block" path="status" cssClass="help-inline" />
+                                        </div>
                                     </div>
 
                                     <div class="form-group">   
-                                        <spring:bind path="vision">
-                                            <label class="col-sm-4 control-label">Vision:</label>
-                                            <div class="col-sm-8">
-                                                <form:textarea class="form-control input-sm textarea-resize-none" path="vision" rows="2" />
-                                                <form:errors class="help-block" path="vision" cssClass="help-inline" />
-                                            </div>
-                                        </spring:bind>
+                                        <label class="col-sm-4 control-label">Vision:</label>
+                                        <div class="col-sm-8">
+                                            <form:textarea class="form-control input-sm textarea-resize-none" path="vision" rows="2" />
+                                            <form:errors class="help-block" path="vision" cssClass="help-inline" />
+                                        </div>
                                     </div>
 
                                     <div class="form-group">   
-                                        <spring:bind path="newOrleans">
-                                            <label class="col-sm-4 control-label">What New Orleans means to you:</label>
-                                            <div class="col-sm-8">
-                                                <form:textarea class="form-control input-sm textarea-resize-none" path="newOrleans" rows="2" />
-                                                <form:errors class="help-block" path="newOrleans" cssClass="help-inline" />
-                                            </div>
-                                        </spring:bind>
+                                        <label class="col-sm-4 control-label">What New Orleans means to you:</label>
+                                        <div class="col-sm-8">
+                                            <form:textarea class="form-control input-sm textarea-resize-none" path="newOrleans" rows="2" />
+                                            <form:errors class="help-block" path="newOrleans" cssClass="help-inline" />
+                                        </div>
                                     </div>
 
                                     <div class="form-group">   
-                                        <spring:bind path="programPlan">
-                                            <label class="col-sm-4 control-label">Program Plan:</label>
-                                            <div class="col-sm-8">
-                                                <form:textarea class="form-control input-sm textarea-resize-none" path="programPlan" rows="2" />
-                                                <form:errors class="help-block" path="programPlan" cssClass="help-inline" />
-                                            </div>
-                                        </spring:bind>
+                                        <label class="col-sm-4 control-label">Program Plan:</label>
+                                        <div class="col-sm-8">
+                                            <form:textarea class="form-control input-sm textarea-resize-none" path="programPlan" rows="2" />
+                                            <form:errors class="help-block" path="programPlan" cssClass="help-inline" />
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
-
-
-
-
         </div>
-
-
-
     </div>
 
     <!-- Bottom Content -->
     <div class="row margin-top-20">
         <div class="col-sm-12 padding-left-20 padding-right-20">
             <div class="col-sm-12">
-
-                <!-- Bottom Content - Row 1 - Col 1 -->
-
-
 
                 <spring:bind path="email">
                     <form:hidden path="email" />
@@ -321,7 +262,6 @@
                 </spring:bind>
 
                 <form:hidden path="linkedInPictureURL" />
-
 
             </div>
         </div>

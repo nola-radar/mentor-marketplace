@@ -4,28 +4,22 @@
  *
  *******************************************************/
 
-
 /*******************************************************
  *  Helper Classes
  *******************************************************/
 
 .padding-left-35 { padding-left: 35px; }
 .padding-right-35 { padding-right: 35px; }
-
 .padding-bottom-20 { padding-bottom: 20px; }
 .padding-left-20 { padding-left: 20px; }
 .padding-right-20 { padding-right: 20px; }
 .padding-top-20 { padding-top: 20px; }
-
 .padding-left-10 { padding-left: 10px; }
 .padding-right-10 { padding-right: 10px; }
 .padding-top-10 { padding-top: 10px; }
-
 .margin-top-20 { margin-top: 20px; }
 .margin-bottom-20 { margin-bottom: 20px; }
-
 .margin-top-10 { margin-top: 10px; }
-
 
 /*******************************************************
  *  Bootstrap Overrides and Media Queries
@@ -44,7 +38,6 @@
 .col-sm-12 {
     display: table;
 }
-
 
 /*******************************************************
  *  Bootstrap Multiselect Overrides
@@ -105,7 +98,6 @@ body {
     background: #f6f6f6;
     margin: 20px;
     margin-top: 0;
-
 }
 
 .form-horizontal .control-label {
@@ -136,16 +128,13 @@ body {
     padding: 15px;
 }
 
-.match-height-registration{
+.match-height-registration {
     height: 475px;
 }
 
 .textarea-resize-none {
     resize: none;
 }
-
-
-
 
 /*******************************************************
  *  Navigation Bar
@@ -195,7 +184,6 @@ body {
     color: #FFFFFF;
     text-transform: uppercase;
 }
-
 
 /*******************************************************
  *  Index Page
@@ -253,7 +241,6 @@ body {
     padding-bottom: 40px;
 }
 
-
 /*******************************************************
  *  Shared Create Profile CSS
  *******************************************************/
@@ -309,7 +296,6 @@ body {
     margin-bottom: 5px;
 }
 
-
 /*******************************************************
  *  Top Text Fields to Account for the Padding
  *******************************************************/
@@ -336,7 +322,6 @@ body {
     padding-top: 10px;
 }
 
-
 /*******************************************************
  *  Create Mentor specific CSS
  *******************************************************/
@@ -355,7 +340,6 @@ body {
     background-color: #f6f6f6;
     height: 300px;
 }
-
 
 /*******************************************************
  *  Create Founder specific CSS
@@ -380,7 +364,6 @@ body {
     background-color: #f6f6f6;
     height: 300px;
 }
-
 
 /*******************************************************
  *  Profile specific CSS
@@ -467,7 +450,6 @@ body {
     float: right;
 }
 
-
 /*******************************************************
  *  Profile Labels CSS
  *******************************************************/
@@ -510,7 +492,6 @@ body {
 #profileDisplayText{
     font-weight:normal;
 }
-
 
 /*******************************************************
  *  Edit Profile specific CSS
