@@ -101,17 +101,7 @@
                         </spring:bind>
                     </div>
 
-                    <div class="section-200">
-
-                        <spring:bind path="background">
-                            <label class="col-sm-3 control-label createProfileTopInputLabels">Background: </label>
-                            <div class="col-sm-9 createProfileTopInputFields">
-                                <form:input class="form-control input-sm" path="background" rows="2" />
-                                <form:errors class="help-block" path="background" cssClass="help-inline" />
-                            </div>
-                        </spring:bind>
-
-                    </div>
+                    <div class="section-200"></div>
                 </div>
             </div>
         </div>
