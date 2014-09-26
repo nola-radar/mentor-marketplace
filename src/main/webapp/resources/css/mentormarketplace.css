@@ -381,10 +381,14 @@ body {
 }
 
 .profileLogoContent {
-    height: 100px;
-    position: relative;
+    height: 130px;
+    width: 130px;
+    position: absolute;
     z-index: 100;
-    padding-top: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130px 130px;
+    margin-left: 15px;
 }
 
 .profileIndustryContent {
@@ -403,13 +407,11 @@ body {
 }
 
 .profileBodyContentContainer {
-    background-color: #eeeeee;
-    display: table;
+    background-color: #eeeeee;  
 }
 
 #profileBodyContent {
     background-color: #ffffff;
-    display: table;
     margin-left: 40px;
     margin-right: 40px;
 }
