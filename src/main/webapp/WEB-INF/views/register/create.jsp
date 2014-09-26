@@ -3,6 +3,9 @@
         
         <!-- Navigation Bar -->
         <%@include file="../shared/navigationBar.jsp" %>
+        
+        <!-- hide My Profile button -->
+        <%@include file="../shared/hideMyProfileButton.jsp" %>
 
         <!-- Create Profile Main Container -->
         <div class="container" id="createProfileMainContainer">
