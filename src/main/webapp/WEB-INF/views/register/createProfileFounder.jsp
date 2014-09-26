@@ -20,7 +20,7 @@
                 <div class="section-content section-content-left">
                     <h3 class="section-content-header">Founder Information</h3>
 
-                    <div class="section-content-body form-horizontal">
+                    <div class="section-content-body form-horizontal">                        
                         <div class="form-group">
                             <label class="col-sm-4 control-label">First Name:</label>
                             <div class="col-sm-8">
