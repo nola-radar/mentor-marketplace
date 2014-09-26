@@ -2,10 +2,7 @@
         <%@include file="../header.jsp" %>
         
         <!-- Navigation Bar -->
-        <%@include file="../shared/navigationBar.jsp" %>
-        
-        <!-- hide My Profile button -->
-        <%@include file="../shared/hideMyProfileButton.jsp" %>
+        <%@include file="../shared/registerNavigationBar.jsp" %>
 
         <!-- Create Profile Main Container -->
         <div class="container" id="createProfileMainContainer">
