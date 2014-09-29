@@ -132,6 +132,10 @@ body {
     height: 475px;
 }
 
+.match-height-registration-mentor {
+    height: 447px;
+}
+
 .textarea-resize-none {
     resize: none;
 }
