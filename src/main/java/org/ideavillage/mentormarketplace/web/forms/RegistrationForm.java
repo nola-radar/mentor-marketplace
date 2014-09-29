@@ -112,6 +112,8 @@ public class RegistrationForm {
         founder.setFacebook(this.facebook);
         founder.setTwitter(this.twitter);
         founder.setOtherSocialMedia(this.otherSocialMedia);
+        founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
+        founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         founder.setLogo(this.logo);
         founder.setTagline(this.tagline);
         founder.setElevatorPitch(this.elevatorPitch);
