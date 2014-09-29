@@ -40,7 +40,7 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Title at company: </label>
                             <div class="col-sm-8">
-                                <form:input class="form-control input-sm" path="linkedInCurrentCompany" />
+                                <form:input class="form-control input-sm" path="linkedInCurrentJobTitle" />
                                 <form:errors class="help-block" path="lastName" cssClass="help-inline" />
                             </div>
                         </div>
