@@ -18,7 +18,7 @@
 
             <div class="col-md-6 padding-right-10">
                 <div class="section-content section-content-left match-height-registration-mentor">
-                    <h3 class="section-content-header">Founder Information</h3>
+                    <h3 class="section-content-header">Mentor Information</h3>
                     <div class="section-content-body form-horizontal">
 
                         <div class="form-group">
@@ -133,11 +133,6 @@
         </div>
     </div>
 
-    <spring:bind path="email">
-        <form:hidden path="email" />
-    </spring:bind>
-
-
     <form:hidden path="userType" value="mentor"  />
 
     <!-- Create Profile Button -->
@@ -150,5 +145,4 @@
             </div>
         </div>
     </div>
-</div>
 </form:form>
