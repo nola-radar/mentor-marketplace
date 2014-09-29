@@ -45,13 +45,13 @@ public class Mentor implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
-    @Size(max = 255)
-    @Column(name = "industry")
-    private String industry;
+    @Size(max = 2147483647)
+    @Column(name = "experience")
+    private String experience;
 
     @Size(max = 2147483647)
-    @Column(name = "background")
-    private String background;
+    @Column(name = "education")
+    private String education;
 
     @Size(max = 255)
     @Column(name = "linked_in_picture_url")
@@ -142,20 +142,20 @@ public class Mentor implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getIndustry() {
-        return industry;
+    public String getExperience() {
+        return experience;
     }
 
-    public void setIndustry(String industry) {
-        this.industry = industry;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 
-    public String getBackground() {
-        return background;
+    public String getEducation() {
+        return education;
     }
 
-    public void setBackground(String background) {
-        this.background = background;
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getLinkedInPictureUrl() {

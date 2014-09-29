@@ -82,6 +82,8 @@ public class RegistrationForm {
         mentor.setFacebook(this.facebook);
         mentor.setTwitter(this.twitter);
         mentor.setOtherSocialMedia(this.otherSocialMedia);
+        mentor.setEducation(this.education);
+        mentor.setExperience(this.experience);
         return mentor;
     }
 
@@ -96,6 +98,8 @@ public class RegistrationForm {
         mentor.setOtherSocialMedia(this.otherSocialMedia);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
+        mentor.setEducation(this.education);
+        mentor.setExperience(this.experience);
         return mentor;
     }
 

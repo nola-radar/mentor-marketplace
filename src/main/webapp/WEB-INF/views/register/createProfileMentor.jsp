@@ -89,7 +89,25 @@
                         </spring:bind>
                     </div>
 
-                    <div class="section-200"></div>
+                    <div class="section-200">
+
+                        <spring:bind path="experience">
+                            <label class="col-sm-3 control-label createProfileTopInputLabels">Experience: </label>
+                            <div class="col-sm-9 createProfileTopInputFields">
+                                <form:input class="form-control input-sm" path="experience" rows="2" />
+                                <form:errors class="help-block" path="experience" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
+
+                        <spring:bind path="education">
+                            <label class="col-sm-3 control-label createProfileTopInputLabels">Education: </label>
+                            <div class="col-sm-9 createProfileTopInputFields">
+                                <form:input class="form-control input-sm" path="education" rows="2" />
+                                <form:errors class="help-block" path="education" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
+
+                    </div>
                 </div>
             </div>
         </div>
