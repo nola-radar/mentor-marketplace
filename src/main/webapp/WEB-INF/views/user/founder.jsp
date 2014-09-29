@@ -115,6 +115,9 @@
 
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Weekly Reports: </label>
                         <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getWeeklyReports()} </label>
+
+                        <label class="col-xs-4 control-label profileTextAreaLabels"> Inspiration: </label>
+                        <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${founder.getInspiration()} </label>
                     </div>
                 </div>
             </div> <!-- End of Body Contents -->

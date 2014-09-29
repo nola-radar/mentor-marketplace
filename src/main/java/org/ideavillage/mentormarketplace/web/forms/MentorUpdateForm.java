@@ -22,7 +22,9 @@ public class MentorUpdateForm {
 
     private List<Expertise> expertiseList;
 
-    private String background;
+    private String experience;
+
+    private String education;
 
     @Size(max = 255)
     private String website;
@@ -35,11 +37,11 @@ public class MentorUpdateForm {
 
     @Size(max = 255)
     private String otherSocialMedia;
-    
-    @Size(max=255)
+
+    @Size(max = 255)
     private String linkedInCurrentCompany;
-    
-    @Size(max=255)
+
+    @Size(max = 255)
     private String linkedInCurrentJobTitle;
 
     public Mentor getMentor() {
@@ -48,7 +50,8 @@ public class MentorUpdateForm {
         mentor.setLastName(this.lastName);
         mentor.setIndustryList(this.industryList);
         mentor.setExpertiseList(this.expertiseList);
-        mentor.setBackground(this.background);
+        mentor.setExperience(this.experience);
+        mentor.setEducation(this.education);
         mentor.setWebsite(this.website);
         mentor.setFacebook(this.facebook);
         mentor.setTwitter(this.twitter);
@@ -63,7 +66,8 @@ public class MentorUpdateForm {
         setLastName(mentor.getLastName());
         setIndustryList(mentor.getIndustryList());
         setExpertiseList(mentor.getExpertiseList());
-        setBackground(mentor.getBackground());
+        setExperience(mentor.getExperience());
+        setEducation(mentor.getEducation());
         setWebsite(mentor.getWebsite());
         setFacebook(mentor.getFacebook());
         setTwitter(mentor.getTwitter());
@@ -77,7 +81,8 @@ public class MentorUpdateForm {
         mentor.setLastName(this.lastName);
         mentor.setIndustryList(this.industryList);
         mentor.setExpertiseList(this.expertiseList);
-        mentor.setBackground(this.background);
+        mentor.setExperience(this.experience);
+        mentor.setEducation(this.education);
         mentor.setWebsite(this.website);
         mentor.setFacebook(this.facebook);
         mentor.setTwitter(this.twitter);
@@ -119,12 +124,20 @@ public class MentorUpdateForm {
         this.expertiseList = expertiseList;
     }
 
-    public String getBackground() {
-        return background;
+    public String getExperience() {
+        return experience;
     }
 
-    public void setBackground(String background) {
-        this.background = background;
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getWebsite() {
