@@ -40,8 +40,8 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Title at company: </label>
                             <div class="col-sm-8">
-                                <form:input class="form-control input-sm" path="linkedInCurrentCompany" />
-                                <form:errors class="help-block" path="lastName" cssClass="help-inline" />
+                                <form:input class="form-control input-sm" path="linkedInCurrentJobTitle" />
+                                <form:errors class="help-block" path="linkedInCurrentJobTitle" cssClass="help-inline" />
                             </div>
                         </div>
 
@@ -215,23 +215,7 @@
         </div>
     </div>
 
-    <spring:bind path="email">
-        <form:hidden path="email" />
-    </spring:bind>
-
-    <spring:bind path="linkedInId">
-        <form:hidden path="linkedInId" />
-    </spring:bind>
-
-    <spring:bind path="isAdmin">
-        <form:hidden path="isAdmin" />
-    </spring:bind>
-
-    <spring:bind path="userType">
-        <form:hidden path="userType" value="founder"  />
-    </spring:bind>
-
-    <form:hidden path="linkedInPictureURL" />
+    <form:hidden path="userType" value="founder"  />
 
     <!-- Create Profile Button -->
     <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">

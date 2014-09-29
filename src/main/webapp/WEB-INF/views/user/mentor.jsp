@@ -51,6 +51,12 @@
 
                                 <label class="col-xs-4 cotrol-label profileTextAreaLabels"> Other Social Media: </label>
                                 <label class="col-xs-8 profileTextAreaLabels" id="profileDisplayText"> ${mentor.getOtherSocialMedia()} </label>
+
+                                <label class="col-xs-4 control-label profileTopTextAreaLabels"> Experience: </label>
+                                <label class="col-xs-8 profileTopTextAreaLabels" id="profileDisplayText"> ${mentor.getExperience()} </label>
+
+                                <label class="col-xs-4 control-label profileTopTextAreaLabels"> Education: </label>
+                                <label class="col-xs-8 profileTopTextAreaLabels" id="profileDisplayText"> ${mentor.getEducation()} </label>
                             </div>
                         </div>
 
@@ -83,8 +89,7 @@
 
                     <!-- Bottom Content -->
                     <div id="profileReports">
-                        <label class="col-xs-4 control-label profileTopTextAreaLabels"> Background: </label>
-                        <label class="col-xs-8 profileTopTextAreaLabels" id="profileDisplayText"> ${mentor.getBackground()} </label>
+
 
                         <label class="col-xs-4 control-label profileTextAreaLabels"> Areas of Expertise: </label>
                         <c:forEach items="${mentor.getExpertiseList()}" var="expertise">

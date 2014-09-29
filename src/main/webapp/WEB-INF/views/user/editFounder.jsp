@@ -151,6 +151,14 @@
                                 </div>
                             </spring:bind>
 
+                            <spring:bind path="inspiration">
+                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Inspiration </label>
+                                <div class="col-sm-10 createProfileTextAreaFields">
+                                    <form:textarea class="form-control input-sm" path="inspiration" rows="2" />
+                                    <form:errors class="help-block" path="inspiration" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
                         </div>
                     </div>
                 </div>

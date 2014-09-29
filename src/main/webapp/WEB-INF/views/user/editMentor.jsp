@@ -102,11 +102,19 @@
                 <div class="col-sm-12 padding-left-20 padding-right-20">
                     <div class="col-sm-12">
                         <div id="editProfileReports">
-                            <spring:bind path="background">
-                                <label class="col-sm-2 control-label createProfileTopInputLabels">Background: </label>
+                            <spring:bind path="experience">
+                                <label class="col-sm-2 control-label createProfileTopInputLabels">Experience: </label>
                                 <div class="col-sm-10 createProfileTopInputFields">
-                                    <form:input class="form-control input-sm" path="background" rows="2" />
-                                    <form:errors class="help-block" path="background" cssClass="help-inline" />
+                                    <form:input class="form-control input-sm" path="experience" rows="2" />
+                                    <form:errors class="help-block" path="experience" cssClass="help-inline" />
+                                </div>
+                            </spring:bind>
+
+                            <spring:bind path="education">
+                                <label class="col-sm-2 control-label createProfileTopInputLabels">Education: </label>
+                                <div class="col-sm-10 createProfileTopInputFields">
+                                    <form:input class="form-control input-sm" path="education" rows="2" />
+                                    <form:errors class="help-block" path="education" cssClass="help-inline" />
                                 </div>
                             </spring:bind>
 

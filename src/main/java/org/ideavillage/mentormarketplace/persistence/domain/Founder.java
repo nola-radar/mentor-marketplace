@@ -139,6 +139,12 @@ public class Founder implements Serializable {
 
     public Founder() {
     }
+    
+    //Constructor for merging a founder with a founder registration form
+    public Founder(String linkedInPictureUrl, String linkedInId){
+        this.linkedInId = linkedInId;
+        this.linkedInPictureUrl = linkedInPictureUrl;
+    }
 
     public Founder(Long id) {
         this.id = id;
