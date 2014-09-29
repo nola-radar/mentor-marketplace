@@ -68,10 +68,6 @@ public class RegisterController {
         model.addAttribute("industryList", industryList);
         Iterable<Expertise> expertiseList = expertiseRepository.findAll();
         model.addAttribute("expertiseList", expertiseList);
-        HashMap<String, String> userTypes = new HashMap<>();
-        userTypes.put("founder", "Founder");
-        userTypes.put("mentor", "Mentor");
-        model.addAttribute("userTypes", userTypes);
         return "register/create";
     }
 
@@ -80,10 +76,10 @@ public class RegisterController {
             @Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm,
             BindingResult result) {
         if (result.hasErrors()) {
-            HashMap<String, String> userTypes = new HashMap<>();
-            userTypes.put("founder", "Founder");
-            userTypes.put("mentor", "Mentor");
-            model.addAttribute("userTypes", userTypes);
+            Iterable<Industry> industryList = industryRepository.findAll();
+            model.addAttribute("industryList", industryList);
+            Iterable<Expertise> expertiseList = expertiseRepository.findAll();
+            model.addAttribute("expertiseList", expertiseList);
             return "register/create";
         }
         Connection<?> userConnection = ProviderSignInUtils.getConnection(request);
