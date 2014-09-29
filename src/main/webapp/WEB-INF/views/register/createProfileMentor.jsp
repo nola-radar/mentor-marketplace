@@ -20,63 +20,51 @@
                     <div id="createProfileMentorSocialInfo">
 
                         <spring:bind path="firstName">
-
                             <label class="col-sm-3 control-label createProfileTopInputLabels">First Name: </label>
                             <div class="col-sm-9 createProfileTopInputFields">
                                 <form:input class="form-control input-sm" path="firstName" rows="2" />
                                 <form:errors class="help-block" path="firstName" cssClass="help-inline" />
                             </div>
-
                         </spring:bind>
 
                         <spring:bind path="lastName">
-
                             <label class="col-sm-3 control-label createProfileInputLabels">Last Name: </label>
                             <div class="col-sm-9 createProfileInputFields">
                                 <form:input class="form-control input-sm" path="lastName" rows="2" />
                                 <form:errors class="help-block" path="lastName" cssClass="help-inline" />
                             </div>
-
                         </spring:bind>
 
                         <spring:bind path="website">
-
                             <label class="col-sm-3 control-label createProfileInputLabels">Website: </label>
                             <div class="col-sm-9 createProfileInputFields">
                                 <form:input class="form-control input-sm" path="website" rows="2" />
                                 <form:errors class="help-block" path="website" cssClass="help-inline" />
                             </div>
-
                         </spring:bind>
 
                         <spring:bind path="facebook">
-
                             <label class="col-sm-3 control-label createProfileInputLabels">Facebook: </label>
                             <div class="col-sm-9 createProfileInputFields">
                                 <form:input class="form-control input-sm" path="facebook" rows="2" />
                                 <form:errors class="help-block" path="facebook" cssClass="help-inline" />
                             </div>
-
                         </spring:bind>
 
                         <spring:bind path="twitter">
-
                             <label class="col-sm-3 control-label createProfileInputLabels">Twitter: </label>
                             <div class="col-sm-9 createProfileInputFields">
                                 <form:input class="form-control input-sm" path="twitter" rows="2" />
                                 <form:errors class="help-block" path="twitter" cssClass="help-inline" />
                             </div>
-
                         </spring:bind>
 
                         <spring:bind path="otherSocialMedia">
-
                             <label class="col-sm-3 control-label createProfileTextAreaLabels">Other Social Media: </label>
                             <div class="col-sm-9 createProfileTextAreaFields">
                                 <form:textarea class="form-control input-sm" path="otherSocialMedia" rows="2" />
                                 <form:errors class="help-block" path="otherSocialMedia" cssClass="help-inline" />
                             </div>
-
                         </spring:bind>
                     </div>
                 </div>
@@ -101,7 +89,25 @@
                         </spring:bind>
                     </div>
 
-                    <div class="section-200"></div>
+                    <div class="section-200">
+
+                        <spring:bind path="experience">
+                            <label class="col-sm-3 control-label createProfileTopInputLabels">Experience: </label>
+                            <div class="col-sm-9 createProfileTopInputFields">
+                                <form:input class="form-control input-sm" path="experience" rows="2" />
+                                <form:errors class="help-block" path="experience" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
+
+                        <spring:bind path="education">
+                            <label class="col-sm-3 control-label createProfileTopInputLabels">Education: </label>
+                            <div class="col-sm-9 createProfileTopInputFields">
+                                <form:input class="form-control input-sm" path="education" rows="2" />
+                                <form:errors class="help-block" path="education" cssClass="help-inline" />
+                            </div>
+                        </spring:bind>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,23 +134,8 @@
                             <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
                         </div>
 
-                        <spring:bind path="email">
-                            <form:hidden path="email" />
-                        </spring:bind>
+                        <form:hidden path="userType" value="mentor"  />
 
-                        <spring:bind path="linkedInId">
-                            <form:hidden path="linkedInId" />
-                        </spring:bind>
-
-                        <spring:bind path="isAdmin">
-                            <form:hidden path="isAdmin" />
-                        </spring:bind>
-
-                        <spring:bind path="userType">
-                            <form:hidden path="userType" value="mentor"  />
-                        </spring:bind>
-
-                        <form:hidden path="linkedInPictureURL" />
                     </div>
                 </div>
             </div>

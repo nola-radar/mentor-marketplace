@@ -215,23 +215,7 @@
         </div>
     </div>
 
-    <spring:bind path="email">
-        <form:hidden path="email" />
-    </spring:bind>
-
-    <spring:bind path="linkedInId">
-        <form:hidden path="linkedInId" />
-    </spring:bind>
-
-    <spring:bind path="isAdmin">
-        <form:hidden path="isAdmin" />
-    </spring:bind>
-
-    <spring:bind path="userType">
-        <form:hidden path="userType" value="founder"  />
-    </spring:bind>
-
-    <form:hidden path="linkedInPictureURL" />
+    <form:hidden path="userType" value="founder"  />
 
     <!-- Create Profile Button -->
     <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
