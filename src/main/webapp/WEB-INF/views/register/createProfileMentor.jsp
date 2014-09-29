@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="col-md-6 padding-left-10">
-                <div class="section-content section-content-right">
+                <div class="section-content section-content-right match-height-registration-mentor">
                     <h3 class="section-content-header">Background</h3>    
                     <div class="section-content-body form-horizontal">
 
@@ -95,7 +95,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Industry: </label>
+                            <label class="col-sm-4 control-label">Current Company Industry: </label>
                             <div class="col-sm-8">
                                 <form:select cssClass="selectpicker" items="${industryList}" itemValue="id"
                                              itemLabel="industry" multiple="multiple" path="industryList" />
@@ -104,7 +104,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Title at company: </label>
+                            <label class="col-sm-4 control-label">Title at Company: </label>
                             <div class="col-sm-8">
                                 <form:input class="form-control input-sm" path="linkedInCurrentCompany" />
                                 <form:errors class="help-block" path="lastName" cssClass="help-inline" />

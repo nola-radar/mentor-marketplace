@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Expertise: </label>
+                            <label class="col-sm-4 control-label">Area(s) of Expertise: </label>
                             <div class="col-sm-8">
                                 <form:select cssClass="selectpicker" items="${expertiseList}" itemValue="id"
                                              itemLabel="expertise"  multiple="multiple" path="expertiseList" />
