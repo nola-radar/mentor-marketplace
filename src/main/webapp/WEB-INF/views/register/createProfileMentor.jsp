@@ -126,9 +126,7 @@
                             <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
                         </div>
 
-                        <spring:bind path="userType">
-                            <form:hidden path="userType" value="mentor"  />
-                        </spring:bind>
+                        <form:hidden path="userType" value="mentor"  />
 
                     </div>
                 </div>
