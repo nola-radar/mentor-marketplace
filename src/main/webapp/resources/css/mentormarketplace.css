@@ -369,6 +369,15 @@ body {
     height: 300px;
 }
 
+.founder-name h4 {
+    line-height: 80px;
+    padding: 0 0 0 90px;
+    margin: 0;
+    margin-left: 8px;
+}
+
+
+
 /*******************************************************
  *  Profile specific CSS
  *******************************************************/
@@ -403,6 +412,7 @@ body {
 
 #profileNameImage {
     border-radius: 50px;
+    margin-bottom: 10px;
 }
 
 .profileHeader {

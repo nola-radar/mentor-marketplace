@@ -59,7 +59,7 @@
                                     <div class="form-group">
                                         <label class="col-xs-4 control-label">Tagline</label>
                                         <div class="col-xs-8 padding-left-0">
-                                            <p class="form-control-static">Input</p>
+                                            <p class="form-control-static">${founder.getTagline()}</p>
                                         </div>
                                     </div>
 
@@ -107,8 +107,10 @@
                                         <div class="col-xs-12 founder-name">
                                             <img class="pull-left"  id="profileNameImage" src="${founder.getLinkedInPictureUrl()}">
                                             <h4>
-                                                ${founder.getFirstName()} ${founder.getLastName()}
+                                                ${founder.getFirstName()} ${founder.getLastName()}, 
+                                                ${founder.getLinkedInCurrentJobTitle()}
                                             </h4>
+                                            
                                         </div>
                                     </div>
 
