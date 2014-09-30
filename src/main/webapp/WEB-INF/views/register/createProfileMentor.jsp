@@ -133,16 +133,12 @@
         </div>
     </div>
 
-    <form:hidden path="userType" value="mentor"  />
+    <form:hidden path="userType" value="mentor" />
 
     <!-- Create Profile Button -->
-    <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
-        <div class="col-sm-12 padding-left-20 padding-right-20">  
-            <div class="col-sm-12">
-                <button class="btn btn-info" type="submit" id="createProfileButton">
-                    Create Profile
-                </button>
-            </div>
+    <div class="row margin-bottom-20">
+        <div class="col-md-2">
+            <button class="btn btn-success" type="submit" id="createProfileButton">Create Profile</button>
         </div>
     </div>
 </form:form>
