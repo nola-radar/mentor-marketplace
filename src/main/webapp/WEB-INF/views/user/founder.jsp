@@ -22,7 +22,7 @@
                     <div class="displayIndustry">${industry.industry}</div>
                 </c:forEach>
             </div>
-               
+
             <!-- Header -->
             <div class="col-xs-12 profileHeader">
                 <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
@@ -110,7 +110,7 @@
                                                 ${founder.getFirstName()} ${founder.getLastName()}, 
                                                 ${founder.getLinkedInCurrentJobTitle()}
                                             </h4>
-                                            
+
                                         </div>
                                     </div>
 

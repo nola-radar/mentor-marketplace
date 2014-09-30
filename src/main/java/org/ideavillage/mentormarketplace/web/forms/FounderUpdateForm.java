@@ -59,9 +59,9 @@ public class FounderUpdateForm {
     private String experience;
 
     private String education;
-    
+
     private String linkedInCurrentJobTitle;
-    
+
     private String linkedInCurrentCompany;
 
     public Founder getFounder() {

@@ -218,18 +218,18 @@
         </div>
     </div>
 
-            <!-- Update Profile Button -->
-            <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
-                <div class="col-sm-12 padding-left-20 padding-right-20">  
-                    <div class="col-sm-12">
-                        <button class="btn btn-info" type="submit" id="editUpdateProfileButton">
-                            Update Profile
-                        </button>
-                    </div>
-                </div>
+    <!-- Update Profile Button -->
+    <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
+        <div class="col-sm-12 padding-left-20 padding-right-20">  
+            <div class="col-sm-12">
+                <button class="btn btn-info" type="submit" id="editUpdateProfileButton">
+                    Update Profile
+                </button>
             </div>
         </div>
     </div>
+</div>
+</div>
 
 </form:form>
 
