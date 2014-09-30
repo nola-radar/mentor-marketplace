@@ -73,7 +73,7 @@
                 </div> 
             </div>
             <div class="col-md-6 padding-left-10">
-                <div class="section-content section-content-right match-height-registration">
+                <div class="section-content section-content-right">
                     <h3 class="section-content-header">Company Information</h3>
 
                     <div class="section-content-body form-horizontal">
@@ -99,6 +99,30 @@
                                 <form:select cssClass="selectpicker" items="${industryList}" itemValue="id"
                                              itemLabel="industry" multiple="multiple" path="industryList" />
                                 <form:errors class="help-block" path="industryList" cssClass="help-inline" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Tagline:</label>
+                            <div class="col-sm-8">
+                                <form:input class="form-control input-sm" path="tagline" />
+                                <form:errors class="help-block" path="tagline" cssClass="help-inline" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">   
+                            <label class="col-sm-4 control-label">Elevator Pitch:</label>
+                            <div class="col-sm-8">
+                                <form:textarea class="form-control input-sm textarea-resize-none" path="elevatorPitch" rows="4" />
+                                <form:errors class="help-block" path="elevatorPitch" cssClass="help-inline" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">   
+                            <label class="col-sm-4 control-label">Immediate Needs:</label>
+                            <div class="col-sm-8">
+                                <form:textarea class="form-control input-sm textarea-resize-none" path="immediateNeeds" rows="2" />
+                                <form:errors class="help-block" path="immediateNeeds" cssClass="help-inline" />
                             </div>
                         </div>
 
@@ -143,13 +167,6 @@
 
                     <div class="row section-content-body">
                         <div class="col-xs-6 form-horizontal">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Tagline:</label>
-                                <div class="col-sm-8">
-                                    <form:input class="form-control input-sm" path="tagline" />
-                                    <form:errors class="help-block" path="tagline" cssClass="help-inline" />
-                                </div>
-                            </div>
 
                             <div class="form-group">   
                                 <label class="col-sm-4 control-label">Inspiration:</label>
@@ -159,24 +176,6 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">   
-                                <label class="col-sm-4 control-label">Elevator Pitch:</label>
-                                <div class="col-sm-8">
-                                    <form:textarea class="form-control input-sm textarea-resize-none" path="elevatorPitch" rows="4" />
-                                    <form:errors class="help-block" path="elevatorPitch" cssClass="help-inline" />
-                                </div>
-                            </div>
-
-                            <div class="form-group">   
-                                <label class="col-sm-4 control-label">Immediate Needs:</label>
-                                <div class="col-sm-8">
-                                    <form:textarea class="form-control input-sm textarea-resize-none" path="immediateNeeds" rows="2" />
-                                    <form:errors class="help-block" path="immediateNeeds" cssClass="help-inline" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-6 form-horizontal">
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Status:</label>
                                 <div class="col-sm-8">

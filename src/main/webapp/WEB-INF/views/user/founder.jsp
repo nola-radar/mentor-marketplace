@@ -42,50 +42,51 @@
 
                             <div class="section-content-body">
                                 <div class="form-horizontal">
+                                                                        
                                     <div class="form-group">
-                                        <label class="col-xs-4 control-label">Elevator Pitch</label>
+                                        <label class="col-xs-4 control-label">Tagline:</label>
+                                        <div class="col-xs-8 padding-left-0">
+                                            <p class="form-control-static">${founder.getTagline()}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-xs-4 control-label">Elevator Pitch:</label>
                                         <div class="col-xs-8 padding-left-0">
                                             <p class="form-control-static">${founder.getElevatorPitch()}</p>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-xs-4 control-label">Immediate Needs</label>
+                                        <label class="col-xs-4 control-label">Immediate Needs:</label>
                                         <div class="col-xs-8 padding-left-0">
                                             <p class="form-control-static">${founder.getImmediateNeeds()}</p>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-xs-4 control-label">Tagline</label>
-                                        <div class="col-xs-8 padding-left-0">
-                                            <p class="form-control-static">${founder.getTagline()}</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-xs-4 control-label">Website</label>
+                                        <label class="col-xs-4 control-label">Website:</label>
                                         <div class="col-xs-8 padding-left-0">
                                             <p class="form-control-static">${founder.getWebsite()}</p>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-xs-4 control-label">Twitter</label>
-                                        <div class="col-xs-8 padding-left-0">
-                                            <p class="form-control-static">${founder.getTwitter()}</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-xs-4 control-label">Facebook</label>
+                                        <label class="col-xs-4 control-label">Facebook:</label>
                                         <div class="col-xs-8 padding-left-0">
                                             <p class="form-control-static">${founder.getFacebook()}</p>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-xs-4 control-label">Other Social Media</label>
+                                        <label class="col-xs-4 control-label">Twitter:</label>
+                                        <div class="col-xs-8 padding-left-0">
+                                            <p class="form-control-static">${founder.getTwitter()}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-xs-4 control-label">Other Social Media:</label>
                                         <div class="col-xs-8 padding-left-0">
                                             <p class="form-control-static">${founder.getOtherSocialMedia()}</p>
                                         </div>
@@ -115,25 +116,25 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-xs-4 control-label">Area(s) of Expertise</label>
+                                        <label class="col-xs-4 control-label">Area(s) of Expertise:</label>
                                         <div class="col-xs-8 padding-left-0">
                                             <c:forEach items="${founder.getExpertiseList()}" var="expertise">
                                                 <p class="form-control-static">${expertise.expertise}</p>
                                             </c:forEach>
                                         </div>
-                                    </div>
+                                    </div>                                          
 
                                     <div class="form-group">
-                                        <label class="col-xs-4 control-label">Previous Experience</label>
+                                        <label class="col-xs-4 control-label">Education:</label>
                                         <div class="col-xs-8 padding-left-0">
-                                            <p class="form-control-static">${founder.getExperience()}</p>
+                                            <p class="form-control-static">${founder.getEducation()}</p>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-xs-4 control-label">Education</label>
+                                        <label class="col-xs-4 control-label">Experience:</label>
                                         <div class="col-xs-8 padding-left-0">
-                                            <p class="form-control-static">${founder.getEducation()}</p>
+                                            <p class="form-control-static">${founder.getExperience()}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -158,56 +159,44 @@
                                 <div class="form-horizontal">
 
                                     <div class="form-group">
-                                        <label class="col-xs-3 control-label">Inspiration</label>
+                                        <label class="col-xs-3 control-label">Inspiration:</label>
                                         <div class="col-xs-9 padding-left-0">
                                             <p class="form-control-static">${founder.getElevatorPitch()}</p>
                                         </div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-xs-3 control-label">Status</label>
+                                        <label class="col-xs-3 control-label">Status:</label>
                                         <div class="col-xs-9 padding-left-0">
                                             <p class="form-control-static">${founder.getStatus()}</p>
                                         </div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-xs-3 control-label">Vision</label>
+                                        <label class="col-xs-3 control-label">Vision:</label>
                                         <div class="col-xs-9 padding-left-0">
                                             <p class="form-control-static">${founder.getVision()}</p>
                                         </div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-xs-3 control-label">What New Orleans mean to you</label>
+                                        <label class="col-xs-3 control-label">What New Orleans mean to you:</label>
                                         <div class="col-xs-9 padding-left-0">
                                             <p class="form-control-static">${founder.getNewOrleans()}</p>
                                         </div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-xs-3 control-label">Program Plan</label>
+                                        <label class="col-xs-3 control-label">Program Plan:</label>
                                         <div class="col-xs-9 padding-left-0">
                                             <p class="form-control-static">${founder.getProgramPlan()}</p>
                                         </div>
-
                                     </div>
-
-
-
                                 </div>
-
-
                             </div>
                         </div>                      
-
                     </div>
-
-
-
                 </div>
-
-
             </div> <!-- End of Body Contents -->
         </div> <!-- End of Body Contents Container -->
     </div> <!-- End of Main Profile Container -->
