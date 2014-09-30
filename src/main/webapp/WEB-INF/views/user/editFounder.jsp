@@ -46,6 +46,15 @@
                                 <form:input class="form-control input-sm" path="linkedInCurrentJobTitle" />
                                 <form:errors class="help-block" path="linkedInCurrentJobTitle" cssClass="help-inline" />
                             </div>
+                        </div>                          
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Area(s) of Expertise: </label>
+                            <div class="col-sm-8">
+                                <form:select cssClass="selectpicker" items="${expertiseList}" itemValue="id"
+                                             itemLabel="expertise"  multiple="multiple" path="expertiseList" />
+                                <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -61,15 +70,6 @@
                             <div class="col-sm-8">
                                 <form:textarea class="form-control input-sm textarea-resize-none" path="experience" rows="5" />
                                 <form:errors class="help-block" path="experience" cssClass="help-inline" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Area(s) of Expertise: </label>
-                            <div class="col-sm-8">
-                                <form:select cssClass="selectpicker" items="${expertiseList}" itemValue="id"
-                                             itemLabel="expertise"  multiple="multiple" path="expertiseList" />
-                                <form:errors class="help-block" path="expertiseList" cssClass="help-inline" />
                             </div>
                         </div>
                     </div>
