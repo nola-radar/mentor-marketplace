@@ -69,7 +69,7 @@ public class Founder implements Serializable {
     @Column(name = "other_social_media")
     private String otherSocialMedia;
 
-    @Size(max = 255)
+    @Size(max = 2147483647)
     @Column(name = "logo")
     private String logo;
 
