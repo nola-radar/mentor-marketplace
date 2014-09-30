@@ -59,6 +59,10 @@ public class FounderUpdateForm {
     private String experience;
 
     private String education;
+    
+    private String linkedInCurrentJobTitle;
+    
+    private String linkedInCurrentCompany;
 
     public Founder getFounder() {
         Founder founder = new Founder();
@@ -82,6 +86,8 @@ public class FounderUpdateForm {
         founder.setNewOrleans(this.newOrleans);
         founder.setProgramPlan(this.programPlan);
         founder.setWeeklyReports(this.weeklyReports);
+        founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
+        founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         return founder;
     }
 
@@ -106,6 +112,8 @@ public class FounderUpdateForm {
         founder.setNewOrleans(this.newOrleans);
         founder.setProgramPlan(this.programPlan);
         founder.setWeeklyReports(this.weeklyReports);
+        founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
+        founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         return founder;
     }
 
@@ -130,6 +138,8 @@ public class FounderUpdateForm {
         setNewOrleans(founder.getNewOrleans());
         setProgramPlan(founder.getProgramPlan());
         setWeeklyReports(founder.getWeeklyReports());
+        setLinkedInCurrentCompany(founder.getLinkedInCurrentCompany());
+        setLinkedInCurrentJobTitle(founder.getLinkedInCurrentJobTitle());
     }
 
     public String getFirstName() {
@@ -290,5 +300,21 @@ public class FounderUpdateForm {
 
     public void setEducation(String education) {
         this.education = education;
+    }
+
+    public String getLinkedInCurrentJobTitle() {
+        return linkedInCurrentJobTitle;
+    }
+
+    public void setLinkedInCurrentJobTitle(String linkedInCurrentJobTitle) {
+        this.linkedInCurrentJobTitle = linkedInCurrentJobTitle;
+    }
+
+    public String getLinkedInCurrentCompany() {
+        return linkedInCurrentCompany;
+    }
+
+    public void setLinkedInCurrentCompany(String linkedInCurrentCompany) {
+        this.linkedInCurrentCompany = linkedInCurrentCompany;
     }
 }
