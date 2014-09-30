@@ -35,10 +35,9 @@ public class FounderUpdateForm {
     private String otherSocialMedia;
 
     @Size(max = 255)
-    private String logo;
-
-    @Size(max = 255)
     private String tagline;
+
+    private String logo;
 
     private String elevatorPitch;
 
