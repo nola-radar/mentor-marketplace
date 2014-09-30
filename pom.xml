@@ -10,29 +10,50 @@
     <name>Idea Village Mentor Marketplace</name>
 
     <properties>
+        <!-- Spring Dependencies Versions -->
         <spring.version>4.0.5.RELEASE</spring.version>
         <spring.security.version>3.2.4.RELEASE</spring.security.version>
         <spring.data.version>1.6.0.RELEASE</spring.data.version>
+
+        <!-- Spring Social Dependencies Versions -->
         <spring.social.version>1.1.0.RELEASE</spring.social.version>
         <spring.social.linkedin.version>1.0.1.RELEASE</spring.social.linkedin.version>
         <apache.httpcomponents.version>4.3.1</apache.httpcomponents.version>
+
+        <!-- JavaEE Dependencies Versions -->
         <javaee.version>6.0</javaee.version>
         <jstl.version>1.2</jstl.version>
+
+        <!-- JPA Dependencies Versions -->
         <hibernate.version>4.3.5.Final</hibernate.version>
+        <validation.version>1.1.0.Final</validation.version>
         <hibernate.validator.version>5.1.1.Final</hibernate.validator.version>
         <postgres.jdbc.driver.version>9.3-1101-jdbc41</postgres.jdbc.driver.version>
+
+        <!-- Test Dependencies Versions -->
+        <mockito.version>1.9.5</mockito.version>
+        <junit.version>4.11</junit.version>
+        <testng.version>6.1.1</testng.version>
+        <selenium.version>2.26.0</selenium.version>
+
+        <!-- Maven Dependencies Versions -->
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
         <maven.surefire.version>2.12.4</maven.surefire.version>
         <maven.failsafe.version>2.17</maven.failsafe.version>
         <maven.war.version>2.3</maven.war.version>
+        <maven.dependency.version>2.1</maven.dependency.version>
         <maven.compiler.version>3.1</maven.compiler.version>
         <maven.source.version>1.7</maven.source.version>
         <maven.target.version>1.7</maven.target.version>
-        <tomcat.plugin.version>2.2</tomcat.plugin.version>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Flyway Properties -->
         <flyway.version>2.3.1</flyway.version>
-        <junit.version>4.11</junit.version>
+        <flyway.driver>org.postgresql.Driver</flyway.driver>
+        <flyway.user>ideavillage</flyway.user>
+        <flyway.password>ideavillage</flyway.password>
+        <flyway.url>jdbc:postgresql://localhost:5432/mentormarketplace</flyway.url>
     </properties>
 
     <dependencies>
@@ -53,6 +74,16 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
             <version>${spring.security.version}</version>
@@ -68,20 +99,11 @@
             <version>${spring.security.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>${spring.data.version}</version>
         </dependency>
+
         <!-- Spring Social, LinkedIn -->
         <dependency>
             <groupId>org.springframework.social</groupId>
@@ -103,6 +125,7 @@
             <artifactId>httpclient</artifactId>
             <version>${apache.httpcomponents.version}</version>
         </dependency>
+
         <!-- Java EE dependencies -->
         <dependency>
             <groupId>javax</groupId>
@@ -115,11 +138,44 @@
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
         </dependency>
+
+        <!-- JPA Dependecies -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version>
+        </dependency>
+
+        <!-- PostgreSQL JDBC Driver dependencies -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgres.jdbc.driver.version}</version>
+        </dependency>
+
+        <!-- Flyway Dependency for DB migration -->
+        <dependency>
+            <groupId>com.googlecode.flyway</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- selenium / testng dependencies -->
         <dependency>  
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
-            <version>1.9.5</version>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -132,61 +188,27 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.1.1</version>
+            <version>${testng.version}</version>
             <scope>test</scope>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.26.0</version>
+            <version>${selenium.version}</version>
             <scope>test</scope>	
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>2.26.0</version>
+            <version>${selenium.version}</version>
             <scope>test</scope>	
-        </dependency>
-        
-        <!-- JPA Dependecies -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>1.1.0.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate.validator.version}</version>
-        </dependency>
-        <!-- PostgreSQL JDBC Driver dependencies -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${postgres.jdbc.driver.version}</version>
-        </dependency>
-        <!-- Flyway Dependency for DB migration -->
-        <dependency>
-            <groupId>com.googlecode.flyway</groupId>
-            <artifactId>flyway-core</artifactId>
-            <version>${flyway.version}</version>
         </dependency>
     </dependencies>
 
     <build>              
         <finalName>mentormarketplace</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>${tomcat.plugin.version}</version>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -210,7 +232,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.1</version>
+                <version>${maven.dependency.version}</version>
                 <executions>
                     <execution>
                         <phase>validate</phase>
@@ -238,10 +260,10 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>${flyway.version}</version>
                 <configuration>
-                    <driver>org.postgresql.Driver</driver>
-                    <user>ideavillage</user>
-                    <password>ideavillage</password>
-                    <url>jdbc:postgresql://localhost:5432/mentormarketplace</url>                
+                    <driver>${flyway.driver}</driver>
+                    <user>${flyway.user}</user>
+                    <password>${flyway.password}</password>
+                    <url>${flyway.url}</url>
                     <executions>
                         <execution>
                             <id>compile</id>
