@@ -255,6 +255,7 @@ body {
 
 #createProfileContainer {
     background-color: #ffffff;
+    margin-bottom: 20px;
 }
 
 #createProfileMenu {
@@ -264,12 +265,6 @@ body {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-}
-
-#createProfileButton {
-    background: #27ae60;
-    border-radius: 0%;
-    width: 150px;
 }
 
 .section-200 {
@@ -532,12 +527,6 @@ body {
 #editProfileReports {
     background-color: #f6f6f6;
     height: 300px;
-}
-
-#editUpdateProfileButton {
-    background: #27ae60;
-    border-radius: 0%;
-    width: 150px;
 }
 
 /*******************************************************
