@@ -180,14 +180,6 @@
                                 </div>
                             </spring:bind>
 
-                            <spring:bind path="weeklyReports">
-                                <label class="col-sm-2 control-label createProfileTextAreaLabels">Weekly Reports: </label>
-                                <div class="col-sm-10 createProfileTextAreaFields">
-                                    <form:textarea class="form-control" path="weeklyReports" rows="2" />
-                                    <form:errors class="help-block" path="weeklyReports" cssClass="help-inline" />
-                                </div>
-                            </spring:bind>
-
                             <label class="col-sm-2 control-label createProfileInputLabels">Industry:</label>
                             <div class="col-sm-10 createProfileInputFields">
                                 <form:select cssClass="selectpicker" items="${industryList}" itemValue="id"
