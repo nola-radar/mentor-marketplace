@@ -54,6 +54,10 @@
         <flyway.user>ideavillage</flyway.user>
         <flyway.password>ideavillage</flyway.password>
         <flyway.url>jdbc:postgresql://localhost:5432/mentormarketplace</flyway.url>
+
+        <!-- Tomcat7:run properties -->
+        <tomcat7.http.proxyHost>iss-americas-pitc-cincinnatiz.proxy.corporate.ge.com</tomcat7.http.proxyHost>
+        <tomcat7.http.proxyPort>80</tomcat7.http.proxyPort>
     </properties>
 
     <dependencies>
@@ -284,4 +288,42 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>proxy</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <version>${tomcat.plugin.version}</version>
+                        <configuration>
+                            <systemProperties>
+                                <http.proxyHost>${tomcat7.http.proxyHost}</http.proxyHost>
+                                <http.proxyPort>${tomcat7.http.proxyPort}</http.proxyPort>
+                                <https.proxyHost>${tomcat7.http.proxyHost}</https.proxyHost>
+                                <https.proxyPort>${tomcat7.http.proxyPort}</https.proxyPort>
+                            </systemProperties>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>noproxy</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <version>${tomcat.plugin.version}</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
