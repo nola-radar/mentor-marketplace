@@ -403,6 +403,7 @@ body {
     height: 100px;
     display: inline;
     float: right;
+    padding-left: 0;
 }
 
 #profileNameImage {
