@@ -9,17 +9,15 @@
     <!-- Main Profile Container -->
     <div class="profileMainContainer">
 
-        <!-- Logo Area -->
+        <!-- Profile Picture and Name Area -->
         <div class="profileLogoAndIndustryContent padding-top-20">
             <div class="col-xs-2 profileLogoContent" style="background-image: url(${mentor.getLinkedInPictureUrl()})">
             </div>
 
             <div class="col-xs-10 profileIndustryContent">
-                <!-- This needs to be captured in registration process and pulled from db -->
                 <h4 id="displayMentorName">${mentor.getFirstName()} ${mentor.getLastName()}</h4>
-
-                <div class="displayIndustry">${mentor.getLinkedInCurrentJobTitle()} at ${mentor.getLinkedInCurrentCompany()}</div>
-
+                <div class="displayIndustry">${mentor.getLinkedInCurrentJobTitle()} at ${mentor.getLinkedInCurrentCompany()}
+                </div>
             </div>
 
             <!-- Header -->
@@ -29,12 +27,9 @@
         </div>
 
         <!-- Body Contents -->
-
-
         <div class="profileBodyContentContainer">
             <div id="profileBodyContent">
                 <div class="row padding-top-20">
-
                     <div class="col-xs-6 padding-right-10">
                         <div class="section-content section-content-left">
 
@@ -69,9 +64,7 @@
                                         </div>
                                     </div>  
                                 </div>
-
                             </div>                        
-
                         </div>          
                     </div>
 
@@ -116,18 +109,11 @@
                                             </c:forEach>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
-
-
                 </div>
-
-
             </div> <!-- End of Body Contents -->
         </div> <!-- End of Body Contents Container -->
     </div> <!-- End of Main Profile Container -->

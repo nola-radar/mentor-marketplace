@@ -12,11 +12,9 @@
         <!-- Logo Area -->
         <div class="profileLogoAndIndustryContent padding-top-20">
             <div class="col-xs-2 profileLogoContent" style="background-image: url(${founder.getLogo()})">
-
             </div>
 
             <div class="col-xs-10 profileIndustryContent">
-                <!-- This needs to be captured in registration process and pulled from db -->
                 <h4>${founder.getLinkedInCurrentCompany()}</h4>
                 <c:forEach items="${founder.getIndustryList()}" var="industry">
                     <div class="displayIndustry">${industry.industry}</div>
@@ -33,8 +31,7 @@
         <div class="profileBodyContentContainer">
             <div id="profileBodyContent">
                 <div class="row padding-top-20">
-
-                    <div class="col-xs-6 padding-right-10">
+                    <div class="col-xs-6 padding-right-10">                        
                         <div class="section-content section-content-left">
                             <h3 class="section-content-header">
                                 Company Information
@@ -42,14 +39,14 @@
 
                             <div class="section-content-body">
                                 <div class="form-horizontal">
-                                                                        
+
                                     <div class="form-group">
                                         <label class="col-xs-4 control-label">Tagline:</label>
                                         <div class="col-xs-8 padding-left-0">
                                             <p class="form-control-static">${founder.getTagline()}</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label class="col-xs-4 control-label">Elevator Pitch:</label>
                                         <div class="col-xs-8 padding-left-0">
@@ -140,14 +137,10 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
 
                 <div class="row">
-
                     <div class="col-xs-12 ">
                         <div class="section-content section-content-left" id="section-content-center">
 
