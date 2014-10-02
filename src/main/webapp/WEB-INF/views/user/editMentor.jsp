@@ -108,8 +108,8 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Title at Company: </label>
                                 <div class="col-sm-8">
-                                    <form:input class="form-control input-sm" path="linkedInCurrentCompany" />
-                                    <form:errors class="help-block" path="lastName" cssClass="help-inline" />
+                                    <form:input class="form-control input-sm" path="linkedInCurrentJobTitle" />
+                                    <form:errors class="help-block" path="linkedInCurrentJobTitle" cssClass="help-inline" />
                                 </div>
                             </div>
 
