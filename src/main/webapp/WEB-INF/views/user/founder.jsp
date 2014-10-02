@@ -25,7 +25,9 @@
 
             <!-- Header -->
             <div class="col-xs-12 profileHeader">
-                <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                <c:if test="${canEditProfile == true}">
+                    <a href="<c:url value="edit" />" class="btn btn-success" id="profileEditButton"> EDIT PROFILE </a>
+                </c:if>
             </div>
         </div>
 
@@ -42,14 +44,14 @@
 
                             <div class="section-content-body">
                                 <div class="form-horizontal">
-                                                                        
+
                                     <div class="form-group">
                                         <label class="col-xs-4 control-label">Tagline:</label>
                                         <div class="col-xs-8 padding-left-0">
                                             <p class="form-control-static">${founder.getTagline()}</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label class="col-xs-4 control-label">Elevator Pitch:</label>
                                         <div class="col-xs-8 padding-left-0">
