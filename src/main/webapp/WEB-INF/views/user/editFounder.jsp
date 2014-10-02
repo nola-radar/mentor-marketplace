@@ -17,11 +17,10 @@
 
             <!-- Content Body -->
             <div class="row margin-top-20">
-
                 <div class="col-md-6 padding-right-10">
-                    <div class="section-content section-content-left match-height-registration">
-                        <h3 class="section-content-header">Founder Information</h3>
+                    <div class="section-content section-content-left">
 
+                        <h3 class="section-content-header">Founder Information</h3>
                         <div class="section-content-body form-horizontal">
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">First Name:</label>
@@ -77,6 +76,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6 padding-left-10">
                     <div class="section-content section-content-right">
                         <h3 class="section-content-header">Company Information</h3>
@@ -171,10 +171,10 @@
 
                 <div class="col-xs-12">
                     <div class="section-content" id="section-content-center">
-                        <h3 class="section-content-header">Story</h3>
 
+                        <h3 class="section-content-header">Story</h3>
                         <div class="row section-content-body">
-                            <div class="col-xs-12 form-horizontal">
+                            <div class="col-xs-12 form-horizontal">                                
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">Inspiration:</label>
                                     <div class="col-sm-8">
@@ -234,7 +234,6 @@
         </div>
     </div>
 </div>
-
 </form:form>
 
 <script type="text/javascript">
