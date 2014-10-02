@@ -233,7 +233,6 @@
             </div>
         </div>
     </div>
-</div>
 </form:form>
 
 <script type="text/javascript">

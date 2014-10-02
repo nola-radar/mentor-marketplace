@@ -6,11 +6,11 @@
 
 <form:form modelAttribute="mentorUpdateForm" action="editMentor">
 
-    <div class="container" id="editMainContainer">
-        <div id="editProfileMainContainer">
+    <div class="container" id="createProfileMainContainer">
+        <div id="createProfileContainer">
 
             <!-- Top Row -->
-            <div class="row">
+            <div class="row margin-top-20">
                 <div class="col-sm-12">
                     <div id="createProfileMenu"> Edit Profile - Mentor</div>
                 </div>
@@ -132,16 +132,12 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Update Profile Button -->
-            <div class="row margin-top-20 margin-bottom-20 padding-bottom-20 ">
-                <div class="col-sm-12 padding-left-20 padding-right-20">  
-                    <div class="col-sm-12">
-                        <button class="btn btn-success" type="submit" id="editUpdateProfileButton">
-                            Update Profile
-                        </button>
-                    </div>
-                </div>
+        <!-- Update Profile Button -->
+        <div class="row margin-bottom-20">
+            <div class="col-md-2">
+                <button class="btn btn-success" type="submit" id="editUpdateProfileButton">Update Profile</button>
             </div>
         </div>
     </div>
