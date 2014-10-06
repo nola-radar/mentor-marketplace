@@ -4,28 +4,22 @@
  *
  *******************************************************/
 
-
 /*******************************************************
  *  Helper Classes
  *******************************************************/
 
 .padding-left-35 { padding-left: 35px; }
 .padding-right-35 { padding-right: 35px; }
-
 .padding-bottom-20 { padding-bottom: 20px; }
 .padding-left-20 { padding-left: 20px; }
 .padding-right-20 { padding-right: 20px; }
 .padding-top-20 { padding-top: 20px; }
-
 .padding-left-10 { padding-left: 10px; }
 .padding-right-10 { padding-right: 10px; }
 .padding-top-10 { padding-top: 10px; }
-
 .margin-top-20 { margin-top: 20px; }
 .margin-bottom-20 { margin-bottom: 20px; }
-
 .margin-top-10 { margin-top: 10px; }
-
 
 /*******************************************************
  *  Bootstrap Overrides and Media Queries
@@ -44,7 +38,6 @@
 .col-sm-12 {
     display: table;
 }
-
 
 /*******************************************************
  *  Bootstrap Multiselect Overrides
@@ -101,6 +94,51 @@ body {
     background-color: #f6f6f6;
 }
 
+.section-content {
+    background: #f6f6f6;
+    margin: 20px;
+    margin-top: 0;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+.section-content-left {
+    margin-right: 0px;
+}
+
+.section-content-right {
+    margin-left: 0px;
+}
+
+#section-content-center {
+    margin-right: 20px;
+}
+
+.section-content-header {
+    padding: 5px 15px;
+    margin: 0;
+    background: #203747;
+    color: #fff;
+    font-size: 16px;
+}
+
+.section-content-body {
+    padding: 15px;
+}
+
+.match-height-registration {
+    height: 583px;
+}
+
+.match-height-registration-mentor {
+    height: 447px;
+}
+
+.textarea-resize-none {
+    resize: none;
+}
 
 /*******************************************************
  *  Navigation Bar
@@ -150,7 +188,6 @@ body {
     color: #FFFFFF;
     text-transform: uppercase;
 }
-
 
 /*******************************************************
  *  Index Page
@@ -208,7 +245,6 @@ body {
     padding-bottom: 40px;
 }
 
-
 /*******************************************************
  *  Shared Create Profile CSS
  *******************************************************/
@@ -219,6 +255,7 @@ body {
 
 #createProfileContainer {
     background-color: #ffffff;
+    margin-bottom: 20px;
 }
 
 #createProfileMenu {
@@ -228,12 +265,6 @@ body {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-}
-
-#createProfileButton {
-    background: #27ae60;
-    border-radius: 0%;
-    width: 150px;
 }
 
 .section-200 {
@@ -264,7 +295,6 @@ body {
     margin-bottom: 5px;
 }
 
-
 /*******************************************************
  *  Top Text Fields to Account for the Padding
  *******************************************************/
@@ -291,7 +321,6 @@ body {
     padding-top: 10px;
 }
 
-
 /*******************************************************
  *  Create Mentor specific CSS
  *******************************************************/
@@ -310,7 +339,6 @@ body {
     background-color: #f6f6f6;
     height: 300px;
 }
-
 
 /*******************************************************
  *  Create Founder specific CSS
@@ -336,6 +364,12 @@ body {
     height: 300px;
 }
 
+.founder-name h4 {
+    line-height: 80px;
+    padding: 0 0 0 90px;
+    margin: 0;
+    margin-left: 8px;
+}
 
 /*******************************************************
  *  Profile specific CSS
@@ -353,10 +387,14 @@ body {
 }
 
 .profileLogoContent {
-    height: 100px;
-    position: relative;
+    height: 130px;
+    width: 130px;
+    position: absolute;
     z-index: 100;
-    padding-top: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130px 130px;
+    margin-left: 15px;
 }
 
 .profileIndustryContent {
@@ -367,6 +405,7 @@ body {
 
 #profileNameImage {
     border-radius: 50px;
+    margin-bottom: 10px;
 }
 
 .profileHeader {
@@ -375,13 +414,11 @@ body {
 }
 
 .profileBodyContentContainer {
-    background-color: #eeeeee;
-    display: table;
+    background-color: #eeeeee;  
 }
 
 #profileBodyContent {
     background-color: #ffffff;
-    display: table;
     margin-left: 40px;
     margin-right: 40px;
 }
@@ -421,7 +458,6 @@ body {
     margin-top: 7px;
     float: right;
 }
-
 
 /*******************************************************
  *  Profile Labels CSS
@@ -466,7 +502,6 @@ body {
     font-weight:normal;
 }
 
-
 /*******************************************************
  *  Edit Profile specific CSS
  *******************************************************/
@@ -490,12 +525,6 @@ body {
 #editProfileReports {
     background-color: #f6f6f6;
     height: 300px;
-}
-
-#editUpdateProfileButton {
-    background: #27ae60;
-    border-radius: 0%;
-    width: 150px;
 }
 
 /*******************************************************
@@ -554,6 +583,6 @@ body {
     background-color: #27ae60;
 }
 
-#navBarExploreButton {
-    margin-right: 15px;
+.navbar-right {
+    margin-right:7px;
 }

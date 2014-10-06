@@ -1,11 +1,7 @@
 package org.ideavillage.mentormarketplace.web.forms;
 
 import java.util.List;
-import javax.persistence.Column;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.ideavillage.mentormarketplace.persistence.domain.Expertise;
 import org.ideavillage.mentormarketplace.persistence.domain.Founder;
 import org.ideavillage.mentormarketplace.persistence.domain.Industry;
@@ -17,17 +13,6 @@ import org.ideavillage.mentormarketplace.persistence.domain.Mentor;
  */
 public class RegistrationForm {
 
-    @NotNull
-    @NotEmpty
-    @Size(min = 1, max = 255)
-    @Email
-    private String email;
-
-    @NotNull
-    @NotEmpty
-    @Size(min = 1, max = 255)
-    private String linkedInId;
-
     @Size(max = 255)
     private String firstName;
 
@@ -38,7 +23,7 @@ public class RegistrationForm {
 
     private List<Expertise> expertiseList;
 
-    private String background;
+    private String experience;
 
     @Size(max = 255)
     private String website;
@@ -53,13 +38,9 @@ public class RegistrationForm {
     private String otherSocialMedia;
 
     @Size(max = 255)
-    private String linkedInPictureURL;
-
-    @Size(max = 255)
     private String linkedInCurrentCompany;
 
     @Size(max = 255)
-    @Column(name = "linkedincurrentjobtitle")
     private String linkedInCurrentJobTitle;
 
     @Size(max = 255)
@@ -72,7 +53,7 @@ public class RegistrationForm {
 
     private String immediateNeeds;
 
-    private String companyDetails;
+    private String education;
 
     private String inspiration;
 
@@ -89,68 +70,62 @@ public class RegistrationForm {
     @Size(max = 255)
     private String userType;
 
-    private boolean isAdmin;
-
     public Mentor getMentor() {
         Mentor mentor = new Mentor();
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
         mentor.setIndustryList(this.industryList);
         mentor.setExpertiseList(this.expertiseList);
-        mentor.setBackground(this.background);
-        mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
         mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         mentor.setWebsite(this.website);
         mentor.setFacebook(this.facebook);
         mentor.setTwitter(this.twitter);
         mentor.setOtherSocialMedia(this.otherSocialMedia);
-        mentor.setLinkedInId(this.linkedInId);
+        mentor.setEducation(this.education);
+        mentor.setExperience(this.experience);
         return mentor;
     }
 
-    public Mentor editMentor(Mentor mentor) {
+    public Mentor mergeFormWithMentor(Mentor mentor) {
         mentor.setFirstName(this.firstName);
         mentor.setLastName(this.lastName);
         mentor.setIndustryList(this.industryList);
         mentor.setExpertiseList(this.expertiseList);
-        mentor.setBackground(this.background);
-        mentor.setLinkedInPictureUrl(this.linkedInPictureURL);
-        mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
-        mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         mentor.setWebsite(this.website);
         mentor.setFacebook(this.facebook);
         mentor.setTwitter(this.twitter);
         mentor.setOtherSocialMedia(this.otherSocialMedia);
-        mentor.setLinkedInId(this.linkedInId);
+        mentor.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
+        mentor.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
+        mentor.setEducation(this.education);
+        mentor.setExperience(this.experience);
         return mentor;
     }
 
-    public Founder editFounder(Founder founder) {
+    public Founder mergeFormWithFounder(Founder founder) {
         founder.setFirstName(this.firstName);
         founder.setLastName(this.lastName);
-        founder.setIndustryList(industryList);
-        founder.setExpertiseList(expertiseList);
-        founder.setBackground(this.background);
-        founder.setLinkedInPictureUrl(this.linkedInPictureURL);
-        founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
-        founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
+        founder.setIndustryList(this.industryList);
+        founder.setExpertiseList(this.expertiseList);
         founder.setWebsite(this.website);
         founder.setFacebook(this.facebook);
         founder.setTwitter(this.twitter);
         founder.setOtherSocialMedia(this.otherSocialMedia);
+        founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
+        founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         founder.setLogo(this.logo);
         founder.setTagline(this.tagline);
         founder.setElevatorPitch(this.elevatorPitch);
         founder.setImmediateNeeds(this.immediateNeeds);
-        founder.setCompanyDetails(this.companyDetails);
+        founder.setEducation(this.education);
+        founder.setExperience(this.experience);
         founder.setInspiration(this.inspiration);
         founder.setStatus(this.status);
         founder.setVision(this.vision);
         founder.setNewOrleans(this.newOrleans);
         founder.setProgramPlan(this.programPlan);
         founder.setWeeklyReports(this.weeklyReports);
-        founder.setLinkedInId(this.linkedInId);
         return founder;
     }
 
@@ -160,8 +135,7 @@ public class RegistrationForm {
         founder.setLastName(this.lastName);
         founder.setIndustryList(this.industryList);
         founder.setExpertiseList(this.expertiseList);
-        founder.setBackground(this.background);
-        founder.setLinkedInPictureUrl(this.linkedInPictureURL);
+        founder.setExperience(this.experience);
         founder.setLinkedInCurrentCompany(this.linkedInCurrentCompany);
         founder.setLinkedInCurrentJobTitle(this.linkedInCurrentJobTitle);
         founder.setWebsite(this.website);
@@ -172,29 +146,14 @@ public class RegistrationForm {
         founder.setTagline(this.tagline);
         founder.setElevatorPitch(this.elevatorPitch);
         founder.setImmediateNeeds(this.immediateNeeds);
-        founder.setCompanyDetails(this.companyDetails);
+        founder.setEducation(this.education);
         founder.setInspiration(this.inspiration);
         founder.setStatus(this.status);
         founder.setVision(this.vision);
         founder.setNewOrleans(this.newOrleans);
         founder.setProgramPlan(this.programPlan);
         founder.setWeeklyReports(this.weeklyReports);
-        founder.setLinkedInId(this.linkedInId);
         return founder;
-    }
-
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getUserType() {
@@ -203,20 +162,6 @@ public class RegistrationForm {
 
     public void setUserType(String userType) {
         this.userType = userType;
-    }
-
-    /**
-     * @return the linkedInId
-     */
-    public String getLinkedInId() {
-        return linkedInId;
-    }
-
-    /**
-     * @param linkedInId the linkedInId to set
-     */
-    public void setLinkedInId(String linkedInId) {
-        this.linkedInId = linkedInId;
     }
 
     public String getFirstName() {
@@ -251,12 +196,12 @@ public class RegistrationForm {
         this.expertiseList = expertiseList;
     }
 
-    public String getBackground() {
-        return background;
+    public String getExperience() {
+        return experience;
     }
 
-    public void setBackground(String background) {
-        this.background = background;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 
     public String getWebsite() {
@@ -289,14 +234,6 @@ public class RegistrationForm {
 
     public void setOtherSocialMedia(String otherSocialMedia) {
         this.otherSocialMedia = otherSocialMedia;
-    }
-
-    public String getLinkedInPictureURL() {
-        return linkedInPictureURL;
-    }
-
-    public void setLinkedInPictureURL(String linkedInPictureURL) {
-        this.linkedInPictureURL = linkedInPictureURL;
     }
 
     public String getLinkedInCurrentCompany() {
@@ -347,12 +284,12 @@ public class RegistrationForm {
         this.immediateNeeds = immediateNeeds;
     }
 
-    public String getCompanyDetails() {
-        return companyDetails;
+    public String getEducation() {
+        return education;
     }
 
-    public void setCompanyDetails(String companyDetails) {
-        this.companyDetails = companyDetails;
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getInspiration() {
@@ -401,14 +338,6 @@ public class RegistrationForm {
 
     public void setWeeklyReports(String weeklyReports) {
         this.weeklyReports = weeklyReports;
-    }
-
-    public void setIsAdmin(boolean isadmin) {
-        this.isAdmin = isadmin;
-    }
-
-    public boolean getIsAdmin() {
-        return isAdmin;
     }
 
 }
